@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="live-dao.properties" />
+	<classPathEntry location="${db.driver.path}" />
+	<context id="MySqlTables" targetRuntime="MyBatis3">
+		
+		<property name="javaFileEncoding" value="utf-8"/>
+
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+			<property name="suppressJavaInterface " value="false"/>
+		</plugin> 
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.MySQLPaginationPlugin"></plugin>
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.MyExtClassPlugin"></plugin>
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.MyFieldExplainPlugin"></plugin>
+
+		<jdbcConnection driverClass="${db.driver}"
+			connectionURL="${db.url}" userId="${db.username}" password="${db.password}">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.zf.live.dao.pojo"
+			targetProject="D://live_db/" >
+			<property name="enableSubPackages" value="true" />
+			<property name="" value=""/>
+			<!-- <property name="trimStrings" value="true" /> -->
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.zf.live.dao.mapper" targetProject="D://live_db/">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.zf.live.dao.mapper" targetProject="D://live_db/">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table schema="lvuser" tableName="lvuser">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id" type="post" identity="true"/>
+		</table>
+
+		<table schema="roomsetting" tableName="roomsetting">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+	</context>
+</generatorConfiguration>
