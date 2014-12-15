@@ -127,5 +127,6 @@
   	<module>live-web-resource</module>
   	<module>live-pojo</module>
   	<module>live-common</module>
+  	<module>live-service</module>
   </modules>
 </project>

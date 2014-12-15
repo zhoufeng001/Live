@@ -58,9 +58,9 @@ public class ZFFieldExplainPlugin extends PluginAdapter{
             IntrospectedTable introspectedTable) {
 	topLevelClass.getJavaDocLines().clear(); 
 	StringBuilder doc = new StringBuilder() ;
-	doc.append("/**").append("\n");
-	doc.append(" * ").append("tableName{" + introspectedTable.getTableConfiguration().getTableName() + "}").append("\n");
-	doc.append(" * by is_zhoufeng@163.com " + String.format("%1$tF %1$tT", System.currentTimeMillis())).append("\n");
+	doc.append("/**").append("\r\n");
+	doc.append(" * ").append("tableName{" + introspectedTable.getTableConfiguration().getTableName() + "}").append("\r\n");
+	doc.append(" * by is_zhoufeng@163.com " + String.format("%1$tF %1$tT", System.currentTimeMillis())).append("\r\n");
 	doc.append(" */");
 	topLevelClass.getJavaDocLines().add(doc.toString());
         return super.modelBaseRecordClassGenerated(topLevelClass, introspectedTable);
@@ -68,10 +68,10 @@ public class ZFFieldExplainPlugin extends PluginAdapter{
     
     private String getFieldDoc(IntrospectedColumn introspectedColumn ){
 	StringBuilder doc = new StringBuilder() ;
-	doc.append("/**").append("\n");
+	doc.append("/**").append("\r\n");
 	doc.append("     * ").append(introspectedColumn.getRemarks()).append("  "); 
-	doc.append("\n");
-	doc.append("     * ").append("column{" + introspectedColumn.getActualColumnName() + "},jdbcType{"+introspectedColumn.getJdbcTypeName()+"}").append("\n");
+	doc.append("\r\n");
+	doc.append("     * ").append("column{" + introspectedColumn.getActualColumnName() + "},jdbcType{"+introspectedColumn.getJdbcTypeName()+"}").append("\r\n");
 	doc.append("     */");
 	return doc.toString() ;
     }

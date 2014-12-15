@@ -1,4 +1,4 @@
-package com.zf.live.rmiservice.user;
+package com.zf.live.service.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

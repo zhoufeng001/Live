@@ -13,6 +13,9 @@
         <dependent-module archiveName="live-client-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/live-client/live-client">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="live-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/live-service/live-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="live-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/live-common/live-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>

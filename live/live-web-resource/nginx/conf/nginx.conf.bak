@@ -1,5 +1,5 @@
 
-#user  nobody;
+user  nobody;
 worker_processes  1;
 
 #error_log  logs/error.log;
@@ -41,17 +41,17 @@ http {
         #access_log  logs/host.access.log  main;
 
         location / {
-            root  html;
-            index  index.html index.htm;
+            root  resources;
+            index  html/index.html html/index.htm;
         }
 
         #error_page  404              /404.html;
 
         # redirect server error pages to the static page /50x.html
         #
-        error_page   500 502 503 504  /50x.html;
+        error_page   500 502 503 504  /html/50x.html;
         location = /50x.html {
-            root   html;
+            root   resources;
         }
 
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80

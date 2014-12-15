@@ -10,7 +10,6 @@ import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.java.Interface;
 import org.mybatis.generator.api.dom.java.JavaVisibility;
-import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.Document;
 import org.mybatis.generator.api.dom.xml.TextElement;
@@ -51,10 +50,10 @@ public class ZFExtClassPlugin extends PluginAdapter{
 		interfaze.addImportedType(fqjt);
 		
 		StringBuilder doc = new StringBuilder() ;
-		doc.append("/**").append("\n") ;
-		doc.append(" * 该类用于扩展" + introspectedTable.getMyBatis3JavaMapperType() + "接口").append("\n") ;
-		doc.append(" * by is_zhoufeng@163.com " + String.format("%1$tF %1$tT", System.currentTimeMillis())).append("\n") ;
-		doc.append("*/") ;
+		doc.append("/**").append("\r\n") ;
+		doc.append(" * 该类用于扩展" + introspectedTable.getMyBatis3JavaMapperType() + "接口").append("\r\n") ;
+		doc.append(" * by is_zhoufeng@163.com " + String.format("%1$tF %1$tT", System.currentTimeMillis())).append("\r\n") ;
+		doc.append(" */") ;
 		
 		interfaze.addJavaDocLine(doc.toString());;
 

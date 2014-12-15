@@ -26,6 +26,11 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
+			<groupId>com.zf</groupId>
+			<artifactId>live-service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
   			<groupId>com.zf</groupId>
   			<artifactId>live-common</artifactId>
   			 <version>0.0.1-SNAPSHOT</version>
