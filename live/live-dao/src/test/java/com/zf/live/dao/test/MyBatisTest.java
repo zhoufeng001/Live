@@ -31,21 +31,21 @@ public class MyBatisTest {
 	@Test
 	public void testInsert(){
 		Lvuser lvuser = new Lvuser() ;
-		lvuser.setUsername(UUID.randomUUID().toString().substring(0, 5));
+		lvuser.setLoginname((UUID.randomUUID().toString().substring(0, 5)));
 		int count = lvuserMapper.insert(lvuser) ;
 		System.out.println("insert count : " + count);
 	}
 	
 	@Test
 	public void testSelect(){
-		Lvuser lvuser = lvuserMapper.selectByPrimaryKey(1) ;
-		System.out.println("lvuser.name : " + lvuser.getUsername());
+		Lvuser lvuser = lvuserMapper.selectByPrimaryKey(1L) ;
+		System.out.println("lvuser.name : " + lvuser.getLoginname());
 	}
 	
 	@Test
 	public void pageQuery(){
 		LvuserExample example = new LvuserExample() ;
-		example.createCriteria().andIdGreaterThan(1) ;
+		example.createCriteria().andIdGreaterThan(1l) ;
 		example.setPage(new Page(2, 4)); 
 		List<Lvuser> users = lvuserMapper.selectByExample(example) ;
 		System.out.println("size:" + users.size());
@@ -54,7 +54,7 @@ public class MyBatisTest {
 	@Test
 	public void testExt(){
 		Lvuser lvuser = lvuserMapper.selectRandom() ;
-		System.out.println("username:" + lvuser.getUsername());
+		System.out.println("username:" + lvuser.getLoginname());
 	}
 
 }

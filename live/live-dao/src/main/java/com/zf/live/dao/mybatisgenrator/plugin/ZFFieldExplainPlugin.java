@@ -15,7 +15,7 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月14日 上午3:35:39
  */
-public class MyFieldExplainPlugin extends PluginAdapter{
+public class ZFFieldExplainPlugin extends PluginAdapter{
 
     @Override
     public boolean validate(List<String> warnings) {

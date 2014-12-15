@@ -11,11 +11,15 @@
 		<property name="javaFileEncoding" value="utf-8"/>
 
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
-			<property name="suppressJavaInterface " value="false"/>
+			<property name="suppressJavaInterface" value="false"/>
 		</plugin> 
-		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.MySQLPaginationPlugin"></plugin>
-		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.MyExtClassPlugin"></plugin>
-		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.MyFieldExplainPlugin"></plugin>
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.ZFServicePlugin">
+			<property name="serviceDir" value="D://live_db/service"/>
+			<property name="package" value="com.zf.live.client.service"/>
+		</plugin> 
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.ZFMySQLPaginationPlugin"></plugin>
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.ZFExtClassPlugin"></plugin>
+		<plugin type="com.zf.live.dao.mybatisgenrator.plugin.ZFFieldExplainPlugin"></plugin>
 
 		<jdbcConnection driverClass="${db.driver}"
 			connectionURL="${db.url}" userId="${db.username}" password="${db.password}">
@@ -41,15 +45,58 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table schema="lvuser" tableName="lvuser">
+		<table schema="buyrecored" tableName="buyrecored">
 			<property name="useActualColumnNames" value="true" />
 			<property name="generateExt" value="true" />
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id" type="post" identity="true"/>
 		</table>
 
+		<table schema="goods" tableName="goods">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+		<table schema="lvuser" tableName="lvuser">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+		<table schema="lvuserinfo" tableName="lvuserinfo">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+		<table schema="playrecored" tableName="playrecored">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+		<table schema="praiserecored" tableName="praiserecored">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
 		<table schema="roomsetting" tableName="roomsetting">
 			<property name="useActualColumnNames" value="true" />
 			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+		<table schema="userprops" tableName="userprops">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+		</table>
+
+		<table schema="video" tableName="video">
+			<property name="useActualColumnNames" value="true" />
+			<property name="generateExt" value="true" />
+			<property name="generateService" value="true" />
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
 		</table>
 

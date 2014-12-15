@@ -21,7 +21,7 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月14日 上午3:29:44
  */
-public final class MySQLPaginationPlugin extends PluginAdapter {
+public final class ZFMySQLPaginationPlugin extends PluginAdapter {
 
     @Override
     public boolean modelExampleClassGenerated(TopLevelClass topLevelClass,

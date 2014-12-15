@@ -10,6 +10,7 @@ import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.java.Interface;
 import org.mybatis.generator.api.dom.java.JavaVisibility;
+import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.Document;
 import org.mybatis.generator.api.dom.xml.TextElement;
@@ -23,13 +24,13 @@ import org.mybatis.generator.config.PropertyRegistry;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月14日 上午3:28:46
  */
-public class MyExtClassPlugin extends PluginAdapter{
+public class ZFExtClassPlugin extends PluginAdapter{
 
 	@Override
 	public boolean validate(List<String> warnings) {
 		return true;
 	}
-
+	
 	@Override
 	public List<GeneratedJavaFile> contextGenerateAdditionalJavaFiles(
 			IntrospectedTable introspectedTable) {

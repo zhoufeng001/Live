@@ -15,18 +15,18 @@ import com.zf.live.dao.pojo.Lvuser;
 @RequestMapping("/hello/*")
 public class HelloController {
 
-    @Resource(name = "lvuserService")
-    private LvuserService lvuserService ; 
+	@Resource(name = "lvuserService")
+	private LvuserService lvuserService ; 
 
-    public HelloController() {
-	System.out.println("HelloController............");
-    }
+	public HelloController() {
+		System.out.println("HelloController............");
+	}
 
-    @RequestMapping("/world")
-    public String helloUser(ServletRequest request, ServletResponse response , ModelMap modelMap) {
-	Lvuser lvuser = lvuserService.selectUserById(1) ;
-	modelMap.put("username", "is_zhoufeng " + lvuser.getUsername());
-	return "hello";
-    }
+	@RequestMapping("/world")
+	public String helloUser(ServletRequest request, ServletResponse response , ModelMap modelMap) {
+		Lvuser lvuser = lvuserService.selectUserById(1) ;
+		modelMap.put("username", "is_zhoufeng " + lvuser.getLoginname());
+		return "hello";
+	}
 
 }

@@ -5,14 +5,15 @@
   用于扩展com.zf.live.dao.mapper.LvuserMapper接口
 可通过com.zf.live.dao.mapper.LvuserMapper.BaseResultMap 
 和com.zf.live.dao.mapper.LvuserMapper.Base_Column_List对其进行引用
-by is_zhoufeng@163.com 2014-12-14 04:25:39.
+by is_zhoufeng@163.com 2014-12-15 17:32:50.
   -->
   
-  <select id="selectRandom"  resultMap="com.zf.live.dao.mapper.LvuserMapper.BaseResultMap">
+   <select id="selectRandom"  resultMap="com.zf.live.dao.mapper.LvuserMapper.BaseResultMap">
   	select 
   	<include refid="com.zf.live.dao.mapper.LvuserMapper.Base_Column_List" />
   	from `lvuser`
   	order by RAND() limit 1; 
   </select>
+  
   
 </mapper>

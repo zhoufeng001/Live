@@ -23,7 +23,7 @@ public class TestService {
     @Test
     public void testInsert(){
 	Lvuser lvuser = new Lvuser() ;
-	lvuser.setUsername(UUID.randomUUID().toString().substring(0, 5));
+	lvuser.setLoginname((UUID.randomUUID().toString().substring(0, 5))) ;
 	int count = lvuserMapper.insert(lvuser) ;
 	System.out.println("insert count : " + count);
     }
