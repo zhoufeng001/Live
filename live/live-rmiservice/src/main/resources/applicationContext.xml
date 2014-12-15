@@ -10,6 +10,15 @@
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<context:annotation-config />
 	<context:component-scan base-package="com.zf.live.rmiservice" />
+	
+	<bean id="propertiesConfig" class="com.zf.live.common.ZFSpringPropertyConfigure">
+		<property name="locations">
+			<array>
+				<value>classpath:app-env.properties</value>
+			</array>
+		</property>
+	</bean>
+	
 
 	<import resource="classpath*:*-beans.xml" />
 	
