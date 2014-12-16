@@ -29,11 +29,11 @@ public class ZFExtClassPlugin extends PluginAdapter{
 	public boolean validate(List<String> warnings) {
 		return true;
 	}
-	
+
 	@Override
 	public List<GeneratedJavaFile> contextGenerateAdditionalJavaFiles(
 			IntrospectedTable introspectedTable) {
-		
+
 		if(!generator(introspectedTable)){
 			return null ;
 		}
@@ -48,13 +48,13 @@ public class ZFExtClassPlugin extends PluginAdapter{
 				introspectedTable.getMyBatis3JavaMapperType() );
 		interfaze.addSuperInterface(fqjt);
 		interfaze.addImportedType(fqjt);
-		
+
 		StringBuilder doc = new StringBuilder() ;
 		doc.append("/**").append("\r\n") ;
 		doc.append(" * 该类用于扩展" + introspectedTable.getMyBatis3JavaMapperType() + "接口").append("\r\n") ;
 		doc.append(" * by is_zhoufeng@163.com " + String.format("%1$tF %1$tT", System.currentTimeMillis())).append("\r\n") ;
 		doc.append(" */") ;
-		
+
 		interfaze.addJavaDocLine(doc.toString());;
 
 
@@ -72,20 +72,20 @@ public class ZFExtClassPlugin extends PluginAdapter{
 	@Override
 	public List<GeneratedXmlFile> contextGenerateAdditionalXmlFiles(
 			IntrospectedTable introspectedTable) {
-		
-		
+
+
 		if(!generator(introspectedTable)){
 			return null ;
 		}
 
-		
+
 		Document document = new Document(
 				XmlConstants.MYBATIS3_MAPPER_PUBLIC_ID,
 				XmlConstants.MYBATIS3_MAPPER_SYSTEM_ID);
 
 		XmlElement root = new XmlElement("mapper"); 
 		document.setRootElement(root);
-		
+
 		root.addAttribute(new Attribute("namespace", introspectedTable.getMyBatis3SqlMapNamespace() + "Ext"));
 
 		root.addElement(new TextElement("<!--")); 
@@ -99,10 +99,10 @@ public class ZFExtClassPlugin extends PluginAdapter{
 		sb.append('.');
 		root.addElement(new TextElement(sb.toString()));
 		root.addElement(new TextElement("-->")); 
-		
+
 		String intfFileName = introspectedTable.getMyBatis3XmlMapperFileName() ;
 		String fileName = intfFileName.replace(".", "Ext.") ;
-		
+
 		GeneratedXmlFile gxf = new GeneratedXmlFile(document,fileName,
 				context.getSqlMapGeneratorConfiguration().getTargetPackage(), 
 				context.getSqlMapGeneratorConfiguration().getTargetProject(), 
@@ -113,7 +113,7 @@ public class ZFExtClassPlugin extends PluginAdapter{
 
 		return answer;
 	}
-	
+
 	private boolean generator(IntrospectedTable introspectedTable){
 		String generateExt = introspectedTable.getTableConfiguration().getProperties().getProperty("generateExt") ;
 		if("true".equals(generateExt)){
