@@ -6,4 +6,14 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>live-pojo</artifactId>
+  
+   
+  <build>
+  	<plugins>
+	  	 <plugin>
+	          <artifactId>maven-compiler-plugin</artifactId>
+	      </plugin>
+  	</plugins>
+  </build>
+  
 </project>
