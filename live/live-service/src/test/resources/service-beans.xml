@@ -16,10 +16,35 @@
 	
 	<import resource="classpath*:dao-beans.xml" />
 	
-	<bean id="redisService" class="com.zf.live.service.redis.RedisService">
-		<constructor-arg name="host" value="${redis.host}" />
-		<constructor-arg name="port" value="${redis.port}" />
-		<constructor-arg name="password" value="${redis.password}" />
+	
+	<!-- Redis配置  -->
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		<property name="maxActive" value="${redis.maxActive}" />
+		<property name="maxWait" value="${redis.maxWait}" />
+		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
 	</bean>
+	
+	
+	 <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+	 	<property name="host-name" value="${redis.host}" />
+	 	<property name="port" value="${redis.port}" />
+	 	<property name="password" value="${redis.password}" />
+	 	<property name="pool-config-ref" value="poolConfig" />
+	 </bean>  
+	
+<!-- 	 <bean id="redisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"> -->
+<!-- 	 	<property name="hostName" value="${redis.host}" /> -->
+<!-- 	 	<property name="port" value="${redis.port}" /> -->
+<!-- 	 	<property name="password" value="${redis.password}" /> -->
+<!-- 	 	<property name="poolConfig" value="poolConfig" /> -->
+<!-- 	 </bean>   -->
+	 
+	 <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">  
+        <property name="connectionFactory"   ref="redisConnectionFactory" />  
+     </bean>    
+	
+	
+	
 	 
 </beans>
