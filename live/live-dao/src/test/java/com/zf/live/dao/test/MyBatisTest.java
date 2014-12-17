@@ -21,7 +21,7 @@ import com.zf.live.dao.vo.Page;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
-		{"classpath*:spring-dao-beans.xml"}		
+		{"classpath*:dao-beans.xml"}		
 )
 public class MyBatisTest {
 	

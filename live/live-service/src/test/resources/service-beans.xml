@@ -12,6 +12,10 @@
 	<context:component-scan base-package="com.zf.live.service" />
 	<context:annotation-config />
 	
+	<context:property-placeholder location="app-env.properties" /> 
+	
+	<import resource="classpath*:dao-beans.xml" />
+	
 	<bean id="redisService" class="com.zf.live.service.redis.RedisService">
 		<constructor-arg name="host" value="${redis.host}" />
 		<constructor-arg name="port" value="${redis.port}" />
