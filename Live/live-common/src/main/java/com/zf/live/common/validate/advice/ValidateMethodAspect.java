@@ -4,10 +4,13 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.reflect.MethodSignature;
 
+import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.validate.IsInteger;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.common.validate.Regexp;
+import com.zf.live.common.validate.handler.NotnullInvokeMethodHandler;
 
 
 /**
@@ -16,48 +19,50 @@ import com.zf.live.common.validate.Regexp;
  * 2014年12月18日 下午5:17:07
  */
 public class ValidateMethodAspect {
-
 	
-	public void validate(ProceedingJoinPoint joinPoint) 
+	private NotnullInvokeMethodHandler notnullInvokeMethodHandler ;
+	
+	public Object validate(ProceedingJoinPoint joinPoint) 
 			throws Throwable {
-		String methodName = joinPoint.getSignature().getName() ;
+		
+		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+		Method method = signature.getMethod();
 		Object[] args = joinPoint.getArgs() ;
-		Class<?>[] argsType = getArgsType(args);
 		Object target = joinPoint.getTarget() ;
-		Method method = null ;
-		if(argsType == null){
-			method = joinPoint.getTarget().getClass().getMethod(methodName) ;
-		}else{
-			method = joinPoint.getTarget().getClass().getMethod(methodName , argsType) ;
-		}
-
 		Parameter[] parameters = method.getParameters() ;
-		if(parameters != null){
-			for (Parameter parameter : parameters) {  
+		
+		
+		if(args != null && parameters != null && args.length != parameters.length){
+			throw new ValidateException("method[" + method.getName() + "]方法定义的参数数量与传入的数量不一致，定义：" + args.length + "，传入：" + parameters.length);
+		}
+		if(parameters != null && args != null){
+			for (int i = 0; i < parameters.length; i++) {
+				Parameter parameter = parameters[i];
 				Notnull[] notnulls = parameter.getAnnotationsByType(Notnull.class) ;
-				notnulls[0].value();
 				IsInteger[] integers = parameter.getAnnotationsByType(IsInteger.class) ;
 				Regexp[] regexps = parameter.getAnnotationsByType(Regexp.class) ;
+				Object arg = args[i];
+				
+				if(notnullInvokeMethodHandler == null){
+					throw new ValidateException("notnullInvokeMethodHandler不能为空");
+				}
+				
+				notnullInvokeMethodHandler.validate(notnulls, arg); ;
 			}
 		}
 		
 		System.out.println("ValidateMethodAdvice..." + method.getName() + "   " + target.toString());
+		
+		return joinPoint.proceed(args) ;
 	}
 
-	/**
-	 * 获取参数类型
-	 * @param args
-	 * @return
-	 */
-	public Class<?>[] getArgsType(Object[] args){
-		if(args == null || args.length <= 0){
-			return null ; 
-		}
-		Class<?>[] clazz = new Class[args.length] ;
-		for (int i = 0; i < args.length; i++) {
-			clazz[i] = args[i].getClass() ;
-		}
-		return clazz ;
+	public NotnullInvokeMethodHandler getNotnullInvokeMethodHandler() {
+		return notnullInvokeMethodHandler;
+	}
+
+	public void setNotnullInvokeMethodHandler(
+			NotnullInvokeMethodHandler notnullInvokeMethodHandler) {
+		this.notnullInvokeMethodHandler = notnullInvokeMethodHandler;
 	}
 
 }

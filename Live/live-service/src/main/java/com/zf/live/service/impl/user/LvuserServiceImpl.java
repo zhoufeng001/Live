@@ -45,7 +45,7 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Override
 	public ServiceResult<Long> regist(
-			@Notnull @Notnull("loginname") @Notnull("nick") @Notnull("password") Lvuser user
+			@Notnull @Notnull("loginname") @Notnull("nick") @Notnull("password") Lvuser user 
 			) {
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
 		if(user == null){
