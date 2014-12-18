@@ -16,4 +16,11 @@ by is_zhoufeng@163.com 2014-12-15 17:32:50.
   </select>
   
   
+    
+  <select id="count" resultType="java.lang.Integer">
+  	select count(*)
+  	from `lvuser`
+  	where loginname =  #{loginname,jdbcType=VARCHAR} limit 1 
+  </select>
+  
 </mapper>

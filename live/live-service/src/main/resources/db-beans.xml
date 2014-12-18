@@ -35,8 +35,8 @@
 	
 	<!-- AOP配置自动代理事务处理 -->
 	<aop:config>  
-		<aop:pointcut expression="execution(public * com.zf.live.rmiservice.*.*(..))" id="servicePointcut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointcut" /> 
+		<aop:pointcut expression="execution(public * com.zf.live.service.impl..*.*(..))" id="servicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointcut" order="2" /> 
 	</aop:config>
 
 </beans>

@@ -100,6 +100,13 @@
             <version>${jetty.version}</version>
         </dependency>
         
+        <dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.4</version>
+		</dependency>
+		        
+        
         <!-- Junit4 -->
         <dependency>
 			<groupId>junit</groupId>

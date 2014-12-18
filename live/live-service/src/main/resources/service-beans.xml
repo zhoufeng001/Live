@@ -26,5 +26,4 @@
 		p:connectionFactory-ref="jedisConnectionFactory"/>
 	
 	
-	
 </beans>

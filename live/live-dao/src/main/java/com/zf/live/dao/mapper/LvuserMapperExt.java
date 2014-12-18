@@ -14,5 +14,11 @@ public interface LvuserMapperExt extends LvuserMapper {
      * @return
      */
     public Lvuser selectRandom();
+    
+    /**
+     * 根据loginname查询用户数量
+     * @return
+     */
+    public Integer count(String loginname); 
 
 }

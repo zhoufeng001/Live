@@ -8,10 +8,27 @@
   <artifactId>live-common</artifactId>
   
   <dependencies>
-
+		<dependency>
+			<groupId>com.zf</groupId>
+			<artifactId>live-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.zf</groupId>
+			<artifactId>live-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		
