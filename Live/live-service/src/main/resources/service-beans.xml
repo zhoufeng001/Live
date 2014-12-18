@@ -26,4 +26,19 @@
 		p:connectionFactory-ref="jedisConnectionFactory"/>
 	
 	
+
+	<!-- 方法参数AOP校验 -->
+	<bean id="validateMethodAspect" class="com.zf.live.common.validate.advice.ValidateMethodAspect" >
+		<property name="notnullInvokeMethodHandler">
+			<bean class="com.zf.live.common.validate.handler.NotnullInvokeMethodHandler" />
+		</property>
+	</bean>
+	<aop:config>
+		<aop:pointcut id="servicePoint" expression="execution(* com.zf.live.service.impl..*.*(..))"  />
+		<aop:aspect ref="validateMethodAspect" > 
+			<aop:around  method="validate" pointcut-ref="servicePoint" />
+		</aop:aspect>
+	</aop:config>
+	
+	
 </beans>

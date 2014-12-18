@@ -1,6 +1,9 @@
 package com.zf.live.common.validate.handler;
 
-import java.lang.reflect.Field;
+import java.beans.IntrospectionException;
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import com.zf.live.client.exception.ValidateException;
 
@@ -28,22 +31,23 @@ public interface InvokeMethodHandler<A> {
 		for (String s : sp) {
 			Class<?> clazz = finalObj.getClass() ;
 			try {
-				Field fld = clazz.getField(s);
-				fld.setAccessible(true); 
-				finalObj = fld.get(finalObj) ;
+				PropertyDescriptor pd = new PropertyDescriptor(s, clazz) ;
+				Method readMethod = pd.getReadMethod() ;
+				if(readMethod == null){
+					throw new ValidateException(clazz.getName() + "类中不存在属性" + s + ",或该属性的getter方法");
+				}
+				readMethod.setAccessible(true);
+				finalObj = readMethod.invoke(finalObj) ;
 				if(finalObj == null){
 					return null ;
 				}
-			} catch (NoSuchFieldException e) {
-				e.printStackTrace();
-				throw new ValidateException(clazz.getName() + "类中不存在属性" + s);
-			} catch (SecurityException e) {
+			}catch (IllegalAccessException e) {
 				e.printStackTrace();
 				throw new ValidateException("获取" + clazz.getName() + "中的属性" + s + "失败");
-			} catch (IllegalArgumentException e) {
+			} catch (IntrospectionException e) {
 				e.printStackTrace();
 				throw new ValidateException("获取" + clazz.getName() + "中的属性" + s + "失败");
-			} catch (IllegalAccessException e) {
+			} catch (InvocationTargetException e) {
 				e.printStackTrace();
 				throw new ValidateException("获取" + clazz.getName() + "中的属性" + s + "失败");
 			}

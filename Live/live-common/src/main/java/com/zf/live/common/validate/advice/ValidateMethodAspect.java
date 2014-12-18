@@ -25,13 +25,12 @@ public class ValidateMethodAspect {
 	public Object validate(ProceedingJoinPoint joinPoint) 
 			throws Throwable {
 		
-		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-		Method method = signature.getMethod();
+		String methodName = joinPoint.getSignature().getName() ;
 		Object[] args = joinPoint.getArgs() ;
 		Object target = joinPoint.getTarget() ;
+		Method method = joinPoint.getTarget().getClass().getMethod(methodName, ((MethodSignature) joinPoint.getSignature()).getParameterTypes() ) ;
+
 		Parameter[] parameters = method.getParameters() ;
-		
-		
 		if(args != null && parameters != null && args.length != parameters.length){
 			throw new ValidateException("method[" + method.getName() + "]方法定义的参数数量与传入的数量不一致，定义：" + args.length + "，传入：" + parameters.length);
 		}

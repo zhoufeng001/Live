@@ -1,0 +1,1 @@
+call redis-cli.exe -a is_zhoufeng
