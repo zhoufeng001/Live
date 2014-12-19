@@ -43,7 +43,15 @@
 
 
 	<!-- 方法参数AOP校验 -->
-	<bean id="validateMethodAspect" class="com.zf.live.common.validate.advice.ValidateMethodAspect" />
+	<bean id="validateMethodAspect" class="com.zf.live.common.validate.advice.ValidateMethodAspect" init-method="init" >
+		<property name="handlers">
+			<map>
+				<entry key="com.zf.live.common.validate.Notnull"  value="com.zf.live.common.validate.handler.NotnullInvokeMethodHandler" /> 
+				<entry key="com.zf.live.common.validate.IsInteger"  value="com.zf.live.common.validate.handler.IsIntegerInvokerMethodHandler" /> 
+				<entry key="com.zf.live.common.validate.Regexp"  value="com.zf.live.common.validate.handler.RegexpInvokeMethodHandler" /> 
+			</map>
+		</property>
+	</bean>
 	<aop:config>
 		<aop:pointcut id="servicePoint" expression="execution(* com.zf.live.service.impl..*.*(..))"  />
 		<aop:aspect ref="validateMethodAspect" > 

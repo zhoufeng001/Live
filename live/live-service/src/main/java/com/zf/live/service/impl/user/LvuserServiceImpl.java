@@ -9,21 +9,22 @@ import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.common.validate.IsInteger;
 import com.zf.live.common.validate.Notnull;
+import com.zf.live.common.validate.Regexp;
 import com.zf.live.dao.mapper.LvuserMapperExt;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.LvuserExample;
 
 @Component("lvuserService")
 public class LvuserServiceImpl implements LvuserService{
-	
-    @Autowired
-    private LvuserMapperExt lvuserMapper ;
+
+	@Autowired
+	private LvuserMapperExt lvuserMapper ;
 
 	@Override
 	public Lvuser selectById(Integer id) {
 		return lvuserMapper.selectRandom() ;
 	}
-	
+
 	@Override
 	public Lvuser selectByLoginname(String loginname) {
 		if(loginname == null){
@@ -37,7 +38,7 @@ public class LvuserServiceImpl implements LvuserService{
 		}
 		return results.get(0);   
 	}
-	
+
 	@Override
 	public boolean exist(String loginname) {
 		Integer userCount = lvuserMapper.count(loginname) ;
@@ -48,6 +49,8 @@ public class LvuserServiceImpl implements LvuserService{
 	public ServiceResult<Long> regist(
 			@Notnull @Notnull("loginname") @Notnull("nick") @Notnull("password")
 			@IsInteger(value = "idxcode", validateValue = true , maxValue = 100 , minValue = 30)
+			@Regexp(field="loginname" , value = "^[a-zA-Z]\\d{4,9}$")
+			@Regexp(field="nick" , value = "^[a-zA-Z0-9]{2,5}$")
 			Lvuser user 
 			) {
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
@@ -60,11 +63,11 @@ public class LvuserServiceImpl implements LvuserService{
 		}
 		return result;
 	}
-	
+
 	@Override
 	public ServiceResult<String> loginNameValidate() {
 		return null;
 	}
-    
-	
+
+
 }
