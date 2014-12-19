@@ -13,8 +13,29 @@ import com.zf.live.client.exception.ValidateException;
  * 2014年12月18日 下午4:14:24
  */
 public interface InvokeMethodHandler<A> { 
-
-	public void validate(A[] annoations , Object arg) throws ValidateException ;
+	
+	/**
+	 * 校验单个注解
+	 * @param annoationa
+	 * @param arg
+	 * @throws ValidateException
+	 */
+	public void validate(A annoationa , Object arg) throws ValidateException ;
+	
+	/**
+	 * 校验注解组 
+	 * @param annoations
+	 * @param arg
+	 * @throws ValidateException
+	 */
+	default void validate(A[] annoations , Object arg) throws ValidateException {
+		if(annoations == null){
+			return  ;
+		}
+		for (A ant : annoations) {
+			validate(ant, arg); 
+		}
+	}
 	
 	/**
 	 * 获取指定对象中的属性，属性可级联，比如  target = "userA"  field = "classes.name"

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.common.validate.IsInteger;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.LvuserMapperExt;
 import com.zf.live.dao.pojo.Lvuser;
@@ -14,7 +15,7 @@ import com.zf.live.dao.pojo.LvuserExample;
 
 @Component("lvuserService")
 public class LvuserServiceImpl implements LvuserService{
-
+	
     @Autowired
     private LvuserMapperExt lvuserMapper ;
 
@@ -45,7 +46,9 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Override
 	public ServiceResult<Long> regist(
-			@Notnull @Notnull("loginname") @Notnull("nick") @Notnull("password") Lvuser user 
+			@Notnull @Notnull("loginname") @Notnull("nick") @Notnull("password")
+			@IsInteger(value = "idxcode", validateValue = true , maxValue = 100 , minValue = 30)
+			Lvuser user 
 			) {
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
 		if(user == null){
@@ -57,7 +60,7 @@ public class LvuserServiceImpl implements LvuserService{
 		}
 		return result;
 	}
-
+	
 	@Override
 	public ServiceResult<String> loginNameValidate() {
 		return null;

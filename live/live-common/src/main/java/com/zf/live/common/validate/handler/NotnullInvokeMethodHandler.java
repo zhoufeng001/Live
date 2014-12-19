@@ -12,15 +12,9 @@ import com.zf.live.common.validate.Notnull;
 public class NotnullInvokeMethodHandler implements InvokeMethodHandler<Notnull> {
 
 	@Override
-	public void validate(Notnull[] annoations, Object arg)
+	public void validate(Notnull annoationa, Object arg)
 			throws ValidateException {
-		for (Notnull notnull : annoations) {
-			validate(notnull, arg); 
-		}
-	}
-	
-	private void validate(Notnull annotations , Object arg) throws ValidateException{
-		String fieldName = annotations.value() ;
+		String fieldName = annoationa.value() ;
 		Object fieldValue = getFiledValue(arg, fieldName) ;
 		if(fieldValue == null){
 			throw new ValidateException("字段" + fieldName + "的值不能为空");
