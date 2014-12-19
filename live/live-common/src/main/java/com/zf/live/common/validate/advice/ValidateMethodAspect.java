@@ -11,12 +11,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
 import com.zf.live.client.exception.ValidateException;
-import com.zf.live.common.validate.IsInteger;
-import com.zf.live.common.validate.Notnull;
-import com.zf.live.common.validate.Regexp;
 import com.zf.live.common.validate.handler.InvokeMethodHandler;
-import com.zf.live.common.validate.handler.IsIntegerInvokerMethodHandler;
-import com.zf.live.common.validate.handler.NotnullInvokeMethodHandler;
 
 
 /**
@@ -28,56 +23,49 @@ public class ValidateMethodAspect {
 
 	private Map<String, String> handlers = new HashMap<String, String>() ;
 	private Map<Class<?>, InvokeMethodHandler<?> > handlersMap = new HashMap<Class<?>, InvokeMethodHandler<?> >() ; 
-
-	private NotnullInvokeMethodHandler notnullInvokeMethodHandler ;
-	private IsIntegerInvokerMethodHandler isIntegerInvokerMethodHandler ;
-
-	public ValidateMethodAspect(){
-		if(handlers != null && handlers.size() > 0){
-			Iterator<Entry<String, String>> handlersSet = handlers.entrySet().iterator(); 
-			while(handlersSet.hasNext()){
-				Entry<String, String> handlerEntry = handlersSet.next() ;
-				String annotationClassName = handlerEntry.getKey() ;
-				String handlerClassName = handlerEntry.getValue() ;
-				Class<?> annotationClass = null ;
-				Class<?> handlerClass = null ;
-				InvokeMethodHandler<?> handler = null ;
-				try {
-					annotationClass = Class.forName(annotationClassName) ;
-					handlerClass = Class.forName(handlerClassName) ;
-					Object handlerObj = handlerClass.newInstance();
-					if(handlerObj == null){
-						throw new ValidateException("实例化handler " +  handlerClassName + "失败");
-					}
-					if(!(handlerObj instanceof InvokeMethodHandler)){
-						throw new ValidateException(handlerClassName + "必须实现" + InvokeMethodHandler.class.getName() + "接口" );
-					}
-					handler = (InvokeMethodHandler<?>)handlerObj ;
-					
-					handlersMap.put(annotationClass, handler) ;
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-					throw new ValidateException(e.getMessage());
-				} catch (InstantiationException e) {
-					e.printStackTrace();
-					throw new ValidateException(e.getMessage());
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-					throw new ValidateException(e.getMessage());
-				}
-			}
-
+	
+	public void init(){
+		if(handlers == null || handlers.size() <= 0){
+			return ;
 		}
-		notnullInvokeMethodHandler = new NotnullInvokeMethodHandler() ;
-		isIntegerInvokerMethodHandler = new IsIntegerInvokerMethodHandler() ;
+		Iterator<Entry<String, String>> handlersSet = handlers.entrySet().iterator(); 
+		while(handlersSet.hasNext()){
+			Entry<String, String> handlerEntry = handlersSet.next() ;
+			String annotationClassName = handlerEntry.getKey() ;
+			String handlerClassName = handlerEntry.getValue() ;
+			Class<?> annotationClass = null ;
+			Class<?> handlerClass = null ;
+			InvokeMethodHandler<?> handler = null ;
+			try {
+				annotationClass = Class.forName(annotationClassName) ;
+				handlerClass = Class.forName(handlerClassName) ;
+				Object handlerObj = handlerClass.newInstance();
+				if(handlerObj == null){
+					throw new ValidateException("实例化handler " +  handlerClassName + "失败");
+				}
+				if(!(handlerObj instanceof InvokeMethodHandler)){
+					throw new ValidateException(handlerClassName + "必须实现" + InvokeMethodHandler.class.getName() + "接口" );
+				}
+				handler = (InvokeMethodHandler<?>)handlerObj ;
+				handlersMap.put(annotationClass, handler) ;
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				throw new ValidateException(e.getMessage());
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+				throw new ValidateException(e.getMessage());
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+				throw new ValidateException(e.getMessage());
+			}
+		}
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object validate(ProceedingJoinPoint joinPoint) 
 			throws Throwable {
-
 		String methodName = joinPoint.getSignature().getName() ;
 		Object[] args = joinPoint.getArgs() ;
-		Object target = joinPoint.getTarget() ;
 		Method method = joinPoint.getTarget().getClass().getMethod(methodName, ((MethodSignature) joinPoint.getSignature()).getParameterTypes() ) ;
 
 		Parameter[] parameters = method.getParameters() ;
@@ -87,18 +75,19 @@ public class ValidateMethodAspect {
 		if(parameters != null && args != null){
 			for (int i = 0; i < parameters.length; i++) {
 				Parameter parameter = parameters[i];
-				Notnull[] notnulls = parameter.getAnnotationsByType(Notnull.class) ;
-				IsInteger[] integers = parameter.getAnnotationsByType(IsInteger.class) ;
-				Regexp[] regexps = parameter.getAnnotationsByType(Regexp.class) ;
 				Object arg = args[i];
-
-				notnullInvokeMethodHandler.validate(notnulls, arg); 
-				isIntegerInvokerMethodHandler.validate(integers, arg); 
+				Iterator<Entry<Class<?>, InvokeMethodHandler<?>>> handlersMapSet =	handlersMap.entrySet().iterator() ;
+				while(handlersMapSet.hasNext()){
+					Entry<Class<?>, InvokeMethodHandler<?>> handlerMapEntry = handlersMapSet.next(); 
+					Class annocationClass = handlerMapEntry.getKey() ;
+					InvokeMethodHandler handler = handlerMapEntry.getValue() ;
+					Object[] annocations = parameter.getAnnotationsByType(annocationClass) ;
+					if(annocations != null && annocations.length > 0){
+						handler.validate(annocations, arg); 
+					}
+				}
 			}
 		}
-
-		System.out.println("ValidateMethodAdvice..." + method.getName() + "   " + target.toString());
-
 		return joinPoint.proceed(args) ;
 	}
 

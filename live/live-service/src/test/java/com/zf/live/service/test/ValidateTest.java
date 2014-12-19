@@ -29,10 +29,10 @@ public class ValidateTest {
 	@Test
 	public void test01(){
 		Lvuser user = new Lvuser() ;
-		user.setLoginname("is_zhoufeng");  
-		user.setNick("is_zhoufeng");
+		user.setLoginname("C12345");  
+		user.setNick("xfdwa");
 		user.setPassword("is_zhoufeng");  
-		user.setIdxcode("af123"); 
+		user.setIdxcode("50"); 
 		lvuserService.regist(user) ;
 	}
 

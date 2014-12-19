@@ -16,28 +16,32 @@ public class IsIntegerInvokerMethodHandler implements InvokeMethodHandler<IsInte
 
 		String fieldName = annoationa.value() ;
 		Object fieldValue = getFiledValue(arg, fieldName) ;
-		
+
 		if(fieldValue == null){
 			return ;
 		}
 		
-		if(!fieldValue.toString().matches("^\\d+$")) {
+		Integer fieldValueInt = null ;
+		try {
+			fieldValueInt = Integer.valueOf(fieldValue.toString());
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
 			throw new ValidateException(String.format("字段%s的值不是数字类型", fieldName , fieldName.getClass().getName()));  
 		}
 		
 		boolean validateValue = annoationa.validateValue() ;
 		if(validateValue){
-			Integer fieldValueInt = Integer.valueOf(fieldValue.toString()) ;
+			fieldValueInt = Integer.valueOf(fieldValue.toString()) ;
 			Integer minValue = annoationa.minValue() ;
 			Integer maxValue = annoationa.maxValue() ;
 			if(fieldValueInt < minValue){
 				throw new ValidateException(String.format("字段%s的值不能小于%d" , fieldName , minValue));
 			}
 			if(fieldValueInt > maxValue ){
-				throw new ValidateException(String.format("字段%s的值不能大于%d的值" , fieldName , minValue));
+				throw new ValidateException(String.format("字段%s的值不能大于%d" , fieldName , maxValue));
 			}
 		}
-		
+
 	}
 
 }
