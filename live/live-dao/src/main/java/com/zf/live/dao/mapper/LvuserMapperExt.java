@@ -19,6 +19,12 @@ public interface LvuserMapperExt extends LvuserMapper {
      * 根据loginname查询用户数量
      * @return
      */
-    public Integer count(String loginname); 
+    public Integer countLoginname(String loginname); 
+    
+    /**
+     * 根据idxcode查询用户数量
+     * @return
+     */
+    public Integer countIdxcode(String idxcode); 
 
 }

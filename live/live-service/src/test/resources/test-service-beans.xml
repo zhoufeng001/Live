@@ -15,7 +15,8 @@
 	<context:property-placeholder location="test-app-env.properties" />
 
 	<import resource="classpath*:dao-beans.xml" />
-
+	
+	<aop:aspectj-autoproxy  proxy-target-class="true"/>
 
 
 	<!-- Redis配置 -->
@@ -47,6 +48,7 @@
 		<property name="handlers">
 			<map>
 				<entry key="com.zf.live.common.validate.Notnull"  value="com.zf.live.common.validate.handler.NotnullInvokeMethodHandler" /> 
+				<entry key="com.zf.live.common.validate.LoginName"  value="com.zf.live.common.validate.handler.LoginNameInvokeMethodHandler" /> 
 				<entry key="com.zf.live.common.validate.IsInteger"  value="com.zf.live.common.validate.handler.IsIntegerInvokerMethodHandler" /> 
 				<entry key="com.zf.live.common.validate.Regexp"  value="com.zf.live.common.validate.handler.RegexpInvokeMethodHandler" /> 
 			</map>

@@ -8,7 +8,7 @@ import com.zf.live.common.validate.IsInteger;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月19日 下午5:25:42
  */
-public class IsIntegerInvokerMethodHandler implements InvokeMethodHandler<IsInteger>{
+public class IsIntegerInvokerMethodHandler extends InvokeMethodHandler<IsInteger>{
 
 	@Override
 	public void validate(IsInteger annoationa, Object arg)

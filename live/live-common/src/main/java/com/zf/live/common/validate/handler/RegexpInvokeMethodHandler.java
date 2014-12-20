@@ -8,7 +8,7 @@ import com.zf.live.common.validate.Regexp;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月20日 上午1:40:46
  */
-public class RegexpInvokeMethodHandler implements InvokeMethodHandler<Regexp> {
+public class RegexpInvokeMethodHandler extends InvokeMethodHandler<Regexp> {
 
 	@Override
 	public void validate(Regexp annoationa, Object arg)

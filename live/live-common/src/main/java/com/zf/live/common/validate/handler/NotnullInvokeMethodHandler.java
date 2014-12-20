@@ -9,7 +9,7 @@ import com.zf.live.common.validate.Notnull;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月18日 下午4:18:02
  */
-public class NotnullInvokeMethodHandler implements InvokeMethodHandler<Notnull> {
+public class NotnullInvokeMethodHandler extends InvokeMethodHandler<Notnull> {
 
 	@Override
 	public void validate(Notnull annoationa, Object arg)

@@ -5,6 +5,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * 
+ * @author is_zhoufeng@163.com , QQ:243970446
+ * 2014年12月20日 下午4:07:29
+ */
 @Retention(RetentionPolicy.RUNTIME)  
 @Target(ElementType.PARAMETER)
 public @interface IsIntegerGroup {

@@ -12,7 +12,7 @@ import com.zf.live.client.exception.ValidateException;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月18日 下午4:14:24
  */
-public interface InvokeMethodHandler<A> { 
+public abstract class InvokeMethodHandler<A> { 
 	
 	/**
 	 * 校验单个注解
@@ -20,7 +20,7 @@ public interface InvokeMethodHandler<A> {
 	 * @param arg
 	 * @throws ValidateException
 	 */
-	public void validate(A annoationa , Object arg) throws ValidateException ;
+	public abstract void validate(A annoationa , Object arg) throws ValidateException ;
 	
 	/**
 	 * 校验注解组 
@@ -28,7 +28,7 @@ public interface InvokeMethodHandler<A> {
 	 * @param arg
 	 * @throws ValidateException
 	 */
-	default void validate(A[] annoations , Object arg) throws ValidateException {
+	public void validate(A[] annoations , Object arg) throws ValidateException {
 		if(annoations == null){
 			return  ;
 		}
@@ -43,13 +43,16 @@ public interface InvokeMethodHandler<A> {
 	 * @param field
 	 * @return
 	 */
-	default Object getFiledValue(Object target , String filedName){
+	protected Object getFiledValue(Object target , String filedName){
 		if(filedName == null || "".equals(filedName.trim())){
 			return target ;
 		}
 		String[] sp = filedName.split("\\.");
 		Object finalObj = target ;
 		for (String s : sp) {
+			if(finalObj == null){
+				return null ;
+			}
 			Class<?> clazz = finalObj.getClass() ;
 			try {
 				PropertyDescriptor pd = new PropertyDescriptor(s, clazz) ;

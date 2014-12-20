@@ -9,17 +9,17 @@ import java.lang.annotation.Target;
 /**
  * 
  * @author is_zhoufeng@163.com , QQ:243970446
- * 2014年12月20日 下午4:07:35
+ * 2014年12月20日 下午11:48:35
  */
 @Retention(RetentionPolicy.RUNTIME)  
 @Target(ElementType.PARAMETER)
-@Repeatable(NotnullGroup.class)
-public @interface Notnull {
-
+@Repeatable(LoginNameGroup.class)
+public @interface LoginName {
+	
 	/**
-	 * 要校验的字段
+	 * 登录名字段
 	 * @return
 	 */
-	public String value() default "" ;
-	
+	public String value();
+
 }

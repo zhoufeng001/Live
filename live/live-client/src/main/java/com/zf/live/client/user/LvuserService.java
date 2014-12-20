@@ -25,11 +25,26 @@ public interface LvuserService {
    public Lvuser selectByLoginname(String loginname) ;
    
    /**
+    * 根据Idxcode查询指定用户
+    * @param idxcode
+    * @return
+    */
+   public Lvuser selectByIdxcode(String idxcode);
+   
+   /**
     * 判断根据登录名指定的用户是否存在
     * @param loginname
     * @return
     */
-   public boolean exist(String loginname) ;
+   public boolean existLoginname(String loginname) ;
+   
+   
+   /**
+    * 判断根据idxcode指定的用户是否存在
+    * @param loginname
+    * @return
+    */
+   public boolean existIdxcode(String idxcode) ;
    
    
    /**

@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.zf.live.client.user.LvuserService;
+import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.dao.pojo.Lvuser;
 
 /**
@@ -19,21 +20,26 @@ import com.zf.live.dao.pojo.Lvuser;
 		{"classpath*:test-service-beans.xml"}		
 		)
 public class ValidateTest {
-	
+
 	@Autowired
 	private LvuserService lvuserService ;
-	
+
 	/**
 	 * 
 	 */
 	@Test
 	public void test01(){
 		Lvuser user = new Lvuser() ;
-		user.setLoginname("C12345");  
+		user.setLoginname("");  
 		user.setNick("xfdwa");
 		user.setPassword("is_zhoufeng");  
 		user.setIdxcode("50"); 
-		lvuserService.regist(user) ;
+		ServiceResult<Long> result = lvuserService.regist(user) ;
+		if(result == null || !result.isSuccess()){
+			System.out.println("添加失败，" + result.getErrMssage());
+		}else{
+			System.out.println("添加成功");
+		}
 	}
 
 }
