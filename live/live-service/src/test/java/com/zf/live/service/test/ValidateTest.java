@@ -36,7 +36,7 @@ public class ValidateTest {
 	@Test
 	public void test01(){
 		Lvuser user = new Lvuser() ;
-		user.setLoginname("");  
+		user.setLoginname("C12345");  
 		user.setNick("xfdwa");
 		user.setPassword("is_zhoufeng");  
 		user.setIdxcode("50"); 
@@ -46,6 +46,7 @@ public class ValidateTest {
 		}else{
 			System.out.println("添加成功");
 		}
+		lvuserService.regist(user) ;
 	}
 
 }

@@ -12,6 +12,7 @@ import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.common.validate.LoginName;
 import com.zf.live.common.validate.Notnull;
+import com.zf.live.common.validate.Regexp;
 import com.zf.live.dao.mapper.LvuserMapperExt;
 import com.zf.live.dao.mapper.LvuserinfoMapperExt;
 import com.zf.live.dao.pojo.Lvuser;

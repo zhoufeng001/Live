@@ -54,7 +54,7 @@
 				<entry key="com.zf.live.common.validate.IsInteger"  value="com.zf.live.common.validate.handler.IsIntegerInvokerMethodHandler" /> 
 				<entry key="com.zf.live.common.validate.Regexp"  value="com.zf.live.common.validate.handler.RegexpInvokeMethodHandler" /> 
 			</map>
-		</property>
+		</property> 
 	</bean>
 	<aop:config>
 		<aop:pointcut id="servicePoint" expression="execution(* com.zf.live.service.impl..*.*(..))"  />
