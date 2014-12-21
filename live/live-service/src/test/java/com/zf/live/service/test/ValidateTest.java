@@ -46,7 +46,7 @@ public class ValidateTest {
 		}else{
 			System.out.println("添加成功");
 		}
-		lvuserService.regist(user) ;
+		lvuserService.regist(user,defaultIdxcodeGenerator) ;
 	}
 
 }
