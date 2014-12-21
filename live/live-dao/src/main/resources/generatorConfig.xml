@@ -45,60 +45,17 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table schema="buyrecored" tableName="buyrecored">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id" type="post" identity="true"/>
-		</table>
-
-		<table schema="goods" tableName="goods">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
-
-		<table schema="lvuser" tableName="lvuser">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
+<!-- 		<table schema="lvuser" tableName="lvuser"> -->
+<!-- 			<property name="useActualColumnNames" value="true" /> -->
+<!-- 			<property name="generateExt" value="true" /> -->
+<!-- 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/> -->
+<!-- 		</table> -->
 
 		<table schema="lvuserinfo" tableName="lvuserinfo">
 			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
+<!-- 			<property name="generateExt" value="true" /> -->
 		</table>
 
-		<table schema="playrecored" tableName="playrecored">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
-
-		<table schema="praiserecored" tableName="praiserecored">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
-
-		<table schema="roomsetting" tableName="roomsetting">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
-
-		<table schema="userprops" tableName="userprops">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
-
-		<table schema="video" tableName="video">
-			<property name="useActualColumnNames" value="true" />
-			<property name="generateExt" value="true" />
-			<property name="generateService" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>
-		</table>
 
 	</context>
 </generatorConfiguration>
