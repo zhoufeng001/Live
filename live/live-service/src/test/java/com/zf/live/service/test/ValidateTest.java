@@ -36,7 +36,7 @@ public class ValidateTest {
 	@Test
 	public void test01(){
 		Lvuser user = new Lvuser() ;
-		user.setLoginname("C12345");  
+//		user.setLoginname("C12345");  
 		user.setNick("xfdwa");
 		user.setPassword("is_zhoufeng");  
 		user.setIdxcode("50"); 

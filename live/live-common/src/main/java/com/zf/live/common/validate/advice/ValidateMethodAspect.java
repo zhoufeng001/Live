@@ -1,5 +1,6 @@
 package com.zf.live.common.validate.advice;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
 import com.zf.live.client.exception.ValidateException;
+import com.zf.live.common.validate.NotnullGroup;
 import com.zf.live.common.validate.handler.InvokeMethodHandler;
 
 
@@ -23,7 +25,7 @@ public class ValidateMethodAspect {
 
 	private Map<String, String> handlers = new HashMap<String, String>() ;
 	private Map<Class<?>, InvokeMethodHandler<?> > handlersMap = new HashMap<Class<?>, InvokeMethodHandler<?> >() ; 
-	
+
 	public void init(){
 		if(handlers == null || handlers.size() <= 0){
 			return ;
@@ -76,6 +78,17 @@ public class ValidateMethodAspect {
 			for (int i = 0; i < parameters.length; i++) {
 				Parameter parameter = parameters[i];
 				Object arg = args[i];
+				
+				//----------
+				Annotation[] annotations =parameter.getAnnotations();
+				if(annotations != null && annotations.length > 0){
+					for (Annotation annotation : annotations) {((NotnullGroup)annotation).value() ;
+						InvokeMethodHandler handler = handlersMap.get(annotation.annotationType()) ;
+						System.out.println(handler);
+					}
+				}
+				//---------
+
 				Iterator<Entry<Class<?>, InvokeMethodHandler<?>>> handlersMapSet =	handlersMap.entrySet().iterator() ;
 				while(handlersMapSet.hasNext()){
 					Entry<Class<?>, InvokeMethodHandler<?>> handlerMapEntry = handlersMapSet.next(); 
