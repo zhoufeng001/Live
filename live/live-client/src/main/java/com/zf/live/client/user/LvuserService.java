@@ -52,12 +52,7 @@ public interface LvuserService {
     * @param user
     * @return
     */
-   public ServiceResult<Long> regist(Lvuser user) ;
+   public ServiceResult<Long> regist(Lvuser user,IdxcodeGenerator idxcodeGenerator) ;
    
-   /**
-    * 登录名校验
-    * @return
-    */
-   public ServiceResult<String> loginNameValidate() ;
    
 }

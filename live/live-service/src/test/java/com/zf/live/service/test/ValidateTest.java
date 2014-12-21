@@ -1,11 +1,14 @@
 package com.zf.live.service.test;
 
+import javax.annotation.Resource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.dao.pojo.Lvuser;
@@ -23,6 +26,9 @@ public class ValidateTest {
 
 	@Autowired
 	private LvuserService lvuserService ;
+	
+	@Resource(name="defaultIdxcodeGenerator")
+	private IdxcodeGenerator defaultIdxcodeGenerator ;
 
 	/**
 	 * 
@@ -34,7 +40,7 @@ public class ValidateTest {
 		user.setNick("xfdwa");
 		user.setPassword("is_zhoufeng");  
 		user.setIdxcode("50"); 
-		ServiceResult<Long> result = lvuserService.regist(user) ;
+		ServiceResult<Long> result = lvuserService.regist(user , defaultIdxcodeGenerator) ;
 		if(result == null || !result.isSuccess()){
 			System.out.println("添加失败，" + result.getErrMssage());
 		}else{

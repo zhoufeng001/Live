@@ -1,10 +1,9 @@
-package com.zf.live.service.impl.user;
+package com.zf.live.common.generator;
 
 import java.util.Date;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.zf.live.client.exception.LiveException;
 import com.zf.live.client.user.IdxcodeGenerator;
@@ -17,7 +16,6 @@ import com.zf.live.client.user.LvuserService;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月21日 上午12:39:53
  */
-@Component("defaultIdxcodeGenerator")
 public class DefaultIdxcodeGenerator implements IdxcodeGenerator{
 
 	@Autowired

@@ -16,7 +16,9 @@
 
 	<import resource="classpath*:dao-beans.xml" />
 	
-	<aop:aspectj-autoproxy  proxy-target-class="true"/>
+	<aop:aspectj-autoproxy  proxy-target-class="true"  />
+	
+	<bean id="defaultIdxcodeGenerator" class="com.zf.live.common.generator.DefaultIdxcodeGenerator" />
 
 
 	<!-- Redis配置 -->
