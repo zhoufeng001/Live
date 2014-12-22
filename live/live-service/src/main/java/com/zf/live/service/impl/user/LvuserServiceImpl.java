@@ -3,6 +3,7 @@ package com.zf.live.service.impl.user;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -69,11 +70,32 @@ public class LvuserServiceImpl implements LvuserService{
 			IdxcodeGenerator idxcodeGenerator
 			) {
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
+		
+		boolean existLoginname = existLoginname(user.getLoginname());
+		if(existLoginname){
+			result.setSuccess(false);
+			result.setErrMssage("登录名[" + user.getLoginname() + "]已存在");
+			return result ;
+		}
+		
+		String idxcode = idxcodeGenerator.generate() ;
+		if(StringUtils.isBlank(idxcode)){
+			result.setSuccess(false);
+			result.setErrMssage("IdxcodeGenerator生成的idxcode为空");
+			return result ;
+		}
+		boolean existIdxcode = existIdxcode(idxcode) ;
+		if(existIdxcode){
+			result.setSuccess(false);
+			result.setErrMssage("Idxcode" + user.getIdxcode() + "已存在");
+			return result ;
+		}
+		
 		Date currentTime = new Date();
 		user.setCoin(0L);
 		user.setCreatetime(currentTime);
 		user.setFlag(0);
-		user.setIdxcode(idxcodeGenerator.generate()); 
+		user.setIdxcode(idxcode); 
 		int inserResult =lvuserMapper.insertSelective(user) ;
 		if(inserResult > 0){
 			Lvuserinfo lvuserinfo = new Lvuserinfo() ;

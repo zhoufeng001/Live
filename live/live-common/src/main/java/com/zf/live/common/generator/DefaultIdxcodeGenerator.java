@@ -2,6 +2,7 @@ package com.zf.live.common.generator;
 
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,7 +23,10 @@ public class DefaultIdxcodeGenerator implements IdxcodeGenerator{
 	private LvuserService lvuserService ;
 
 	private final String prefixs [] = {"1","3","5","7","9"};
+	private final AtomicInteger prefixIndex = new AtomicInteger(0) ;
 	private final String suffixs [] = {"1","2","3","4","5","6","7"} ;
+	private final AtomicInteger suffixIndex = new AtomicInteger(0) ;
+
 	
 	/**
 	 * 如果失败，最多重试3次
@@ -52,8 +56,11 @@ public class DefaultIdxcodeGenerator implements IdxcodeGenerator{
 	private String nextIdxcode(Date currentTime){
 		StringBuilder idxcode = new StringBuilder() ;
 		int prefixLength = prefixs.length ;
-		int randPrefixIndex = random.nextInt(prefixLength) ;
-		String prefix = prefixs[randPrefixIndex]; 
+		prefixIndex.incrementAndGet() ;
+		if(prefixIndex.intValue() >= prefixLength){
+			prefixIndex.set(0);
+		}
+		String prefix = prefixs[prefixIndex.intValue()]; 
 		idxcode.append(prefix) ;
 		int yearLimit1 = currentTime.getYear() % 10 ;
 		idxcode.append(yearLimit1) ;
@@ -63,8 +70,10 @@ public class DefaultIdxcodeGenerator implements IdxcodeGenerator{
 		idxcode.append(String.format("%02d", currentTime.getMinutes()));
 		idxcode.append(String.format("%02d", currentTime.getSeconds()));
 		int suffixLength = suffixs.length ;
-		int randSuffixIndex = random.nextInt(suffixLength) ;
-		String suffix = suffixs[randSuffixIndex];
+		if(suffixIndex.incrementAndGet() >= suffixLength){
+			suffixIndex.set(0); 
+		}
+		String suffix = suffixs[suffixIndex.intValue()];
 		idxcode.append(suffix) ;
 		return idxcode.toString() ;
 	}
