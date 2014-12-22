@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
@@ -13,8 +12,6 @@ import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -26,11 +23,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * 2014年12月17日 下午11:14:03
  */
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-		{"classpath*:test-service-beans.xml"}		
-		)
-public class RedisTest {
+public class RedisTest extends ServiceBaseTester {
 
 	@Autowired
 	private RedisTemplate<String, String> stringTemplate ;

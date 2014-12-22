@@ -3,7 +3,6 @@ package com.zf.live.service.impl.user;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -73,20 +72,13 @@ public class LvuserServiceImpl implements LvuserService{
 		
 		boolean existLoginname = existLoginname(user.getLoginname());
 		if(existLoginname){
-			result.setSuccess(false);
 			result.setErrMssage("登录名[" + user.getLoginname() + "]已存在");
 			return result ;
 		}
 		
 		String idxcode = idxcodeGenerator.generate() ;
-		if(StringUtils.isBlank(idxcode)){
-			result.setSuccess(false);
-			result.setErrMssage("IdxcodeGenerator生成的idxcode为空");
-			return result ;
-		}
 		boolean existIdxcode = existIdxcode(idxcode) ;
 		if(existIdxcode){
-			result.setSuccess(false);
 			result.setErrMssage("Idxcode" + user.getIdxcode() + "已存在");
 			return result ;
 		}
@@ -110,7 +102,6 @@ public class LvuserServiceImpl implements LvuserService{
 				throw new LiveException("创建用户详细信息失败！");
 			}
 		}else{
-			result.setSuccess(false);
 			result.setErrMssage("创建用户失败!");
 		}
 		return result;
