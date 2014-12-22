@@ -62,7 +62,8 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Override
 	public ServiceResult<Long> regist(
-			@Notnull @LoginName("loginname") @Notnull("nick") @Notnull("password")
+			@Notnull("loginname") @Notnull("nick") @Notnull("password")
+			@LoginName("loginname") 
 			Lvuser user, 
 			@Notnull 
 			IdxcodeGenerator idxcodeGenerator

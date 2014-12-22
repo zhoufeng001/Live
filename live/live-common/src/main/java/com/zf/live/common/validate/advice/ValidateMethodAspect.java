@@ -1,10 +1,11 @@
 package com.zf.live.common.validate.advice;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -12,7 +13,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
 import com.zf.live.client.exception.ValidateException;
-import com.zf.live.common.validate.NotnullGroup;
 import com.zf.live.common.validate.handler.InvokeMethodHandler;
 
 
@@ -24,7 +24,7 @@ import com.zf.live.common.validate.handler.InvokeMethodHandler;
 public class ValidateMethodAspect {
 
 	private Map<String, String> handlers = new HashMap<String, String>() ;
-	private Map<Class<?>, InvokeMethodHandler<?> > handlersMap = new HashMap<Class<?>, InvokeMethodHandler<?> >() ; 
+	private List<AnnotationHandlerPair> annotaionHandlers = new LinkedList<AnnotationHandlerPair>() ; 
 
 	public void init(){
 		if(handlers == null || handlers.size() <= 0){
@@ -40,6 +40,9 @@ public class ValidateMethodAspect {
 			InvokeMethodHandler<?> handler = null ;
 			try {
 				annotationClass = Class.forName(annotationClassName) ;
+				if(!annotationClass.isAnnotation()){
+					throw new ValidateException(annotationClassName + "不是注解类型");
+				}
 				handlerClass = Class.forName(handlerClassName) ;
 				Object handlerObj = handlerClass.newInstance();
 				if(handlerObj == null){
@@ -49,7 +52,7 @@ public class ValidateMethodAspect {
 					throw new ValidateException(handlerClassName + "必须实现" + InvokeMethodHandler.class.getName() + "接口" );
 				}
 				handler = (InvokeMethodHandler<?>)handlerObj ;
-				handlersMap.put(annotationClass, handler) ;
+				annotaionHandlers.add(new AnnotationHandlerPair(annotationClass, handler)) ;
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 				throw new ValidateException(e.getMessage());
@@ -78,22 +81,13 @@ public class ValidateMethodAspect {
 			for (int i = 0; i < parameters.length; i++) {
 				Parameter parameter = parameters[i];
 				Object arg = args[i];
-				
-				//----------
-				Annotation[] annotations =parameter.getAnnotations();
-				if(annotations != null && annotations.length > 0){
-					for (Annotation annotation : annotations) {((NotnullGroup)annotation).value() ;
-						InvokeMethodHandler handler = handlersMap.get(annotation.annotationType()) ;
-						System.out.println(handler);
-					}
+				int paramAnnotationLength = parameter.getAnnotations().length ;
+				if(paramAnnotationLength <= 0){
+					continue ;
 				}
-				//---------
-
-				Iterator<Entry<Class<?>, InvokeMethodHandler<?>>> handlersMapSet =	handlersMap.entrySet().iterator() ;
-				while(handlersMapSet.hasNext()){
-					Entry<Class<?>, InvokeMethodHandler<?>> handlerMapEntry = handlersMapSet.next(); 
-					Class annocationClass = handlerMapEntry.getKey() ;
-					InvokeMethodHandler handler = handlerMapEntry.getValue() ;
+				for (AnnotationHandlerPair annotation : annotaionHandlers) {
+					Class annocationClass = annotation.annotation ;
+					InvokeMethodHandler handler = annotation.handler ;
 					Object[] annocations = parameter.getAnnotationsByType(annocationClass) ;
 					if(annocations != null && annocations.length > 0){
 						handler.validate(annocations, arg); 
@@ -110,6 +104,19 @@ public class ValidateMethodAspect {
 
 	public void setHandlers(Map<String, String> handlers) {
 		this.handlers = handlers;
+	}
+
+
+	private class AnnotationHandlerPair {
+		Class<?> annotation ;
+		InvokeMethodHandler<?> handler ;
+
+		public AnnotationHandlerPair(Class<?> annotation,
+				InvokeMethodHandler<?> handler) {
+			this.annotation = annotation;
+			this.handler = handler;
+		}
+
 	}
 
 }
