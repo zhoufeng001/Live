@@ -1,6 +1,7 @@
 package com.zf.live.common.validate.handler;
 
 import com.zf.live.client.exception.ValidateException;
+import com.zf.live.common.util.ZFReflectionUtils;
 import com.zf.live.common.validate.Notnull;
 
 
@@ -15,7 +16,7 @@ public class NotnullInvokeMethodHandler extends InvokeMethodHandler<Notnull> {
 	public void validate(Notnull annoationa, Object arg)
 			throws ValidateException {
 		String fieldName = annoationa.value() ;
-		Object fieldValue = getFiledValue(arg, fieldName) ;
+		Object fieldValue = ZFReflectionUtils.getFiledValue(arg, fieldName) ;
 		if(fieldValue == null){
 			throw new ValidateException("字段" + fieldName + "的值不能为空");
 		}

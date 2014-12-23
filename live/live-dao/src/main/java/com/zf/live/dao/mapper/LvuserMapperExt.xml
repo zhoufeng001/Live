@@ -29,4 +29,10 @@ by is_zhoufeng@163.com 2014-12-15 17:32:50.
   	where idxcode =  #{idxcode,jdbcType=VARCHAR} limit 1 
   </select>
   
+  <select id="countMail" resultType="java.lang.Integer">
+  	select count(*)
+  	from `lvuser`
+  	where idxcode =  #{mail,jdbcType=VARCHAR} limit 1 
+  </select>
+  
 </mapper>

@@ -1,10 +1,5 @@
 package com.zf.live.common.validate.handler;
 
-import java.beans.IntrospectionException;
-import java.beans.PropertyDescriptor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 import com.zf.live.client.exception.ValidateException;
 
 /**
@@ -42,7 +37,7 @@ public abstract class InvokeMethodHandler<A> {
 	 * @param target
 	 * @param field
 	 * @return
-	 */
+	 *//*
 	protected Object getFiledValue(Object target , String filedName){
 		if(filedName == null || "".equals(filedName.trim())){
 			return target ;
@@ -78,5 +73,5 @@ public abstract class InvokeMethodHandler<A> {
 		}
 		return finalObj ;
 	}
-	
+	*/
 }

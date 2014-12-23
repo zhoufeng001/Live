@@ -1,5 +1,7 @@
 package com.zf.live.dao.mapper;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.zf.live.dao.pojo.Lvuser;
 
 /**
@@ -19,12 +21,18 @@ public interface LvuserMapperExt extends LvuserMapper {
      * 根据loginname查询用户数量
      * @return
      */
-    public Integer countLoginname(String loginname); 
+    public Integer countLoginname(@Param("loginname") String loginname); 
     
     /**
      * 根据idxcode查询用户数量
      * @return
      */
-    public Integer countIdxcode(String idxcode); 
+    public Integer countIdxcode(@Param("idxcode") String idxcode); 
+    
+    /**
+     * 根据idxcode查询用户数量
+     * @return
+     */
+    public Integer countMail(@Param("mail") String mail); 
 
 }

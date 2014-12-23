@@ -1,6 +1,7 @@
 package com.zf.live.common.validate.handler;
 
 import com.zf.live.client.exception.ValidateException;
+import com.zf.live.common.util.ZFReflectionUtils;
 import com.zf.live.common.validate.Regexp;
 
 /**
@@ -14,7 +15,7 @@ public class RegexpInvokeMethodHandler extends InvokeMethodHandler<Regexp> {
 	public void validate(Regexp annoationa, Object arg)
 			throws ValidateException {
 		String fieldName = annoationa.field() ;
-		Object fieldValue = getFiledValue(arg, fieldName) ;
+		Object fieldValue = ZFReflectionUtils.getFiledValue(arg, fieldName) ;
 		String regexp = annoationa.value() ;
 		if(fieldValue == null || regexp == null){
 			return ;
