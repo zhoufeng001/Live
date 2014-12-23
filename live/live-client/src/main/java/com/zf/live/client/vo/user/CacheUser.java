@@ -1,13 +1,14 @@
 package com.zf.live.client.vo.user;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 登录信息（存于Redis）
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月23日 下午5:22:37
  */
-public class LoginUser implements Serializable{
+public class CacheUser implements Serializable{
 
 	/**
 	 * 
@@ -26,6 +27,11 @@ public class LoginUser implements Serializable{
 	private Integer praise ;
 	private Byte userfrom ;
 	private String token  ;
+	private Date loginTime ;
+	/**
+	 * 1:已登录   0：未登录
+	 */
+	private Integer isLogin ;
 	
 	public Long getId() {
 		return id;
@@ -98,5 +104,17 @@ public class LoginUser implements Serializable{
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}
+	public Date getLoginTime() {
+		return loginTime;
+	}
+	public void setLoginTime(Date loginTime) {
+		this.loginTime = loginTime;
+	}
+	public Integer getIsLogin() {
+		return isLogin;
+	}
+	public void setIsLogin(Integer isLogin) {
+		this.isLogin = isLogin;
 	}
 }

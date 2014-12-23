@@ -11,7 +11,7 @@ import com.zf.live.client.exception.LiveException;
 import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
-import com.zf.live.client.vo.user.LoginUser;
+import com.zf.live.client.vo.user.CacheUser;
 import com.zf.live.common.validate.LoginName;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.LvuserMapperExt;
@@ -20,6 +20,8 @@ import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.LvuserExample;
 import com.zf.live.dao.pojo.Lvuserinfo;
 import com.zf.live.dao.vo.Page;
+import com.zf.live.service.impl.cache.user.UserCacheService;
+import com.zf.live.service.impl.util.TokenFactory;
 
 /**
  * 
@@ -28,6 +30,9 @@ import com.zf.live.dao.vo.Page;
  */
 @Component("lvuserService")
 public class LvuserServiceImpl implements LvuserService{
+	
+	@Autowired
+	private UserCacheService userCacheService;
 
 	@Autowired
 	private LvuserMapperExt lvuserMapper ;
@@ -170,11 +175,19 @@ public class LvuserServiceImpl implements LvuserService{
 			return result ;
 		}
 		
-		LoginUser loginUser = new LoginUser() ;
-		BeanUtils.copyProperties(lvuser, loginUser); 
+		if(!lvuser.getPassword().equals(secret)){
+			result.setErrMssage("用户名错误或密码不正确");
+			return result ;
+		}
 		
-		return null;
-	}
+		CacheUser cacheUser = new CacheUser() ;
+		BeanUtils.copyProperties(lvuser, cacheUser); 
+		String token = TokenFactory.newToken() ;
+		userCacheService.putLoginUserInfo(token, cacheUser);
+		result.setSuccess(true);
+		result.setData(token);
+		return result;
+	} 
 
 
 }

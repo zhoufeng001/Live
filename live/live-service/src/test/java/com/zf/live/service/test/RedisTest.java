@@ -1,4 +1,4 @@
-package com.zf.live.service.test;
+/*package com.zf.live.service.test;
 
 import java.util.List;
 
@@ -17,11 +17,11 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-/**
+*//**
  * 
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月17日 下午11:14:03
- */
+ *//*
 
 public class RedisTest extends ServiceBaseTester {
 
@@ -36,8 +36,6 @@ public class RedisTest extends ServiceBaseTester {
 
 	@Test
 	public void testString(){
-
-
 		String result = stringTemplate.execute(new RedisCallback<String>() {
 			@Override
 			public String doInRedis(RedisConnection connection)
@@ -100,3 +98,4 @@ public class RedisTest extends ServiceBaseTester {
 
 
 }
+*/
