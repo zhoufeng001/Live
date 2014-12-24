@@ -10,7 +10,7 @@
 登录名：<input type="text" name="userkey" />
 &nbsp;&nbsp;密码：<input type="text" name="secret" />
 <br/><br/>
-<input type="button" value="登录" />
+<input type="submit" value="登录" />
 </form>  
 </body>
 </html>

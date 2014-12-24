@@ -47,12 +47,15 @@ public class UserController {
 			ServletRequest request, ServletResponse response , ModelMap modelMap) {
 		ServiceResult<String> result = lvuserService.login4Platform(userkey, secret) ;
 		if(result == null){
-			return "redirect:user/loginView";
+			return "redirect:/user/loginView.htm";
 		}else{
 			if(result.isSuccess()){
-				return "index.htm";
+				
+				// TODO 为浏览器添加cookie
+				
+				return "index";
 			}else{
-				return "redirect:user/loginView";
+				return "redirect:/user/loginView.htm";
 			}
 		}
 	}

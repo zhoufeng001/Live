@@ -55,7 +55,7 @@ public class LvuserServiceImpl implements LvuserService{
 		query.createCriteria().andLoginnameEqualTo(loginname) ;
 		query.setPage(new Page(0, 1));
 		List<Lvuser> results = lvuserMapper.selectByExample(query) ;
-		if(results == null){
+		if(results == null || results.size() == 0){
 			return null ;
 		}
 		return results.get(0);   
@@ -67,19 +67,19 @@ public class LvuserServiceImpl implements LvuserService{
 		query.createCriteria().andMailEqualTo(mail) ;
 		query.setPage(new Page(0, 1));
 		List<Lvuser> results = lvuserMapper.selectByExample(query) ;
-		if(results == null){
+		if(results == null || results.size() == 0){
 			return null ;
 		}
 		return results.get(0);   
 	}
 
 	@Override
-	public Lvuser selectByPhone(String phone) {
+	public Lvuser selectByPhone(@Notnull String phone) {
 		LvuserExample query = new LvuserExample() ;
 		query.createCriteria().andPhoneEqualTo(phone) ;
 		query.setPage(new Page(0, 1));
 		List<Lvuser> results = lvuserMapper.selectByExample(query) ;
-		if(results == null){
+		if(results == null || results.size() == 0){
 			return null ;
 		}
 		return results.get(0); 
@@ -157,7 +157,7 @@ public class LvuserServiceImpl implements LvuserService{
 		query.createCriteria().andIdxcodeEqualTo(idxcode) ;
 		query.setPage(new Page(0, 1));
 		List<Lvuser> results = lvuserMapper.selectByExample(query) ;
-		if(results == null){
+		if(results == null || results.size() == 0){
 			return null ;
 		}
 		return results.get(0);  
