@@ -15,7 +15,7 @@ public interface LvuserService {
 	 * @param id
 	 * @return
 	 */
-   public Lvuser selectById(Integer id);
+   public Lvuser selectByIdWithCache(Long id);
    
    /**
     * 根据loginname查询用户信息
@@ -84,5 +84,23 @@ public interface LvuserService {
     */
    public ServiceResult<String> login4Platform(String userKey , String secret);
    
+   /**
+    * 根据token获取已登录用户的信息
+    * @param token
+    * @return
+    */
+   public Lvuser getUserByToken(String token);
    
+   /**
+    * 用户退出
+    * @param userid
+    */
+   public void logout(Long userid);
+   
+   /**
+    * 根据userid判断用户是否已登录
+    * @param userid
+    * @return
+    */
+   public boolean isLogin(Long userid);
 }

@@ -12,7 +12,13 @@
 	<context:component-scan base-package="com.zf.live.service" />
 	<context:annotation-config />
 
-	<context:property-placeholder location="test-app-env.properties" />
+	<bean id="propertiesConfig" class="com.zf.live.common.ZFSpringPropertyConfigure">
+		<property name="locations">
+			<array>
+				<value>classpath:test-app-env.properties</value>
+			</array>
+		</property>
+	</bean>
 
 	<import resource="classpath*:dao-beans.xml" />
 	

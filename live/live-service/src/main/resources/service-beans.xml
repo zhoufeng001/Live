@@ -20,22 +20,13 @@
 		<property name="maxTotal" value="${redis.maxTotal}" />
 		<property name="maxIdle" value="${redis.maxIdle}" />
 	</bean>
-
-	<bean id="jedisConnectionFactory"
-		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-		p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.password}"
-		p:pool-config-ref="jedisPoolConfig" />
-
-	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
-		p:connectionFactory-ref="jedisConnectionFactory">
-		<property name="keySerializer">
-			<bean
-				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
-		</property>
-		<property name="valueSerializer">
-			<bean
-				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
-		</property>
+	
+	<bean id="jedisPool" class="redis.clients.jedis.JedisPool" destroy-method="destroy">
+	    	<constructor-arg index="0" ref="jedisPoolConfig" />
+	        <constructor-arg index="1" value="${redis.host}"/>
+	        <constructor-arg index="2" value="${redis.port}"/>
+	        <constructor-arg index="3" value="${redis.timeout}"/>
+	        <constructor-arg index="4" value="${redis.password}"/>
 	</bean>
 
 
@@ -57,7 +48,5 @@
 		</aop:aspect>
 	</aop:config>
 
-
-	
-	
+		
 </beans>

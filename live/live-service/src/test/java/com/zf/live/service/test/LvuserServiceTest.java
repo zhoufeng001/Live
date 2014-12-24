@@ -30,7 +30,7 @@ public class LvuserServiceTest extends ServiceBaseTester {
 	@Test
 	public void testGet(){
 		
-		CacheUser cacheUser = userCacheService.getCacheUserById(11L);
+		CacheUser cacheUser = userCacheService.getCacheUserById(3L);
 		if(cacheUser == null){
 			System.out.println("空。。。");
 		}else{
@@ -38,5 +38,29 @@ public class LvuserServiceTest extends ServiceBaseTester {
 		}
 		
 	}
+	
+	@Test 
+	public void testGetTokens(){
+		 String token = userCacheService.getTokenByUserId(3L);
+		 System.out.println(token);
+	}
+	
+	@Test
+	public void testRemove(){
+		userCacheService.removeLoginUserInfo(3L);
+		System.out.println("Ok.");
+	}
+	
+	@Test
+	public void testGetUserByToken(){
+		Long userid = null ;
+		userid = userCacheService.getUserIdByToken("a4e1b73d2a444c2bbb02f6512a638295");
+		System.out.println(userid);
+		userid = userCacheService.getUserIdByToken("4049ad434b7a4bdb966035ce162abbb9");
+		System.out.println(userid);
+		userid = userCacheService.getUserIdByToken("0290c4daafd442129dad83287ad7a233");
+		System.out.println(userid);
+	}
+
 	
 }

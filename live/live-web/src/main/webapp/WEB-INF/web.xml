@@ -25,6 +25,12 @@
 		<url-pattern>*.htm</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>init</servlet-name>
+		<servlet-class>com.zf.live.web.servlet.InitServlet</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

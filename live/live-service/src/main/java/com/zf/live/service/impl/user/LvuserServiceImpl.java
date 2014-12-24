@@ -3,7 +3,6 @@ package com.zf.live.service.impl.user;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +10,6 @@ import com.zf.live.client.exception.LiveException;
 import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
-import com.zf.live.client.vo.user.CacheUser;
 import com.zf.live.common.validate.LoginName;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.LvuserMapperExt;
@@ -39,12 +37,18 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Autowired
 	private LvuserinfoMapperExt lvuserinfoMapper ;
-
+	
 	@Override
-	public Lvuser selectById(Integer id) {
-		return lvuserMapper.selectRandom() ;
+	public Lvuser selectByIdWithCache(@Notnull Long id) {
+		Lvuser lvuser = userCacheService.getCacheUserById(id);
+		if(lvuser != null){
+			return lvuser ;
+		}
+		lvuser = lvuserMapper.selectByPrimaryKey(id);
+		userCacheService.putUserInfo(lvuser); 
+		return lvuser ;
 	}
-
+	
 	@Override
 	public Lvuser selectByLoginname(@Notnull String loginname) {
 		LvuserExample query = new LvuserExample() ;
@@ -180,13 +184,30 @@ public class LvuserServiceImpl implements LvuserService{
 			return result ;
 		}
 		
-		CacheUser cacheUser = new CacheUser() ;
-		BeanUtils.copyProperties(lvuser, cacheUser); 
 		String token = TokenFactory.newToken() ;
-		userCacheService.putLoginUserInfo(token, cacheUser);
+		userCacheService.putLoginUserInfo(token, lvuser);
 		result.setSuccess(true);
 		result.setData(token);
 		return result;
+	}
+
+	@Override
+	public Lvuser getUserByToken(String token) {
+		Long userid = userCacheService.getUserIdByToken(token);
+		if(userid == null || userid.longValue() <= 0){
+			return null ;
+		}
+		return userCacheService.getCacheUserById(userid); 
+	}
+
+	@Override
+	public void logout(Long userid) {
+		userCacheService.removeLoginUserInfo(userid); 
+	}
+
+	@Override
+	public boolean isLogin(Long userid) {
+		return userCacheService.getTokenByUserId(userid) != null ;
 	} 
 
 

@@ -95,9 +95,10 @@ databases 16
 #
 #   save ""
 
-save 900 1
-save 300 10
-save 60 10000
+# ≥÷æ√ªØ≈‰÷√
+# save 900 1
+# save 300 10
+# save 60 10000
 
 # By default Redis will stop accepting writes if RDB snapshots are enabled
 # (at least one save point) and the latest background save failed.
@@ -247,7 +248,7 @@ slave-priority 100
 # use a very strong password otherwise it will be very easy to break.
 #
 # requirepass foobared
-requirepass yourpassword
+requirepass is_zhoufeng
 
 # Command renaming.
 #

@@ -7,6 +7,7 @@ call mvn -Dmaven.test.skip=true install
 cd %root%/live-client
 call mvn -Dmaven.test.skip=true install 
 
+
 cd %root%/live-dao
 call mvn -Dmaven.test.skip=true install 
 
