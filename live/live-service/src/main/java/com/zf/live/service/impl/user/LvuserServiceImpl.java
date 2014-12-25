@@ -45,6 +45,9 @@ public class LvuserServiceImpl implements LvuserService{
 			return lvuser ;
 		}
 		lvuser = lvuserMapper.selectByPrimaryKey(id);
+		if(lvuser == null){
+			return null ;
+		}
 		userCacheService.putUserInfo(lvuser); 
 		return lvuser ;
 	}

@@ -3,13 +3,17 @@ package com.zf.live.web.control.user;
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.web.app.util.WebTokenUtil;
 
 /**
  * 
@@ -22,6 +26,9 @@ public class UserController {
 
 	@Resource(name = "lvuserService")
 	private LvuserService lvuserService ; 
+	
+	@Autowired
+	private WebTokenUtil webTokenUtil;
 	
 	/**
 	 * 去登录页面
@@ -44,16 +51,16 @@ public class UserController {
 	 */
 	@RequestMapping("/doLogin")
 	public String doLogin(String userkey , String secret , 
-			ServletRequest request, ServletResponse response , ModelMap modelMap) {
+			HttpServletRequest request, HttpServletResponse response , ModelMap modelMap) {
 		ServiceResult<String> result = lvuserService.login4Platform(userkey, secret) ;
 		if(result == null){
 			return "redirect:/user/loginView.htm";
 		}else{
 			if(result.isSuccess()){
-				
 				// TODO 为浏览器添加cookie
-				
-				return "index";
+				String token = result.getData() ;
+				webTokenUtil.createTokenCookie(request, response, token); 
+				return "redirect:/index.htm";
 			}else{
 				return "redirect:/user/loginView.htm";
 			}
