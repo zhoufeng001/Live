@@ -31,6 +31,16 @@
 		<load-on-startup>3</load-on-startup>
 	</servlet>
 	
+	<filter>
+		<filter-name>secureFilter</filter-name>
+		<filter-class>com.zf.live.web.servlet.filter.SecureFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>secureFilter</filter-name>
+		<url-pattern>*.htm</url-pattern>
+	</filter-mapping>
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

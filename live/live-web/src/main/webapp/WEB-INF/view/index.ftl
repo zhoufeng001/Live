@@ -6,5 +6,7 @@
 </head>
 <body>  
 Index.htm
+<br/><br/>
+token:${user.loginname!""} 
 </body>
 </html>

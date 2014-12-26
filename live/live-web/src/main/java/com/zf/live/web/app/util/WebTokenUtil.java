@@ -1,7 +1,5 @@
 package com.zf.live.web.app.util;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -66,10 +64,10 @@ public class WebTokenUtil {
 		{
 			tokenCookie = new Cookie(TOKEN_COOKIE_KEY, token);  
 			tokenCookie.setMaxAge(TOKEN_MAX_AGE);
-			tokenCookie.setDomain(COOKIE_PATH);
+			tokenCookie.setPath(COOKIE_PATH);
 
 			lastTimeCookie = new Cookie(TOKEN_COOKIE_LAST_TIME_KEY, "123");
-			lastTimeCookie.setDomain(COOKIE_PATH);
+			lastTimeCookie.setPath(COOKIE_PATH);
 
 			response.addCookie(tokenCookie);
 			response.addCookie(lastTimeCookie);
@@ -83,10 +81,28 @@ public class WebTokenUtil {
 	 * @param request
 	 * @param response
 	 */
-	public  void deleteTokenCookiee(ServletRequest request , ServletResponse response){
-
+	public  void deleteTokenCookiee(HttpServletRequest request , HttpServletResponse response){
+		
 	}
 
+	/**
+	 * 从请求的Cookie中获取Token
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	public String getTokenFromCookie(HttpServletRequest request , HttpServletResponse response){
+		Cookie[] cookies = request.getCookies() ;
+		if(cookies == null || cookies.length == 0){
+			return null;
+		}
+		for (Cookie cookie : cookies) {
+			if(TOKEN_COOKIE_KEY.equals(cookie.getName())){
+				return cookie.getValue();
+			}
+		}
+		return null ;
+	}
 
 
 }
