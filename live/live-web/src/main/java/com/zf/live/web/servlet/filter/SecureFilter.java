@@ -19,7 +19,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.dao.pojo.Lvuser;
-import com.zf.live.web.app.service.WebUserService;
+import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
 
 /**
@@ -52,7 +52,7 @@ public class SecureFilter implements Filter{
 			FilterChain chain) throws IOException, ServletException {
 		try {
 			//如果使用线程池，当前线程可能会残留之前用户的信息，所以需要先清除
-			WebUserService.clearCurrentUser();
+			LiveWebUtil.clearCurrentUser();
 			String token = webTokenUtil.getTokenFromCookie((HttpServletRequest)request, (HttpServletResponse)response);
 			if(StringUtils.isBlank(token)){
 				return ;
@@ -61,7 +61,7 @@ public class SecureFilter implements Filter{
 			if(currentUser == null){ //如果用户失效，则清除cookie信息
 				webTokenUtil.deleteTokenCookiee((HttpServletRequest)request, (HttpServletResponse)response);
 			}else{
-				WebUserService.setCurrentUser(currentUser);
+				LiveWebUtil.setCurrentUser(currentUser);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

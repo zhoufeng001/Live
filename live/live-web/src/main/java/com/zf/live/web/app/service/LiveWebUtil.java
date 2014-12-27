@@ -9,9 +9,9 @@ import com.zf.live.dao.pojo.Lvuser;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月26日 下午1:55:45
  */
-public class WebUserService {
+public abstract class LiveWebUtil {
 	
-	static final Logger log = org.slf4j.LoggerFactory.getLogger(WebUserService.class);
+	static final Logger log = org.slf4j.LoggerFactory.getLogger(LiveWebUtil.class);
 
 
 	private static final ThreadLocal<Lvuser> currentUser = new ThreadLocal<Lvuser>() ;
@@ -37,6 +37,14 @@ public class WebUserService {
 	 */
 	public static void clearCurrentUser(){
 		currentUser.remove(); 
+	}
+	
+	public static String redirectIndexPath(){
+		return "redirect:/index.htm";
+	}
+	
+	public static String redirectLoginPath(){
+		return "redirect:/user/loginView.htm";
 	}
 	
 	

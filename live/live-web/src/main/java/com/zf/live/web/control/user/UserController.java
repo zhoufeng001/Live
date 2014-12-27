@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.common.generator.DefaultIdxcodeGenerator;
+import com.zf.live.dao.pojo.Lvuser;
+import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
 
 /**
@@ -33,6 +36,9 @@ public class UserController {
 	@Autowired
 	private WebTokenUtil webTokenUtil;
 
+	@Autowired
+	private DefaultIdxcodeGenerator defaultIdxcodeGenerator ;
+	
 	/**
 	 * 去登录页面
 	 * @param request
@@ -57,15 +63,43 @@ public class UserController {
 			HttpServletRequest request, HttpServletResponse response , ModelMap modelMap) {
 		ServiceResult<String> result = lvuserService.login4Platform(userkey, secret) ;
 		if(result == null){
-			return "redirect:/user/loginView.htm";
+			return LiveWebUtil.redirectLoginPath();
 		}else{
 			if(result.isSuccess()){
 				String token = result.getData() ;
 				webTokenUtil.createTokenCookie(request, response, token); 
-				return "redirect:/index.htm";
+				return LiveWebUtil.redirectIndexPath() ;
 			}else{
-				return "redirect:/user/loginView.htm";
+				return LiveWebUtil.redirectLoginPath();
 			}
 		}
 	}
+
+	/**
+	 * 执行注册操作
+	 * @param userkey
+	 * @param secret
+	 * @param request
+	 * @param response
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping("/doRegist")
+	public String doRegist(String userkey , String secret , String nick,
+			HttpServletRequest request, HttpServletResponse response , ModelMap modelMap){
+		Lvuser user = new Lvuser();
+		user.setLoginname(userkey);
+		user.setPassword(secret);
+		user.setNick(nick);
+		ServiceResult<Long> result = lvuserService.regist(user, defaultIdxcodeGenerator);
+		if(request == null){
+			return LiveWebUtil.redirectIndexPath() ;
+		}
+		if(result.isSuccess()){
+			return LiveWebUtil.redirectIndexPath() ;
+		}else{
+			return LiveWebUtil.redirectLoginPath() ;
+		}
+	}
+
 }

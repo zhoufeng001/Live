@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.dao.pojo.Lvuser;
-import com.zf.live.web.app.service.WebUserService;
+import com.zf.live.web.app.service.LiveWebUtil;
 
 @Controller
 @RequestMapping()
@@ -17,7 +17,7 @@ public class IndexController {
 	
 	@RequestMapping("/index")
 	public String index(@CookieValue(required = false ,value="_tc_k_") String token , ServletRequest request, ServletResponse response , ModelMap modelMap) {
-		Lvuser currentUser = WebUserService.getCurrentUser();
+		Lvuser currentUser = LiveWebUtil.getCurrentUser();
 		modelMap.put("user", currentUser); 
 		return "index";
 	}
