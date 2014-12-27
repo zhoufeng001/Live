@@ -1,11 +1,16 @@
 package com.zf.live.web.app.util;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.zf.live.client.user.LvuserService;
 import com.zf.live.web.app.util.DesSecureFactory.DesSecure;
 
 /**
@@ -39,12 +44,15 @@ public class WebTokenUtil {
 	/**
 	 * Token两小时不使用则自动失效
 	 */
-	private static final Integer TOKEN_MAX_AGE = 7200 ;
+	private static final Integer TOKEN_MAX_AGE = 7200000 ;
 
 	/**
 	 * Cookie Path
 	 */
 	private static final String COOKIE_PATH = "/";
+	
+	@Autowired
+	private LvuserService lvuserService;
 
 	/**
 	 * 在浏览器创建包含token的cookie
@@ -54,7 +62,6 @@ public class WebTokenUtil {
 	 */
 	public void createTokenCookie(HttpServletRequest request , HttpServletResponse response , String token){
 
-		Cookie lastTimeCookie = null ;
 		Cookie tokenCookie = null ;
 
 		//如果之前的用户信息还存在，则先删除之前的登录信息
@@ -66,23 +73,37 @@ public class WebTokenUtil {
 			tokenCookie.setMaxAge(TOKEN_MAX_AGE);
 			tokenCookie.setPath(COOKIE_PATH);
 
-			lastTimeCookie = new Cookie(TOKEN_COOKIE_LAST_TIME_KEY, "123");
-			lastTimeCookie.setPath(COOKIE_PATH);
-
 			response.addCookie(tokenCookie);
-			response.addCookie(lastTimeCookie);
+			setLastTimeToken(response); 
 		}
 
 
 	}
 
 	/**
-	 * 删除浏览器包含token的cookie
+	 * 删除浏览器包含token的cookie，并从Redis缓存中移除用户的登录信息
 	 * @param request
 	 * @param response
 	 */
 	public  void deleteTokenCookiee(HttpServletRequest request , HttpServletResponse response){
-		
+		Map<String, String> cookies = getCookies(request , response);
+		String tokenValue = cookies.get(TOKEN_COOKIE_KEY) ;
+		String lastTimeValue = cookies.get(TOKEN_COOKIE_LAST_TIME_KEY) ;
+		if(tokenValue == null && lastTimeValue == null){
+			return;
+		}
+		if(tokenValue != null){
+			Cookie tokenCookie = new Cookie(TOKEN_COOKIE_KEY , tokenValue);
+			tokenCookie.setMaxAge(0);
+			tokenCookie.setPath(COOKIE_PATH);
+			response.addCookie(tokenCookie); 
+			lvuserService.logoutByToken(tokenValue); 
+		}
+		if(lastTimeValue != null){
+			Cookie lastTimeCookie = new Cookie(TOKEN_COOKIE_LAST_TIME_KEY , tokenValue);
+			lastTimeCookie.setPath(COOKIE_PATH);
+			response.addCookie(lastTimeCookie); 
+		}
 	}
 
 	/**
@@ -92,16 +113,50 @@ public class WebTokenUtil {
 	 * @return
 	 */
 	public String getTokenFromCookie(HttpServletRequest request , HttpServletResponse response){
-		Cookie[] cookies = request.getCookies() ;
-		if(cookies == null || cookies.length == 0){
+		Map<String, String> cookies = getCookies(request , response);
+		String tokenValue = cookies.get(TOKEN_COOKIE_KEY) ;
+		String lastTimeValue = cookies.get(TOKEN_COOKIE_LAST_TIME_KEY) ;
+		
+		if(tokenValue == null || lastTimeValue == null){
 			return null;
 		}
-		for (Cookie cookie : cookies) {
-			if(TOKEN_COOKIE_KEY.equals(cookie.getName())){
-				return cookie.getValue();
-			}
+		Long prevTimeValue = Long.valueOf(lastTimeValue) ;
+		Long currentTime = System.currentTimeMillis();
+		if((currentTime - prevTimeValue ) > TOKEN_MAX_AGE){
+			deleteTokenCookiee(request, response); 
+			return null ;
 		}
-		return null ;
+		return tokenValue ;
+	}
+	
+	/**
+	 * 从请求中获取cookie存入map，以cookie名称当作key，值当作value
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	private Map<String, String> getCookies(HttpServletRequest request , HttpServletResponse response){
+		Map<String , String> cookiesMap = new HashMap<String, String>() ;
+		Cookie[] cookies = request.getCookies() ;
+		if(cookies == null || cookies.length == 0){
+			return cookiesMap;
+		}
+		for (Cookie cookie : cookies) {
+			cookiesMap.put(cookie.getName(), cookie.getValue()) ;
+		}
+		setLastTimeToken(response); 
+		return cookiesMap ;
+	}
+	
+	/**
+	 * 添加最后访问时间到cookie
+	 * @param response
+	 */
+	private void setLastTimeToken(HttpServletResponse response){
+		Cookie lastTimeCookie = null ;
+		lastTimeCookie = new Cookie(TOKEN_COOKIE_LAST_TIME_KEY, String.valueOf(System.currentTimeMillis())); 
+		lastTimeCookie.setPath(COOKIE_PATH);
+		response.addCookie(lastTimeCookie);
 	}
 
 

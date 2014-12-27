@@ -1,5 +1,7 @@
 package com.zf.live.common.validate.handler;
 
+import java.lang.reflect.Method;
+
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.util.ZFReflectionUtils;
 import com.zf.live.common.validate.Regexp;
@@ -12,7 +14,7 @@ import com.zf.live.common.validate.Regexp;
 public class RegexpInvokeMethodHandler extends InvokeMethodHandler<Regexp> {
 
 	@Override
-	public void validate(Regexp annoationa, Object arg)
+	public void validate(Regexp annoationa, Object arg ,Method method)
 			throws ValidateException {
 		String fieldName = annoationa.field() ;
 		Object fieldValue = ZFReflectionUtils.getFiledValue(arg, fieldName) ;
@@ -21,7 +23,7 @@ public class RegexpInvokeMethodHandler extends InvokeMethodHandler<Regexp> {
 			return ;
 		}
 		if(!fieldValue.toString().matches(regexp)){
-			throw new ValidateException(String.format("字段%s不符合规则%s", fieldName , regexp));  
+			throw new ValidateException(String.format("[%s]字段%s不符合规则%s", method.getName(),fieldName , regexp));  
 		}
 	}
 

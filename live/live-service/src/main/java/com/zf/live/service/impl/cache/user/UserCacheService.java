@@ -113,7 +113,7 @@ public class UserCacheService {
 	
 	
 	/**
-	 * 移除登录用户的登录信息
+	 * 根据userid移除登录用户的登录信息
 	 * @param userid
 	 */
 	public void removeLoginUserInfo(@Notnull Long userid){
@@ -139,6 +139,33 @@ public class UserCacheService {
 		}
 	}
 
+	/**
+	 * 根据token移除用户的登录信息
+	 * @param token
+	 */
+	public void removeLoginUserInfo(@Notnull String token){
+		Jedis jedis = null ;
+		try {
+			jedis = jedisPool.getResource() ;
+			String tokenKey = TOEKN_USERID_KEY_PREFIX + token ;
+			String useridValue = jedis.get(tokenKey);
+			Pipeline pipeline = jedis.pipelined();
+			if(StringUtils.isNoneBlank(useridValue)){
+				String useridKey = USER_TOKEN_KEY_PREFIX + useridValue ;
+				pipeline.del(useridKey);
+			}
+			pipeline.del(tokenKey);
+			String userKey = USER_CACHE_KEY_PREFIX + useridValue;
+			pipeline.del(userKey); 
+			pipeline.sync();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new LiveException(e.getMessage());
+		}finally{
+			jedisPool.returnResource(jedis);
+		}
+	}
+	
 	/**
 	 * 缓存用户信息
 	 * @param cacheUser
@@ -227,7 +254,15 @@ public class UserCacheService {
 		try {
 			String userTokenKey = USER_TOKEN_KEY_PREFIX + userid ;
 			jedis = jedisPool.getResource();
-			return jedis.get(userTokenKey) ;
+			String token = jedis.get(userTokenKey) ;
+			if(StringUtils.isNotBlank(token)){
+				Pipeline pipeline = jedis.pipelined();
+				pipeline.expire(userTokenKey, TOKEN_CACHE_TIME) ;
+				pipeline.expire(TOEKN_USERID_KEY_PREFIX + token, TOKEN_CACHE_TIME) ;
+				pipeline.sync();
+				return token ;
+			}
+			return null;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new LiveException(e.getMessage());

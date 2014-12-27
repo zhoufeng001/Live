@@ -90,7 +90,7 @@ public class ValidateMethodAspect {
 					InvokeMethodHandler handler = annotation.handler ;
 					Object[] annocations = parameter.getAnnotationsByType(annocationClass) ;
 					if(annocations != null && annocations.length > 0){
-						handler.validate(annocations, arg); 
+						handler.validate(annocations, arg,method); 
 					}
 				}
 			}

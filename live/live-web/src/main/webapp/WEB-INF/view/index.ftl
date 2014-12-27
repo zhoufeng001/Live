@@ -7,6 +7,6 @@
 <body>  
 Index.htm
 <br/><br/>
-token:${user.loginname!""} 
-</body>
+token:${(user.loginname)!"未登录!"}
+</body>  
 </html>

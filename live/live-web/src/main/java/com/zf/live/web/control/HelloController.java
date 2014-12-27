@@ -25,7 +25,9 @@ public class HelloController {
 	@RequestMapping("/world")
 	public String helloUser(ServletRequest request, ServletResponse response , ModelMap modelMap) {
 		Lvuser lvuser = lvuserService.selectByIdWithCache(3L) ;
-		modelMap.put("username", "is_zhoufeng " + lvuser.getLoginname());
+		if(lvuser != null){
+			modelMap.put("username", "is_zhoufeng " + lvuser.getLoginname());
+		}
 		return "hello";
 	}
 

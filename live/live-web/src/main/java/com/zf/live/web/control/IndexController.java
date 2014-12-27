@@ -16,7 +16,7 @@ import com.zf.live.web.app.service.WebUserService;
 public class IndexController {
 	
 	@RequestMapping("/index")
-	public String index(@CookieValue("_tc_k_") String token , ServletRequest request, ServletResponse response , ModelMap modelMap) {
+	public String index(@CookieValue(required = false ,value="_tc_k_") String token , ServletRequest request, ServletResponse response , ModelMap modelMap) {
 		Lvuser currentUser = WebUserService.getCurrentUser();
 		modelMap.put("user", currentUser); 
 		return "index";

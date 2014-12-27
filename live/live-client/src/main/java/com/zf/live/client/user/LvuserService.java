@@ -92,10 +92,16 @@ public interface LvuserService {
    public Lvuser getUserByToken(String token);
    
    /**
-    * 用户退出
+    * 用户退出（根据用户id）
     * @param userid
     */
-   public void logout(Long userid);
+   public void logoutByUserid(Long userid);
+   
+   /**
+    * 用户退出（根据token）
+    * @param token
+    */
+   public void logoutByToken(String token);
    
    /**
     * 根据userid判断用户是否已登录

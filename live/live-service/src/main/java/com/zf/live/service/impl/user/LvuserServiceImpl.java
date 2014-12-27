@@ -65,7 +65,7 @@ public class LvuserServiceImpl implements LvuserService{
 	}
 	
 	@Override
-	public Lvuser selectByMail(String mail) {
+	public Lvuser selectByMail(@Notnull String mail) {
 		LvuserExample query = new LvuserExample() ;
 		query.createCriteria().andMailEqualTo(mail) ;
 		query.setPage(new Page(0, 1));
@@ -101,7 +101,7 @@ public class LvuserServiceImpl implements LvuserService{
 	}
 	
 	@Override
-	public boolean existMail(String mail) {
+	public boolean existMail(@Notnull String mail) {
 		Integer userCount = lvuserMapper.countMail(mail) ;
 		return userCount == null ? false : userCount > 0 ;
 	}
@@ -195,7 +195,7 @@ public class LvuserServiceImpl implements LvuserService{
 	}
 
 	@Override
-	public Lvuser getUserByToken(String token) {
+	public Lvuser getUserByToken(@Notnull String token) {
 		Long userid = userCacheService.getUserIdByToken(token);
 		if(userid == null || userid.longValue() <= 0){
 			return null ;
@@ -204,14 +204,19 @@ public class LvuserServiceImpl implements LvuserService{
 	}
 
 	@Override
-	public void logout(Long userid) {
+	public void logoutByUserid(@Notnull Long userid) {
 		userCacheService.removeLoginUserInfo(userid); 
 	}
+	
+	@Override
+	public void logoutByToken(@Notnull String token) {
+		userCacheService.removeLoginUserInfo(token);
+	} 
 
 	@Override
 	public boolean isLogin(Long userid) {
 		return userCacheService.getTokenByUserId(userid) != null ;
-	} 
+	}
 
 
 }

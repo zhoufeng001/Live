@@ -11,6 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -49,8 +50,13 @@ public class SecureFilter implements Filter{
 			//如果使用线程池，当前线程可能会残留之前用户的信息，所以需要先清除
 			WebUserService.clearCurrentUser();
 			String token = webTokenUtil.getTokenFromCookie((HttpServletRequest)request, (HttpServletResponse)response);
+			if(StringUtils.isBlank(token)){
+				return ;
+			}
 			Lvuser currentUser = lvuserService.getUserByToken(token) ;
-			if(currentUser != null){
+			if(currentUser == null){ //如果用户失效，则清除cookie信息
+				webTokenUtil.deleteTokenCookiee((HttpServletRequest)request, (HttpServletResponse)response);
+			}else{
 				WebUserService.setCurrentUser(currentUser);
 			}
 		} catch (Exception e) {

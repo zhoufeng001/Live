@@ -1,5 +1,7 @@
 package com.zf.live.common.validate.handler;
 
+import java.lang.reflect.Method;
+
 import com.zf.live.client.exception.ValidateException;
 
 /**
@@ -15,7 +17,7 @@ public abstract class InvokeMethodHandler<A> {
 	 * @param arg
 	 * @throws ValidateException
 	 */
-	public abstract void validate(A annoationa , Object arg) throws ValidateException ;
+	public abstract void validate(A annoationa , Object arg , Method method) throws ValidateException ;
 	
 	/**
 	 * 校验注解组 
@@ -23,12 +25,12 @@ public abstract class InvokeMethodHandler<A> {
 	 * @param arg
 	 * @throws ValidateException
 	 */
-	public void validate(A[] annoations , Object arg) throws ValidateException {
+	public void validate(A[] annoations , Object arg,Method method) throws ValidateException {
 		if(annoations == null){
 			return  ;
 		}
 		for (A ant : annoations) {
-			validate(ant, arg); 
+			validate(ant, arg,method); 
 		}
 	}
 	

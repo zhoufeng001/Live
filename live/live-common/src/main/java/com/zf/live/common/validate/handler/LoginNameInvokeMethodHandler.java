@@ -1,5 +1,7 @@
 package com.zf.live.common.validate.handler;
 
+import java.lang.reflect.Method;
+
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.Const;
 import com.zf.live.common.util.ZFReflectionUtils;
@@ -13,7 +15,7 @@ import com.zf.live.common.validate.LoginName;
 public class LoginNameInvokeMethodHandler extends InvokeMethodHandler<LoginName>{
 	
 	@Override
-	public void validate(LoginName annoationa, Object arg)
+	public void validate(LoginName annoationa, Object arg,Method method)
 			throws ValidateException {
 		String fieldName = annoationa.value() ;
 		Object fieldValue = ZFReflectionUtils.getFiledValue(arg, fieldName) ;
@@ -21,7 +23,7 @@ public class LoginNameInvokeMethodHandler extends InvokeMethodHandler<LoginName>
 			return ;
 		}
 		if(!fieldValue.toString().matches(Const.UserConst.LOGINNAME_REGEXP)){
-			throw new ValidateException("登录名不符合规范！");
+			throw new ValidateException(String.format("[%s登录名不符合规范！]", method.getName()));
 		}
 	}
 
