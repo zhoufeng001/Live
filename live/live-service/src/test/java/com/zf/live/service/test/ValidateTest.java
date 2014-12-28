@@ -29,17 +29,16 @@ public class ValidateTest extends ServiceBaseTester{
 	@Test
 	public void test01(){
 		Lvuser user = new Lvuser() ;
-		user.setLoginname("C12345");  
-		user.setNick("xfdwa");
+		user.setLoginname("D12345");  
+		user.setNick("xxlfds");
 		user.setPassword("is_zhoufeng");  
-		user.setIdxcode("50"); 
-		ServiceResult<Long> result = lvuserService.regist(user , defaultIdxcodeGenerator) ;
+		user.setIdxcode(defaultIdxcodeGenerator.generate());
+		ServiceResult<Long> result = lvuserService.regist(user) ;
 		if(result == null || !result.isSuccess()){
 			System.out.println("添加失败，" + result.getErrMssage());
 		}else{
 			System.out.println("添加成功");
 		}
-		lvuserService.regist(user,defaultIdxcodeGenerator) ;
 	}
 
 }

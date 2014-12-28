@@ -1,7 +1,6 @@
 package com.zf.live.common.generator;
 
 import java.util.Date;
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,12 @@ import com.zf.live.client.user.LvuserService;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月21日 上午12:39:53
  */
-public class DefaultIdxcodeGenerator implements IdxcodeGenerator{
+public class DefaultIdxcodeGenerator implements IdxcodeGenerator {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7370399283485018271L;
 
 	@Autowired
 	private LvuserService lvuserService ;
@@ -27,13 +31,10 @@ public class DefaultIdxcodeGenerator implements IdxcodeGenerator{
 	private final String suffixs [] = {"1","2","3","4","5","6","7"} ;
 	private final AtomicInteger suffixIndex = new AtomicInteger(0) ;
 
-	
 	/**
 	 * 如果失败，最多重试3次
 	 */
 	private final int reTry = 3 ;
-
-	private final Random random = new Random(); 
 
 
 	@Override

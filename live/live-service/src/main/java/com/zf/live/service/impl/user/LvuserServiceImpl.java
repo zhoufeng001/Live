@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.zf.live.client.exception.LiveException;
-import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.common.validate.LoginName;
@@ -114,11 +113,9 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Override
 	public ServiceResult<Long> regist(
-			@Notnull("loginname") @Notnull("nick") @Notnull("password")
+			@Notnull("loginname") @Notnull("nick") @Notnull("password") @Notnull("idxcode")
 			@LoginName("loginname") 
-			Lvuser user, 
-			@Notnull 
-			IdxcodeGenerator idxcodeGenerator
+			Lvuser user
 			) {
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
 		
@@ -128,8 +125,7 @@ public class LvuserServiceImpl implements LvuserService{
 			return result ;
 		}
 		
-		String idxcode = idxcodeGenerator.generate() ;
-		boolean existIdxcode = existIdxcode(idxcode) ;
+		boolean existIdxcode = existIdxcode(user.getIdxcode()) ;
 		if(existIdxcode){
 			result.setErrMssage("Idxcode" + user.getIdxcode() + "已存在");
 			return result ;
@@ -139,7 +135,6 @@ public class LvuserServiceImpl implements LvuserService{
 		user.setCoin(0L);
 		user.setCreatetime(currentTime);
 		user.setFlag(0);
-		user.setIdxcode(idxcode); 
 		int inserResult =lvuserMapper.insertSelective(user) ;
 		if(inserResult > 0){
 			Lvuserinfo lvuserinfo = new Lvuserinfo() ;

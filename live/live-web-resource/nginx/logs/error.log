@@ -174,3 +174,22 @@
 2014/12/16 00:01:37 [error] 3476#6884: *1 CreateFile() "E:\Live\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost"
 2014/12/16 00:01:38 [error] 3476#6884: *1 CreateFile() "E:\Live\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost"
 2014/12/16 00:01:42 [notice] 6272#3468: signal process started
+2014/12/28 15:43:10 [emerg] 7476#6512: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:06 [emerg] 8116#4148: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:35 [emerg] 8176#4692: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:47 [emerg] 2236#6688: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:48 [emerg] 8076#7648: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:49 [emerg] 7224#1600: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:52 [emerg] 7232#8096: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:54 [emerg] 7380#8124: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:44:57 [emerg] 4864#7856: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:45:21 [emerg] 5048#5764: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:46:21 [emerg] 7176#2276: CreateDirectory() "E:\Live02\live\live-web-resource\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2014/12/28 15:46:41 [error] 7820#6288: *1 CreateFile() "E:\Live02\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost"
+2014/12/28 15:46:41 [error] 7820#6288: *1 CreateFile() "E:\Live02\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost"
+2014/12/28 15:55:46 [error] 7820#6288: *4 CreateFile() "E:\Live02\live\live-web-resource\nginx/resources/img/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /img/favicon.ico HTTP/1.1", host: "127.0.0.1"
+2014/12/28 15:55:46 [error] 7820#6288: *4 CreateFile() "E:\Live02\live\live-web-resource\nginx/resources/img/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /img/favicon.ico HTTP/1.1", host: "127.0.0.1"
+2014/12/28 15:56:51 [error] 7820#6288: *5 "E:\Live02\live\live-web-resource\nginx/resources/img/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /img/ HTTP/1.1", host: "localhost"
+2014/12/28 15:58:25 [error] 7820#6288: *6 CreateFile() "E:\Live02\live\live-web-resource\nginx/resources/img/live.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /img/live.ico HTTP/1.1", host: "localhost"
+2014/12/28 16:16:43 [notice] 2380#7904: signal process started
+2014/12/28 16:18:17 [error] 7556#6616: *1 CreateFile() "E:\Live02\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:3040"

@@ -73,7 +73,7 @@ public interface LvuserService {
     * @param user
     * @return
     */
-   public ServiceResult<Long> regist(Lvuser user,IdxcodeGenerator idxcodeGenerator) ;
+   public ServiceResult<Long> regist(Lvuser user) ;
    
    
    /**

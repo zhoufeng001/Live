@@ -2,10 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Freemarker</title>
+<link rel="shortcut icon" type="image/x-icon" href="${static_server}/img/favicon.ico" />
+<title>登录</title>
 
 </head>
 <body>  
+<h1>用户登录</h1>
+<br/></br/>
 <form method="post" action="${ctx}/user/doLogin.htm">
 登录名：<input type="text" name="userkey" value="C12345" />
 &nbsp;&nbsp;密码：<input type="text" name="secret" value="is_zhoufeng" />

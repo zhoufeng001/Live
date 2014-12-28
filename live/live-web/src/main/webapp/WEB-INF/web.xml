@@ -3,6 +3,10 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 	
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+	
 	<context-param> 
 	    <param-name>contextConfigLocation</param-name> 
 	    <param-value>classpath*:applicationContext.xml</param-value> 
@@ -44,5 +48,27 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>/404.html</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/404.html</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.Error</exception-type>
+		<location>/404.html</location>
+	</error-page>
+	
+	
 	
 </web-app>

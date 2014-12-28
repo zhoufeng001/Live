@@ -12,9 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
-import com.zf.live.common.generator.DefaultIdxcodeGenerator;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
@@ -37,7 +37,7 @@ public class UserController {
 	private WebTokenUtil webTokenUtil;
 
 	@Autowired
-	private DefaultIdxcodeGenerator defaultIdxcodeGenerator ;
+	private IdxcodeGenerator defaultIdxcodeGenerator ;
 	
 	/**
 	 * 去登录页面
@@ -74,6 +74,11 @@ public class UserController {
 			}
 		}
 	}
+	
+	@RequestMapping("/registView")
+	public String registView(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap){
+		return "user/registView";
+	}
 
 	/**
 	 * 执行注册操作
@@ -91,7 +96,8 @@ public class UserController {
 		user.setLoginname(userkey);
 		user.setPassword(secret);
 		user.setNick(nick);
-		ServiceResult<Long> result = lvuserService.regist(user, defaultIdxcodeGenerator);
+		user.setIdxcode(defaultIdxcodeGenerator.generate());
+		ServiceResult<Long> result = lvuserService.regist(user);
 		if(request == null){
 			return LiveWebUtil.redirectIndexPath() ;
 		}

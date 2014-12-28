@@ -10,7 +10,7 @@ by is_zhoufeng@163.com 2014-12-15 17:32:50.
   
    <select id="selectRandom"  resultMap="com.zf.live.dao.mapper.LvuserMapper.BaseResultMap">
   	select 
-  	<include refid="com.zf.live.dao.mapper.LvuserMapper.Base_Column_List" />
+  	<include refid="com.zf.live.dao.mapper.LvuserMapper.BaseResultMap" />
   	from `lvuser`
   	order by RAND() limit 1; 
   </select>
@@ -26,7 +26,7 @@ by is_zhoufeng@163.com 2014-12-15 17:32:50.
   <select id="countIdxcode" resultType="java.lang.Integer">
   	select count(*)
   	from `lvuser`
-  	where idxcode =  #{idxcode,jdbcType=VARCHAR} limit 1 
+  	where idxcode = #{idxcode,jdbcType=VARCHAR} limit 1 
   </select>
   
   <select id="countMail" resultType="java.lang.Integer">
