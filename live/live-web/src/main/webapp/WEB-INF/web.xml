@@ -4,7 +4,7 @@
 	version="3.1">
 	
 	<welcome-file-list>
-		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
 	<context-param> 
@@ -42,6 +42,16 @@
 	
 	<filter-mapping>
 		<filter-name>secureFilter</filter-name>
+		<url-pattern>*.htm</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>tipMessageFilter</filter-name>
+		<filter-class>com.zf.live.web.servlet.filter.TipMessageFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>tipMessageFilter</filter-name>
 		<url-pattern>*.htm</url-pattern>
 	</filter-mapping>
 	

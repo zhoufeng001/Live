@@ -10,7 +10,17 @@
 	<context:component-scan base-package="com.zf.live.web.control" />  
 		
 	<!-- Controller注解处理 -->
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />  
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="com.zf.live.web.interceptor.LiveWebInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="com.zf.live.web.interceptor.ExportStaticBeansInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	<!-- freemarker的配置 -->  
     <bean id="freemarkerConfigurer"  

@@ -1,11 +1,15 @@
 package com.zf.live.web.control.user;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +20,7 @@ import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.dao.pojo.Lvuser;
+import com.zf.live.web.app.RequestContext;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
 
@@ -70,6 +75,7 @@ public class UserController {
 				webTokenUtil.createTokenCookie(request, response, token); 
 				return LiveWebUtil.redirectIndexPath() ;
 			}else{
+				RequestContext.setErrTipMessage(result.getErrMssage()); 
 				return LiveWebUtil.redirectLoginPath();
 			}
 		}
@@ -102,10 +108,33 @@ public class UserController {
 			return LiveWebUtil.redirectIndexPath() ;
 		}
 		if(result.isSuccess()){
-			return LiveWebUtil.redirectIndexPath() ;
+			//自动登录
+			Map<String, String> params = new HashMap<String, String>();
+			params.put("userkey", userkey);
+			params.put("secret", secret);
+			return LiveWebUtil.redirectPath("/user/doLogin.htm", params) ;
 		}else{
 			return LiveWebUtil.redirectLoginPath() ;
 		}
+	}
+	
+	
+	/**
+	 * 执行用户退出操作
+	 * @param request
+	 * @param response
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping("/doLogout")
+	public String doLogout(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap){
+		String token = webTokenUtil.getTokenFromCookie(request, response) ;
+		if(StringUtils.isBlank(token)){
+			return LiveWebUtil.redirectIndexPath() ;
+		}
+		lvuserService.logoutByToken(token); 
+		webTokenUtil.deleteTokenCookiee(request, response); 
+		return LiveWebUtil.redirectIndexPath() ;
 	}
 
 }

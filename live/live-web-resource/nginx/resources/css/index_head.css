@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+body,div,dl,dd.dt,ol,ul,li,h1,h2,h3,h4,h5,h9,form,pre,fieldest,input,p,blockquote,th,td,button,legend{padding:0; margin:0;}
+.index_head_top_div {
+	width: 100% ;
+	height: 25px ;
+	line-height:25px;
+	text-align: right;
+	vertical-align: middle;
+	margin-right: 10px;
+	border-bottom:1px solid ;
+	float: right;
+}

@@ -14,6 +14,11 @@
 &nbsp;&nbsp;密码：<input type="text" name="secret" value="is_zhoufeng" />
 <br/><br/>
 <input type="submit" value="登录" />
+&nbsp;&nbsp;<a href="${ctx}/user/registView.htm">注册</a>
 </form>  
+
+<br/>
+<font color="red">${(RequestContext.getErrTipMessage())!"xx"}</font>
+
 </body>
 </html>

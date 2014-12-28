@@ -14,7 +14,7 @@
 &nbsp;&nbsp;密码：<input type="text" name="secret" />
 
 <br/><br/>
-<input type="submit" value="登录" />
+<input type="submit" value="注册" />
 </form>  
 </body>
 </html>

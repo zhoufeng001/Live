@@ -1,8 +1,11 @@
 package com.zf.live.web.app.service;
 
-import org.slf4j.Logger;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
-import com.zf.live.dao.pojo.Lvuser;
+import org.apache.commons.lang3.StringUtils;
+
 
 /**
  * 
@@ -10,42 +13,62 @@ import com.zf.live.dao.pojo.Lvuser;
  * 2014年12月26日 下午1:55:45
  */
 public abstract class LiveWebUtil {
-	
-	static final Logger log = org.slf4j.LoggerFactory.getLogger(LiveWebUtil.class);
 
+	public static final String REDIRECT_PREFIX = "redirect:";
+	public static final String SYSTEM_REDIRECT_FLAG_KEY = "_sys_rid_";
+	public static final String SYSTEM_REDIRECT_FLAG_VALUE = "1";
 
-	private static final ThreadLocal<Lvuser> currentUser = new ThreadLocal<Lvuser>() ;
-	
-	/**
-	 * 设置当前登录用户
-	 * @param lvuser
-	 */
-	public static void setCurrentUser(Lvuser lvuser){
-		currentUser.set(lvuser);
-	}
-	
-	/**
-	 * 获取当前登录的用户
-	 * @param lvuser
-	 */
-	public static Lvuser getCurrentUser(){
-		return currentUser.get() ;
-	}
-	
-	/**
-	 * 清楚当前登录用户信息
-	 */
-	public static void clearCurrentUser(){
-		currentUser.remove(); 
-	}
-	
 	public static String redirectIndexPath(){
-		return "redirect:/index.htm";
+		return buildPathWithParams("/index.htm" , null);
 	}
 	
+	public static String redirectIndexPath(Map<String, String> params){
+		return buildPathWithParams("/index.htm" , params);
+	}
+
 	public static String redirectLoginPath(){
-		return "redirect:/user/loginView.htm";
+		return buildPathWithParams("/user/loginView.htm" ,null);
 	}
 	
+	public static String redirectLoginPath(Map<String, String> params){
+		return buildPathWithParams("/user/loginView.htm" ,params);
+	}
+
+	public static String redirectPath(String path){
+		return buildPathWithParams(path ,null);
+	}
 	
+	public static String redirectPath(String path , Map<String, String> params){
+		return buildPathWithParams(path ,params);
+	}
+	
+	/**
+	 * 根据basePath和查询参数拼接redirect路径
+	 * @param path 相对路径，例如 /user/loginView.htm 
+	 * @param params
+	 * @return
+	 */
+	private static String buildPathWithParams(String basePath , Map<String , String> params){
+		if(StringUtils.isBlank(basePath)){
+			return basePath; 
+		}
+		basePath = REDIRECT_PREFIX + basePath ;
+		if(params == null || params.size() == 0){
+			return basePath ;
+		}
+		StringBuilder db = new StringBuilder(basePath);
+		db.append("?");
+		db.append(SYSTEM_REDIRECT_FLAG_KEY).append("=").append(SYSTEM_REDIRECT_FLAG_VALUE);
+		Iterator<Entry<String, String>> paramsIt = params.entrySet().iterator() ;
+		Entry<String , String> paramEntry ;
+		while(paramsIt.hasNext()){
+			paramEntry = paramsIt.next();
+			if(StringUtils.isAnyBlank(paramEntry.getKey() , paramEntry.getValue())){
+				continue ;
+			}
+			db.append("&").append(paramEntry.getKey()).append("=").append(paramEntry.getValue()); 
+		}
+		return db.toString() ;
+	}
+
 }
