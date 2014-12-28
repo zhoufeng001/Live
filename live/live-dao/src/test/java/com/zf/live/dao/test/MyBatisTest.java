@@ -21,7 +21,7 @@ import com.zf.live.dao.vo.Page;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
-		{"classpath*:dao-beans.xml"}		
+		{"classpath*:test-dao-beans.xml"}		
 )
 public class MyBatisTest {
 	
@@ -38,7 +38,7 @@ public class MyBatisTest {
 	
 	@Test
 	public void testSelect(){
-		Lvuser lvuser = lvuserMapper.selectByPrimaryKey(1L) ;
+		Lvuser lvuser = lvuserMapper.selectByPrimaryKey(11L) ;
 		System.out.println("lvuser.name : " + lvuser.getLoginname());
 	}
 	
