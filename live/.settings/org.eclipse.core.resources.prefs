@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
 encoding//live-dao/src/main/resources/live-dao.properties=UTF-8
+encoding//live-web/src/main/resources/app-env.properties=UTF-8

@@ -1,5 +1,7 @@
 package com.zf.live.web.app.service;
 
+import org.slf4j.Logger;
+
 import com.zf.live.dao.pojo.Lvuser;
 
 /**
@@ -8,6 +10,9 @@ import com.zf.live.dao.pojo.Lvuser;
  * 2014年12月26日 下午1:55:45
  */
 public class WebUserService {
+	
+	static final Logger log = org.slf4j.LoggerFactory.getLogger(WebUserService.class);
+
 
 	private static final ThreadLocal<Lvuser> currentUser = new ThreadLocal<Lvuser>() ;
 	

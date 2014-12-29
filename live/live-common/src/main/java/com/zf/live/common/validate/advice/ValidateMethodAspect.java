@@ -11,6 +11,8 @@ import java.util.Map.Entry;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.validate.handler.InvokeMethodHandler;
@@ -22,6 +24,9 @@ import com.zf.live.common.validate.handler.InvokeMethodHandler;
  * 2014年12月18日 下午5:17:07
  */
 public class ValidateMethodAspect {
+	
+	private static final Logger log = LoggerFactory.getLogger(ValidateMethodAspect.class);
+
 
 	private Map<String, String> handlers = new HashMap<String, String>() ;
 	private List<AnnotationHandlerPair> annotaionHandlers = new LinkedList<AnnotationHandlerPair>() ; 
@@ -54,13 +59,13 @@ public class ValidateMethodAspect {
 				handler = (InvokeMethodHandler<?>)handlerObj ;
 				annotaionHandlers.add(new AnnotationHandlerPair(annotationClass, handler)) ;
 			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
+				log.error(e.getMessage());
 				throw new ValidateException(e.getMessage());
 			} catch (InstantiationException e) {
-				e.printStackTrace();
+				log.error(e.getMessage());
 				throw new ValidateException(e.getMessage());
 			} catch (IllegalAccessException e) {
-				e.printStackTrace();
+				log.error(e.getMessage());
 				throw new ValidateException(e.getMessage());
 			}
 		}

@@ -2,6 +2,9 @@ package com.zf.live.common.validate.handler;
 
 import java.lang.reflect.Method;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.util.ZFReflectionUtils;
 import com.zf.live.common.validate.Regexp;
@@ -13,6 +16,8 @@ import com.zf.live.common.validate.Regexp;
  */
 public class RegexpInvokeMethodHandler extends InvokeMethodHandler<Regexp> {
 
+	static final Logger log = LoggerFactory.getLogger(RegexpInvokeMethodHandler.class);
+	
 	@Override
 	public void validate(Regexp annoationa, Object arg ,Method method)
 			throws ValidateException {

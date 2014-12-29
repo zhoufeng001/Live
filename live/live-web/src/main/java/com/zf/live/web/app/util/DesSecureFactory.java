@@ -9,6 +9,8 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.Base64Utils;
 
 /**
@@ -17,6 +19,9 @@ import org.springframework.util.Base64Utils;
  * 2014年12月26日 上午1:25:37
  */
 public class DesSecureFactory {
+	
+	static final Logger log = LoggerFactory.getLogger(DesSecureFactory.class);
+
 
 	private final static String DES = "DES";
 
@@ -41,7 +46,7 @@ public class DesSecureFactory {
 
 			return new DesSecure(encrypt , decrypt);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage());
 		}
 		return null ;
 	}
@@ -68,7 +73,7 @@ public class DesSecureFactory {
 				byte[] sourceBytes = Base64Utils.decodeFromString(source);
 				bytes = decrypt.doFinal(sourceBytes);
 			} catch (IllegalBlockSizeException | BadPaddingException e) {
-				e.printStackTrace();
+				log.error(e.getMessage());
 				return null ;
 			}
 			return new String(bytes); 
@@ -85,7 +90,7 @@ public class DesSecureFactory {
 				result = encrypt.doFinal(source.getBytes());
 				return Base64Utils.encodeToString(result);
 			} catch (IllegalBlockSizeException | BadPaddingException e) {
-				e.printStackTrace();
+				log.error(e.getMessage());
 			}
 			return null ;
 		}

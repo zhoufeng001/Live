@@ -5,6 +5,9 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 常用反射工具类
  * @author is_zhoufeng@163.com , QQ:243970446
@@ -12,6 +15,7 @@ import java.lang.reflect.Method;
  */
 public abstract class ZFReflectionUtils {
 	
+	private static final Logger log = LoggerFactory.getLogger(ZFReflectionUtils.class);
 	
 	/**
 	 * 获取指定对象中的属性，属性可级联，比如  target = "userA"  field = "classes.name"
@@ -42,10 +46,13 @@ public abstract class ZFReflectionUtils {
 					return null ;
 				}
 			}catch (IllegalAccessException e) {
+				log.error(e.getMessage());
 				return null ;
 			} catch (IntrospectionException e) {
+				log.error(e.getMessage());
 				return null ;
 			} catch (InvocationTargetException e) {
+				log.error(e.getMessage());
 				return null ;
 			}
 		}

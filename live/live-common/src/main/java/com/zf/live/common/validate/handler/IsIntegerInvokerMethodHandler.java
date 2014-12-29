@@ -2,6 +2,9 @@ package com.zf.live.common.validate.handler;
 
 import java.lang.reflect.Method;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.util.ZFReflectionUtils;
 import com.zf.live.common.validate.IsInteger;
@@ -12,6 +15,9 @@ import com.zf.live.common.validate.IsInteger;
  * 2014年12月19日 下午5:25:42
  */
 public class IsIntegerInvokerMethodHandler extends InvokeMethodHandler<IsInteger>{
+	
+	private static final Logger log = LoggerFactory.getLogger(IsIntegerInvokerMethodHandler.class);
+
 
 	@Override
 	public void validate(IsInteger annoationa, Object arg,Method method)
@@ -28,7 +34,7 @@ public class IsIntegerInvokerMethodHandler extends InvokeMethodHandler<IsInteger
 		try {
 			fieldValueInt = Integer.valueOf(fieldValue.toString());
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			log.error(e.getMessage());
 			throw new ValidateException(String.format("[%s]字段%s的值不是数字类型",method.getName(), fieldName));  
 		}
 		

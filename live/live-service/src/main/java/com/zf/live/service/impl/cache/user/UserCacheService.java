@@ -1,6 +1,8 @@
 package com.zf.live.service.impl.cache.user;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,6 +24,9 @@ import com.zf.live.dao.pojo.Lvuser;
  */
 @Component("userCacheService")
 public class UserCacheService {
+	
+	static final Logger log = LoggerFactory.getLogger(UserCacheService.class);
+
 
 	@Autowired
 	private JedisPool jedisPool ;
@@ -104,7 +109,6 @@ public class UserCacheService {
 			
 			jedis.sync();
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -132,7 +136,6 @@ public class UserCacheService {
 			pipeline.del(userKey); 
 			pipeline.sync();
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -159,7 +162,6 @@ public class UserCacheService {
 			pipeline.del(userKey); 
 			pipeline.sync();
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -186,7 +188,6 @@ public class UserCacheService {
 			pipeline.expire(userKey, USER_CACHE_TIME) ; 
 			jedis.sync();
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -210,7 +211,26 @@ public class UserCacheService {
 			jedis.expire(key, USER_CACHE_TIME) ;
 			return JSON.parseObject(userJson, CacheUser.class); 
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage());
+			throw new LiveException(e.getMessage());
+		}finally{
+			jedisPool.returnResource(jedis);
+		}
+	}
+	
+	/**
+	 * 判断指定的userid是否被缓存了
+	 * @param userid
+	 * @return
+	 */
+	public boolean existCachedUser(@Notnull Long userid){
+		Jedis jedis = null ;
+		try {
+			jedis = jedisPool.getResource();
+			String key = USER_CACHE_KEY_PREFIX + userid ;
+			return jedis.exists(key); 
+		} catch (Exception e) {
+			log.error(e.getMessage());
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -237,7 +257,6 @@ public class UserCacheService {
 			}
 			return null ;
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -264,7 +283,6 @@ public class UserCacheService {
 			}
 			return null;
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new LiveException(e.getMessage());
 		}finally{
 			jedisPool.returnResource(jedis);

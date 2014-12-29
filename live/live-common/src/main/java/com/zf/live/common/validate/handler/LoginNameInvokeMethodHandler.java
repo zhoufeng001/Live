@@ -2,6 +2,9 @@ package com.zf.live.common.validate.handler;
 
 import java.lang.reflect.Method;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.Const;
 import com.zf.live.common.util.ZFReflectionUtils;
@@ -13,7 +16,10 @@ import com.zf.live.common.validate.LoginName;
  * 2014年12月20日 下午11:50:28
  */
 public class LoginNameInvokeMethodHandler extends InvokeMethodHandler<LoginName>{
-	
+
+	static final Logger log = LoggerFactory.getLogger(LoginNameInvokeMethodHandler.class);
+
+
 	@Override
 	public void validate(LoginName annoationa, Object arg,Method method)
 			throws ValidateException {

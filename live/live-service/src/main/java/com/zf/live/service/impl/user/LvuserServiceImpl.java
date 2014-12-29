@@ -3,6 +3,8 @@ package com.zf.live.service.impl.user;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +31,8 @@ import com.zf.live.service.impl.util.TokenFactory;
 @Component("lvuserService")
 public class LvuserServiceImpl implements LvuserService{
 	
+	private static final Logger log = LoggerFactory.getLogger(LvuserServiceImpl.class);
+	
 	@Autowired
 	private UserCacheService userCacheService;
 
@@ -40,6 +44,7 @@ public class LvuserServiceImpl implements LvuserService{
 	
 	@Override
 	public Lvuser selectByIdWithCache(@Notnull Long id) {
+		log.info("selectByIdWithCache...");
 		Lvuser lvuser = userCacheService.getCacheUserById(id);
 		if(lvuser != null){
 			return lvuser ;
@@ -146,9 +151,11 @@ public class LvuserServiceImpl implements LvuserService{
 				result.setData(user.getId());
 				return result ;
 			}else{
+				log.error("创建用户信息失败！");
 				throw new LiveException("创建用户详细信息失败！");
 			}
 		}else{
+			log.error("创建用户信息失败！");
 			result.setErrMssage("创建用户失败!");
 		}
 		return result;

@@ -13,7 +13,10 @@
       
       <jetty.version>9.2.5.v20141112</jetty.version>
       
-      <slf4j.version>1.7.7</slf4j.version>
+      <logback.version>1.1.2</logback.version>
+      <slf4j.version>1.7.9</slf4j.version>
+      
+      <junit.version>4.10</junit.version>
   </properties>
   
   <build>
@@ -88,12 +91,6 @@
 			<artifactId>spring-test</artifactId>
 			<version>4.1.3.RELEASE</version>
 		</dependency>
-				
-		<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
          <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlets</artifactId>
@@ -111,25 +108,57 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
 		</dependency>
-				
-        
-        <!-- Junit4 -->
-        <dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-		        
-        
+		
+		
+		 <!-- logback start -->
+           
+           <dependency>
+              <groupId>ch.qos.logback</groupId>
+              <artifactId>logback-classic</artifactId>
+              <version>${logback.version}</version>
+              <type>jar</type>
+           </dependency>
+         <!-- logback end -->
+			
   	</dependencies>
   </dependencyManagement>
   
   <dependencies>
-  		<dependency>  
+  
+
+		<!-- Junit4 -->
+        <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- SLF4J  -->
+		 <dependency>
+            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-        </dependency>
+            <version>${slf4j.version}</version>
+         </dependency>
+        
+        <!-- 为了将log4j的日志也使用slf4j输出，需要配置下面的转换器 -->
+        <dependency>  
+		    <groupId>org.slf4j</groupId>  
+		    <artifactId>jcl-over-slf4j</artifactId>  
+		    <version>${slf4j.version}</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>org.slf4j</groupId>  
+		    <artifactId>log4j-over-slf4j</artifactId>  
+		    <version>${slf4j.version}</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>org.slf4j</groupId>  
+		    <artifactId>jul-to-slf4j</artifactId>  
+		    <version>${slf4j.version}</version>  
+		</dependency>  
+		<!-- SLF4J -->
+        	
   </dependencies>
   
   <modules>

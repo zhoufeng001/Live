@@ -33,47 +33,4 @@ public abstract class InvokeMethodHandler<A> {
 			validate(ant, arg,method); 
 		}
 	}
-	
-	/**
-	 * 获取指定对象中的属性，属性可级联，比如  target = "userA"  field = "classes.name"
-	 * @param target
-	 * @param field
-	 * @return
-	 *//*
-	protected Object getFiledValue(Object target , String filedName){
-		if(filedName == null || "".equals(filedName.trim())){
-			return target ;
-		}
-		String[] sp = filedName.split("\\.");
-		Object finalObj = target ;
-		for (String s : sp) {
-			if(finalObj == null){
-				return null ;
-			}
-			Class<?> clazz = finalObj.getClass() ;
-			try {
-				PropertyDescriptor pd = new PropertyDescriptor(s, clazz) ;
-				Method readMethod = pd.getReadMethod() ;
-				if(readMethod == null){
-					throw new ValidateException(clazz.getName() + "类中不存在属性" + s + ",或该属性的getter方法");
-				}
-				readMethod.setAccessible(true);
-				finalObj = readMethod.invoke(finalObj) ;
-				if(finalObj == null){
-					return null ;
-				}
-			}catch (IllegalAccessException e) {
-				e.printStackTrace();
-				throw new ValidateException("获取" + clazz.getName() + "中的属性" + s + "失败");
-			} catch (IntrospectionException e) {
-				e.printStackTrace();
-				throw new ValidateException("获取" + clazz.getName() + "中的属性" + s + "失败");
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-				throw new ValidateException("获取" + clazz.getName() + "中的属性" + s + "失败");
-			}
-		}
-		return finalObj ;
-	}
-	*/
 }

@@ -1,5 +1,8 @@
 package com.zf.live.common.assertx;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.zf.live.client.exception.ValidateException;
 import com.zf.live.common.util.ZFReflectionUtils;
 
@@ -10,6 +13,8 @@ import com.zf.live.common.util.ZFReflectionUtils;
  * 2014年12月23日 下午5:43:59
  */
 public abstract class ZFAssert {
+	
+	private static final Logger log = LoggerFactory.getLogger(ZFAssert.class);
 
 	/**
 	 * 判断target对象是否为空,如果不为空，则抛出异常
@@ -88,6 +93,7 @@ public abstract class ZFAssert {
 			if(message == null){
 				message = "对象必须为数字格式" ;
 			}
+			log.error(e.getMessage()); 
 			throw new ValidateException(message);
 		}
 	}
@@ -109,6 +115,7 @@ public abstract class ZFAssert {
 			if(message == null){
 				message = "[校验失败] 字段" + field + "不是数字格式"; 
 			}
+			log.error(e.getMessage());
 			throw new ValidateException(message);
 		}
 	}
