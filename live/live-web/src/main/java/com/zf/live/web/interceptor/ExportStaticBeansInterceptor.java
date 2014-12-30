@@ -10,9 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.zf.live.web.app.RequestContext;
 
-import freemarker.ext.beans.BeansWrapper;
-import freemarker.template.TemplateModelException;
-
 /**
  * 暴露Beans给freemarker使用
  * @author is_zhoufeng@163.com , QQ:243970446
@@ -23,48 +20,33 @@ public class ExportStaticBeansInterceptor implements HandlerInterceptor{
 	static final Logger log = LoggerFactory.getLogger(ExportStaticBeansInterceptor.class);
 
 
-	private static Class<?>[] exportClasses = new Class<?>[]{
-		RequestContext.class
-	};
-
-
 	@Override
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception exception)
 					throws Exception {
-
+		log.info("ExportStaticBeansInterceptor.afterCompletion()");
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler, ModelAndView mav) throws Exception {
 
-		if(exportClasses == null || exportClasses.length == 0){
-			return ;
-		}
-		for (Class<?> clz : exportClasses) {  
-			String name = clz.getSimpleName();  
-			mav.getModelMap().addAttribute(name, getStaticModel(clz));  
-		}  
+		String errorMessage = RequestContext.getErrTipMessage() ;
+		String successMessage = RequestContext.getSuccessTipMessage() ;
+		
+		request.setAttribute("errMsg", errorMessage);
+		request.setAttribute("sucMsg", successMessage);
+		log.info("ExportStaticBeansInterceptor.postHandle()");
 
 	}
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler) throws Exception {
+		log.info("ExportStaticBeansInterceptor.preHandle()");
+
 		return true;
 	}
 
-
-	@SuppressWarnings("deprecation")
-	private static Object getStaticModel(Class<?> clz) {  
-		BeansWrapper wrapper = BeansWrapper.getDefaultInstance(); 
-		try {  
-			return wrapper.getStaticModels().get(clz.getName());  
-		} catch (TemplateModelException e) {  
-			log.error(e.getMessage());  
-		}  
-		return null;  
-	}  
 
 }

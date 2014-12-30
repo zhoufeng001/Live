@@ -53,12 +53,12 @@ public abstract class LiveWebUtil {
 			return basePath; 
 		}
 		basePath = REDIRECT_PREFIX + basePath ;
-		if(params == null || params.size() == 0){
-			return basePath ;
-		}
 		StringBuilder db = new StringBuilder(basePath);
 		db.append("?");
 		db.append(SYSTEM_REDIRECT_FLAG_KEY).append("=").append(SYSTEM_REDIRECT_FLAG_VALUE);
+		if(params == null || params.size() == 0){
+			return db.toString() ;
+		}
 		Iterator<Entry<String, String>> paramsIt = params.entrySet().iterator() ;
 		Entry<String , String> paramEntry ;
 		while(paramsIt.hasNext()){

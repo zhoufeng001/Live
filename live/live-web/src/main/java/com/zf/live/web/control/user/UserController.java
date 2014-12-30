@@ -43,7 +43,7 @@ public class UserController {
 
 	@Autowired
 	private IdxcodeGenerator defaultIdxcodeGenerator ;
-	
+
 	/**
 	 * 去登录页面
 	 * @param request
@@ -53,6 +53,8 @@ public class UserController {
 	 */
 	@RequestMapping("/loginView")
 	public String helloUser(ServletRequest request, ServletResponse response , ModelMap modelMap) {
+		String errMessage = RequestContext.getErrTipMessage() ;
+		log.error(errMessage); 
 		return "user/loginView";
 	}
 
@@ -75,12 +77,12 @@ public class UserController {
 				webTokenUtil.createTokenCookie(request, response, token); 
 				return LiveWebUtil.redirectIndexPath() ;
 			}else{
-				RequestContext.setErrTipMessage(result.getErrMssage()); 
+				RequestContext.setErrTipMessage(result.getErrMssage());
 				return LiveWebUtil.redirectLoginPath();
 			}
 		}
 	}
-	
+
 	@RequestMapping("/registView")
 	public String registView(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap){
 		return "user/registView";
@@ -117,8 +119,8 @@ public class UserController {
 			return LiveWebUtil.redirectLoginPath() ;
 		}
 	}
-	
-	
+
+
 	/**
 	 * 执行用户退出操作
 	 * @param request

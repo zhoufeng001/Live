@@ -13,11 +13,11 @@
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/*"/>
+			<mvc:mapping path="/**"/>
 			<bean class="com.zf.live.web.interceptor.LiveWebInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
-			<mvc:mapping path="/*"/>
+			<mvc:mapping path="/**"/>
 			<bean class="com.zf.live.web.interceptor.ExportStaticBeansInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>

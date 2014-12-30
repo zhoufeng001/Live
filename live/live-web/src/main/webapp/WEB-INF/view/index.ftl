@@ -10,7 +10,9 @@
  
 <!-- 头部信息-开始 -->
 <#include "./common/index/head.ftl" >
-<!-- 头部信息-结束 -->
+<!-- 头部信息-结束 -->  
+
+${errMsg!""}  
 
 
 </body>  
