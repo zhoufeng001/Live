@@ -13,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.zf.live.client.user.LvuserService;
-import com.zf.live.web.app.util.DesSecureFactory.DesSecure;
+import com.zf.live.common.util.DesSecureFactory;
+import com.zf.live.common.util.DesSecureFactory.DesSecure;
 
 /**
  * Token相关工具类

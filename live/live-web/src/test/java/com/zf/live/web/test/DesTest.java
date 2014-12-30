@@ -2,8 +2,8 @@ package com.zf.live.web.test;
 
 import org.junit.Test;
 
-import com.zf.live.web.app.util.DesSecureFactory;
-import com.zf.live.web.app.util.DesSecureFactory.DesSecure;
+import com.zf.live.common.util.DesSecureFactory;
+import com.zf.live.common.util.DesSecureFactory.DesSecure;
 
 public class DesTest {
 	
