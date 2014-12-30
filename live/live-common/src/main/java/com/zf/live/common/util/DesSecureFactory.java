@@ -1,4 +1,4 @@
-package com.zf.live.web.app.util;
+package com.zf.live.common.util;
 
 import java.security.SecureRandom;
 
