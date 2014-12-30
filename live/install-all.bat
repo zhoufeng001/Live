@@ -25,6 +25,6 @@ call mvn -Dmaven.test.skip=true install
 cd %root%/live-web
 call mvn -Dmaven.test.skip=true install 
 
-echo 全部安装完成
+echo 全部模块安装完成
 
 pause
