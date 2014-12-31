@@ -46,6 +46,14 @@ public interface LvuserService {
    public Lvuser selectByIdxcode(String idxcode);
    
    /**
+    * 根据第三方平台信息查询出用户
+    * @param thirdType {@link Lvuser.userfrom} 常量定义在{@link Const.UserConst} 
+    * @param thirdId   {@linkplain Lvuser.oauthid}}
+    * @return
+    */
+   public Lvuser selectByThirdInfo(Byte thirdType , String thirdId);
+   
+   /**
     * 判断根据登录名指定的用户是否存在
     * @param loginname
     * @return
@@ -69,12 +77,18 @@ public interface LvuserService {
    
    
    /**
-    * 用户注册
+    * 平台用户注册
     * @param user
     * @return
     */
    public ServiceResult<Long> regist(Lvuser user) ;
    
+   /**
+    * 第三方用户注册
+    * @param user
+    * @return
+    */
+   public ServiceResult<Long> regist4Third(Lvuser user) ;
    
    /**
     * 平台用户登录
@@ -83,6 +97,14 @@ public interface LvuserService {
     * @return 登录成功返回token
     */
    public ServiceResult<String> login4Platform(String userKey , String secret);
+   
+   /**
+    * 第三方用户登录
+    * @param from
+    * @param openid
+    * @return
+    */
+   public ServiceResult<String> login4Third(Byte from , String openid) ;
    
    /**
     * 根据token获取已登录用户的信息

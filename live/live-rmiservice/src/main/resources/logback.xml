@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 	
-  <property file="src/main/resources/app-env.properties" />
+  <property name="log.level"  value="INFO" />
+  <property name="log.dir"  value="D:/live_logs/rmiservice" />
 
   <!-- 控制台打印 -->
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">   
        <level>${log.level}</level>   
-       <onMatch>ACCEPT</onMatch>   
-       <onMismatch>DENY</onMismatch>
     </filter>  
     <encoder>
-      <pattern>%d{HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+      <pattern>%d{HH:mm:ss} %-5level %logger[%line] - %msg%n</pattern>
     </encoder>
   </appender>
   
@@ -19,12 +18,10 @@
   <appender name="liveRmiAll" class="ch.qos.logback.core.rolling.RollingFileAppender">
   		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">   
 	       <level>${log.level}</level>   
-	       <onMatch>ACCEPT</onMatch>   
-	       <onMismatch>DENY</onMismatch>
 	    </filter>
         <file>${log.dir}/live-rmiservice.log</file>
 		<encoder>
-		       <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+		       <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger[%line] - %msg%n</pattern>
 		</encoder>
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
               <FileNamePattern>${log.dir}/back/live-rmiservice.%d{yyyy-MM-dd}.log</FileNamePattern>
@@ -36,12 +33,10 @@
    <appender name="liveRmiError" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		 <filter class="ch.qos.logback.classic.filter.ThresholdFilter">   
 	       <level>ERROR</level>   
-	       <onMatch>ACCEPT</onMatch>   
-	       <onMismatch>DENY</onMismatch>
 	    </filter>  
         <file>${log.dir}/live-rmiservice-error.log</file>
 		<encoder>
-		       <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger - %msg%n</pattern>
+		       <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger[%line] - %msg%n</pattern>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
              <FileNamePattern>${log.dir}/back/live-rmiservice-error.%d{yyyy-MM-dd}.log</FileNamePattern>

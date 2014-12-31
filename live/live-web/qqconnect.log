@@ -1,0 +1,94 @@
+0    DEBUG [2015-01-01 03:01:34]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+7    DEBUG [2015-01-01 03:01:34]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+77   DEBUG [2015-01-01 03:01:35]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+98   DEBUG [2015-01-01 03:01:35]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
+101  DEBUG [2015-01-01 03:01:35]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
+19039 DEBUG [2015-01-01 03:01:53]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052389072 != file lastModified=1420052512494
+19088 DEBUG [2015-01-01 03:01:54]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+19097 DEBUG [2015-01-01 03:01:54]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+38340 DEBUG [2015-01-01 03:02:13]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+38357 DEBUG [2015-01-01 03:02:13]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+152719 DEBUG [2015-01-01 03:04:07]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052512494 != file lastModified=1420052644112
+152720 DEBUG [2015-01-01 03:04:07]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+152729 DEBUG [2015-01-01 03:04:07]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+181579 DEBUG [2015-01-01 03:04:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+181579 DEBUG [2015-01-01 03:04:36]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+181944 DEBUG [2015-01-01 03:04:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+181944 DEBUG [2015-01-01 03:04:36]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+242781 DEBUG [2015-01-01 03:05:37]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052644112 != file lastModified=1420052734033
+242781 DEBUG [2015-01-01 03:05:37]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+242798 DEBUG [2015-01-01 03:05:37]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+285309 DEBUG [2015-01-01 03:06:20]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
+285310 DEBUG [2015-01-01 03:06:20]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+285314 DEBUG [2015-01-01 03:06:20]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+323856 DEBUG [2015-01-01 03:06:58]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1419958388707 != file lastModified=1420052817626
+323875 DEBUG [2015-01-01 03:06:58]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+339624 DEBUG [2015-01-01 03:07:14]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052817626 != file lastModified=1420052833422
+339624 DEBUG [2015-01-01 03:07:14]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+0    DEBUG [2015-01-01 04:11:24]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
+4    DEBUG [2015-01-01 04:11:24]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+59   DEBUG [2015-01-01 04:11:24]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+2233 DEBUG [2015-01-01 04:11:26]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+2626 DEBUG [2015-01-01 04:11:27]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+2885 DEBUG [2015-01-01 04:11:27]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+96250 DEBUG [2015-01-01 04:13:00]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+96251 DEBUG [2015-01-01 04:13:00]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+96256 DEBUG [2015-01-01 04:13:00]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+96257 DEBUG [2015-01-01 04:13:00]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
+96258 DEBUG [2015-01-01 04:13:00]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
+0    DEBUG [2015-01-01 04:20:05]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+3    DEBUG [2015-01-01 04:20:05]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+66   DEBUG [2015-01-01 04:20:05]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+81   DEBUG [2015-01-01 04:20:05]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
+83   DEBUG [2015-01-01 04:20:05]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
+3380 DEBUG [2015-01-01 04:20:08]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+3386 DEBUG [2015-01-01 04:20:08]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+8727 DEBUG [2015-01-01 04:20:14]  Could not find template in cache, creating new one; id=["user/registView.ftl"["zh_CN",UTF-8,parsed] ]
+8731 DEBUG [2015-01-01 04:20:14]  Compiling FreeMarker template "user/registView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\registView.ftl"
+8741 DEBUG [2015-01-01 04:20:14]  "user/registView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\registView.ftl didn't change.
+13554 DEBUG [2015-01-01 04:20:19]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
+13555 DEBUG [2015-01-01 04:20:19]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+13566 DEBUG [2015-01-01 04:20:19]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+1    DEBUG [2015-01-01 04:27:32]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+4    DEBUG [2015-01-01 04:27:32]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+54   DEBUG [2015-01-01 04:27:32]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+65   DEBUG [2015-01-01 04:27:32]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
+66   DEBUG [2015-01-01 04:27:32]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
+55641 DEBUG [2015-01-01 04:28:28]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+55644 DEBUG [2015-01-01 04:28:28]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+62080 DEBUG [2015-01-01 04:28:34]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+62082 DEBUG [2015-01-01 04:28:34]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+62918 DEBUG [2015-01-01 04:28:35]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+62918 DEBUG [2015-01-01 04:28:35]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+63361 DEBUG [2015-01-01 04:28:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+63361 DEBUG [2015-01-01 04:28:36]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+0    DEBUG [2015-01-01 04:33:57]  Could not find template in cache, creating new one; id=["user/registView.ftl"["zh_CN",UTF-8,parsed] ]
+4    DEBUG [2015-01-01 04:33:57]  Compiling FreeMarker template "user/registView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\registView.ftl"
+53   DEBUG [2015-01-01 04:33:57]  "user/registView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\registView.ftl didn't change.
+5539 DEBUG [2015-01-01 04:34:02]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
+5539 DEBUG [2015-01-01 04:34:02]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+5561 DEBUG [2015-01-01 04:34:02]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+38338 DEBUG [2015-01-01 04:34:35]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+38339 DEBUG [2015-01-01 04:34:35]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+38348 DEBUG [2015-01-01 04:34:35]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+38349 DEBUG [2015-01-01 04:34:35]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
+38350 DEBUG [2015-01-01 04:34:35]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
+41261 DEBUG [2015-01-01 04:34:38]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+41264 DEBUG [2015-01-01 04:34:38]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+42065 DEBUG [2015-01-01 04:34:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+42067 DEBUG [2015-01-01 04:34:39]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+42673 DEBUG [2015-01-01 04:34:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+42675 DEBUG [2015-01-01 04:34:39]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+43040 DEBUG [2015-01-01 04:34:40]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+43042 DEBUG [2015-01-01 04:34:40]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+75060 DEBUG [2015-01-01 04:35:12]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+75062 DEBUG [2015-01-01 04:35:12]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+75743 DEBUG [2015-01-01 04:35:12]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+75744 DEBUG [2015-01-01 04:35:12]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+76106 DEBUG [2015-01-01 04:35:13]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+76108 DEBUG [2015-01-01 04:35:13]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+77941 DEBUG [2015-01-01 04:35:15]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+77943 DEBUG [2015-01-01 04:35:15]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+80415 DEBUG [2015-01-01 04:35:17]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+118281 DEBUG [2015-01-01 04:35:55]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+118283 DEBUG [2015-01-01 04:35:55]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.

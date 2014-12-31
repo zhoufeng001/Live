@@ -82,6 +82,7 @@ public class UserController {
 			}
 		}
 	}
+	
 
 	@RequestMapping("/registView")
 	public String registView(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap){
@@ -89,7 +90,7 @@ public class UserController {
 	}
 
 	/**
-	 * 执行注册操作
+	 * 执行平台用户注册操作
 	 * @param userkey
 	 * @param secret
 	 * @param request
@@ -119,7 +120,6 @@ public class UserController {
 			return LiveWebUtil.redirectLoginPath() ;
 		}
 	}
-
 
 	/**
 	 * 执行用户退出操作

@@ -15,6 +15,8 @@
 <br/><br/>
 <input type="submit" value="登录" />
 &nbsp;&nbsp;<a href="${ctx}/user/registView.htm">注册</a>
+<br/><br/>
+<a href="${ctx}/qq/gotoLogin.htm" ><img src="${static_server}/img/Connect_logo_3.png"  /></a>
 </form>  
 
 <br/>  
