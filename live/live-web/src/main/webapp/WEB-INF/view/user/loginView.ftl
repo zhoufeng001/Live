@@ -17,6 +17,8 @@
 &nbsp;&nbsp;<a href="${ctx}/user/registView.htm">注册</a>
 <br/><br/>
 <a href="${ctx}/qq/gotoLogin.htm" ><img src="${static_server}/img/Connect_logo_3.png"  /></a>
+&nbsp;&nbsp;
+<a href="${ctx}/sina/gotoLogin.htm">新浪微博登录</a>
 </form>  
 
 <br/>  

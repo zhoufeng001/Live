@@ -2,6 +2,7 @@ package com.zf.live.client.user;
 
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.dao.pojo.Lvuser;
+import com.zf.live.dao.pojo.Thirduser;
 
 /**
  * 对User基本操作
@@ -47,11 +48,11 @@ public interface LvuserService {
    
    /**
     * 根据第三方平台信息查询出用户
-    * @param thirdType {@link Lvuser.userfrom} 常量定义在{@link Const.UserConst} 
-    * @param thirdId   {@linkplain Lvuser.oauthid}}
+    * @param thirdType {@link Thirduser.userfrom} 常量定义在{@link Const.UserConst} 
+    * @param openId   {@linkplain Thirduser.openId}}
     * @return
     */
-   public Lvuser selectByThirdInfo(Byte thirdType , String thirdId);
+   public Lvuser selectByThirdInfo(Byte thirdType , String openId);
    
    /**
     * 判断根据登录名指定的用户是否存在
@@ -86,9 +87,10 @@ public interface LvuserService {
    /**
     * 第三方用户注册
     * @param user
+    * @param thirduser
     * @return
     */
-   public ServiceResult<Long> regist4Third(Lvuser user) ;
+   public ServiceResult<Long> regist4Third(Lvuser user, Thirduser thirduser) ;
    
    /**
     * 平台用户登录

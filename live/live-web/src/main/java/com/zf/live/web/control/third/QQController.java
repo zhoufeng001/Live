@@ -23,14 +23,20 @@ import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.common.Const;
 import com.zf.live.dao.pojo.Lvuser;
+import com.zf.live.dao.pojo.Thirduser;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
 
+/**
+ * QQ登录
+ * @author is_zhoufeng@163.com , QQ:243970446
+ * 2015年1月1日 下午10:05:43
+ */
 @Controller
 @RequestMapping("/qq/*")
-public class QQControl {
+public class QQController {
 
-	static final Logger log = org.slf4j.LoggerFactory.getLogger(QQControl.class);
+	static final Logger log = org.slf4j.LoggerFactory.getLogger(QQController.class);
 	
 	@Autowired
 	private LvuserService lvuserService ;
@@ -100,12 +106,15 @@ public class QQControl {
 					if(lvuser == null){
 						//注册
 						lvuser = new Lvuser() ;
-						lvuser.setUserfrom(Const.UserConst.USER_FROM_QQ); 
-						lvuser.setOauthid(openID);
 						lvuser.setNick(userNick);
 						lvuser.setPhoto(photo); 
 						lvuser.setIdxcode(defaultIdxcodeGenerator.generate());
-						ServiceResult<Long> registResult = lvuserService.regist4Third(lvuser) ;
+						
+						Thirduser thirduser = new Thirduser() ;
+						thirduser.setOpenid(openID);
+						thirduser.setUserfrom(Const.UserConst.USER_FROM_QQ);
+						
+						ServiceResult<Long> registResult = lvuserService.regist4Third(lvuser , thirduser) ;
 						if(registResult.isSuccess()){
 							//登录
 							ServiceResult<String> loginResult = lvuserService.login4Third(Const.UserConst.USER_FROM_QQ, openID) ;

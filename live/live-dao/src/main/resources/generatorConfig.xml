@@ -54,6 +54,7 @@
 		<table schema="lvuserinfo" tableName="lvuserinfo">
 			<property name="useActualColumnNames" value="true" />
 <!-- 			<property name="generateExt" value="true" /> -->
+<!-- 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>  -->
 		</table>
 
 

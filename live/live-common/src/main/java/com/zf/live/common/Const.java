@@ -6,6 +6,17 @@ package com.zf.live.common;
  * 2014年12月18日 下午3:18:55
  */
 public interface Const {
+	
+	/**
+	 * 有效的
+	 */
+	 static Byte USEFUL = 1 ;
+	 
+	 /**
+	  * 无效的
+	  */
+	 static Byte UN_USEFAL = 0;
+	 
 
 	/**
 	 * 用户常量
@@ -41,6 +52,12 @@ public interface Const {
 		
 		
 		/**
+		 * SINA注册用户
+		 */
+		Byte USER_FROM_SINA = 3 ;
+		
+		
+		/**
 		 * 用户状态【启用】
 		 */
 		Byte USER_STATUS_ENABLE = 1 ;
@@ -50,6 +67,16 @@ public interface Const {
 		 */
 		Byte USER_STATUS_DISABLE = 2;
 		
+		
+		/**
+		 * 是第三方用户
+		 */
+		Byte THIRD_TRUE = 1;
+		
+		/**
+		 * 不是第三方用户
+		 */
+		Byte THIRD_FALSE = 0;
 		
 		/**
 		 * 用户标位

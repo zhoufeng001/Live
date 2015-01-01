@@ -1,94 +1,163 @@
-0    DEBUG [2015-01-01 03:01:34]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-7    DEBUG [2015-01-01 03:01:34]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-77   DEBUG [2015-01-01 03:01:35]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-98   DEBUG [2015-01-01 03:01:35]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
-101  DEBUG [2015-01-01 03:01:35]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
-19039 DEBUG [2015-01-01 03:01:53]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052389072 != file lastModified=1420052512494
-19088 DEBUG [2015-01-01 03:01:54]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-19097 DEBUG [2015-01-01 03:01:54]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-38340 DEBUG [2015-01-01 03:02:13]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-38357 DEBUG [2015-01-01 03:02:13]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-152719 DEBUG [2015-01-01 03:04:07]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052512494 != file lastModified=1420052644112
-152720 DEBUG [2015-01-01 03:04:07]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-152729 DEBUG [2015-01-01 03:04:07]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-181579 DEBUG [2015-01-01 03:04:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-181579 DEBUG [2015-01-01 03:04:36]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-181944 DEBUG [2015-01-01 03:04:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-181944 DEBUG [2015-01-01 03:04:36]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-242781 DEBUG [2015-01-01 03:05:37]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052644112 != file lastModified=1420052734033
-242781 DEBUG [2015-01-01 03:05:37]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-242798 DEBUG [2015-01-01 03:05:37]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-285309 DEBUG [2015-01-01 03:06:20]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-285310 DEBUG [2015-01-01 03:06:20]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-285314 DEBUG [2015-01-01 03:06:20]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-323856 DEBUG [2015-01-01 03:06:58]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1419958388707 != file lastModified=1420052817626
-323875 DEBUG [2015-01-01 03:06:58]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-339624 DEBUG [2015-01-01 03:07:14]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1420052817626 != file lastModified=1420052833422
-339624 DEBUG [2015-01-01 03:07:14]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-0    DEBUG [2015-01-01 04:11:24]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-4    DEBUG [2015-01-01 04:11:24]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-59   DEBUG [2015-01-01 04:11:24]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-2233 DEBUG [2015-01-01 04:11:26]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-2626 DEBUG [2015-01-01 04:11:27]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-2885 DEBUG [2015-01-01 04:11:27]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-96250 DEBUG [2015-01-01 04:13:00]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-96251 DEBUG [2015-01-01 04:13:00]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-96256 DEBUG [2015-01-01 04:13:00]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-96257 DEBUG [2015-01-01 04:13:00]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
-96258 DEBUG [2015-01-01 04:13:00]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
-0    DEBUG [2015-01-01 04:20:05]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-3    DEBUG [2015-01-01 04:20:05]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-66   DEBUG [2015-01-01 04:20:05]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-81   DEBUG [2015-01-01 04:20:05]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
-83   DEBUG [2015-01-01 04:20:05]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
-3380 DEBUG [2015-01-01 04:20:08]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-3386 DEBUG [2015-01-01 04:20:08]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-8727 DEBUG [2015-01-01 04:20:14]  Could not find template in cache, creating new one; id=["user/registView.ftl"["zh_CN",UTF-8,parsed] ]
-8731 DEBUG [2015-01-01 04:20:14]  Compiling FreeMarker template "user/registView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\registView.ftl"
-8741 DEBUG [2015-01-01 04:20:14]  "user/registView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\registView.ftl didn't change.
-13554 DEBUG [2015-01-01 04:20:19]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-13555 DEBUG [2015-01-01 04:20:19]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-13566 DEBUG [2015-01-01 04:20:19]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-1    DEBUG [2015-01-01 04:27:32]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-4    DEBUG [2015-01-01 04:27:32]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-54   DEBUG [2015-01-01 04:27:32]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-65   DEBUG [2015-01-01 04:27:32]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
-66   DEBUG [2015-01-01 04:27:32]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
-55641 DEBUG [2015-01-01 04:28:28]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-55644 DEBUG [2015-01-01 04:28:28]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-62080 DEBUG [2015-01-01 04:28:34]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-62082 DEBUG [2015-01-01 04:28:34]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-62918 DEBUG [2015-01-01 04:28:35]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-62918 DEBUG [2015-01-01 04:28:35]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-63361 DEBUG [2015-01-01 04:28:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-63361 DEBUG [2015-01-01 04:28:36]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-0    DEBUG [2015-01-01 04:33:57]  Could not find template in cache, creating new one; id=["user/registView.ftl"["zh_CN",UTF-8,parsed] ]
-4    DEBUG [2015-01-01 04:33:57]  Compiling FreeMarker template "user/registView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\registView.ftl"
-53   DEBUG [2015-01-01 04:33:57]  "user/registView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\registView.ftl didn't change.
-5539 DEBUG [2015-01-01 04:34:02]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-5539 DEBUG [2015-01-01 04:34:02]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-5561 DEBUG [2015-01-01 04:34:02]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-38338 DEBUG [2015-01-01 04:34:35]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-38339 DEBUG [2015-01-01 04:34:35]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-38348 DEBUG [2015-01-01 04:34:35]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-38349 DEBUG [2015-01-01 04:34:35]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
-38350 DEBUG [2015-01-01 04:34:35]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
-41261 DEBUG [2015-01-01 04:34:38]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-41264 DEBUG [2015-01-01 04:34:38]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-42065 DEBUG [2015-01-01 04:34:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-42067 DEBUG [2015-01-01 04:34:39]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-42673 DEBUG [2015-01-01 04:34:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-42675 DEBUG [2015-01-01 04:34:39]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-43040 DEBUG [2015-01-01 04:34:40]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-43042 DEBUG [2015-01-01 04:34:40]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-75060 DEBUG [2015-01-01 04:35:12]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-75062 DEBUG [2015-01-01 04:35:12]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-75743 DEBUG [2015-01-01 04:35:12]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-75744 DEBUG [2015-01-01 04:35:12]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-76106 DEBUG [2015-01-01 04:35:13]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-76108 DEBUG [2015-01-01 04:35:13]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-77941 DEBUG [2015-01-01 04:35:15]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-77943 DEBUG [2015-01-01 04:35:15]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
-80415 DEBUG [2015-01-01 04:35:17]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-118281 DEBUG [2015-01-01 04:35:55]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-118283 DEBUG [2015-01-01 04:35:55]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+227745 DEBUG [2015-01-01 20:58:45]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+227748 DEBUG [2015-01-01 20:58:45]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+270942 DEBUG [2015-01-01 20:59:28]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+272713 DEBUG [2015-01-01 20:59:30]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+272888 DEBUG [2015-01-01 20:59:30]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+273037 DEBUG [2015-01-01 20:59:30]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+282670 DEBUG [2015-01-01 20:59:40]  Request:
+282670 DEBUG [2015-01-01 20:59:40]  POSThttps://api.weibo.com/oauth2/access_token
+283464 DEBUG [2015-01-01 20:59:40]  Response:
+283464 DEBUG [2015-01-01 20:59:40]  https StatusCode:200
+283464 DEBUG [2015-01-01 20:59:40]  Server:nginx/1.6.1
+283464 DEBUG [2015-01-01 20:59:40]  Date:Thu, 01 Jan 2015 12:58:25 GMT
+283467 DEBUG [2015-01-01 20:59:40]  Content-Type:text/plain;charset=UTF-8
+283467 DEBUG [2015-01-01 20:59:40]  Content-Length:117
+283467 DEBUG [2015-01-01 20:59:40]  Connection:keep-alive
+283467 DEBUG [2015-01-01 20:59:40]  Pragma:No-cache
+283467 DEBUG [2015-01-01 20:59:40]  Cache-Control:no-cache
+283467 DEBUG [2015-01-01 20:59:40]  Expires:Thu, 01 Jan 1970 00:00:00 GMT
+283467 DEBUG [2015-01-01 20:59:40]  Api-Server-IP:10.75.2.83
+283469 DEBUG [2015-01-01 20:59:40]  {"access_token":"2.00d1QuTDDeu9QE8cd26f1739xqJ9RD","remind_in":"157679999","expires_in":157679999,"uid":"3190321391"}
+
+283469 DEBUG [2015-01-01 20:59:40]  Request:
+283469 DEBUG [2015-01-01 20:59:40]  GET:https://api.weibo.com/2/users/show.json
+283472 DEBUG [2015-01-01 20:59:40]  Authorization: OAuth2 2.00d1QuTDDeu9QE8cd26f1739xqJ9RD
+283472 DEBUG [2015-01-01 20:59:40]  API-RemoteIP: 192.168.56.1
+284407 DEBUG [2015-01-01 20:59:41]  Response:
+284407 DEBUG [2015-01-01 20:59:41]  https StatusCode:200
+284407 DEBUG [2015-01-01 20:59:41]  Server:nginx/1.2.0
+284407 DEBUG [2015-01-01 20:59:41]  Date:Thu, 01 Jan 2015 12:58:26 GMT
+284409 DEBUG [2015-01-01 20:59:41]  Content-Type:application/json;charset=UTF-8
+284409 DEBUG [2015-01-01 20:59:41]  Transfer-Encoding:chunked
+284409 DEBUG [2015-01-01 20:59:41]  Connection:keep-alive
+284412 DEBUG [2015-01-01 20:59:41]  Api-Server-IP:10.75.5.90
+284412 DEBUG [2015-01-01 20:59:41]  Vary:Accept-Encoding
+284414 DEBUG [2015-01-01 20:59:41]  {"id":3190321391,"idstr":"3190321391","class":1,"screen_name":"is_zhoufeng","name":"is_zhoufeng","province":"44","city":"3","location":"广东 深圳","description":"","url":"","profile_image_url":"http://tp4.sinaimg.cn/3190321391/50/0/1","profile_url":"u/3190321391","domain":"","weihao":"","gender":"m","followers_count":24,"friends_count":32,"pagefriends_count":0,"statuses_count":6,"favourites_count":0,"created_at":"Sat Dec 15 10:26:58 +0800 2012","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"remark":"","status":{"created_at":"Mon Sep 23 18:25:45 +0800 2013","id":3625759732567465,"mid":"3625759732567465","idstr":"3625759732567465","text":"API测试","source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/6paXUX\" rel=\"nofollow\">未通过审核应用</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","pic_urls":[],"geo":null,"reposts_count":0,"comments_count":0,"attitudes_count":0,"mlevel":0,"visible":{"type":0,"list_id":0},"darwin_tags":[]},"ptype":0,"allow_all_comment":true,"avatar_large":"http://tp4.sinaimg.cn/3190321391/180/0/1","avatar_hd":"http://tp4.sinaimg.cn/3190321391/180/0/1","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":false,"online_status":0,"bi_followers_count":4,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"urank":1}
+
+0    DEBUG [2015-01-01 21:04:01]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
+12   DEBUG [2015-01-01 21:04:01]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+127  DEBUG [2015-01-01 21:04:01]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+185  DEBUG [2015-01-01 21:04:01]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+277  DEBUG [2015-01-01 21:04:01]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+15716 DEBUG [2015-01-01 21:04:17]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+15894 DEBUG [2015-01-01 21:04:17]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+23835 DEBUG [2015-01-01 21:04:25]  Request:
+23835 DEBUG [2015-01-01 21:04:25]  POSThttps://api.weibo.com/oauth2/access_token
+26791 DEBUG [2015-01-01 21:04:28]  Response:
+26794 DEBUG [2015-01-01 21:04:28]  https StatusCode:200
+26796 DEBUG [2015-01-01 21:04:28]  Server:nginx/1.2.0
+26799 DEBUG [2015-01-01 21:04:28]  Date:Thu, 01 Jan 2015 13:03:13 GMT
+26799 DEBUG [2015-01-01 21:04:28]  Content-Type:text/plain;charset=UTF-8
+26801 DEBUG [2015-01-01 21:04:28]  Content-Length:117
+26804 DEBUG [2015-01-01 21:04:28]  Connection:keep-alive
+26806 DEBUG [2015-01-01 21:04:28]  Pragma:No-cache
+26806 DEBUG [2015-01-01 21:04:28]  Cache-Control:no-cache
+26809 DEBUG [2015-01-01 21:04:28]  Expires:Thu, 01 Jan 1970 00:00:00 GMT
+26811 DEBUG [2015-01-01 21:04:28]  Api-Server-IP:10.75.25.86
+26816 DEBUG [2015-01-01 21:04:28]  {"access_token":"2.00d1QuTDDeu9QE8cd26f1739xqJ9RD","remind_in":"157679999","expires_in":157679999,"uid":"3190321391"}
+
+26831 DEBUG [2015-01-01 21:04:28]  Request:
+26834 DEBUG [2015-01-01 21:04:28]  GET:https://api.weibo.com/2/users/show.json
+26836 DEBUG [2015-01-01 21:04:28]  Authorization: OAuth2 2.00d1QuTDDeu9QE8cd26f1739xqJ9RD
+26836 DEBUG [2015-01-01 21:04:28]  API-RemoteIP: 192.168.56.1
+27271 DEBUG [2015-01-01 21:04:28]  Response:
+27271 DEBUG [2015-01-01 21:04:28]  https StatusCode:200
+27274 DEBUG [2015-01-01 21:04:28]  Server:nginx/1.2.0
+27276 DEBUG [2015-01-01 21:04:28]  Date:Thu, 01 Jan 2015 13:03:13 GMT
+27276 DEBUG [2015-01-01 21:04:28]  Content-Type:application/json;charset=UTF-8
+27279 DEBUG [2015-01-01 21:04:28]  Transfer-Encoding:chunked
+27279 DEBUG [2015-01-01 21:04:28]  Connection:keep-alive
+27281 DEBUG [2015-01-01 21:04:28]  Api-Server-IP:10.75.5.97
+27284 DEBUG [2015-01-01 21:04:28]  Vary:Accept-Encoding
+27289 DEBUG [2015-01-01 21:04:28]  {"id":3190321391,"idstr":"3190321391","class":1,"screen_name":"is_zhoufeng","name":"is_zhoufeng","province":"44","city":"3","location":"广东 深圳","description":"","url":"","profile_image_url":"http://tp4.sinaimg.cn/3190321391/50/0/1","profile_url":"u/3190321391","domain":"","weihao":"","gender":"m","followers_count":24,"friends_count":32,"pagefriends_count":0,"statuses_count":6,"favourites_count":0,"created_at":"Sat Dec 15 10:26:58 +0800 2012","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"remark":"","status":{"created_at":"Mon Sep 23 18:25:45 +0800 2013","id":3625759732567465,"mid":"3625759732567465","idstr":"3625759732567465","text":"API测试","source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/6paXUX\" rel=\"nofollow\">未通过审核应用</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","pic_urls":[],"geo":null,"reposts_count":0,"comments_count":0,"attitudes_count":0,"mlevel":0,"visible":{"type":0,"list_id":0},"darwin_tags":[]},"ptype":0,"allow_all_comment":true,"avatar_large":"http://tp4.sinaimg.cn/3190321391/180/0/1","avatar_hd":"http://tp4.sinaimg.cn/3190321391/180/0/1","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":false,"online_status":0,"bi_followers_count":4,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"urank":1}
+
+94977 DEBUG [2015-01-01 21:05:36]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+94980 DEBUG [2015-01-01 21:05:36]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+95000 DEBUG [2015-01-01 21:05:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+95000 DEBUG [2015-01-01 21:05:36]  Could not find template in cache, creating new one; id=["common/index/head.ftl"["zh_CN",UTF-8,parsed] ]
+95002 DEBUG [2015-01-01 21:05:36]  Compiling FreeMarker template "common/index/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\index\\head.ftl"
+97912 DEBUG [2015-01-01 21:05:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+97917 DEBUG [2015-01-01 21:05:39]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+98465 DEBUG [2015-01-01 21:05:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+98468 DEBUG [2015-01-01 21:05:39]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+98728 DEBUG [2015-01-01 21:05:40]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+98733 DEBUG [2015-01-01 21:05:40]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+98948 DEBUG [2015-01-01 21:05:40]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+98951 DEBUG [2015-01-01 21:05:40]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+99137 DEBUG [2015-01-01 21:05:40]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+99137 DEBUG [2015-01-01 21:05:40]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+99382 DEBUG [2015-01-01 21:05:40]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+99384 DEBUG [2015-01-01 21:05:40]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+211717 DEBUG [2015-01-01 21:07:33]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+211722 DEBUG [2015-01-01 21:07:33]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+213633 DEBUG [2015-01-01 21:07:35]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+222820 DEBUG [2015-01-01 21:07:44]  Request:
+222820 DEBUG [2015-01-01 21:07:44]  POSThttps://api.weibo.com/oauth2/access_token
+223073 DEBUG [2015-01-01 21:07:44]  Response:
+223073 DEBUG [2015-01-01 21:07:44]  https StatusCode:200
+223073 DEBUG [2015-01-01 21:07:44]  Server:nginx/1.6.1
+223076 DEBUG [2015-01-01 21:07:44]  Date:Thu, 01 Jan 2015 13:06:29 GMT
+223076 DEBUG [2015-01-01 21:07:44]  Content-Type:text/plain;charset=UTF-8
+223076 DEBUG [2015-01-01 21:07:44]  Content-Length:117
+223076 DEBUG [2015-01-01 21:07:44]  Connection:keep-alive
+223078 DEBUG [2015-01-01 21:07:44]  Pragma:No-cache
+223078 DEBUG [2015-01-01 21:07:44]  Cache-Control:no-cache
+223078 DEBUG [2015-01-01 21:07:44]  Expires:Thu, 01 Jan 1970 00:00:00 GMT
+223078 DEBUG [2015-01-01 21:07:44]  Api-Server-IP:10.73.89.46
+223081 DEBUG [2015-01-01 21:07:44]  {"access_token":"2.00d1QuTDDeu9QE8cd26f1739xqJ9RD","remind_in":"157679999","expires_in":157679999,"uid":"3190321391"}
+
+223081 DEBUG [2015-01-01 21:07:44]  Request:
+223081 DEBUG [2015-01-01 21:07:44]  GET:https://api.weibo.com/2/users/show.json
+223083 DEBUG [2015-01-01 21:07:44]  Authorization: OAuth2 2.00d1QuTDDeu9QE8cd26f1739xqJ9RD
+223083 DEBUG [2015-01-01 21:07:44]  API-RemoteIP: 192.168.56.1
+223336 DEBUG [2015-01-01 21:07:44]  Response:
+223336 DEBUG [2015-01-01 21:07:44]  https StatusCode:200
+223336 DEBUG [2015-01-01 21:07:44]  Server:nginx/1.2.0
+223338 DEBUG [2015-01-01 21:07:44]  Date:Thu, 01 Jan 2015 13:06:29 GMT
+223338 DEBUG [2015-01-01 21:07:44]  Content-Type:application/json;charset=UTF-8
+223338 DEBUG [2015-01-01 21:07:44]  Transfer-Encoding:chunked
+223338 DEBUG [2015-01-01 21:07:44]  Connection:keep-alive
+223338 DEBUG [2015-01-01 21:07:44]  Api-Server-IP:10.75.5.100
+223338 DEBUG [2015-01-01 21:07:44]  Vary:Accept-Encoding
+223343 DEBUG [2015-01-01 21:07:44]  {"id":3190321391,"idstr":"3190321391","class":1,"screen_name":"is_zhoufeng","name":"is_zhoufeng","province":"44","city":"3","location":"广东 深圳","description":"","url":"","profile_image_url":"http://tp4.sinaimg.cn/3190321391/50/0/1","profile_url":"u/3190321391","domain":"","weihao":"","gender":"m","followers_count":24,"friends_count":32,"pagefriends_count":0,"statuses_count":6,"favourites_count":0,"created_at":"Sat Dec 15 10:26:58 +0800 2012","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"remark":"","status":{"created_at":"Mon Sep 23 18:25:45 +0800 2013","id":3625759732567465,"mid":"3625759732567465","idstr":"3625759732567465","text":"API测试","source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/6paXUX\" rel=\"nofollow\">未通过审核应用</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","pic_urls":[],"geo":null,"reposts_count":0,"comments_count":0,"attitudes_count":0,"mlevel":0,"visible":{"type":0,"list_id":0},"darwin_tags":[]},"ptype":0,"allow_all_comment":true,"avatar_large":"http://tp4.sinaimg.cn/3190321391/180/0/1","avatar_hd":"http://tp4.sinaimg.cn/3190321391/180/0/1","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":false,"online_status":0,"bi_followers_count":4,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"urank":1}
+
+227033 DEBUG [2015-01-01 21:07:48]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+227036 DEBUG [2015-01-01 21:07:48]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+247936 DEBUG [2015-01-01 21:08:09]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+247938 DEBUG [2015-01-01 21:08:09]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+252629 DEBUG [2015-01-01 21:08:14]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+262375 DEBUG [2015-01-01 21:08:23]  Request:
+262375 DEBUG [2015-01-01 21:08:23]  POSThttps://api.weibo.com/oauth2/access_token
+263082 DEBUG [2015-01-01 21:08:24]  Response:
+263102 DEBUG [2015-01-01 21:08:24]  https StatusCode:200
+263102 DEBUG [2015-01-01 21:08:24]  Server:nginx/1.2.0
+263102 DEBUG [2015-01-01 21:08:24]  Date:Thu, 01 Jan 2015 13:07:09 GMT
+263102 DEBUG [2015-01-01 21:08:24]  Content-Type:text/plain;charset=UTF-8
+263102 DEBUG [2015-01-01 21:08:24]  Content-Length:117
+263102 DEBUG [2015-01-01 21:08:24]  Connection:keep-alive
+263105 DEBUG [2015-01-01 21:08:24]  Pragma:No-cache
+263105 DEBUG [2015-01-01 21:08:24]  Cache-Control:no-cache
+263105 DEBUG [2015-01-01 21:08:24]  Expires:Thu, 01 Jan 1970 00:00:00 GMT
+263105 DEBUG [2015-01-01 21:08:24]  Api-Server-IP:10.75.25.115
+263105 DEBUG [2015-01-01 21:08:24]  {"access_token":"2.00d1QuTDDeu9QE8cd26f1739xqJ9RD","remind_in":"157679999","expires_in":157679999,"uid":"3190321391"}
+
+263107 DEBUG [2015-01-01 21:08:24]  Request:
+263107 DEBUG [2015-01-01 21:08:24]  GET:https://api.weibo.com/2/users/show.json
+263107 DEBUG [2015-01-01 21:08:24]  Authorization: OAuth2 2.00d1QuTDDeu9QE8cd26f1739xqJ9RD
+263107 DEBUG [2015-01-01 21:08:24]  API-RemoteIP: 192.168.56.1
+263727 DEBUG [2015-01-01 21:08:25]  Response:
+263730 DEBUG [2015-01-01 21:08:25]  https StatusCode:200
+263730 DEBUG [2015-01-01 21:08:25]  Server:nginx/1.2.0
+263730 DEBUG [2015-01-01 21:08:25]  Date:Thu, 01 Jan 2015 13:07:10 GMT
+263730 DEBUG [2015-01-01 21:08:25]  Content-Type:application/json;charset=UTF-8
+263730 DEBUG [2015-01-01 21:08:25]  Transfer-Encoding:chunked
+263732 DEBUG [2015-01-01 21:08:25]  Connection:keep-alive
+263732 DEBUG [2015-01-01 21:08:25]  Api-Server-IP:10.75.5.101
+263732 DEBUG [2015-01-01 21:08:25]  Vary:Accept-Encoding
+263737 DEBUG [2015-01-01 21:08:25]  {"id":3190321391,"idstr":"3190321391","class":1,"screen_name":"is_zhoufeng","name":"is_zhoufeng","province":"44","city":"3","location":"广东 深圳","description":"","url":"","profile_image_url":"http://tp4.sinaimg.cn/3190321391/50/0/1","profile_url":"u/3190321391","domain":"","weihao":"","gender":"m","followers_count":24,"friends_count":32,"pagefriends_count":0,"statuses_count":6,"favourites_count":0,"created_at":"Sat Dec 15 10:26:58 +0800 2012","following":false,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":-1,"remark":"","status":{"created_at":"Mon Sep 23 18:25:45 +0800 2013","id":3625759732567465,"mid":"3625759732567465","idstr":"3625759732567465","text":"API测试","source_type":1,"source":"<a href=\"http://app.weibo.com/t/feed/6paXUX\" rel=\"nofollow\">未通过审核应用</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","pic_urls":[],"geo":null,"reposts_count":0,"comments_count":0,"attitudes_count":0,"mlevel":0,"visible":{"type":0,"list_id":0},"darwin_tags":[]},"ptype":0,"allow_all_comment":true,"avatar_large":"http://tp4.sinaimg.cn/3190321391/180/0/1","avatar_hd":"http://tp4.sinaimg.cn/3190321391/180/0/1","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":false,"online_status":0,"bi_followers_count":4,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"urank":1}
+
+266740 DEBUG [2015-01-01 21:08:28]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+266747 DEBUG [2015-01-01 21:08:28]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+281507 DEBUG [2015-01-01 21:08:42]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+281512 DEBUG [2015-01-01 21:08:42]  "common/index/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\index\head.ftl didn't change.
+283755 DEBUG [2015-01-01 21:08:45]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.

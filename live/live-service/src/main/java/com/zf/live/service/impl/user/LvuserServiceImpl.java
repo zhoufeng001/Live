@@ -17,9 +17,12 @@ import com.zf.live.common.validate.LoginName;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.LvuserMapperExt;
 import com.zf.live.dao.mapper.LvuserinfoMapperExt;
+import com.zf.live.dao.mapper.ThirduserMapperExt;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.LvuserExample;
 import com.zf.live.dao.pojo.Lvuserinfo;
+import com.zf.live.dao.pojo.Thirduser;
+import com.zf.live.dao.pojo.ThirduserExample;
 import com.zf.live.dao.vo.Page;
 import com.zf.live.service.impl.cache.user.UserCacheService;
 import com.zf.live.service.impl.util.TokenFactory;
@@ -42,6 +45,9 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Autowired
 	private LvuserinfoMapperExt lvuserinfoMapper ;
+
+	@Autowired
+	private ThirduserMapperExt thirdUserMapper ;
 
 	@Override
 	public Lvuser selectByIdWithCache(@Notnull Long id) {
@@ -137,9 +143,9 @@ public class LvuserServiceImpl implements LvuserService{
 		user.setCoin(0L);
 		user.setCreatetime(currentTime);
 		user.setFlag(0);
-		user.setUserfrom(Const.UserConst.USER_FROM_PLATEFORM);
 		user.setStatus(Const.UserConst.USER_STATUS_ENABLE);
 		user.setPraise(0L);
+		user.setThirduser(Const.UserConst.THIRD_FALSE); 
 		int inserResult =lvuserMapper.insertSelective(user) ;
 		if(inserResult > 0){
 			Lvuserinfo lvuserinfo = new Lvuserinfo() ;
@@ -164,13 +170,16 @@ public class LvuserServiceImpl implements LvuserService{
 
 	@Override
 	public ServiceResult<Long> regist4Third(
-			@Notnull("nick") @Notnull("idxcode") @Notnull("userfrom") @Notnull("oauthid")
-			Lvuser user) {
+			@Notnull("nick") @Notnull("idxcode")
+			Lvuser user , 
+			@Notnull("userfrom") @Notnull("openid")
+			Thirduser thirduser) {
 
 		user.setLoginname(null);
 		user.setPassword(null);
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
-		Lvuser existUser = selectByThirdInfo(user.getUserfrom() ,user.getOauthid() );
+
+		Lvuser existUser = selectByThirdInfo(thirduser.getUserfrom(),thirduser.getOpenid() );
 		if(existUser != null){
 			result.setErrMssage("该用户已注册！");
 			return result ;
@@ -181,7 +190,8 @@ public class LvuserServiceImpl implements LvuserService{
 		user.setCreatetime(currentTime);
 		user.setFlag(0);
 		user.setPraise(0L); 
-		
+		user.setThirduser(Const.UserConst.THIRD_TRUE); 
+
 		//打上未设置用户名和密码标
 		int userFlag = user.getFlag() ;
 		userFlag = FlagBitUtil.sign(userFlag, Const.UserConst.UserFlag.notSetLoginnameAndPasswordFlag) ;
@@ -189,25 +199,34 @@ public class LvuserServiceImpl implements LvuserService{
 
 		user.setStatus(Const.UserConst.USER_STATUS_ENABLE); 
 		int inserResult =lvuserMapper.insertSelective(user) ;
-		if(inserResult > 0){
-			Lvuserinfo lvuserinfo = new Lvuserinfo() ;
-			lvuserinfo.setId(user.getId());
-			lvuserinfo.setCreatetime(currentTime);
-			inserResult = lvuserinfoMapper.insert(lvuserinfo) ;
-			if(inserResult > 0){
-				result.setSuccess(true);
-				result.setData(user.getId());
-				return result ;
-			}else{
-				log.error("创建用户信息失败！");
-				throw new LiveException("创建用户详细信息失败！");
-			}
-		}else{
+		if(inserResult <= 0){
 			log.error("创建用户信息失败！");
 			result.setErrMssage("创建用户失败!");
+			return result ;
 		}
-		return result;
 
+		Lvuserinfo lvuserinfo = new Lvuserinfo() ;
+		lvuserinfo.setId(user.getId());
+		lvuserinfo.setCreatetime(currentTime);
+		inserResult = lvuserinfoMapper.insert(lvuserinfo) ;
+
+		if(inserResult <= 0){
+			log.error("创建用户信息失败！");
+			throw new LiveException("创建用户详细信息失败！");
+		}
+
+		thirduser.setCreatetime(new Date());
+		thirduser.setUserid(user.getId());
+		thirduser.setStatus(Const.USEFUL);
+		inserResult = thirdUserMapper.insertSelective(thirduser) ;
+		if(inserResult <= 0){
+			log.error("创建第三方用户信息失败！");
+			throw new LiveException("创建第三方用户信息失败！");
+		}
+
+		result.setSuccess(true);
+		result.setData(user.getId());
+		return result ;
 	}
 
 	@Override
@@ -250,7 +269,7 @@ public class LvuserServiceImpl implements LvuserService{
 		return result;
 	}
 
-	
+
 	@Override
 	public ServiceResult<String> login4Third(@Notnull Byte from, @Notnull String openid) {
 		ServiceResult<String> result = new ServiceResult<String>();
@@ -293,14 +312,15 @@ public class LvuserServiceImpl implements LvuserService{
 	}
 
 	@Override
-	public Lvuser selectByThirdInfo(@Notnull Byte thirdType,@Notnull String thirdId) {
-		LvuserExample query = new LvuserExample() ;
-		query.createCriteria().andUserfromEqualTo(thirdType).andOauthidEqualTo(thirdId);
+	public Lvuser selectByThirdInfo(@Notnull Byte thirdType , @Notnull String openId) {
+		ThirduserExample query = new ThirduserExample() ;
+		query.createCriteria().andUserfromEqualTo(thirdType).andOpenidEqualTo(openId).andStatusEqualTo(Const.USEFUL);
 		query.setPage(new Page(0, 1));
-		List<Lvuser> user = lvuserMapper.selectByExample(query);
-		if(user == null || user.size() <= 0){
+		List<Thirduser> thirdUserList = thirdUserMapper.selectByExample(query); 
+		if(thirdUserList == null || thirdUserList.size() <= 0){
 			return null ;
 		}
-		return user.get(0); 
+		Thirduser thirduser = thirdUserList.get(0);
+		return selectByIdWithCache(thirduser.getUserid());
 	}
 }

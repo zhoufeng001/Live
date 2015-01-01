@@ -23,4 +23,7 @@ public class DesTest {
 		String result = desSecure.decrypt(dec); 
 		System.out.println(result);
 	}
+	
+	
+	
 }
