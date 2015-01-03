@@ -15,6 +15,7 @@
 		<property name="locations">
 			<array>
 				<value>classpath:app-env.properties</value>
+				<value>classpath:youku.properties</value>
 			</array>
 		</property>
 	</bean>
