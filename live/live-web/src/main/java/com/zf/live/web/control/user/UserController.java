@@ -52,7 +52,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/loginView")
-	public String helloUser(ServletRequest request, ServletResponse response , ModelMap modelMap) {
+	public String loginView(ServletRequest request, ServletResponse response , ModelMap modelMap) {
 		String errMessage = RequestContext.getErrTipMessage() ;
 		log.error(errMessage); 
 		return "user/loginView";

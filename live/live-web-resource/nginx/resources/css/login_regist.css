@@ -1,0 +1,146 @@
+/* CSS Document */
+@CHARSET "UTF-8";
+.left_guanggao{
+	width:645px;
+	height:400px;
+	float:left; 
+}
+
+.left_guanggao img{
+	width:645px;
+	height:400px;
+}
+
+.right_login_box{
+	width:345px;
+	height:400px;
+	float:right;
+	border:#EEF4EC 2px solid ;
+}
+
+.welcome_box{
+	width:100% ;
+	height:130px;
+}
+
+.welcome_box img{
+	width:40%;
+	height:130px;
+	float:left;
+}
+
+.welcome_box .login_label{
+	font-weight:bold ;
+	width:58% ;
+	height:25px;
+	float:right;
+	margin-top:50px;
+	font-size:24px;
+	color:#CCC;
+	text-align:left ;
+}
+
+.welcome_box .regist_lable{
+	width:58% ;
+	height:25px;
+	float:right;
+	margin-top:20px;
+	font-size:15px;
+	color: #000;
+	text-align:left ;
+}
+
+.plateform_login_box{
+	width:100% ;
+	height:268px;	
+}
+
+.plateform_login_box .lable_ul{
+	font-weight:bold ;
+	float:left ;
+	text-align:right;
+	margin-top:20px;
+	height:250px ;
+	width:25% ;
+	list-style:none ;
+}
+
+.plateform_login_box .lable_ul li{
+	height:35px;
+}
+
+.plateform_login_box .input_ul{
+	float:right ;
+	text-align:left;
+	margin-top:15px;
+	height:250px ;
+	width:75% ;
+	list-style:none ;
+}
+
+.plateform_login_box .input_ul li{
+	height:35px;
+}
+
+.plateform_login_box .input_ul li .login_input{
+	width:80% ;
+	height:20px;
+}
+
+.plateform_login_box .input_ul li.rem_password{
+	height:25px;
+	line-height:25px;
+	vertical-align:middle ;
+}
+
+.plateform_login_box .input_ul li .login_but{
+	width:82%;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em; 
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top, #faa51a, #f47a20);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+
+.plateform_login_box .input_ul li .login_but:hover {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top, #f88e11, #f06015);
+	text-decoration: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+
+.plateform_login_box .input_ul li .login_but:active {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+.plateform_login_box .input_ul li.third_login{
+	margin-top:10px;
+	height:70px;
+}
+.plateform_login_box .input_ul li.third_login a img{
+	width:105px;
+	height:25px;
+	border:none ;
+}
