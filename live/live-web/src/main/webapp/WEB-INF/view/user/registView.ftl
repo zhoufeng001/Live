@@ -33,6 +33,7 @@
                 </span>
             </div>
         	<div class="plateform_login_box">
+        	<form method="post" action="${ctx}/user/doRegist.htm">
             	<ul class="lable_ul">
                 	<li>帐 号：</li>
                     <li>昵 称：</li>
@@ -41,25 +42,26 @@
                 </ul>
                 <ul class="input_ul">
                 	<li>
-                    	<input type="text" class="live_input login_input"/>
+                    	<input type="text" name="userkey"  class="live_input login_input"/>
                     </li>
                     <li>
-                    	<input type="text" class="live_input login_input"/>
+                    	<input type="text" name="nick" class="live_input login_input"/>
                     </li>
                     <li>
-                    	<input type="password" class="live_input login_input" />
+                    	<input type="password" name="secret"  class="live_input login_input" />
                     </li>
                     <li>
-                    	<input type="password" class="live_input login_input" />
+                    	<input type="password" name="confirm_secret"  class="live_input login_input" />
                     </li>
                     <li>
-                    	<input type="button"  class="login_but" value="注 册" />
+                    	<input type="submit"  class="login_but" value="注 册" />
                     </li> 
                     <li class="third_login">
-                    	<a href="http://www.baidu.com"><img src="${static_server}/img/qq_login_logo_big.png" /></a>
-                        <a href="http://www.baidu.com"><img src="${static_server}/img/sina_login_logo_big.png" /></a>
+                    	<a href="${ctx}/qq/gotoLogin.htm"><img src="${static_server}/img/qq_login_logo_big.png" /></a>
+                        <a href="${ctx}/sina/gotoLogin.htm"><img src="${static_server}/img/sina_login_logo_big.png" /></a>
                     </li>
                 </ul>
+              </form>
             </div> 
         </div>
         

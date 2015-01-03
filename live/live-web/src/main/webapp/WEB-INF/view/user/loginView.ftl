@@ -52,8 +52,8 @@
                 	<input type="submit"  class="login_but" value="登 录" />
                 </li> 
                 <li class="third_login">
-                	<a href="http://www.baidu.com"><img src="${static_server}/img/qq_login_logo_big.png" /></a>
-                    <a href="http://www.baidu.com"><img src="${static_server}/img/sina_login_logo_big.png" /></a>
+                	<a href="${ctx}/qq/gotoLogin.htm"><img src="${static_server}/img/qq_login_logo_big.png" /></a>
+                    <a href="${ctx}/sina/gotoLogin.htm"><img src="${static_server}/img/sina_login_logo_big.png" /></a>
                 </li>
              </ul>
             </form>

@@ -60,12 +60,10 @@ a:hover{
 }
 
 .index_menu_bar .logined{
-	width:170px;
 	height:40px ;
 }
 
 .index_menu_bar .unlogin{
-	width:250px;
 	height:40px ;
 }
 
@@ -80,6 +78,7 @@ a:hover{
 	line-height:40px;
 	float:left;
 	margin-left:5px;
+	margin-right: 5px;
 }
 
 .index_menu_bar .user_info_bar .third_login_logo{
@@ -91,6 +90,7 @@ a:hover{
 	height:18px;
 	margin-top:10px;
 	margin-right:5px;
+	border: none;
 }
 
 
