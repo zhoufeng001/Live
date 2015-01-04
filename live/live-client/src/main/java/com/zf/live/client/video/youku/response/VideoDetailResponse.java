@@ -34,7 +34,7 @@ public class VideoDetailResponse extends VideoResponse{
 	/**
 	 * 多张截图（默认不返回），需要在请求中的ext参数中加入thumbnails
 	 */
-	private List<ThumbnailEntity> thumbnails ;
+	private List<ThumbnailObject> thumbnails ;
 	
 	
 	public String getBigThumbnail() {
@@ -73,13 +73,13 @@ public class VideoDetailResponse extends VideoResponse{
 
 
 
-	public List<ThumbnailEntity> getThumbnails() {
+	public List<ThumbnailObject> getThumbnails() {
 		return thumbnails;
 	}
 
 
 
-	public void setThumbnails(List<ThumbnailEntity> thumbnails) {
+	public void setThumbnails(List<ThumbnailObject> thumbnails) {
 		this.thumbnails = thumbnails;
 	}
 
@@ -90,7 +90,7 @@ public class VideoDetailResponse extends VideoResponse{
 	 * @author is_zhoufeng@163.com , QQ:243970446
 	 * 2015年1月4日 上午3:32:26
 	 */
-	public static class ThumbnailEntity {
+	public static class ThumbnailObject {
 		/**
 		 * 截图序号
 		 */

@@ -1,5 +1,7 @@
 package com.zf.live.service.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -8,6 +10,7 @@ import com.zf.live.client.video.youku.request.SearchVideoDetailRequest;
 import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
 import com.zf.live.client.video.youku.response.VideoDetailResponse;
 import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
+import com.zf.live.client.video.youku.vo.Category;
 
 /**
  * 
@@ -22,6 +25,9 @@ public class YoukuVideoSearchTest extends ServiceBaseTester{
 	@Test
 	public void testSearchByTag(){
 		SearchVideoByCategoryRequest request = new SearchVideoByCategoryRequest() ;
+		request.setPage(200);
+		request.setCount(20);
+		request.setCategory("资讯");
 		SearchVideoByCategoryResponse  response = youkuVideoSearchService.searchByCategory(request);
 		if(response == null){
 			System.out.println("请求结果为空！");
@@ -34,6 +40,7 @@ public class YoukuVideoSearchTest extends ServiceBaseTester{
 	public void testSearchVideoDetail(){
 		SearchVideoDetailRequest request = new SearchVideoDetailRequest() ;
 		request.setVideoId("XODYzMjU4NzIw");
+		request.setExt("thumbnails");
 		VideoDetailResponse response = youkuVideoSearchService.searchVideoDetail(request);
 		if(response == null){
 			System.out.println("请求结果为空！");
@@ -42,4 +49,13 @@ public class YoukuVideoSearchTest extends ServiceBaseTester{
 		}
 	}
 	
+	@Test
+	public void testAllCategory(){
+		List<Category> categories = youkuVideoSearchService.searchAllCategories();
+		if(categories == null || categories.size() == 0){
+			System.out.println("结果集为空");
+		}else{
+			System.out.println(categories.size());  
+		}
+	}
 }

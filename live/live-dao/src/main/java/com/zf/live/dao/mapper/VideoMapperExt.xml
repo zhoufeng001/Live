@@ -5,6 +5,6 @@
   用于扩展com.zf.live.dao.mapper.VideoMapper接口
 可通过com.zf.live.dao.mapper.VideoMapper.BaseResultMap 
 和com.zf.live.dao.mapper.VideoMapper.Base_Column_List对其进行引用
-by is_zhoufeng@163.com 2014-12-15 17:32:50.
+by is_zhoufeng@163.com 2015-01-05 00:14:43.
   -->
 </mapper>

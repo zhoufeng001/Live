@@ -33,11 +33,16 @@ public class SearchVideoDetailRequest extends BaseRequest{
 	public void setVideoId(String videoId) {
 		this.videoId = videoId;
 	}
-
+	
 	public String getExt() {
 		return ext;
 	}
 
+	/**
+	 * 视频扩展信息返回， 多个用逗号分隔	
+	 * thumbnails：视频截图列表
+	 * show, dvd,reference
+	 */
 	public void setExt(String ext) {
 		this.ext = ext;
 	}

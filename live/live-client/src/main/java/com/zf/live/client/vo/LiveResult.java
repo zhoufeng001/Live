@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月18日 下午3:08:17
  */
-public class LiveResult<T extends Serializable> implements Serializable{
+public class LiveResult<T> implements Serializable{
 
 	/**
 	 * 

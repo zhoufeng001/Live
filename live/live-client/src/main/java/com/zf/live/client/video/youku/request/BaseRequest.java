@@ -19,8 +19,10 @@ public class BaseRequest implements Serializable{
 	@RequestField("client_id")
 	protected String clientId ;
 	
+	@RequestField("page")
 	protected Integer page ;
 	
+	@RequestField("count")
 	protected Integer count ;
 
 	public String getClientId() {

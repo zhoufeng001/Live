@@ -15,11 +15,6 @@ public class SearchVideoByCategoryRequest extends BaseRequest{
 	private static final long serialVersionUID = 5033733281022167890L;
 
 	
-	/**
-	 * 标签 多个标签逗号分隔
-	 */
-	@RequestField("tag")
-	private String tag ;
 	
 	/**
 	 * 分类 综艺 娱乐 教育 旅游 时尚 母婴 资讯 原创 女性 搞笑 音乐 
@@ -42,32 +37,24 @@ public class SearchVideoByCategoryRequest extends BaseRequest{
 	@RequestField("orderby")
 	private String orderby ;
 
-
-	public String getTag() {
-		return tag;
-	}
-
-
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
-
+	/**
+	 * 类型	如：社会资讯
+	 */
+	@RequestField("genre")
+	private String genre ;
 
 	public String getCategory() {
 		return category;
 	}
 
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
-
+	
 	public String getPeriod() {
 		return period;
 	}
-
-
+	
 	public void setPeriod(String period) {
 		this.period = period;
 	}

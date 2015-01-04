@@ -1,6 +1,5 @@
 package com.zf.live.client.vo;
 
-import java.io.Serializable;
 
 
 /**
@@ -8,7 +7,7 @@ import java.io.Serializable;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2014年12月18日 下午2:40:01
  */
-public class ServiceResult<T extends Serializable> extends LiveResult<T>{
+public class ServiceResult<T> extends LiveResult<T>{
 
 	/**  
 	 * 
