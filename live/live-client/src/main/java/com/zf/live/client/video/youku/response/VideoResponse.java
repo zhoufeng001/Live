@@ -3,6 +3,9 @@ package com.zf.live.client.video.youku.response;
 import java.io.Serializable;
 import java.util.List;
 
+import com.zf.live.client.vo.video.VideoSite;
+import com.zf.live.dao.pojo.Video;
+
 /**
  * 优酷接口返回的视频对象信息
  * @author is_zhoufeng@163.com , QQ:243970446
@@ -222,5 +225,16 @@ public class VideoResponse implements Serializable{
 	public void setOperation_limit(List<String> operation_limit) {
 		this.operation_limit = operation_limit;
 	}
+	
+	public Video toLocalVideo(){
+		Video video = new Video() ;
+		video.setCategory(this.getCategory());
+		video.setFromid(this.getId());
+		video.setThumbnail(this.getThumbnail());
+		video.setVideofrom(VideoSite.YOUKU.getValue());
+		video.setVideoname(this.getTitle()); 
+		return video ;
+	}
+	
 
 }

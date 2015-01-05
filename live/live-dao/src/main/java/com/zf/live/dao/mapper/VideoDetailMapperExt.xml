@@ -7,4 +7,24 @@
 和com.zf.live.dao.mapper.VideoDetailMapper.Base_Column_List对其进行引用
 by is_zhoufeng@163.com 2015-01-05 00:14:43.
   -->
+  
+  <select id="countVideoDetail" resultType="java.lang.Integer">
+  		 select 
+  		 count(*)
+	     from video_detail
+	     where
+	     id = (select id from video where videofrom = #{videofrom} and fromid = #{fromId})
+	     limit 1
+  </select>
+  
+  
+  <select id="selectVideoDetailId" resultType="java.lang.Long">
+ 		 select 
+ 		 id
+	     from video_detail
+	     where
+	     id = (select id from video where videofrom = #{videofrom} and fromid = #{fromId})
+	     limit 1
+  </select>
+  
 </mapper>

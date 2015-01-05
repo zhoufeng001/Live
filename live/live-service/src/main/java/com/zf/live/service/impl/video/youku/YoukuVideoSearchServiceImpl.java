@@ -10,15 +10,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
+import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.video.youku.request.SearchVideoByCategoryRequest;
 import com.zf.live.client.video.youku.request.SearchVideoDetailRequest;
 import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
 import com.zf.live.client.video.youku.response.VideoDetailResponse;
 import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
 import com.zf.live.client.video.youku.vo.Category;
+import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.video.VideoSite;
+import com.zf.live.client.vo.video.local.VideoDetailVo;
 import com.zf.live.common.ZFSpringPropertyConfigure;
 import com.zf.live.common.assertx.ZFAssert;
 import com.zf.live.common.util.HttpClientUtils;
+import com.zf.live.common.validate.Notnull;
+import com.zf.live.dao.pojo.Video;
+import com.zf.live.dao.pojo.VideoDetailWithBLOBs;
 
 /**
  * 优酷视频搜索实现
@@ -29,6 +36,9 @@ import com.zf.live.common.util.HttpClientUtils;
 public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 
 	private static final Logger log = LoggerFactory.getLogger(YoukuVideoSearchServiceImpl.class);
+
+	@Autowired
+	private LocalVideoService localVideoService ;
 
 	@Autowired
 	private ZFSpringPropertyConfigure propertyConfigure ;
@@ -53,14 +63,24 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		SearchVideoByCategoryResponse response = JSON.parseObject(responseStr , SearchVideoByCategoryResponse.class);
 		return response;
 	}
-	
+
 	@Override
-	public VideoDetailResponse searchVideoDetail(
-			SearchVideoDetailRequest request) {
+	public VideoDetailVo searchVideoDetail(
+			@Notnull("videoId") SearchVideoDetailRequest request) {
+
+		Long localVideoDetailId = localVideoService.selectVideoDetailId(VideoSite.YOUKU.getValue(), request.getVideoId());
+		if(localVideoDetailId != null && localVideoDetailId > 0){
+			ServiceResult<VideoDetailVo>  localVideoDetailVoResult = localVideoService.selectVideoWithDetailInfo(localVideoDetailId);
+			if(localVideoDetailVoResult != null && localVideoDetailVoResult.isSuccess()){
+				return localVideoDetailVoResult.getData() ;
+			}
+		}
+
 		String apiUrl = propertyConfigure.getProperties("api.search_video_detail") ;
 		ZFAssert.notBlank(apiUrl, "优酷搜索视频详情api地址api.search_video_detail未正确配置"); 
 		String clientId = getClientId() ;
 		request.setClientId(clientId);
+		request.setExt("thumbnails"); 
 		String requestUrl = YoukuRequestUtil.buildRequestUrl(apiUrl, request) ;
 		String responseStr = HttpClientUtils.sendGetRequest(requestUrl);
 		if(StringUtils.isBlank(responseStr)){
@@ -72,10 +92,48 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 			return null ;
 		}
 		VideoDetailResponse response = JSON.parseObject(responseStr , VideoDetailResponse.class);
-		return response;
+
+		/* 存储视频到本地  */
+		Video video = localVideoService.selectVideo(VideoSite.YOUKU.getValue(), response.getId());
+		if(video == null){
+			video = response.toLocalVideo();
+			ServiceResult<Long> saveVideoResult =	localVideoService.saveVideo(video);
+			if(saveVideoResult == null){
+				log.error("存储视频到本地失败！");
+				return null ;
+			}
+			if(!saveVideoResult.isSuccess()){
+				log.error(saveVideoResult.getErrMssage());
+				return null;
+			}
+		}
+
+		VideoDetailWithBLOBs localVideoDetail = new VideoDetailWithBLOBs();
+		localVideoDetail.setId(video.getId());
+		localVideoDetail.setDescription(response.getDescription());
+		localVideoDetail.setDuration(response.getDuration());
+		localVideoDetail.setLink(response.getLink());
+		localVideoDetail.setBigthumbnail(response.getBigThumbnail());
+		if(response.getThumbnails() != null){  
+			localVideoDetail.setThumbnails(JSON.toJSONString(response.getThumbnails())); 
+		}
+		ServiceResult<Long> saveDetailResult = localVideoService.saveVideoDetail(localVideoDetail);
+		if(saveDetailResult == null){
+			log.error("存储视频详情到本地失败！");
+			return null ;
+		}
+		if(!saveDetailResult.isSuccess()){
+			log.error(saveDetailResult.getErrMssage());
+			return null ;
+		}
+
+		VideoDetailVo videoDetailVo = new VideoDetailVo();
+		videoDetailVo.setVideo(video);
+		videoDetailVo.setVideoDetail(localVideoDetail);
+		return videoDetailVo;
 
 	}
-	
+
 	@Override
 	public List<Category> searchAllCategories() {
 		String categoriesFilepath = propertyConfigure.getProperties("categories.filepath");
@@ -88,9 +146,9 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		} 
 		return null;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * 获取clientId
 	 * @return
@@ -100,7 +158,7 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		ZFAssert.notBlank(clientId, "优酷client_id未配置");
 		return clientId ;
 	}
-	
+
 	/**
 	 * 获取clientSecret
 	 * @return
@@ -111,7 +169,7 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		return clientSecret ;
 	}
 
-	
+
 	/**
 	 * 判断是否发生错误
 	 * @param response
@@ -121,5 +179,5 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		return response.matches("\\{\"error\":\\{.*?\\}\\}");
 	}
 
-	
+
 }

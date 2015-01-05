@@ -44,6 +44,31 @@ public interface LocalVideoService {
 	 */
 	Boolean existVideo(Byte videofrom , String fromId);
 	
+	
+	/**
+	 * 根据第三方信息，从本地搜索视频
+	 * @param videofrom
+	 * @param fromId
+	 * @return
+	 */
+	Video selectVideo(Byte videofrom,String fromId) ;
+	
+	/**
+	 * 判断第三方视频详情信息是否存在于本地
+	 * @param videofrom
+	 * @param fromId
+	 * @return
+	 */
+	boolean existVideoDetail(Byte videofrom,String fromId) ;
+	
+	/**
+	 * 根据第三方信息，从本地搜索视频详情，并返回其ID，如果本地不存在，则返回Null
+	 * @param videofrom
+	 * @param fromId
+	 * @return
+	 */
+	Long selectVideoDetailId(Byte videofrom,String fromId) ;
+	
 	/**
 	 * 根据视频本地ID查询视频基本信息以及详细信息
 	 * @param videoId

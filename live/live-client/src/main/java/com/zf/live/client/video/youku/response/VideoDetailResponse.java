@@ -83,7 +83,7 @@ public class VideoDetailResponse extends VideoResponse{
 		this.thumbnails = thumbnails;
 	}
 
-
+	
 
 	/**
 	 * 视频截图列表

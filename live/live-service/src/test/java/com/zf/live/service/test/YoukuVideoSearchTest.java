@@ -11,6 +11,7 @@ import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
 import com.zf.live.client.video.youku.response.VideoDetailResponse;
 import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
 import com.zf.live.client.video.youku.vo.Category;
+import com.zf.live.client.vo.video.local.VideoDetailVo;
 
 /**
  * 
@@ -39,9 +40,9 @@ public class YoukuVideoSearchTest extends ServiceBaseTester{
 	@Test
 	public void testSearchVideoDetail(){
 		SearchVideoDetailRequest request = new SearchVideoDetailRequest() ;
-		request.setVideoId("XODYzMjU4NzIw");
+		request.setVideoId("XODY0NjkwMjcy");
 		request.setExt("thumbnails");
-		VideoDetailResponse response = youkuVideoSearchService.searchVideoDetail(request);
+		VideoDetailVo response = youkuVideoSearchService.searchVideoDetail(request);
 		if(response == null){
 			System.out.println("请求结果为空！");
 		}else{

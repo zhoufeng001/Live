@@ -85,10 +85,36 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		VideoExample query = new VideoExample() ;
 		query.createCriteria().andVideofromEqualTo(videofrom)
 		.andFromidEqualTo(fromId);
-		query.setPage(new Page(1, 1));
+		query.setPage(new Page(0, 1));
 		List<Video> videos = videoMapper.selectByExample(query); 
 		return (videos != null && videos.size() > 0); 
 	}
+	
+	@Override
+	public Video selectVideo(@Notnull Byte videofrom, @Notnull String fromId) {
+		VideoExample query = new VideoExample() ;
+		query.createCriteria().andVideofromEqualTo(videofrom)
+		.andFromidEqualTo(fromId);
+		query.setPage(new Page(0, 1));
+		List<Video> videos = videoMapper.selectByExample(query); 
+		if(videos != null && videos.size() > 0){
+			return videos.get(0);
+		}
+		return null ;
+	}
+	
+
+	@Override
+	public boolean existVideoDetail(Byte videofrom, String fromId) {
+		Integer count =videoDetailMapper.countVideoDetail(videofrom, fromId);
+		return count == null ? false : (count > 0); 
+	}
+	
+	@Override
+	public Long selectVideoDetailId(Byte videofrom, String fromId) {
+		return videoDetailMapper.selectVideoDetailId(videofrom, fromId); 
+	}
+
 
 	@Override
 	public ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(@Notnull Long videoId) {
@@ -118,7 +144,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 				criteria.andCategoryEqualTo(condition.getCategory());
 			}
 			if(StringUtils.isNotBlank(condition.getKeyword())){
-				criteria.andVideonameLike(condition.getKeyword()); 
+				criteria.andVideonameLike("%" + condition.getKeyword() + "%"); 
 			}
 			if(condition.getPage() != null && condition.getPageSize() != null){
 				query.setPage(new Page((condition.getPage() - 1) * condition.getPageSize(), condition.getPageSize()));

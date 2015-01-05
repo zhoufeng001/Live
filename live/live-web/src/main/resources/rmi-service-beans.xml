@@ -14,5 +14,20 @@
 	    <property name="serviceInterface" value="com.zf.live.client.user.LvuserService"/>
 	</bean>
 			
+	<bean id="localVideoService" class="com.zf.live.common.hessian.ZFHessianProxyFactory">
+	    <property name="serviceName" value="localVideoService"/>
+	    <property name="serviceInterface" value="com.zf.live.client.video.local.LocalVideoService"/>
+	</bean>
+			
+	<bean id="youkuVideoSearchService" class="com.zf.live.common.hessian.ZFHessianProxyFactory">
+	    <property name="serviceName" value="youkuVideoSearchService"/>
+	    <property name="serviceInterface" value="com.zf.live.client.video.youku.service.YoukuVideoSearchService"/>
+	</bean>
+			
+	<bean id="youkuFetchVideoAndSaveService" class="com.zf.live.common.hessian.ZFHessianProxyFactory">
+	    <property name="serviceName" value="youkuFetchVideoAndSaveService"/>
+	    <property name="serviceInterface" value="com.zf.live.client.video.FetchVideosAndSaveService"/>
+	</bean>
+			
 		
 </beans>

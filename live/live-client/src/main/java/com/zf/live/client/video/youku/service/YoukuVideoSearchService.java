@@ -5,8 +5,8 @@ import java.util.List;
 import com.zf.live.client.video.youku.request.SearchVideoByCategoryRequest;
 import com.zf.live.client.video.youku.request.SearchVideoDetailRequest;
 import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
-import com.zf.live.client.video.youku.response.VideoDetailResponse;
 import com.zf.live.client.video.youku.vo.Category;
+import com.zf.live.client.vo.video.local.VideoDetailVo;
 
 /**
  * 搜索youku视频服务
@@ -23,11 +23,11 @@ public interface YoukuVideoSearchService {
 	SearchVideoByCategoryResponse searchByCategory(SearchVideoByCategoryRequest request);
  	
 	/**
-	 * 查询视频详细信息
+	 * 查询视频详细信息（先从本地查找，如果本地存在，直接返回，否则从优酷查询，同时会将该视频保存到本地）
 	 * @param request
 	 * @return
 	 */
-	VideoDetailResponse searchVideoDetail(SearchVideoDetailRequest request);
+	VideoDetailVo searchVideoDetail(SearchVideoDetailRequest request);
 	
 	
 	/**
