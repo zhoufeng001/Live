@@ -1,7 +1,9 @@
 package com.zf.live.service.impl.video.youku;
 
+import java.text.ParseException;
 import java.util.List;
 
+import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,24 +46,24 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 	public void fetchAndSave() {
 		SearchVideoByCategoryRequest request = new SearchVideoByCategoryRequest() ;
 		request.setCount(PAGE_SIZE);
-	
+
 		int index = 0;
 		int totalRecoredCount = 0;
 		int totalInsertCount = 0;
 		SearchVideoByCategoryResponse response = null ;
 		List<VideoResponse> videoResponse = null ;
-		
+
 		List<Category> categoryList = youkuVideoSearchService.searchAllCategories();
 		if(categoryList == null || categoryList.size() == 0){
 			log.error("未查询到视频分类！");
 		}
-		
+
 		String categoryLable = null ;
 		for (Category category : categoryList) {
 			categoryLable = category.getLabel();
 			log.info("------------------------开始搜索"+ categoryLable +"视频----------------------------");
 			request.setCategory(categoryLable); 
-			
+
 			int pageIndex = 0;
 			int errCount = 0 ;
 			do{	
@@ -88,6 +90,24 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 						video.setCategory(youkuVideo.getCategory());
 						video.setFromid(youkuVideo.getId());
 						video.setThumbnail(youkuVideo.getThumbnail());
+						try {
+							video.setPublishtime(DateUtils.parseDate(youkuVideo.getPublished(), "yyyy-MM-dd HH:mm:ss"));
+						} catch (ParseException e1) {
+							log.error(e1.getMessage()); 
+						}
+						video.setPraise(0L);
+						if(youkuVideo.getUp_count() != null){
+							video.setPraise(video.getPraise() + Long.valueOf(youkuVideo.getUp_count()));
+						}  
+						if(youkuVideo.getFavorite_count() != null){
+							video.setPraise(video.getPraise() + Long.valueOf(youkuVideo.getFavorite_count()));
+						}
+						if(youkuVideo.getComment_count() != null){
+							video.setPraise(video.getPraise() + Long.valueOf(youkuVideo.getComment_count()));
+						}
+						if(youkuVideo.getView_count() != null){
+							video.setPlaycount(Long.valueOf(youkuVideo.getView_count()));  
+						}
 						video.setVideofrom(VideoSite.YOUKU.getValue());
 						video.setVideoname(youkuVideo.getTitle()); 
 						ServiceResult<Long> saveResult = null;
@@ -111,10 +131,10 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 				log.info("第" + ++index + "次搜索到" + videoResponse.size() + "条视频记录");
 				totalRecoredCount += videoResponse.size() ;
 			}while(errCount < 3);
-			
+
 			log.info("------------------------搜索"+ categoryLable +"视频完成----------------------------\n\n\n");
 		}
-		
+
 		log.info("搜索完成，共搜索到" + totalRecoredCount + "条记录，共插入" + totalInsertCount + "条记录！");
 	}
 

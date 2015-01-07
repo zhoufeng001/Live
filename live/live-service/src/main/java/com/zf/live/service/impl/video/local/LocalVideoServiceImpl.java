@@ -36,13 +36,20 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 
 	@Override
 	public ServiceResult<Long> saveVideo(
-			@Notnull("videofrom") @Notnull("fromid") @Notnull("videoname") @Notnull("category")
+			@Notnull("videofrom") @Notnull("fromid") @Notnull("videoname") @Notnull("category") 
 			Video video) {
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
 		video.setFlag(0);
 		video.setCreatetime(new Date());
-		video.setPlaycount(0);
-		video.setPraise(0L);
+		if(video.getPlaycount() == null){
+			video.setPlaycount(0L);
+		}
+		if(video.getPublishtime() == null){
+			video.setPublishtime(new Date()); 
+		}
+		if(video.getPraise() == null){
+			video.setPraise(0L);
+		}
 		int insertResult = videoMapper.insert(video);
 		if(insertResult > 0){
 			result.setSuccess(true);
@@ -89,7 +96,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		List<Video> videos = videoMapper.selectByExample(query); 
 		return (videos != null && videos.size() > 0); 
 	}
-	
+
 	@Override
 	public Video selectVideo(@Notnull Byte videofrom, @Notnull String fromId) {
 		VideoExample query = new VideoExample() ;
@@ -102,14 +109,14 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		}
 		return null ;
 	}
-	
+
 
 	@Override
 	public boolean existVideoDetail(Byte videofrom, String fromId) {
 		Integer count =videoDetailMapper.countVideoDetail(videofrom, fromId);
 		return count == null ? false : (count > 0); 
 	}
-	
+
 	@Override
 	public Long selectVideoDetailId(Byte videofrom, String fromId) {
 		return videoDetailMapper.selectVideoDetailId(videofrom, fromId); 
