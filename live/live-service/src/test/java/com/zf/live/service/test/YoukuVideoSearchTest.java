@@ -40,7 +40,7 @@ public class YoukuVideoSearchTest extends ServiceBaseTester{
 	@Test
 	public void testSearchVideoDetail(){
 		SearchVideoDetailRequest request = new SearchVideoDetailRequest() ;
-		request.setVideoId("XODY0NjkwMjcy");
+		request.setVideoId("XODY0NzkyNzk2");
 		request.setExt("thumbnails");
 		VideoDetailVo response = youkuVideoSearchService.searchVideoDetail(request);
 		if(response == null){

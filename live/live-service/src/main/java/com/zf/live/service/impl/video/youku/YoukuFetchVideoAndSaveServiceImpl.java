@@ -13,6 +13,7 @@ import com.zf.live.client.video.youku.request.SearchVideoByCategoryRequest;
 import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
 import com.zf.live.client.video.youku.response.VideoResponse;
 import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
+import com.zf.live.client.video.youku.vo.Category;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.client.vo.video.VideoSite;
 import com.zf.live.dao.pojo.Video;
@@ -43,62 +44,78 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 	public void fetchAndSave() {
 		SearchVideoByCategoryRequest request = new SearchVideoByCategoryRequest() ;
 		request.setCount(PAGE_SIZE);
+	
 		int index = 0;
-		int errCount = 0 ;
-		int pageIndex = 0;
 		int totalRecoredCount = 0;
 		int totalInsertCount = 0;
 		SearchVideoByCategoryResponse response = null ;
 		List<VideoResponse> videoResponse = null ;
-		do{	
-
-			/* 从Youku搜索  */
-			request.setPage(++pageIndex);
-			response = youkuVideoSearchService.searchByCategory(request) ;
-			if(response == null ){
-				errCount++ ;
-				System.out.println("第"+ errCount +"次失败");
-				continue ;
-			}
-			videoResponse = response.getVideos();
-			if(videoResponse == null || videoResponse.size() == 0 ){
-				errCount++ ;
-				System.out.println("第"+ errCount +"次失败");
-				continue ;
-			}
-
-			/* 存储到本地  */
-			for (VideoResponse youkuVideo : videoResponse) {
-
-				if(!localVideoService.existVideo(VideoSite.YOUKU.getValue(), youkuVideo.getId())){
-					Video video = new Video();
-					video.setCategory(youkuVideo.getCategory());
-					video.setFromid(youkuVideo.getId());
-					video.setThumbnail(youkuVideo.getThumbnail());
-					video.setVideofrom(VideoSite.YOUKU.getValue());
-					video.setVideoname(youkuVideo.getTitle()); 
-					ServiceResult<Long> saveResult = null;
-					try {
-						saveResult = localVideoService.saveVideo(video);
-					}catch(Exception e){
-						e.printStackTrace();
-						continue ;
-					}
-					if(saveResult == null){
-						System.out.println("保存视频到本地失败");
-						continue; 
-					}
-					if(!saveResult.isSuccess()){
-						System.out.println(saveResult.getErrMssage()); 
-					}
-					totalInsertCount++;
+		
+		List<Category> categoryList = youkuVideoSearchService.searchAllCategories();
+		if(categoryList == null || categoryList.size() == 0){
+			log.error("未查询到视频分类！");
+		}
+		
+		String categoryLable = null ;
+		for (Category category : categoryList) {
+			categoryLable = category.getLabel();
+			log.info("------------------------开始搜索"+ categoryLable +"视频----------------------------");
+			request.setCategory(categoryLable); 
+			
+			int pageIndex = 0;
+			int errCount = 0 ;
+			do{	
+				/* 从Youku搜索  */
+				request.setPage(++pageIndex);
+				response = youkuVideoSearchService.searchByCategory(request) ;
+				if(response == null ){
+					errCount++ ;
+					log.info("第"+ errCount +"次失败");
+					continue ;
 				}
-			} 
+				videoResponse = response.getVideos();
+				if(videoResponse == null || videoResponse.size() == 0 ){
+					errCount++ ;
+					log.info("第"+ errCount +"次失败");
+					continue ;
+				}
 
-			System.out.println("第" + ++index + "次搜索到" + videoResponse.size() + "条视频记录");
-			totalRecoredCount += videoResponse.size() ;
-		}while(errCount < 3);
-		System.out.println("搜索完成，共搜索到" + totalRecoredCount + "条记录，共插入" + totalInsertCount + "条记录！");
+				/* 存储到本地  */
+				for (VideoResponse youkuVideo : videoResponse) {
+
+					if(!localVideoService.existVideo(VideoSite.YOUKU.getValue(), youkuVideo.getId())){
+						Video video = new Video();
+						video.setCategory(youkuVideo.getCategory());
+						video.setFromid(youkuVideo.getId());
+						video.setThumbnail(youkuVideo.getThumbnail());
+						video.setVideofrom(VideoSite.YOUKU.getValue());
+						video.setVideoname(youkuVideo.getTitle()); 
+						ServiceResult<Long> saveResult = null;
+						try {
+							saveResult = localVideoService.saveVideo(video);
+						}catch(Exception e){
+							e.printStackTrace();
+							continue ;
+						}
+						if(saveResult == null){
+							log.error("保存视频到本地失败");
+							continue; 
+						}
+						if(!saveResult.isSuccess()){
+							log.error(saveResult.getErrMssage()); 
+						}
+						totalInsertCount++;
+					}
+				} 
+
+				log.info("第" + ++index + "次搜索到" + videoResponse.size() + "条视频记录");
+				totalRecoredCount += videoResponse.size() ;
+			}while(errCount < 3);
+			
+			log.info("------------------------搜索"+ categoryLable +"视频完成----------------------------\n\n\n");
+		}
+		
+		log.info("搜索完成，共搜索到" + totalRecoredCount + "条记录，共插入" + totalInsertCount + "条记录！");
 	}
 
 }

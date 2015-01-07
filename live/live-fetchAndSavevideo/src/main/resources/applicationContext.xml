@@ -14,8 +14,7 @@
 	<bean id="propertiesConfig" class="com.zf.live.common.ZFSpringPropertyConfigure">
 		<property name="locations">
 			<array>
-				<value>classpath*:app-env.properties</value>
-				<value>classpath*:youku/youku.properties</value>
+				<value>classpath*:app-*.properties</value>
 			</array>
 		</property>
 	</bean>

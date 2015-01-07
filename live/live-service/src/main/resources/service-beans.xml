@@ -14,7 +14,7 @@
 	<context:annotation-config />
 	
 	<aop:aspectj-autoproxy  proxy-target-class="true"/>
-
+	
 	<!-- Redis配置 -->
 	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
 		<property name="maxTotal" value="${redis.maxTotal}" />

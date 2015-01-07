@@ -13,19 +13,18 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
  */
 public class ZFSpringPropertyConfigure extends PropertyPlaceholderConfigurer {
 
-    private static Properties properties = null ;
+	private static Properties properties = new Properties() ;
 
-    @Override
-    protected void processProperties(
-	    ConfigurableListableBeanFactory beanFactoryToProcess,
-	    Properties props) throws BeansException {
-	super.processProperties(beanFactoryToProcess, props);
+	@Override
+	protected void processProperties(
+			ConfigurableListableBeanFactory beanFactoryToProcess,
+			Properties props) throws BeansException {
+		super.processProperties(beanFactoryToProcess, props);
+		properties.putAll(props);
+	}
 
-	properties = new Properties(props);  
-    }
-
-    public String getProperties(String key){
-	return properties.getProperty(key); 
-    }
+	public String getProperties(String key){
+		return properties.getProperty(key); 
+	}
 
 }
