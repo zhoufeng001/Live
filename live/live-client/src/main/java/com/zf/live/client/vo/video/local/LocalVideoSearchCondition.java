@@ -2,8 +2,6 @@ package com.zf.live.client.vo.video.local;
 
 import java.io.Serializable;
 
-import com.zf.live.client.vo.Sort;
-
 /**
  * 本地视频搜索条件
  * @author is_zhoufeng@163.com , QQ:243970446
@@ -73,8 +71,8 @@ public class LocalVideoSearchCondition implements Serializable{
 	public String getOrderBy() {
 		return orderBy;
 	}
-	
-	public void orderByPlaycount(Sort sort){
+	/*
+	public void orderByThirdPlaycount(Sort sort){
 		if(this.orderBy == null || "".equals(this.orderBy.trim())){
 			this.orderBy = " order by ";
 		}else{
@@ -92,7 +90,7 @@ public class LocalVideoSearchCondition implements Serializable{
 		this.orderBy = " order by createtime " + sort;
 	}
 	
-	public void orderByPraise(Sort sort){
+	public void orderByThirdPraise(Sort sort){
 		if(this.orderBy == null || "".equals(this.orderBy.trim())){
 			this.orderBy = " order by ";
 		}else{
@@ -100,6 +98,6 @@ public class LocalVideoSearchCondition implements Serializable{
 		}
 		this.orderBy = " order by praise " + sort;
 	}
-	
+	*/
 	
 }

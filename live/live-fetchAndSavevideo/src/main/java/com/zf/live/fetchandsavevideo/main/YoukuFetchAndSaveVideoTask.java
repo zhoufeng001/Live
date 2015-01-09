@@ -21,11 +21,11 @@ public class YoukuFetchAndSaveVideoTask {
 			log.error("参数不能为空，第一个参数为隔多少个小时执行一次！");
 			return ;
 		}
-		
 		Integer hour = Integer.valueOf((args[0]));
 
 		ScheduledExecutorService threadPool = Executors.newScheduledThreadPool(1);
 		
+		@SuppressWarnings("resource")
 		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		final FetchVideosAndSaveService youkuFAS = applicationContext.getBean(YoukuFetchVideoAndSaveServiceImpl.class);

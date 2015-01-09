@@ -41,8 +41,8 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		ServiceResult<Long> result = new ServiceResult<Long>() ;
 		video.setFlag(0);
 		video.setCreatetime(new Date());
-		if(video.getPlaycount() == null){
-			video.setPlaycount(0L);
+		if(video.getViewCount() == null){
+			video.setViewCount(0L);
 		}
 		if(video.getPublishtime() == null){
 			video.setPublishtime(new Date()); 

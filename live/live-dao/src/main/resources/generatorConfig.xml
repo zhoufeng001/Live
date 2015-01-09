@@ -52,15 +52,16 @@
 <!-- 		</table> -->
 
 		<table schema="video" tableName="video">
-			<property name="useActualColumnNames" value="true" />
+			<property name="useActualColumnNames" value="false" />
 <!-- 			<property name="generateExt" value="true" /> -->
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/> 
 		</table>
 
-<!-- 		<table schema="video_detail" tableName="video_detail"> -->
-<!-- 			<property name="useActualColumnNames" value="true" /> -->
-<!-- 			<property name="generateExt" value="true" /> -->
-<!-- 		</table> -->
+		<table schema="video_group" tableName="video_group"> 
+			<property name="useActualColumnNames" value="false" />
+			<property name="generateExt" value="true" />
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/> 
+		</table>
 
 
 	</context>

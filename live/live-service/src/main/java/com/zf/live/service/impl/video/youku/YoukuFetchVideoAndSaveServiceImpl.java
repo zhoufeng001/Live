@@ -95,18 +95,18 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 						} catch (ParseException e1) {
 							log.error(e1.getMessage()); 
 						}
-						video.setPraise(0L);
+						video.setThirdPraise(0L);
 						if(youkuVideo.getUp_count() != null){
-							video.setPraise(video.getPraise() + Long.valueOf(youkuVideo.getUp_count()));
+							video.setThirdPraise(video.getThirdPraise() + Long.valueOf(youkuVideo.getUp_count()));
 						}  
 						if(youkuVideo.getFavorite_count() != null){
-							video.setPraise(video.getPraise() + Long.valueOf(youkuVideo.getFavorite_count()));
+							video.setThirdPraise(video.getThirdPraise() + Long.valueOf(youkuVideo.getFavorite_count()));
 						}
 						if(youkuVideo.getComment_count() != null){
-							video.setPraise(video.getPraise() + Long.valueOf(youkuVideo.getComment_count()));
+							video.setThirdPraise(video.getThirdPraise() + Long.valueOf(youkuVideo.getComment_count()));
 						}
 						if(youkuVideo.getView_count() != null){
-							video.setPlaycount(Long.valueOf(youkuVideo.getView_count()));  
+							video.setThirdViewCount(Long.valueOf(youkuVideo.getView_count()));  
 						}
 						video.setVideofrom(VideoSite.YOUKU.getValue());
 						video.setVideoname(youkuVideo.getTitle()); 
