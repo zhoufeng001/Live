@@ -191,6 +191,6 @@
   	<module>live-pojo</module>
   	<module>live-common</module>
   	<module>live-service</module>
-  	<module>live-fetchAndSavevideo</module>
+  	<module>live-scheduled</module>
   </modules>
 </project>

@@ -6,7 +6,7 @@
 		<artifactId>live</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>live-fetchAndSavevideo</artifactId>
+	<artifactId>live-scheduled</artifactId>
 
 	<dependencies>
 		<dependency>
