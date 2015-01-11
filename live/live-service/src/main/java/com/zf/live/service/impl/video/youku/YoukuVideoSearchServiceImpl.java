@@ -13,7 +13,13 @@ import com.alibaba.fastjson.JSON;
 import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.video.youku.request.SearchVideoByCategoryRequest;
 import com.zf.live.client.video.youku.request.SearchVideoDetailRequest;
+import com.zf.live.client.video.youku.request.SearchVideoListByCategoryRequest;
+import com.zf.live.client.video.youku.request.SearchVideoListDetailByIdsRequest;
+import com.zf.live.client.video.youku.request.SearchVideosFromVideoListRequest;
 import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
+import com.zf.live.client.video.youku.response.SearchVideoListByCategoryResponse;
+import com.zf.live.client.video.youku.response.SearchVideoListDetailByIdsResponse;
+import com.zf.live.client.video.youku.response.SearchVideosFromVideoListResponse;
 import com.zf.live.client.video.youku.response.VideoDetailResponse;
 import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
 import com.zf.live.client.video.youku.vo.Category;
@@ -45,9 +51,9 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 
 
 	@Override
-	public SearchVideoByCategoryResponse searchByCategory(SearchVideoByCategoryRequest request) {
-		String apiUrl = propertyConfigure.getProperties("api.search_by_category") ;
-		ZFAssert.notBlank(apiUrl, "优酷根据标签搜索视频api地址api.search_by_tag未正确配置"); 
+	public SearchVideoByCategoryResponse searchVideoByCategory(SearchVideoByCategoryRequest request) {
+		String apiUrl = propertyConfigure.getProperties("youku.api.search_video_by_category") ;
+		ZFAssert.notBlank(apiUrl, "优酷根据标签搜索视频api地址youku.api.search_video_by_category未正确配置"); 
 		String clientId = getClientId() ;
 		request.setClientId(clientId);
 		String requestUrl = YoukuRequestUtil.buildRequestUrl(apiUrl, request) ;
@@ -76,8 +82,8 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 			}
 		}
 
-		String apiUrl = propertyConfigure.getProperties("api.search_video_detail") ;
-		ZFAssert.notBlank(apiUrl, "优酷搜索视频详情api地址api.search_video_detail未正确配置"); 
+		String apiUrl = propertyConfigure.getProperties("youku.api.search_video_detail") ;
+		ZFAssert.notBlank(apiUrl, "优酷搜索视频详情api地址youku.api.search_video_detail未正确配置"); 
 		String clientId = getClientId() ;
 		request.setClientId(clientId);
 		request.setExt("thumbnails"); 
@@ -133,11 +139,75 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		return videoDetailVo;
 
 	}
+	
+	@Override
+	public SearchVideoListByCategoryResponse searchVideoListByCategory(
+			SearchVideoListByCategoryRequest request) {
+		String apiUrl = propertyConfigure.getProperties("youku.api.search_videolist_by_category") ;
+		ZFAssert.notBlank(apiUrl, "优酷根据标签搜索视频专辑api地址youku.api.search_videolist_by_category未正确配置"); 
+		String clientId = getClientId() ;
+		request.setClientId(clientId);
+		String requestUrl = YoukuRequestUtil.buildRequestUrl(apiUrl, request) ;
+		String responseStr = HttpClientUtils.sendGetRequest(requestUrl);
+		if(StringUtils.isBlank(responseStr)){
+			log.warn("请求结果为空！"); 
+			return null ;
+		}
+		if(isError(responseStr)){
+			log.error("根据分类查询专辑列表失败，{}",responseStr);
+			return null ;
+		}
+		SearchVideoListByCategoryResponse response = JSON.parseObject(responseStr , SearchVideoListByCategoryResponse.class);
+		return response;
+	}
+
 
 	@Override
-	public List<Category> searchAllCategories() {
-		String categoriesFilepath = propertyConfigure.getProperties("categories.filepath");
-		ZFAssert.notBlank(categoriesFilepath, "categories.json文件路径未配置"); 
+	public SearchVideoListDetailByIdsResponse searchVideoListDetailByIds(
+			SearchVideoListDetailByIdsRequest request) {
+		String apiUrl = propertyConfigure.getProperties("youku.api.search_videolist_detail_by_ids") ;
+		ZFAssert.notBlank(apiUrl, "优酷根据专辑搜索视频api地址youku.api.search_videolist_detail_by_ids未正确配置"); 
+		String clientId = getClientId() ;
+		request.setClientId(clientId);
+		String requestUrl = YoukuRequestUtil.buildRequestUrl(apiUrl, request) ;
+		String responseStr = HttpClientUtils.sendGetRequest(requestUrl);
+		if(StringUtils.isBlank(responseStr)){
+			log.warn("请求结果为空！"); 
+			return null ;
+		}
+		if(isError(responseStr)){
+			log.error("根据分类查询专辑详情失败，{}",responseStr);
+			return null ;
+		}
+		SearchVideoListDetailByIdsResponse response = JSON.parseObject(responseStr , SearchVideoListDetailByIdsResponse.class);
+		return response;
+	}
+	
+	@Override
+	public SearchVideosFromVideoListResponse searchVideoListFromVideoGroup(
+			SearchVideosFromVideoListRequest request) {
+		String apiUrl = propertyConfigure.getProperties("youku.api.search_videolist_by_groupid") ;
+		ZFAssert.notBlank(apiUrl, "优酷根据专辑id搜索视频列表api地址youku.api.search_videolist_by_groupid未正确配置"); 
+		String clientId = getClientId() ;
+		request.setClientId(clientId);
+		String requestUrl = YoukuRequestUtil.buildRequestUrl(apiUrl, request) ;
+		String responseStr = HttpClientUtils.sendGetRequest(requestUrl);
+		if(StringUtils.isBlank(responseStr)){
+			log.warn("请求结果为空！"); 
+			return null ;
+		}
+		if(isError(responseStr)){
+			log.error("根据专辑id查询专辑下面视频失败，{}",responseStr);
+			return null ;
+		}
+		SearchVideosFromVideoListResponse response = JSON.parseObject(responseStr , SearchVideosFromVideoListResponse.class);
+		return response;
+	}
+	
+	@Override
+	public List<Category> searchAllVideoCategories() {
+		String categoriesFilepath = propertyConfigure.getProperties("youku.video.categories.filepath");
+		ZFAssert.notBlank(categoriesFilepath, "video_categories.json文件路径未配置"); 
 		try {
 			String fileContent = IOUtils.toString(this.getClass().getResourceAsStream(categoriesFilepath), "UTF-8") ;
 			return JSON.parseArray(fileContent, Category.class) ;
@@ -147,7 +217,18 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		return null;
 	}
 
-
+	@Override
+	public List<Category> searchAllVideoListCategories() {
+		String categoriesFilepath = propertyConfigure.getProperties("youku.videolist.categories.filepath");
+		ZFAssert.notBlank(categoriesFilepath, "videolist_categories.json文件路径未配置"); 
+		try {
+			String fileContent = IOUtils.toString(this.getClass().getResourceAsStream(categoriesFilepath), "UTF-8") ;
+			return JSON.parseArray(fileContent, Category.class) ;
+		} catch (Exception e) {
+			log.error("读取配置文件{}失败" , categoriesFilepath);
+		} 
+		return null;
+	}
 
 	/**
 	 * 获取clientId
@@ -159,16 +240,6 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		return clientId ;
 	}
 
-	/**
-	 * 获取clientSecret
-	 * @return
-	 */
-	private String getClientSecret(){
-		String clientSecret = propertyConfigure.getProperties("youku.client_secret");
-		ZFAssert.notBlank(clientSecret, "优酷client_secret未配置");
-		return clientSecret ;
-	}
-
 
 	/**
 	 * 判断是否发生错误
@@ -178,6 +249,5 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 	private boolean isError(String response){
 		return response.matches("\\{\"error\":\\{.*?\\}\\}");
 	}
-
 
 }

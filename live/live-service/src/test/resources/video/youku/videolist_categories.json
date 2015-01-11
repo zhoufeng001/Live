@@ -1,0 +1,97 @@
+ [
+        {
+            "term": "News",
+            "label": "资讯",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Original",
+            "label": "原创",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "TV",
+            "label": "电视剧",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Entertainment",
+            "label": "娱乐",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Movies",
+            "label": "电影",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Sports",
+            "label": "体育",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Music",
+            "label": "音乐",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Games",
+            "label": "游戏",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Anime",
+            "label": "动漫",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Fashion",
+            "label": "时尚",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Parenting",
+            "label": "亲子",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Autos",
+            "label": "汽车",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Travel",
+            "label": "旅游",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Tech",
+            "label": "科技",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Education",
+            "label": "教育",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "LifeStyle",
+            "label": "生活",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Humor",
+            "label": "搞笑",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Ads",
+            "label": "广告",
+            "lang": "zh_CN"
+        },
+        {
+            "term": "Others",
+            "label": "其他",
+            "lang": "zh_CN"
+        }
+]

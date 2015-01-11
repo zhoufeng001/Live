@@ -2,7 +2,7 @@
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 	
   <property name="log.level"  value="INFO" />
-  <property name="log.dir"  value="D:/live_logs/fas" />
+  <property name="log.dir"  value="/data/live_logs/fas" />
 
   <!-- 控制台打印 -->
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">

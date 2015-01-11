@@ -131,6 +131,12 @@
 			</exclusions>
 
 		</dependency>
+		
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
+		</dependency>
 
 
 	</dependencies>
@@ -159,7 +165,7 @@
 			                    </transformer>  
 			                    <transformer  
 			                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">  
-			                        <mainClass>com.zf.live.fetchandsavevideo.main.YoukuFetchAndSaveVideoTask</mainClass>  
+			                        <mainClass>com.zf.live.scheduled.StartUp</mainClass>  
 			                    </transformer>  
 			                </transformers>  
 			            </configuration>  

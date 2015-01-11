@@ -57,11 +57,11 @@
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/> 
 		</table>
 
-		<table schema="video_group" tableName="video_group"> 
-			<property name="useActualColumnNames" value="false" />
-			<property name="generateExt" value="true" />
-			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/> 
-		</table>
+<!-- 		<table schema="video_group" tableName="video_group">  -->
+<!-- 			<property name="useActualColumnNames" value="false" /> -->
+<!-- 			<property name="generateExt" value="true" /> -->
+<!-- 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/>  -->
+<!-- 		</table> -->
 
 
 	</context>

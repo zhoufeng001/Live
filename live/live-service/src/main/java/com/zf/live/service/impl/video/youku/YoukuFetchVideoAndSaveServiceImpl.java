@@ -53,7 +53,7 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 		SearchVideoByCategoryResponse response = null ;
 		List<VideoResponse> videoResponse = null ;
 
-		List<Category> categoryList = youkuVideoSearchService.searchAllCategories();
+		List<Category> categoryList = youkuVideoSearchService.searchAllVideoCategories();
 		if(categoryList == null || categoryList.size() == 0){
 			log.error("未查询到视频分类！");
 		}
@@ -69,7 +69,7 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 			do{	
 				/* 从Youku搜索  */
 				request.setPage(++pageIndex);
-				response = youkuVideoSearchService.searchByCategory(request) ;
+				response = youkuVideoSearchService.searchVideoByCategory(request) ;
 				if(response == null ){
 					errCount++ ;
 					log.info("第"+ errCount +"次失败");
@@ -114,7 +114,7 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 						try {
 							saveResult = localVideoService.saveVideo(video);
 						}catch(Exception e){
-							e.printStackTrace();
+							log.error("保存视频失败,{}",e.getMessage()); 
 							continue ;
 						}
 						if(saveResult == null){
