@@ -33,7 +33,7 @@ import com.zf.live.web.app.util.WebTokenUtil;
  * 2015年1月1日 下午10:05:54
  */
 @Controller
-@RequestMapping("/sina/*")
+@RequestMapping("/sina")
 public class SinaController {
 
 	static final Logger log = org.slf4j.LoggerFactory.getLogger(SinaController.class);

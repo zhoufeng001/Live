@@ -30,7 +30,7 @@ import com.zf.live.web.app.util.WebTokenUtil;
  * 2014年12月24日 下午5:54:23
  */
 @Controller
-@RequestMapping("/user/*")
+@RequestMapping("/user")
 public class UserController {
 
 	static final Logger log = org.slf4j.LoggerFactory.getLogger(UserController.class);

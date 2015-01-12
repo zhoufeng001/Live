@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration scan="true" scanPeriod="60 seconds" debug="true">
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
 <!-- <configuration scan="false" scanPeriod="60 seconds" debug="false"> -->
 
   <property name="log.level"  value="INFO" />
@@ -45,7 +45,13 @@
         </rollingPolicy>
    </appender>
    
-  <root level="debug">
+  <!-- 只输出WARN级别及以上的日志 -->
+  <logger name="freemarker" level="WARN" />
+  <logger name="org.springframework.web.servlet.view.freemarker" level="WARN" />
+  
+   
+   
+  <root level="${log.level}">
     <appender-ref ref="console" />
     <appender-ref ref="liveWebAll" />
     <appender-ref ref="liveWebError" />

@@ -8,6 +8,10 @@ a:hover{
 	color:#F00 ;
 }
 
+.praise_icon{
+	width:24px;
+	height:24px;
+}
 .index_body{ width:100%; height:100% ; }
 
 .top_banner{ width:100% ; height:100px; background-image:url(../img/index_top_banner.jpg)}

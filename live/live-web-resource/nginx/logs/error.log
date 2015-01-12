@@ -254,3 +254,4 @@
 2015/01/03 21:30:50 [error] 7288#6852: *144 CreateFile() "E:\Live03\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:3040"
 2015/01/03 21:34:28 [error] 7288#6852: *159 CreateFile() "E:\Live03\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:3040"
 2015/01/03 22:00:30 [error] 7288#6852: *195 CreateFile() "E:\Live03\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:3040"
+2015/01/13 01:05:01 [notice] 5448#1388: signal process started

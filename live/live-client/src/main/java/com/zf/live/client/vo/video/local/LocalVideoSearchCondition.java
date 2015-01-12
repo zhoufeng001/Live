@@ -71,6 +71,11 @@ public class LocalVideoSearchCondition implements Serializable{
 	public String getOrderBy() {
 		return orderBy;
 	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+	}
+	
 	/*
 	public void orderByThirdPlaycount(Sort sort){
 		if(this.orderBy == null || "".equals(this.orderBy.trim())){

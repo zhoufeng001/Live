@@ -10,9 +10,19 @@
 	        <!-- 菜单 -->
 			<div class="menu_buts">
 	    		<span class="menu_but_sp"><a  href="${ctx}/index.htm" >首  页</a></span>
-	            <span class="menu_but_sp"><a  href="${ctx}/index.htm" >正在直播</a></span>
-	            <span class="menu_but_sp"><a  href="${ctx}/index.htm" >热门播主</a></span>
-	            <span class="menu_but_sp"><a  href="${ctx}/index.htm" >热门视频</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/电影/1/1.htm" >电影</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/电视剧/1/1.htm" >电视剧</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/综艺/1/1.htm" >综艺</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/游戏/1/1.htm" >游戏</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/动漫/1/1.htm" >动漫</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/娱乐/1/1.htm" >娱乐</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/搞笑/1/1.htm" >搞笑</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/时尚/1/1.htm" >时尚</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/汽车/1/1.htm" >汽车</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/科技/1/1.htm" >科技</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/生活/1/1.htm" >生活</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/专辑/1/1.htm" >专辑</a></span>
+	            <span class="menu_but_sp"><a  href="${ctx}/video/category/更多/1/1.htm" >更多>></a></span>
             </div>
             <!-- 搜索框 -->
             <div id="search_box">  

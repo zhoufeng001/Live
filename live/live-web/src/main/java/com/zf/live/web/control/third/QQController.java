@@ -33,7 +33,7 @@ import com.zf.live.web.app.util.WebTokenUtil;
  * 2015年1月1日 下午10:05:43
  */
 @Controller
-@RequestMapping("/qq/*")
+@RequestMapping("/qq")
 public class QQController {
 
 	static final Logger log = org.slf4j.LoggerFactory.getLogger(QQController.class);
