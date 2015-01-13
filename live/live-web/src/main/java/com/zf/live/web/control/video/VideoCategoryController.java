@@ -1,7 +1,5 @@
 package com.zf.live.web.control.video;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.video.local.LocalVideoService;
-import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.dao.pojo.Video;
 
@@ -81,16 +79,8 @@ public class VideoCategoryController {
 				condition.setOrderBy(" publishtime desc ");
 			}
 		}
-		ServiceResult<List<Video>> result = localVideoService.searchVideos(condition);
-		if(result == null){
-			log.warn("没找到视频！");
-		}else{
-			if(result.isSuccess()){
-				modelMap.put("videoList", result.getData()) ;
-			}else{
-				log.error(result.getErrMssage());
-			}
-		}
+		PagedVo<Video> videoPageVo = localVideoService.searchVideos(condition);
+		modelMap.put("videoPageVo", videoPageVo) ;
 		log.info(category); 
 		return "vcategory";
 	}

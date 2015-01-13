@@ -1,8 +1,7 @@
 package com.zf.live.client.video.local;
 
-import java.util.List;
-
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
 import com.zf.live.dao.pojo.Video;
@@ -81,6 +80,8 @@ public interface LocalVideoService {
 	 * @param condition
 	 * @return
 	 */
-	ServiceResult<List<Video>> searchVideos(LocalVideoSearchCondition condition);
+	PagedVo<Video> searchVideos(LocalVideoSearchCondition condition);
+	
+	
 	
 }

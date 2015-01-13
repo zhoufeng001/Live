@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
 import com.zf.live.common.util.TimerUtil;
@@ -64,16 +65,14 @@ public class LocalVideoTest extends ServiceBaseTester{
 	public void testSearch(){
 		LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
 		condition.setCategory("拍客");
-		condition.setKeyword("银行");
+		condition.setKeyword(null);
+		condition.setPage(1);
+		condition.setPageSize(20);
 		TimerUtil.start("");
-		ServiceResult<List<Video>> result = localVideoService.searchVideos(condition);
+		PagedVo<Video> result = localVideoService.searchVideos(condition);
 		Long time  = TimerUtil.timing();
 		System.out.println("time : " + time );
-		if(result.isSuccess()){
-			System.out.println(result.getData());
-		}else{
-			System.out.println("搜索失败");
-		}
+		System.out.println(result.getData().size());
 	}
 
 }

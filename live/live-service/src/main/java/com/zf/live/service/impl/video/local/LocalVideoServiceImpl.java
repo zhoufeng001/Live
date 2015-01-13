@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 
 import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.common.util.TimerUtil;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.VideoDetailMapperExt;
 import com.zf.live.dao.mapper.VideoMapperExt;
@@ -141,9 +143,11 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 
 	@Override
-	public ServiceResult<List<Video>> searchVideos(
+	public PagedVo<Video> searchVideos(
+			@Notnull("page") @Notnull("pageSize") 
 			LocalVideoSearchCondition condition) {
-		ServiceResult<List<Video>> result = new ServiceResult<List<Video>>();
+		PagedVo<Video> result = new PagedVo<Video>();
+		
 		VideoExample query = new VideoExample() ;
 		Criteria criteria = query.createCriteria();
 		if(condition != null){
@@ -161,7 +165,13 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 			}
 		}
 		List<Video> videos = videoMapper.selectByExample(query);
-		result.setSuccess(true);
+		int total = videoMapper.countByExample(query) ;
+		
+		result.setData(videos);
+		result.setPage(condition.getPage()); 
+		result.setPageSize(condition.getPageSize()); 
+		result.setCount(videos == null ? 0 : videos.size());
+		result.setTotalRecored(total); 
 		result.setData(videos);
 		return result; 
 	}

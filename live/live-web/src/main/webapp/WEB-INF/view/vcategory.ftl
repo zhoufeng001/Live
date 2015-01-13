@@ -3,9 +3,24 @@
 <head>
 <!-- 公共meta信息 -->
 <#include "./common/live_common_meta.ftl" >	
+<#include "./common/live_common_js.ftl" >	
+<#include "./common/zfpage.ftl" >
 <link rel="stylesheet" href="${static_server}/css/category.css">
-<title>${category!""}频道</title>
 
+<script type="text/javascript" src="${static_server}/js/video/vcategory.js" /></script>
+<script type="text/javascript">
+ var ctx = '${ctx!""}';
+ var category = '${category!""}';
+ var orderby = '${orderby!""}';
+ var pageno =  ${page!""} ;
+ var totalRecored = ${(videoPageVo.totalRecored)!""}; 
+ var totalPage = ${(videoPageVo.totalPage)!""} ;  
+
+var zfpager = $.zfpager ; 
+
+</script>
+
+<title>${category!""}频道</title>
 </head>
 <body>  
 
@@ -26,7 +41,7 @@
             <div class="left_video_box">
             	<div class="video_info">
                     <span class="video_name">
-                    	<a href="#">人在囧途</a>
+                    	<a href="${ctx}/video/view/108811.htm" target="_blank"> 人在囧途</a>
                     </span>
                     <span class="user_info"> 
                     	520人在线
@@ -37,7 +52,7 @@
                     </span>
                 </div>
             	<div class="video_img">
-                	<a href="#"><img src="${static_server}/img/video_big_img.jpg" /></a>
+                	<a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video_big_img.jpg" /></a>
                 </div>
             </div>
             
@@ -45,8 +60,8 @@
             <div class="recommend_list_box">
             	<!-- 一个视频 -->
             	<div class="recommend_video_box">
-                	<span class="video_name"><a href="#">武媚娘传奇</a></span>
-                    <a href="#"><img src="${static_server}/img/video.jpg"  /></a>
+                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
+                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
                     <span class="praise_info">
                     	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
                         <p>14421</p>
@@ -58,8 +73,8 @@
                 <!--/ 一个视频 -->
                 <!-- 一个视频 -->
             	<div class="recommend_video_box">
-                	<span class="video_name"><a href="#">武媚娘传奇</a></span>
-                    <a href="#"><img src="${static_server}/img/video.jpg"  /></a>
+                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
+                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
                     <span class="praise_info">
                     	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
                         <p>14421</p>
@@ -71,8 +86,8 @@
                 <!--/ 一个视频 -->
                 <!-- 一个视频 -->
             	<div class="recommend_video_box">
-                	<span class="video_name"><a href="#">武媚娘传奇</a></span>
-                    <a href="#"><img src="${static_server}/img/video.jpg"  /></a>
+                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
+                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
                     <span class="praise_info">
                     	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
                         <p>14421</p>
@@ -83,8 +98,8 @@
                 </div>
                 <!--/ 一个视频 --> 
             	<div class="recommend_video_box">
-                	<span class="video_name"><a href="#">武媚娘传奇</a></span>
-                    <a href="#"><img src="${static_server}/img/video.jpg"  /></a>
+                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
+                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
                     <span class="praise_info">
                     	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
                         <p>14421</p>
@@ -95,8 +110,8 @@
                 </div>
                 <!--/ 一个视频 --> 
             	<div class="recommend_video_box">
-                	<span class="video_name"><a href="#">武媚娘传奇</a></span>
-                    <a href="#"><img src="${static_server}/img/video.jpg"  /></a>
+                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
+                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
                     <span class="praise_info">
                     	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
                         <p>14421</p>
@@ -107,8 +122,8 @@
                 </div>
                 <!--/ 一个视频 -->
             	<div class="recommend_video_box">
-                	<span class="video_name"><a href="#">武媚娘传奇</a></span>
-                    <a href="#"><img src="${static_server}/img/video.jpg"  /></a>
+                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
+                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
                     <span class="praise_info">
                     	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
                         <p>14421</p>
@@ -134,19 +149,19 @@
         <!-- 排序结束 -->
         
         <!-- 视频列表开始 -->
-        <div class="video_list">
-        	<#list videoList as video >
+        <div class="video_list">  
+        	<#list videoPageVo.data as video >
 				<!-- 一个视频 -->
 	            <div class="list_video_box">
-	                <span class="video_name"><a href="#" title="${(video.videoname)!""}">${(video.videoname)!""}</a></span>
-	                <a href="#"><img src="${(video.thumbnail)!""}"  /></a>
+	                <span class="video_name"><a href="${ctx}/video/view/${video.id}.htm" target="_blank" title="${(video.videoname)!""}">${(video.videoname)!""}</a></span>
+	                <a href="${ctx}/video/view/${video.id}.htm" target="_blank"><img src="${(video.thumbnail)!""}"  /></a>
                 <span class="praise_info">
                     <img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                    <p>${(video.thirdPraise)}</p>
+                    <p>${(video.thirdPraise)!""}</p> 
                 </span>
                 <span class="user_info">
                     520人在线
-                </span>
+                </span>  
 	            </div>
 	            <!--/ 一个视频 -->
 			</#list>
@@ -154,18 +169,9 @@
         <!-- 视频列表结束 -->
         
         <!-- 分页信息开始 -->
-        <div class="page_info">
-        	<a href="#"> <<  </a>
-            <a href="#"> 1 </a>
-            <a href="#"> 2 </a>
-            <a href="#" class="current_page"> 3 </a>
-            <a href="#"> 4 </a>
-            <a href="#"> 5 </a>
-            <a href="#"> 6 </a>
-            <a href="#"> >> </a>
-        </div>
+         <div id="div_pager" class="page_info"></div>
          <!-- 分页信息结束 -->
-	
+		
 
 </div>
  <!-- 内容部分结束 -->
