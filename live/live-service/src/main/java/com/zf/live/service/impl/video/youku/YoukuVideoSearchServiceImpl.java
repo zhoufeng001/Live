@@ -69,19 +69,10 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		SearchVideoByCategoryResponse response = JSON.parseObject(responseStr , SearchVideoByCategoryResponse.class);
 		return response;
 	}
-
+	
 	@Override
-	public VideoDetailVo searchVideoDetail(
-			@Notnull("videoId") SearchVideoDetailRequest request) {
-
-		Long localVideoDetailId = localVideoService.selectVideoDetailId(VideoSite.YOUKU.getValue(), request.getVideoId());
-		if(localVideoDetailId != null && localVideoDetailId > 0){
-			ServiceResult<VideoDetailVo>  localVideoDetailVoResult = localVideoService.selectVideoWithDetailInfo(localVideoDetailId);
-			if(localVideoDetailVoResult != null && localVideoDetailVoResult.isSuccess()){
-				return localVideoDetailVoResult.getData() ;
-			}
-		}
-
+	public VideoDetailResponse searchYoukuVideoDetail(
+			SearchVideoDetailRequest request) {
 		String apiUrl = propertyConfigure.getProperties("youku.api.search_video_detail") ;
 		ZFAssert.notBlank(apiUrl, "优酷搜索视频详情api地址youku.api.search_video_detail未正确配置"); 
 		String clientId = getClientId() ;
@@ -98,7 +89,57 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 			return null ;
 		}
 		VideoDetailResponse response = JSON.parseObject(responseStr , VideoDetailResponse.class);
+		return response;
+	}
+	
 
+	@Override
+	public VideoDetailWithBLOBs searchYoukuVideoDetailAndSave(
+			Long localVideoId ,SearchVideoDetailRequest request) {
+		VideoDetailResponse youkuVideoDetail = searchYoukuVideoDetail(request) ;
+		if(youkuVideoDetail == null){
+			log.warn("没有搜索到视频{}", request.getVideoId());
+			return null ;
+		}
+		
+		VideoDetailWithBLOBs localVideoDetail = new VideoDetailWithBLOBs();
+		localVideoDetail.setId(localVideoId);
+		localVideoDetail.setDescription(youkuVideoDetail.getDescription());
+		localVideoDetail.setDuration(youkuVideoDetail.getDuration());
+		localVideoDetail.setLink(youkuVideoDetail.getLink());
+		localVideoDetail.setBigthumbnail(youkuVideoDetail.getBigThumbnail());
+		if(youkuVideoDetail.getThumbnails() != null){  
+			localVideoDetail.setThumbnails(JSON.toJSONString(youkuVideoDetail.getThumbnails())); 
+		}
+		ServiceResult<Long> saveDetailResult = localVideoService.saveVideoDetail(localVideoDetail);
+		if(saveDetailResult == null){
+			log.error("存储视频详情到本地失败！");
+			return null ;
+		}
+		if(!saveDetailResult.isSuccess()){
+			log.error(saveDetailResult.getErrMssage());
+			return null ;
+		}
+		return localVideoDetail ;
+	}
+	
+	@Override
+	public VideoDetailVo searchVideoDetail(
+			@Notnull("videoId") SearchVideoDetailRequest request) {
+
+		Long localVideoDetailId = localVideoService.selectVideoDetailId(VideoSite.YOUKU.getValue(), request.getVideoId());
+		if(localVideoDetailId != null && localVideoDetailId > 0){
+			ServiceResult<VideoDetailVo>  localVideoDetailVoResult = localVideoService.selectVideoWithDetailInfo(localVideoDetailId,false);
+			if(localVideoDetailVoResult != null && localVideoDetailVoResult.isSuccess()){
+				return localVideoDetailVoResult.getData() ;
+			}
+		}
+
+		VideoDetailResponse response = searchYoukuVideoDetail(request);
+		if(response == null){
+			log.error("没有搜索到视频{}",request.getVideoId());
+			return null ;
+		}
 		/* 存储视频到本地  */
 		Video video = localVideoService.selectVideo(VideoSite.YOUKU.getValue(), response.getId());
 		if(video == null){
@@ -113,25 +154,8 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 				return null;
 			}
 		}
-
-		VideoDetailWithBLOBs localVideoDetail = new VideoDetailWithBLOBs();
-		localVideoDetail.setId(video.getId());
-		localVideoDetail.setDescription(response.getDescription());
-		localVideoDetail.setDuration(response.getDuration());
-		localVideoDetail.setLink(response.getLink());
-		localVideoDetail.setBigthumbnail(response.getBigThumbnail());
-		if(response.getThumbnails() != null){  
-			localVideoDetail.setThumbnails(JSON.toJSONString(response.getThumbnails())); 
-		}
-		ServiceResult<Long> saveDetailResult = localVideoService.saveVideoDetail(localVideoDetail);
-		if(saveDetailResult == null){
-			log.error("存储视频详情到本地失败！");
-			return null ;
-		}
-		if(!saveDetailResult.isSuccess()){
-			log.error(saveDetailResult.getErrMssage());
-			return null ;
-		}
+		
+		VideoDetailWithBLOBs localVideoDetail = searchYoukuVideoDetailAndSave(video.getId() , request);
 
 		VideoDetailVo videoDetailVo = new VideoDetailVo();
 		videoDetailVo.setVideo(video);

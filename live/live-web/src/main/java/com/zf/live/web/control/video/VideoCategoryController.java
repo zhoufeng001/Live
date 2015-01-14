@@ -6,6 +6,7 @@ import javax.servlet.ServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,8 @@ import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.dao.pojo.Video;
+import com.zf.live.web.app.service.video.WebVideoService;
+import com.zf.live.web.vo.video.CategoryRecommendVo;
 
 /**
  * 视频分类
@@ -29,6 +32,9 @@ public class VideoCategoryController {
 
 	@Resource(name="localVideoService")
 	private LocalVideoService localVideoService ;
+	
+	@Autowired
+	private WebVideoService webVideoService ;
 
 	/**
 	 * 页大小
@@ -63,25 +69,38 @@ public class VideoCategoryController {
 			@PathVariable("page") Integer page ,
 			@PathVariable("orderby") Integer orderby,
 			ServletRequest request, ServletResponse response , ModelMap modelMap) {
-		LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
-		condition.setCategory(category);
-		if(page == null || page <= 0){
-			page = 1;
-		}
-		condition.setPage(page); 
-		condition.setPageSize(VIDEO_CATEGORY_PAGE_SIZE); 
-		if(orderby != null){
-			if(ORDER_BY_ONLINE_NUM.equals(orderby)){
-				//				condition.setOrderBy(" order by publishtime desc ");
-			}else if(ORDER_BY_PRAISE_NUM.equals(orderby)){
-				condition.setOrderBy(" praise desc ,third_praise desc ");
-			}else if(ORDER_BY_UPDATE_TIME.equals(orderby)){
-				condition.setOrderBy(" publishtime desc ");
+
+		//分页查询video列表信息
+		{
+			LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
+			condition.setCategory(category);
+			if(page == null || page <= 0){
+				page = 1;
 			}
+			condition.setPage(page); 
+			condition.setPageSize(VIDEO_CATEGORY_PAGE_SIZE); 
+			if(orderby != null){
+				if(ORDER_BY_ONLINE_NUM.equals(orderby)){
+					//				condition.setOrderBy(" order by publishtime desc ");
+				}else if(ORDER_BY_PRAISE_NUM.equals(orderby)){
+					condition.setOrderBy(" praise desc ,third_praise desc ");
+				}else if(ORDER_BY_UPDATE_TIME.equals(orderby)){
+					condition.setOrderBy(" publishtime desc ");
+				}
+			}
+
+			PagedVo<Video> videoPageVo = localVideoService.searchVideos(condition);
+			modelMap.put("videoPageVo", videoPageVo) ;
 		}
-		PagedVo<Video> videoPageVo = localVideoService.searchVideos(condition);
-		modelMap.put("videoPageVo", videoPageVo) ;
-		log.info(category); 
+
+
+		//根据viewCount排序，取7条数据
+		{
+			CategoryRecommendVo categoryRecommendVo = webVideoService.selectCategoryRecommend(category) ;
+			modelMap.put("categoryRecommendVo", categoryRecommendVo);
+		}
+
+
 		return "vcategory";
 	}
 

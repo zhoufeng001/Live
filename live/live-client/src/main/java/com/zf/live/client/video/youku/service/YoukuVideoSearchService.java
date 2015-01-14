@@ -11,8 +11,10 @@ import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
 import com.zf.live.client.video.youku.response.SearchVideoListByCategoryResponse;
 import com.zf.live.client.video.youku.response.SearchVideoListDetailByIdsResponse;
 import com.zf.live.client.video.youku.response.SearchVideosFromVideoListResponse;
+import com.zf.live.client.video.youku.response.VideoDetailResponse;
 import com.zf.live.client.video.youku.vo.Category;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.dao.pojo.VideoDetailWithBLOBs;
 
 /**
  * 搜索youku视频服务
@@ -37,6 +39,21 @@ public interface YoukuVideoSearchService {
 	 */
 	VideoDetailVo searchVideoDetail(SearchVideoDetailRequest request);
 	
+	
+	/**
+	 * 从优酷搜索视频详情
+	 * @param request
+	 * @return
+	 */
+	VideoDetailResponse searchYoukuVideoDetail(SearchVideoDetailRequest request);
+	
+	
+	/**
+	 * 从优酷搜索视频详情，并保存到本地
+	 * @param request
+	 * @return
+	 */
+	VideoDetailWithBLOBs searchYoukuVideoDetailAndSave(Long localVideoId , SearchVideoDetailRequest request);
 	
 	/**
 	 * 查询所有视频分类

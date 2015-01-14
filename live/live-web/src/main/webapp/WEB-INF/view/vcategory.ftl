@@ -37,102 +37,45 @@ var zfpager = $.zfpager ;
         <div class="recommend_box">
         	<p class="list_title">热门${category!""}</p>
             <hr/>
-            <!-- 置顶视频 -->
-            <div class="left_video_box">
-            	<div class="video_info">
-                    <span class="video_name">
-                    	<a href="${ctx}/video/view/108811.htm" target="_blank"> 人在囧途</a>
-                    </span>
-                    <span class="user_info"> 
-                    	520人在线
-                    </span>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" />
-             			<p class="praise_count">12343</p>
-                    </span>
-                </div>
-            	<div class="video_img">
-                	<a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video_big_img.jpg" /></a>
-                </div>
-            </div>
-            
+            <#if categoryRecommendVo.topVideoDetailVo??>
+	            <!-- 置顶视频 -->
+	            <div class="left_video_box">  
+	            	<div class="video_info">
+	                    <span class="video_name">  
+	                    	<a href="${ctx}/video/view/${(categoryRecommendVo.topVideoDetailVo.video.id)!""}.htm" target="_blank">${(categoryRecommendVo.topVideoDetailVo.video.videoname)!""}</a>
+	                    </span>
+	                    <span class="user_info"> 
+	                    	520人在线
+	                    </span>
+	                    <span class="praise_info">
+	                    	<img src="${static_server}/img/praise.jpg" /> 
+	             			<p class="praise_count">${(categoryRecommendVo.topVideoDetailVo.video.thirdPraise)!""}</p>
+	                    </span>  
+	                </div>   
+	            	<div class="video_img">    
+	                	<a href="${ctx}/video/view/${(categoryRecommendVo.topVideoDetailVo.video.id)!""}.htm" target="_blank"><img src="${(categoryRecommendVo.topVideoDetailVo.videoDetail.bigthumbnail)!""}" /></a>
+	                </div>
+	            </div>   
+            </#if>  
             <!-- 推荐视频 -->
             <div class="recommend_list_box">
-            	<!-- 一个视频 -->
-            	<div class="recommend_video_box">
-                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
-                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                        <p>14421</p>
-                    </span>
-                    <span class="user_info">
-                    	520人在线
-                    </span>
-                </div>
-                <!--/ 一个视频 -->
-                <!-- 一个视频 -->
-            	<div class="recommend_video_box">
-                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
-                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                        <p>14421</p>
-                    </span>
-                    <span class="user_info">
-                    	520人在线
-                    </span>
-                </div>
-                <!--/ 一个视频 -->
-                <!-- 一个视频 -->
-            	<div class="recommend_video_box">
-                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
-                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                        <p>14421</p>
-                    </span>
-                    <span class="user_info">
-                    	520人在线
-                    </span>
-                </div>
-                <!--/ 一个视频 --> 
-            	<div class="recommend_video_box">
-                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
-                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                        <p>14421</p>
-                    </span>
-                    <span class="user_info">
-                    	520人在线
-                    </span>
-                </div>
-                <!--/ 一个视频 --> 
-            	<div class="recommend_video_box">
-                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
-                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                        <p>14421</p>
-                    </span>
-                    <span class="user_info">
-                    	520人在线
-                    </span>
-                </div>
-                <!--/ 一个视频 -->
-            	<div class="recommend_video_box">
-                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">武媚娘传奇</a></span>
-                    <a href="${ctx}/video/view/108811.htm" target="_blank"><img src="${static_server}/img/video.jpg"  /></a>
-                    <span class="praise_info">
-                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                        <p>14421</p>
-                    </span>
-                    <span class="user_info">
-                    	520人在线
-                    </span>
-                </div>
-                <!--/ 一个视频 -->
+				<#if categoryRecommendVo.recommendVideoList??>
+	            	<#list categoryRecommendVo.recommendVideoList as video>
+						<!-- 一个视频 -->
+		            	<div class="recommend_video_box">  
+		                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">${(video.videoname)!""}</a></span>
+		                    <a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank"><img src="${(video.thumbnail)!""}"  /></a>
+		                    <span class="praise_info">
+		                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
+		                        <p>${(video.thirdPraise)!""}</p>
+		                    </span>
+		                    <span class="user_info">
+		                    	520人在线
+		                    </span>
+		                </div>
+		                <!--/ 一个视频 -->
+					</#list>
+				</#if>
             </div>
             
         </div>
@@ -171,8 +114,6 @@ var zfpager = $.zfpager ;
         <!-- 分页信息开始 -->
          <div id="div_pager" class="page_info"></div>
          <!-- 分页信息结束 -->
-		
-
 </div>
  <!-- 内容部分结束 -->
 

@@ -20,6 +20,19 @@ public interface LocalVideoService {
 	 * @return
 	 */
 	ServiceResult<Long> saveVideo(Video video);
+	
+	/**
+	 * 根据本地视频id查询本地视频
+	 * @param localVideoId
+	 * @return
+	 */
+	Video selectVideo(Long localVideoId);
+	
+	/**
+	 * 更新视频信息
+	 * @return
+	 */
+	boolean updateVideoBySelective(Video video);
 
 	/**
 	 * 保存视频详细信息
@@ -73,7 +86,7 @@ public interface LocalVideoService {
 	 * @param videoId
 	 * @return
 	 */
-	ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(Long videoId);
+	ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(Long videoId, boolean incrementViewCount);
 	
 	/**
 	 * 根据条件搜索本地视频列表

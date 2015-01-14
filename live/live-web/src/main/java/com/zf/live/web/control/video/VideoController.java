@@ -4,15 +4,15 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.video.local.LocalVideoService;
-import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
-import com.zf.live.web.app.service.LiveWebUtil;
+import com.zf.live.web.app.service.video.WebVideoService;
 
 /**
  * 视频播放
@@ -27,9 +27,12 @@ public class VideoController {
 	
 	@Resource(name="localVideoService")
 	private LocalVideoService localVideoService ;
+	
+	@Autowired
+	private WebVideoService webVideoService ;
 
 	/**
-	 * 去分类页面
+	 * 去视频播放页面
 	 * @param request
 	 * @param response
 	 * @param modelMap
@@ -37,18 +40,9 @@ public class VideoController {
 	 */
 	@RequestMapping("/view/{videoId}")
 	public String videoView(@PathVariable("videoId") Long videoId, ModelMap modelMap){
-		ServiceResult<VideoDetailVo> result = localVideoService.selectVideoWithDetailInfo(videoId);
-		if(result == null){
-			return LiveWebUtil.redirectIndexPath() ;
-		}
-		if(result.isSuccess()){
-			VideoDetailVo videoDetailVo = result.getData();
-			modelMap.addAttribute("videoDetailVo", videoDetailVo) ;
-			return "videoview";
-		}else{
-			return LiveWebUtil.redirectIndexPath() ;
-		}
-		
+		VideoDetailVo videoDetailVo =  webVideoService.selectVideoDetailVoWithCache(videoId, true) ;
+		modelMap.addAttribute("videoDetailVo", videoDetailVo) ;
+		return "videoview";
 	}
 
 

@@ -53,7 +53,7 @@ public class LocalVideoTest extends ServiceBaseTester{
 
 	@Test
 	public void testSearchById(){
-		ServiceResult<VideoDetailVo> result = localVideoService.selectVideoWithDetailInfo(1L);
+		ServiceResult<VideoDetailVo> result = localVideoService.selectVideoWithDetailInfo(1L,true);
 		if(result.isSuccess()){
 			System.out.println(result.getData());
 		}else{

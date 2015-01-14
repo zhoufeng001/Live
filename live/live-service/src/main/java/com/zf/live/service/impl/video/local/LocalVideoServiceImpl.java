@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.zf.live.client.video.local.LocalVideoService;
+import com.zf.live.client.video.youku.request.SearchVideoDetailRequest;
+import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.client.vo.paging.PagedVo;
+import com.zf.live.client.vo.video.VideoSite;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
-import com.zf.live.common.util.TimerUtil;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.VideoDetailMapperExt;
 import com.zf.live.dao.mapper.VideoMapperExt;
@@ -36,6 +38,9 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	@Autowired
 	private VideoDetailMapperExt videoDetailMapper ;
 
+	@Autowired
+	private YoukuVideoSearchService youkuVideoSearchService ;
+	
 	@Override
 	public ServiceResult<Long> saveVideo(
 			@Notnull("videofrom") @Notnull("fromid") @Notnull("videoname") @Notnull("category") 
@@ -126,7 +131,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 
 
 	@Override
-	public ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(@Notnull Long videoId) {
+	public ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(@Notnull Long videoId, boolean incrementViewCount) {
 		ServiceResult<VideoDetailVo> result = new ServiceResult<VideoDetailVo>() ;
 		VideoDetailVo videoDetailVo = new VideoDetailVo();
 		Video video = videoMapper.selectByPrimaryKey(videoId);
@@ -135,10 +140,31 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 			return result;
 		}
 		VideoDetailWithBLOBs videoDetail = videoDetailMapper.selectByPrimaryKey(videoId);
+		if(videoDetail == null){
+			if(video.getVideofrom() == VideoSite.YOUKU.getValue()){
+				SearchVideoDetailRequest request = new SearchVideoDetailRequest();
+				request.setVideoId(video.getFromid()); 
+				videoDetail = youkuVideoSearchService.searchYoukuVideoDetailAndSave(video.getId(), request) ;
+			}
+		}
 		videoDetailVo.setVideo(video);
 		videoDetailVo.setVideoDetail(videoDetail);
 		result.setSuccess(true);
 		result.setData(videoDetailVo);
+
+		//观看次数+1
+		if(incrementViewCount){
+			Video updateVideo = new Video();
+			updateVideo.setId(video.getId()); 
+			Long viewCount = video.getViewCount();
+			if(viewCount == null){
+				viewCount = 0L ;
+			}
+			viewCount++ ;
+			updateVideo.setViewCount(viewCount);
+			videoMapper.updateByPrimaryKeySelective(updateVideo) ;
+		}
+
 		return result; 
 	}
 
@@ -147,7 +173,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 			@Notnull("page") @Notnull("pageSize") 
 			LocalVideoSearchCondition condition) {
 		PagedVo<Video> result = new PagedVo<Video>();
-		
+
 		VideoExample query = new VideoExample() ;
 		Criteria criteria = query.createCriteria();
 		if(condition != null){
@@ -166,7 +192,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		}
 		List<Video> videos = videoMapper.selectByExample(query);
 		int total = videoMapper.countByExample(query) ;
-		
+
 		result.setData(videos);
 		result.setPage(condition.getPage()); 
 		result.setPageSize(condition.getPageSize()); 
@@ -174,6 +200,16 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		result.setTotalRecored(total); 
 		result.setData(videos);
 		return result; 
+	}
+
+	@Override
+	public Video selectVideo(@Notnull Long localVideoId) {
+		return videoMapper.selectByPrimaryKey(localVideoId);
+	}
+
+	@Override
+	public boolean updateVideoBySelective(@Notnull("id") Video video) {
+		return videoMapper.updateByPrimaryKeySelective(video) > 0;
 	}
 
 }
