@@ -203,7 +203,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 
 	@Override
-	public Video selectVideo(@Notnull Long localVideoId) {
+	public Video selectVideoById(@Notnull Long localVideoId) {
 		return videoMapper.selectByPrimaryKey(localVideoId);
 	}
 

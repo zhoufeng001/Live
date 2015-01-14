@@ -26,7 +26,7 @@ public interface LocalVideoService {
 	 * @param localVideoId
 	 * @return
 	 */
-	Video selectVideo(Long localVideoId);
+	Video selectVideoById(Long localVideoId);
 	
 	/**
 	 * 更新视频信息
