@@ -24,7 +24,7 @@
 <#list categoryRecomendVoList as categoryRecommendVo>
  <!-- 推荐视频列表开始 -->
         <div class="recommend_box">  
-        	<p class="list_title">热门${categoryRecommendVo.topVideoDetailVo.video.category!""}</p>
+        	<p class="list_title">${categoryRecommendVo.topVideoDetailVo.video.category!""}</p>
             <hr/>
             <#if categoryRecommendVo.topVideoDetailVo??>
 	            <!-- 置顶视频 -->

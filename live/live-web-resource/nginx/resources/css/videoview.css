@@ -1,0 +1,26 @@
+/* CSS Document */
+@CHARSET "UTF-8";
+
+.player_left{
+	width: 100px;
+	height: 500px;
+	float: left;
+}
+
+.player_right{
+	width: 270px;
+	height: 500px;
+	float: right;
+}
+
+.player{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.titleInfo{
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+}

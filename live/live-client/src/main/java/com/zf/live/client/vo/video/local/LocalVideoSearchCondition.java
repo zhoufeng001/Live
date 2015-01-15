@@ -1,6 +1,7 @@
 package com.zf.live.client.vo.video.local;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 本地视频搜索条件
@@ -22,7 +23,7 @@ public class LocalVideoSearchCondition implements Serializable{
 	/**
 	 * 分类
 	 */
-	private String category ;
+	private List<String> category ; 
 	
 	/**
 	 * 第几页
@@ -44,11 +45,11 @@ public class LocalVideoSearchCondition implements Serializable{
 		this.keyword = keyword;
 	}
 
-	public String getCategory() {
+	public List<String> getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(List<String> category) {
 		this.category = category;
 	}
 

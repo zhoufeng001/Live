@@ -33,6 +33,31 @@
 			<value>0 0/10 * * * ?</value> <!-- 10分钟执行一次 -->
 		</property>
 	</bean>
+
+	<!-- 重新缓存分类置顶视频Job -->
+	<bean id="reCacheCategoryRecommendTopVideoJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类 -->
+		<property name="targetObject">
+			<ref bean="recacheCategoryRecommendTopVideoTask" />
+		</property>
+		<!-- 调用类中的方法 -->
+		<property name="targetMethod">
+			<value>reCache</value>
+		</property>
+	</bean>
+
+	<!-- 重新缓存分类置顶视频Trigger  -->
+	<bean id="reCacheCategoryRecommendTopVideoTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="reCacheCategoryRecommendTopVideoJob" />
+		</property>
+		<!-- cron表达式 -->
+		<property name="cronExpression">
+			<value>0 0/10 * * * ?</value> <!-- 10分钟执行一次 -->
+		</property>
+	</bean>
 	
 	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
 	<bean id="startQuertz" lazy-init="false" autowire="no"
@@ -40,6 +65,7 @@
 		<property name="triggers"> 
 			<list>
 				<ref bean="clearAndSaveCacheVideoToDbTrigger" />
+				<ref bean="reCacheCategoryRecommendTopVideoTrigger" />
 			</list>
 		</property>
 	</bean>

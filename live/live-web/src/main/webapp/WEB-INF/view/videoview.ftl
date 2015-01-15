@@ -4,7 +4,7 @@
 <!-- 公共meta信息 -->
 <#include "./common/live_common_meta.ftl" >	
 <#include "./common/live_common_js.ftl" >	
-<link rel="stylesheet" href="${static_server}/css/category.css">
+<link rel="stylesheet" href="${static_server}/css/videoview.css">
 
 <script type="text/javascript">
  var ctx = '${ctx!""}';
@@ -22,9 +22,14 @@
  
 <!-- 内容部分开始 -->
 <div class="main_content">
-<center>
-	<div id="youkuplayer" style="width:800px;height:480px"></div>  
-</center>
+	
+	<div class="player_left"></div>
+	<div class="player">
+		<span class="titleInfo">${(videoDetailVo.video.videoname)!""}</span>
+		<div  id="youkuplayer" style="width:800px;height:480px"></div>  
+	</div>
+	<div class="player_right"></div>
+
 </div>
  <!-- 内容部分结束 -->
 

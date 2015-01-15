@@ -28,8 +28,8 @@ public class IndexController {
 	/**
 	 * 首页展示的分类集合
 	 */
-	private static final String categorys[] = {
-		"电影","电视剧","综艺","游戏","动漫","娱乐","搞笑","时尚","汽车","科技","生活"
+	public static final String categorys[] = {
+		"电影","电视剧","综艺","音乐","微电影","网剧","游戏","动漫","娱乐","时尚","搞笑","自拍","汽车","科技","生活"
 	};
 	
 	@RequestMapping("/index")

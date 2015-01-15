@@ -16,10 +16,10 @@ a:hover{
 
 .top_banner{ width:100% ; height:100px; background-image:url(../img/index_top_banner.jpg)}
 
-.index_menu_bar{ width:100%; height:35px; background:#CCC ;}
+.index_menu_bar{ width:100%; height:35px; background:#AAAAFF ;}
 
 .index_menu{
-	width:1000px;
+	width:1200px;
 	height:100%;
 	margin:auto auto ;
 	padding-top:2px;
@@ -42,7 +42,7 @@ a:hover{
 .index_menu .menu_buts .menu_but_sp a{
 	text-decoration: none;
 	font-weight: bold;
-	color: gray;
+	color: #642100 ;
 }
 
 .index_menu .menu_buts .menu_but_sp a:hover{
@@ -55,7 +55,7 @@ a:hover{
 .index_menu_bar .user_info_bar{
 	background:#606;
 	position:absolute ;
-	background:#FFF ;
+	background:#F0FFF0 ;
 	right:10px;
 	top:10px;
 	z-index:100;
@@ -121,7 +121,7 @@ a:hover{
 } 
 
 .main_content{
-	width:1000px;
+	width:1200px;
 	margin-left:auto ;
 	margin-right:auto ;
 	margin-top:5px; 

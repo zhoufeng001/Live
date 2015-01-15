@@ -1,5 +1,6 @@
 package com.zf.live.service.test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -64,7 +65,9 @@ public class LocalVideoTest extends ServiceBaseTester{
 	@Test
 	public void testSearch(){
 		LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
-		condition.setCategory("拍客");
+		List<String> category = new ArrayList<String>();
+		category.add("拍客");
+		condition.setCategory(category);
 		condition.setKeyword(null);
 		condition.setPage(1);
 		condition.setPageSize(20);

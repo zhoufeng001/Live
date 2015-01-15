@@ -23,6 +23,7 @@ import com.zf.live.dao.pojo.VideoDetailWithBLOBs;
 import com.zf.live.dao.pojo.VideoExample;
 import com.zf.live.dao.pojo.VideoExample.Criteria;
 import com.zf.live.dao.vo.Page;
+import com.zf.live.service.impl.ServiceConst;
 
 /**
  * 
@@ -177,8 +178,11 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		VideoExample query = new VideoExample() ;
 		Criteria criteria = query.createCriteria();
 		if(condition != null){
-			if(StringUtils.isNotBlank(condition.getCategory())){ 
-				criteria.andCategoryEqualTo(condition.getCategory());
+			if(condition.getCategory()!=null && condition.getCategory().size() > 0){ 
+				if(condition.getCategory().contains("其他")){
+					condition.getCategory().addAll(ServiceConst.CATEGORY_OTHER_INCLUED); 
+				}
+				criteria.andCategoryIn(condition.getCategory()) ;
 			}
 			if(StringUtils.isNotBlank(condition.getKeyword())){
 				criteria.andVideonameLike("%" + condition.getKeyword() + "%"); 

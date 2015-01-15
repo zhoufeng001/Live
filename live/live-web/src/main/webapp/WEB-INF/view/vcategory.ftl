@@ -88,9 +88,9 @@ var zfpager = $.zfpager ;
             <p class="sort_type"><a <#if orderby == 2 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/2.htm"  >赞数量↓</a></p>
             <p class="sort_type"><a <#if orderby == 3 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/3.htm"  >更新时间↓</a></p>
         </div>  
-  		<hr/>
+  		<hr style="width:1200px"/>
         <!-- 排序结束 -->
-        
+         
         <!-- 视频列表开始 -->
         <div class="video_list">  
         	<#list videoPageVo.data as video >
@@ -98,10 +98,10 @@ var zfpager = $.zfpager ;
 	            <div class="list_video_box">
 	                <span class="video_name"><a href="${ctx}/video/view/${video.id}.htm" target="_blank" title="${(video.videoname)!""}">${(video.videoname)!""}</a></span>
 	                <a href="${ctx}/video/view/${video.id}.htm" target="_blank"><img src="${(video.thumbnail)!""}"  /></a>
-                <span class="praise_info">
+               		 <span class="praise_info">
                     <img src="${static_server}/img/praise.jpg" class="praise_icon" />
                     <p>${(video.thirdPraise)!""}</p> 
-                </span>
+                	</span>
                 <span class="user_info">
                     520人在线
                 </span>  

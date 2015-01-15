@@ -23,6 +23,11 @@ public interface WebConst {
 		 * 视频详情缓存
 		 */
 		public String videoInfoCache = "videoInfoCache";
+		
+		/**
+		 * 对视频分类的第一页进行缓存
+		 */
+		public String videoPageCache = "videoPageCache";
 	}
 	
 }
