@@ -1,0 +1,1 @@
+java -Djava.rmi.server.hostname=主机ip -Dcom.sun.management.jmxremote.port=8999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -jar -Xms64M -Xmx128M -Xmn20M -XX:SurvivorRatio=2 ./live-scheduled-0.0.1-SNAPSHOT.jar

@@ -43,7 +43,7 @@ public class VideoCategoryController {
 	/**
 	 * 页大小
 	 */
-	private static final Integer VIDEO_CATEGORY_PAGE_SIZE = 32 ;
+	private static final Integer VIDEO_CATEGORY_PAGE_SIZE = 28 ;
 
 	/**
 	 * 根据在线人数排序

@@ -31,7 +31,7 @@
 		</property>
 		<!-- cron表达式 -->
 		<property name="cronExpression">
-			<value>0 0 0/3 * * ?</value> <!-- 每天从0时开始每三小时一次 -->
+			<value>0 0/5 * * * ?</value> <!-- 每天从0时开始每三小时一次 -->
 		</property>
 	</bean>
 	

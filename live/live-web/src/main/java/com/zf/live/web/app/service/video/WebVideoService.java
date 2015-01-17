@@ -44,6 +44,7 @@ public class WebVideoService {
 		//先从缓存中读取
 		cateRecommendVo = ehCacheUtil.get(EhCacheNames.categoryRecommendTopVideoCache, category, CategoryRecommendVo.class); 
 		if(cateRecommendVo != null){
+			log.info("从缓存中读取到分类列表[{}]" , category);
 			return cateRecommendVo ;
 		}
 		reCacheCategoryRecommend(category); 
@@ -60,6 +61,7 @@ public class WebVideoService {
 	 * @return
 	 */
 	public void reCacheCategoryRecommend(String category){
+		log.info("Recache分类[{}]" , category); 
 		ZFAssert.notBlank(category, "category不能为空");
 		CategoryRecommendVo cateRecommendVo = new CategoryRecommendVo();
 		LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
@@ -67,7 +69,7 @@ public class WebVideoService {
 		categoryList.add(category);
 		condition.setCategory(categoryList);
 		condition.setPage(1);
-		condition.setPageSize(11);
+		condition.setPageSize(9);
 		condition.setOrderBy(" view_count desc , third_view_count desc ,praise desc , third_praise desc , publishtime desc ");
 		PagedVo<Video> videoPageVo = localVideoService.searchVideos(condition);
 		if(videoPageVo != null && videoPageVo.getData() != null && videoPageVo.getCount() > 0){
@@ -91,6 +93,7 @@ public class WebVideoService {
 		CachedVideoDetailVo cachedVideoDetailVo = null ;
 		cachedVideoDetailVo = ehCacheUtil.get(EhCacheNames.videoInfoCache, videoId, CachedVideoDetailVo.class);
 		if(cachedVideoDetailVo != null){
+			log.info("从缓存中读取到视频[{}]" , videoId); 
 			if(incrementViewCount){
 				Long viewCount = cachedVideoDetailVo.getVideo().getViewCount();
 				viewCount++ ;
@@ -105,6 +108,7 @@ public class WebVideoService {
 			log.warn("没查询到视频{}",videoId);
 			return null ;
 		}
+		log.info("从数据库读取到视频[{}]" , videoId); 
 		if(result.isSuccess()){
 			VideoDetailVo videoDetailVo = result.getData();
 			if(videoDetailVo == null){
@@ -143,8 +147,11 @@ public class WebVideoService {
 			PagedVo<Video> pageVo = new PagedVo<Video>();
 			pageVo = ehCacheUtil.get(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo.getClass());
 			if(pageVo == null){
+				log.info("从数据库中查询分类第一页缓存[{}]",condition.getCategory()); 
 				pageVo = localVideoService.searchVideos(condition); 
 				ehCacheUtil.put(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo);  
+			}else{
+				log.info("从缓存中读取到分类第一页视频[{}]" , condition.getCategory()); 
 			}
 			return pageVo ;
 		}else{

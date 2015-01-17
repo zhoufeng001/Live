@@ -88,7 +88,7 @@ var zfpager = $.zfpager ;
             <p class="sort_type"><a <#if orderby == 2 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/2.htm"  >赞数量↓</a></p>
             <p class="sort_type"><a <#if orderby == 3 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/3.htm"  >更新时间↓</a></p>
         </div>  
-  		<hr style="width:1200px"/>
+  		<hr />
         <!-- 排序结束 -->
          
         <!-- 视频列表开始 -->

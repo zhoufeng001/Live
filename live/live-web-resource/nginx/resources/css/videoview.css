@@ -1,26 +1,188 @@
 /* CSS Document */
 @CHARSET "UTF-8";
 
-.player_left{
-	width: 100px;
-	height: 500px;
-	float: left;
+.video_main_content{
+	width:1200px ;
+	height:500px;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto ;
 }
 
-.player_right{
-	width: 270px;
-	height: 500px;
-	float: right;
+.video_head{
+	width:100%;
+	height:45px;
+	float:left;
+	line-height:45px;
 }
 
-.player{
-	float: left;
+.video_head .playing_icon{
+	float:left;
+	margin-top:6px;
+}
+
+.video_head .video_name{
+	height:45px;
+	float:left;
 	margin-left: 10px;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
-.titleInfo{
-	height: 30px;
-	line-height: 30px;
-	font-size: 13px;
+.video_head .play_icon{
+	float:left;
+	margin-top:10px;
+}
+
+.video_head .praise_icon{
+	float:left;
+	margin-top:10px;
+	margin-left:20px;
+}
+
+.video_head .play_count{
+	float:left;
+	margin-bottom:13px;
+	margin-left:3px;
+	font-size:14px;
+}
+
+
+.video_main_box{
+	width:100%;
+	float:left;
+}
+
+.audience_list{
+	width:160px;
+	float:left;
+	height:600px;
+	overflow-y:auto; 
+}
+
+.audience{
+	width:100%;
+	height:40px;
+	float:left;
+	margin-bottom:3px;
+}
+
+.audience_loadmore{
+	width:100%;
+	height:40px;
+	float:left;
+	margin-bottom:3px;
+}
+
+.audience_loadmore .load_more{
+	width:100%;
+	float:left;
+	line-height:40px;
+	height:40px;
+}
+
+.audience a{
+	height:40px;
+	line-height:40px;
+	text-decoration:none
+}
+
+
+.audience :hover{
+	background:#CC9;
+	cursor:context-menu;
+}
+
+.audience .photo{
+	width:40px;
+	height:40px;
+	float:left;
+}
+
+.audience .audience_name{	
+	width:80px;	
+	height:40px;
+	line-height:40px;
+	float:left;
+	margin-left:5px;
+	overflow:hidden; 
+}
+
+.player_and_chat{
+	width:700px;
+	margin-left:10px;
+	float:left;
+	height:500px;
+}
+
+.player_and_chat .player{
+	width:100%;
+	height:470px;
+	float:left;
+}
+
+.player_and_chat .chat_input{
+	width:100%;
+	height:120px;
+	float:left;
+	margin-top:5px;
+}
+
+.chat_textarea{
+	width:590px;
+	height:85px;
+	float:left;
+}
+
+.chat_control{
+	width:95px;
+	height:85px;
+	float:right;
+}
+
+.chat_control .emotion{
+	width:100%;
+	height:25px;
+	float:left;
+}
+
+.chat_send{
+	width:50px;
+	height:30px;
+	margin-top:5px;
+	vertical-align:bottom; ;
+	float:left;
+}
+
+.chat_recored{
+	width:320px;
+	height:470px;
+	float:right;
+	border:#CCC 1px solid ;
+}
+
+.chatlist_ul{
+	list-style:none;
+	width:98%;
+	height:98%;
+	margin-left:5px;
+	margin-top:5px;
+	overflow-y:auto; 
+	word-wrap:break-word; word-break:break-all;display:block;
+}
+
+.chatlist_ul li{
+	font-size:14px;
+	line-height:22px;
+	vertical-align:bottom;
+	margin-bottom:2px;
+}
+
+.chatlist_ul li img{
+	display: inline-block;
+	vertical-align: bottom;
+	padding: 0 2px;
+}
+
+.chatlist_ul li .username{
+	color:#bc755a; 
 }
