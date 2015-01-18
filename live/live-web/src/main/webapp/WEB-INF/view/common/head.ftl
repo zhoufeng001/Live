@@ -9,7 +9,7 @@
     	<div class="index_menu">   
 	        <!-- 菜单 -->
 			<div class="menu_buts">
-	    		<span class="menu_but_sp"><a  href="${ctx}/index.htm" >首  页</a></span>
+	    		<span class="menu_but_sp"><a  href="${ctx}/index.htm" class="menu_cur">首  页</a></span>
 	            <span class="menu_but_sp"><a  href="${ctx}/video/category/电影/1/2.htm" >电影</a></span>
 	            <span class="menu_but_sp"><a  href="${ctx}/video/category/电视剧/1/2.htm" >电视剧</a></span> 
 	            <span class="menu_but_sp"><a  href="${ctx}/video/category/综艺/1/2.htm" >综艺</a></span>

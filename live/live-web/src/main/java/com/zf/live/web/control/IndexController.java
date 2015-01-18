@@ -40,6 +40,8 @@ public class IndexController {
 			categoryRecomendVoList.add(categoryRecommendVo);
 		}
 		modelMap.addAttribute("categoryRecomendVoList", categoryRecomendVoList) ; 
+		
+		modelMap.addAttribute("category", "首页");
 		return "index"; 
 	}
 

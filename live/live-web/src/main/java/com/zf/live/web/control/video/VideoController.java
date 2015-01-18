@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.common.ZFSpringPropertyConfigure;
 import com.zf.live.web.app.service.video.WebVideoService;
 
 /**
@@ -24,12 +25,15 @@ import com.zf.live.web.app.service.video.WebVideoService;
 public class VideoController {
 
 	static final Logger log = LoggerFactory.getLogger(VideoController.class);
-	
+
 	@Resource(name="localVideoService")
 	private LocalVideoService localVideoService ;
-	
+
 	@Autowired
 	private WebVideoService webVideoService ;
+	
+	@Autowired
+	private ZFSpringPropertyConfigure propertyConfigure ;
 
 	/**
 	 * 去视频播放页面
@@ -42,6 +46,16 @@ public class VideoController {
 	public String videoView(@PathVariable("videoId") Long videoId, ModelMap modelMap){
 		VideoDetailVo videoDetailVo =  webVideoService.selectVideoDetailVoWithCache(videoId, true) ;
 		modelMap.addAttribute("videoDetailVo", videoDetailVo) ;
+		if(videoDetailVo != null && videoDetailVo.getVideo() != null){
+			modelMap.addAttribute("category", videoDetailVo.getVideo().getCategory());
+		}
+		
+		/* 聊天服务器 */
+		String cometServerUrl = propertyConfigure.getProperties("comet.server.url");
+		String cometdHandshake = propertyConfigure.getProperties("comet.server.handshake.url");
+		modelMap.addAttribute("cometServerUrl", cometServerUrl) ;
+		modelMap.addAttribute("cometdHandshake", cometdHandshake) ;
+		
 		return "videoview";
 	}
 

@@ -107,8 +107,8 @@ public class VideoCategoryController {
 			CategoryRecommendVo categoryRecommendVo = webVideoService.selectCategoryRecommend(category) ;
 			modelMap.put("categoryRecommendVo", categoryRecommendVo);
 		}
-
-
+		
+		modelMap.addAttribute("category", category);
 		return "vcategory";
 	}
 

@@ -1,10 +1,14 @@
 /* CSS Document */
 @CHARSET "UTF-8";
 
+body{
+	background: #F4ECF9;
+}
+
 .video_main_content{
 	width:1200px ;
 	height:500px;
-	margin-top:10px;
+	margin-top:3px;
 	margin-left:auto;
 	margin-right:auto ;
 }
@@ -14,6 +18,7 @@
 	height:45px;
 	float:left;
 	line-height:45px;
+	background: #CCC;
 }
 
 .video_head .playing_icon{
@@ -46,10 +51,18 @@
 	font-size:14px;
 }
 
+.video_head .praise_count{
+	float:left;
+	margin-bottom:13px;
+	margin-left:3px;
+	font-size:14px;
+}
+
 
 .video_main_box{
 	width:100%;
 	float:left;
+	margin-top: 3px;
 }
 
 .audience_list{
@@ -57,6 +70,12 @@
 	float:left;
 	height:600px;
 	overflow-y:auto; 
+}
+
+.online_count{
+	height: 30px;
+	line-height: 30px;
+	float: left;
 }
 
 .audience{
@@ -131,6 +150,7 @@
 	width:590px;
 	height:85px;
 	float:left;
+	background: #F4ECF9;
 }
 
 .chat_control{
@@ -185,4 +205,5 @@
 
 .chatlist_ul li .username{
 	color:#bc755a; 
+	margin-left: 5px;
 }

@@ -6,15 +6,23 @@
 <#include "./common/live_common_js.ftl" >	
 <link href="${static_server}/css/videoview.css" rel="stylesheet" />
 <link href="${static_server}/js/qqface/face.css" rel="stylesheet" />
+<script type="text/javascript">
+var ctx = '${ctx!""}';
+
+var cometServerUrl = "${cometServerUrl!""}" ;
+var cometdHandshake = "${cometdHandshake!""}" ;
+var config = {
+    contextPath: cometServerUrl
+};
+</script>
+
 
 <script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>
-<script type="text/jscript" src="${static_server}/js/qqface/jquery.qqFace.js"></script>
+<script type="text/jscript" src="${static_server}/js/qqface/jquery.qqFace.js"></script> 
+<script type="text/jscript" src="${static_server}/js/chat/cometd.js"></script>  
+<script type="text/jscript" src="${static_server}/js/chat/jquery.cometd.js"></script>
+<script type="text/jscript" src="${static_server}/js/chat/chatprocess.js"></script>
 
-
-<script type="text/javascript">
- var ctx = '${ctx!""}';
-
-</script>
 
 <title>${(videoDetailVo.video.videoname)!""}</title>
 </head>
@@ -43,6 +51,9 @@
         	
             <!-- 观众列表 -->
         	<div class="audience_list">
+        		<div class="online_count">
+        			300人在线
+        		</div>
             	<div class="audience">
                 	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
                     <span class="audience_name">赖宝</span>
@@ -128,201 +139,20 @@
             
             <!-- 聊天记录 -->
             <div class="chat_recored">
-            	<ul class="chatlist_ul">
-                	<li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋 <img src="${static_server}/img/face/1.gif" />
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">田娇</span>
-                        说：大笨蛋
-                    </li>
-                    <li>
-                    	<span>21:43</span>
-                        <span class="username">赖宝</span>
-                        说：我就是大笨蛋
-                    </li>
+            	<ul class="chatlist_ul" id="chatlist_ul" >
                 </ul>
             </div>
             <!--/聊天记录  --> 	
             
-        </div>
             
-    </div>
+    </div> 
  <!-- 内容部分结束 -->
 
 <!-- 底部信息  -->
 <#include "./common/bottom.ftl" >
 
 </div>
-
+<!--
 <script type="text/javascript" src="http://player.youku.com/jsapi">
 	player = new YKU.Player('youkuplayer',{
 		styleid: '0',
@@ -332,7 +162,7 @@
 		autoplay: false
 	});
 </script>
-
+-->
 <script type="text/javascript">
 	$(function(){
 		$('.emotion').qqFace({

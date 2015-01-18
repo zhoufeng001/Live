@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 
 import org.cometd.annotation.ServerAnnotationProcessor;
 import org.cometd.bayeux.server.BayeuxServer;
+import org.cometd.bayeux.server.ServerSession;
 import org.cometd.server.BayeuxServerImpl;
 import org.cometd.server.transport.JSONPTransport;
 import org.cometd.server.transport.JSONTransport;
@@ -31,6 +32,10 @@ public class CometDInitializer implements ServletContextAware
         servletContext.setAttribute(BayeuxServer.ATTRIBUTE, bean);
         bean.setOption(ServletContext.class.getName(), servletContext);
         bean.setOption("ws.cometdURLMapping", "/cometd/*");
+        
+        //设置权限校验服务
+        bean.setSecurityPolicy(new LiveSecurityPolicy()); 
+        
         return bean;
     }
 

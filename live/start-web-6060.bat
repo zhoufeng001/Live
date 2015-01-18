@@ -1,4 +1,4 @@
 cd ./live-web
-set MAVEN_OPTS= -Djetty.port=6060 -Djetty.ajp.port=6009 -Djetty.stop.port=6079 -Xrunjdwp:transport=dt_socket,address=6666,suspend=n,server=y -Xms128m -Xmx128m -Xmn50m -XX:SurvivorRatio=3 -XX:MetaspaceSize=32m -XX:MaxMetaspaceSize=64m -Dcom.sun.management.jmxremote.port=6677 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=d:/java_pid.hprof 
+set MAVEN_OPTS= -Djetty.port=6060 -Djetty.ajp.port=6009 -Djetty.stop.port=6079 -Xrunjdwp:transport=dt_socket,address=6666,suspend=n,server=y -Xms128m -Xmx128m -Xmn50m -XX:SurvivorRatio=3 -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Dcom.sun.management.jmxremote.port=6677 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=d:/java_pid.hprof 
 rem -Dio.netty.leakDetectionLevel=advanced
 mvn -Dmaven.test.skip=true jetty:run

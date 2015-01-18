@@ -38,7 +38,6 @@ a:hover{
 	text-align: center;
 }
 
-
 .index_menu .menu_buts .menu_but_sp a{
 	text-decoration: none;
 	font-weight: bold;
@@ -51,6 +50,11 @@ a:hover{
 	color: teal;
 	text-decoration: underline;
 }
+
+.index_menu .menu_buts .menu_but_sp a.menu_cur{
+	color: #C84FAC ;
+	font-weight: bold;
+} 
 
 .index_menu_bar .user_info_bar{
 	background:#606;
