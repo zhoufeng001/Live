@@ -58,7 +58,7 @@ public class UserController {
 		return "user/loginView";
 	}
 
-	/**710002373100
+	/**
 	 * 执行登录操作
 	 * @param request
 	 * @param response
@@ -74,7 +74,8 @@ public class UserController {
 		}else{
 			if(result.isSuccess()){
 				String token = result.getData() ;
-				webTokenUtil.createTokenCookie(request, response, token); 
+				Lvuser user = lvuserService.getUserByToken(token);
+				webTokenUtil.createTokenCookie(request, response, token , user); 
 				return LiveWebUtil.redirectIndexPath() ;
 			}else{
 				RequestContext.setErrTipMessage(result.getErrMssage());

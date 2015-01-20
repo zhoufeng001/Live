@@ -123,7 +123,9 @@ public class SinaController {
 					//登录
 					ServiceResult<String> loginResult = lvuserService.login4Third(Const.UserConst.USER_FROM_SINA, openId) ;
 					if(loginResult.isSuccess()){
-						webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, loginResult.getData()); 
+						String token = loginResult.getData() ;
+						Lvuser loginUser = lvuserService.getUserByToken(token);
+						webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, token , loginUser); 
 					}else{
 						log.warn("SINA用户{}登录失败", openId);
 					}
@@ -134,7 +136,9 @@ public class SinaController {
 				//登录
 				ServiceResult<String> loginResult = lvuserService.login4Third(Const.UserConst.USER_FROM_SINA, openId) ;
 				if(loginResult.isSuccess()){
-					webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, loginResult.getData()); 
+					String token = loginResult.getData() ;
+					Lvuser loginUser = lvuserService.getUserByToken(token);
+					webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, token ,loginUser); 
 				}else{
 					log.warn("SINA用户{}登录失败", openId);
 				}

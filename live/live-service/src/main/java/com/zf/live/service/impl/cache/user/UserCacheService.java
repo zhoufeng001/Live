@@ -58,9 +58,9 @@ public class UserCacheService {
 	private final int USER_CACHE_TIME = 3600 ;
 	
 	/**
-	 * token缓存时间（30分钟不使用，自动失效）
+	 * token缓存时间（7天）
 	 */
-	private final int TOKEN_CACHE_TIME = 1800 ;
+	private final int TOKEN_CACHE_TIME = 60 * 60 * 24 * 7 ;
 	
 	
 	/**

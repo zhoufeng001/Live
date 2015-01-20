@@ -119,7 +119,9 @@ public class QQController {
 							//登录
 							ServiceResult<String> loginResult = lvuserService.login4Third(Const.UserConst.USER_FROM_QQ, openID) ;
 							if(loginResult.isSuccess()){
-								webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, loginResult.getData()); 
+								String token = loginResult.getData() ;
+								Lvuser user = lvuserService.getUserByToken(token);
+								webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, token,user); 
 							}else{
 								log.warn("QQ用户{}登录失败", openID);
 							}
@@ -130,7 +132,9 @@ public class QQController {
 						//登录
 						ServiceResult<String> loginResult = lvuserService.login4Third(Const.UserConst.USER_FROM_QQ, openID) ;
 						if(loginResult.isSuccess()){
-							webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, loginResult.getData()); 
+							String token = loginResult.getData();
+							Lvuser user = lvuserService.getUserByToken(token);
+							webTokenUtil.createTokenCookie((HttpServletRequest)request,(HttpServletResponse) response, token ,user); 
 						}else{
 							log.warn("QQ用户{}登录失败", openID);
 						}

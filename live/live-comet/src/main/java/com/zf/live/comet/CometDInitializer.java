@@ -3,12 +3,12 @@ package com.zf.live.comet;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
 
 import org.cometd.annotation.ServerAnnotationProcessor;
 import org.cometd.bayeux.server.BayeuxServer;
-import org.cometd.bayeux.server.ServerSession;
 import org.cometd.server.BayeuxServerImpl;
 import org.cometd.server.transport.JSONPTransport;
 import org.cometd.server.transport.JSONTransport;
@@ -19,10 +19,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
 
+import com.zf.live.client.room.RoomService;
+import com.zf.live.client.user.LvuserService;
+
 @Component
 public class CometDInitializer implements ServletContextAware
 {
     private ServletContext servletContext;
+    
+    @Resource(name="roomService")
+    private RoomService roomService ;
+    
+    @Resource(name="lvuserService")
+    private LvuserService lvuserService ;
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public BayeuxServer bayeuxServer()
@@ -34,7 +43,7 @@ public class CometDInitializer implements ServletContextAware
         bean.setOption("ws.cometdURLMapping", "/cometd/*");
         
         //设置权限校验服务
-        bean.setSecurityPolicy(new LiveSecurityPolicy()); 
+        bean.setSecurityPolicy(new Authorcation(servletContext,roomService,lvuserService));  
         
         return bean;
     }

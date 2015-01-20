@@ -6,23 +6,31 @@
 <#include "./common/live_common_js.ftl" >	
 <link href="${static_server}/css/videoview.css" rel="stylesheet" />
 <link href="${static_server}/js/qqface/face.css" rel="stylesheet" />
+<script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>
+<script type="text/jscript" src="${static_server}/js/jquery.cookie.js"></script>
 <script type="text/javascript">
-var ctx = '${ctx!""}';
+	var ctx = '${ctx!""}';
 
-var cometServerUrl = "${cometServerUrl!""}" ;
-var cometdHandshake = "${cometdHandshake!""}" ;
-var config = {
-    contextPath: cometServerUrl
-};
+	var cometServerUrl = "${cometServerUrl!""}" ;
+	var cometdHandshake = "${cometdHandshake!""}" ;
+	var config = {
+   		 contextPath: cometServerUrl
+	};
+	
+	var videoId = ${(videoDetailVo.video.id)!""} ;
+	
+	var userToken = $.cookie("_tc_k_");
+	var userId = $.cookie("_c_uid_");
+	var userNick = $.cookie("_c_unick_");
+	
+	
 </script>
 
 
-<script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>
 <script type="text/jscript" src="${static_server}/js/qqface/jquery.qqFace.js"></script> 
 <script type="text/jscript" src="${static_server}/js/chat/cometd.js"></script>  
 <script type="text/jscript" src="${static_server}/js/chat/jquery.cometd.js"></script>
 <script type="text/jscript" src="${static_server}/js/chat/chatprocess.js"></script>
-
 
 <title>${(videoDetailVo.video.videoname)!""}</title>
 </head>

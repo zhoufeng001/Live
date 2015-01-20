@@ -28,6 +28,11 @@
 	    <property name="serviceName" value="youkuFetchVideoAndSaveService"/>
 	    <property name="serviceInterface" value="com.zf.live.client.video.FetchVideosAndSaveService"/>
 	</bean>
+	
+	<bean id="roomService" class="com.zf.live.common.hessian.ZFHessianProxyFactory">
+	    <property name="serviceName" value="roomService"/>
+	    <property name="serviceInterface" value="com.zf.live.client.room.RoomService"/>
+	</bean>
 			
 		
 </beans>

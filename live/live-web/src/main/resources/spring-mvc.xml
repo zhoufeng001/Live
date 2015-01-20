@@ -16,10 +16,6 @@
 			<mvc:mapping path="/**"/>
 			<bean class="com.zf.live.web.interceptor.LiveWebInterceptor" />
 		</mvc:interceptor>
-		<mvc:interceptor>
-			<mvc:mapping path="/**"/>
-			<bean class="com.zf.live.web.interceptor.ExportStaticBeansInterceptor"/>
-		</mvc:interceptor>
 	</mvc:interceptors>
 	
 	<!-- freemarker的配置 -->  

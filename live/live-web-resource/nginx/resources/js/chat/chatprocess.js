@@ -87,7 +87,7 @@ var msgUL ;
             logLevel: 'debug',
             requestHeaders:'{"aaa":"111" , "bbb":"222"}',
         });
-
+        
         cometd.addListener('/meta/handshake', _metaHandshake);
         cometd.addListener('/meta/connect', _metaConnect);
         
@@ -95,7 +95,13 @@ var msgUL ;
         	alert("/service/hello " + message);    
         });
         
-        cometd.handshake();
+        cometd.handshake({
+            ext: {
+        		token : userToken,
+        		videoId : videoId
+            }
+        });
+        
     });
     
 })(jQuery);

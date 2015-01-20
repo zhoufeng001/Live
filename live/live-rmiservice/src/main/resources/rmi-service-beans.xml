@@ -37,5 +37,12 @@
 	      <!--  Hessian服务的接口-->
 	    <property name="serviceInterface" value="com.zf.live.client.video.FetchVideosAndSaveService"/>
 	 </bean>
+		
+	 <bean name="/roomService" class="org.springframework.remoting.caucho.HessianServiceExporter">
+	   <!--  需要导出的目标bean-->
+	    <property name="service" ref="roomService"/>
+	      <!--  Hessian服务的接口-->
+	    <property name="serviceInterface" value="com.zf.live.client.room.RoomService"/>
+	 </bean>
 
 </beans>
