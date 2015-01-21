@@ -1,264 +1,520 @@
-11745 DEBUG [2015-01-19 21:43:26]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-11745 DEBUG [2015-01-19 21:43:26]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-11750 DEBUG [2015-01-19 21:43:26]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-11763 DEBUG [2015-01-19 21:43:26]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-13904 DEBUG [2015-01-19 21:43:28]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-13904 DEBUG [2015-01-19 21:43:28]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-13925 DEBUG [2015-01-19 21:43:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-13932 DEBUG [2015-01-19 21:43:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-13932 DEBUG [2015-01-19 21:43:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-13935 DEBUG [2015-01-19 21:43:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-13937 DEBUG [2015-01-19 21:43:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3610701 DEBUG [2015-01-19 22:43:25]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3610703 DEBUG [2015-01-19 22:43:25]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3610704 DEBUG [2015-01-19 22:43:25]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3610706 DEBUG [2015-01-19 22:43:25]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3610707 DEBUG [2015-01-19 22:43:25]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3687067 DEBUG [2015-01-19 22:44:41]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3687070 DEBUG [2015-01-19 22:44:41]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3687072 DEBUG [2015-01-19 22:44:41]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3687075 DEBUG [2015-01-19 22:44:41]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3687078 DEBUG [2015-01-19 22:44:41]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3688688 DEBUG [2015-01-19 22:44:43]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3688690 DEBUG [2015-01-19 22:44:43]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3688692 DEBUG [2015-01-19 22:44:43]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3688693 DEBUG [2015-01-19 22:44:43]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3688694 DEBUG [2015-01-19 22:44:43]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3689252 DEBUG [2015-01-19 22:44:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3689253 DEBUG [2015-01-19 22:44:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3689255 DEBUG [2015-01-19 22:44:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3689258 DEBUG [2015-01-19 22:44:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3689260 DEBUG [2015-01-19 22:44:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3689470 DEBUG [2015-01-19 22:44:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3689471 DEBUG [2015-01-19 22:44:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3689473 DEBUG [2015-01-19 22:44:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3689474 DEBUG [2015-01-19 22:44:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3689476 DEBUG [2015-01-19 22:44:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3689691 DEBUG [2015-01-19 22:44:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3689693 DEBUG [2015-01-19 22:44:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3689694 DEBUG [2015-01-19 22:44:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3689695 DEBUG [2015-01-19 22:44:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3689696 DEBUG [2015-01-19 22:44:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3689879 DEBUG [2015-01-19 22:44:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3689880 DEBUG [2015-01-19 22:44:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3689882 DEBUG [2015-01-19 22:44:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3689883 DEBUG [2015-01-19 22:44:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3689886 DEBUG [2015-01-19 22:44:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3841906 DEBUG [2015-01-19 22:47:16]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-3841908 DEBUG [2015-01-19 22:47:16]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3841910 DEBUG [2015-01-19 22:47:16]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-3841912 DEBUG [2015-01-19 22:47:16]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3841915 DEBUG [2015-01-19 22:47:16]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3854320 DEBUG [2015-01-19 22:47:29]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-3854321 DEBUG [2015-01-19 22:47:29]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-3854340 DEBUG [2015-01-19 22:47:29]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-3854342 DEBUG [2015-01-19 22:47:29]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3854343 DEBUG [2015-01-19 22:47:29]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3854344 DEBUG [2015-01-19 22:47:29]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3863086 DEBUG [2015-01-19 22:47:37]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-3863087 DEBUG [2015-01-19 22:47:37]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3863088 DEBUG [2015-01-19 22:47:37]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3863140 DEBUG [2015-01-19 22:47:37]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-3870044 DEBUG [2015-01-19 22:47:44]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-3870046 DEBUG [2015-01-19 22:47:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-3870047 DEBUG [2015-01-19 22:47:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-3870075 DEBUG [2015-01-19 22:47:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-0    DEBUG [2015-01-19 23:48:05]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-6    DEBUG [2015-01-19 23:48:05]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-74   DEBUG [2015-01-19 23:48:05]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-85   DEBUG [2015-01-19 23:48:05]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-86   DEBUG [2015-01-19 23:48:05]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-90   DEBUG [2015-01-19 23:48:05]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-91   DEBUG [2015-01-19 23:48:05]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-173  DEBUG [2015-01-19 23:48:05]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
-175  DEBUG [2015-01-19 23:48:05]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
-32830 DEBUG [2015-01-19 23:48:37]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
-32834 DEBUG [2015-01-19 23:48:37]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
-32849 DEBUG [2015-01-19 23:48:37]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-32853 DEBUG [2015-01-19 23:48:37]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-32853 DEBUG [2015-01-19 23:48:37]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-32855 DEBUG [2015-01-19 23:48:37]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-32858 DEBUG [2015-01-19 23:48:37]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
-32859 DEBUG [2015-01-19 23:48:37]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
-32869 DEBUG [2015-01-19 23:48:37]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-32878 DEBUG [2015-01-19 23:48:37]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-36169 DEBUG [2015-01-19 23:48:41]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-36174 DEBUG [2015-01-19 23:48:41]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-36185 DEBUG [2015-01-19 23:48:41]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-36188 DEBUG [2015-01-19 23:48:41]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-36192 DEBUG [2015-01-19 23:48:41]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-36195 DEBUG [2015-01-19 23:48:41]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-36199 DEBUG [2015-01-19 23:48:41]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-45650 DEBUG [2015-01-19 23:48:50]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-45652 DEBUG [2015-01-19 23:48:50]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-45654 DEBUG [2015-01-19 23:48:50]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-45657 DEBUG [2015-01-19 23:48:50]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-45659 DEBUG [2015-01-19 23:48:50]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-71446 DEBUG [2015-01-19 23:49:16]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-71446 DEBUG [2015-01-19 23:49:16]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-71446 DEBUG [2015-01-19 23:49:16]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-71446 DEBUG [2015-01-19 23:49:16]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-71446 DEBUG [2015-01-19 23:49:16]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-78542 DEBUG [2015-01-19 23:49:23]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-78542 DEBUG [2015-01-19 23:49:23]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-78542 DEBUG [2015-01-19 23:49:23]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-78542 DEBUG [2015-01-19 23:49:23]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-78542 DEBUG [2015-01-19 23:49:23]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-82964 DEBUG [2015-01-19 23:49:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-82964 DEBUG [2015-01-19 23:49:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-82982 DEBUG [2015-01-19 23:49:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-82983 DEBUG [2015-01-19 23:49:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-82984 DEBUG [2015-01-19 23:49:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-743843 DEBUG [2015-01-20 00:00:28]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1421682385373 != file lastModified=1421683222039
-743843 DEBUG [2015-01-20 00:00:28]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-743843 DEBUG [2015-01-20 00:00:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-743843 DEBUG [2015-01-20 00:00:28]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1421679240664 != file lastModified=1421682716472
-743843 DEBUG [2015-01-20 00:00:28]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-743843 DEBUG [2015-01-20 00:00:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-743843 DEBUG [2015-01-20 00:00:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-811889 DEBUG [2015-01-20 00:01:36]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1421683222039 != file lastModified=1421683292327
-811889 DEBUG [2015-01-20 00:01:36]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-811914 DEBUG [2015-01-20 00:01:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-811916 DEBUG [2015-01-20 00:01:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-811922 DEBUG [2015-01-20 00:01:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-811923 DEBUG [2015-01-20 00:01:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-846229 DEBUG [2015-01-20 00:02:11]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-846230 DEBUG [2015-01-20 00:02:11]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-846233 DEBUG [2015-01-20 00:02:11]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-846234 DEBUG [2015-01-20 00:02:11]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-846235 DEBUG [2015-01-20 00:02:11]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-846235 DEBUG [2015-01-20 00:02:11]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-854201 DEBUG [2015-01-20 00:02:19]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-854202 DEBUG [2015-01-20 00:02:19]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-854202 DEBUG [2015-01-20 00:02:19]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-854261 DEBUG [2015-01-20 00:02:19]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-856332 DEBUG [2015-01-20 00:02:21]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-856333 DEBUG [2015-01-20 00:02:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-856334 DEBUG [2015-01-20 00:02:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-856334 DEBUG [2015-01-20 00:02:21]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-856335 DEBUG [2015-01-20 00:02:21]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-0    DEBUG [2015-01-20 00:10:25]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-8    DEBUG [2015-01-20 00:10:25]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-89   DEBUG [2015-01-20 00:10:25]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-104  DEBUG [2015-01-20 00:10:25]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-106  DEBUG [2015-01-20 00:10:25]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-110  DEBUG [2015-01-20 00:10:25]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-111  DEBUG [2015-01-20 00:10:25]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-128  DEBUG [2015-01-20 00:10:25]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-129  DEBUG [2015-01-20 00:10:25]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-149  DEBUG [2015-01-20 00:10:25]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
-150  DEBUG [2015-01-20 00:10:25]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
-23457 DEBUG [2015-01-20 00:10:49]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-23458 DEBUG [2015-01-20 00:10:49]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-23469 DEBUG [2015-01-20 00:10:49]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-23471 DEBUG [2015-01-20 00:10:49]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-23472 DEBUG [2015-01-20 00:10:49]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-23546 DEBUG [2015-01-20 00:10:49]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-25978 DEBUG [2015-01-20 00:10:51]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
-25982 DEBUG [2015-01-20 00:10:51]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
-25987 DEBUG [2015-01-20 00:10:51]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-25988 DEBUG [2015-01-20 00:10:51]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-25990 DEBUG [2015-01-20 00:10:51]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-25992 DEBUG [2015-01-20 00:10:51]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-27902 DEBUG [2015-01-20 00:10:53]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
-27903 DEBUG [2015-01-20 00:10:53]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-27907 DEBUG [2015-01-20 00:10:53]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-27910 DEBUG [2015-01-20 00:10:53]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-38585 DEBUG [2015-01-20 00:11:04]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-38587 DEBUG [2015-01-20 00:11:04]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-38588 DEBUG [2015-01-20 00:11:04]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-38604 DEBUG [2015-01-20 00:11:04]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-45832 DEBUG [2015-01-20 00:11:11]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-45833 DEBUG [2015-01-20 00:11:11]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-45834 DEBUG [2015-01-20 00:11:11]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-45835 DEBUG [2015-01-20 00:11:11]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-45838 DEBUG [2015-01-20 00:11:11]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-92349 DEBUG [2015-01-20 00:11:57]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-92351 DEBUG [2015-01-20 00:11:57]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-92354 DEBUG [2015-01-20 00:11:57]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-92356 DEBUG [2015-01-20 00:11:57]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-92359 DEBUG [2015-01-20 00:11:57]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-0    DEBUG [2015-01-20 22:00:08]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-42   DEBUG [2015-01-20 22:00:08]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-205  DEBUG [2015-01-20 22:00:08]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-215  DEBUG [2015-01-20 22:00:08]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-217  DEBUG [2015-01-20 22:00:08]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-220  DEBUG [2015-01-20 22:00:08]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-222  DEBUG [2015-01-20 22:00:08]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-310  DEBUG [2015-01-20 22:00:08]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
-312  DEBUG [2015-01-20 22:00:08]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
-10779 DEBUG [2015-01-20 22:00:19]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-10782 DEBUG [2015-01-20 22:00:19]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-10794 DEBUG [2015-01-20 22:00:19]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-10809 DEBUG [2015-01-20 22:00:19]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-10809 DEBUG [2015-01-20 22:00:19]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-10814 DEBUG [2015-01-20 22:00:19]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-10820 DEBUG [2015-01-20 22:00:19]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-10829 DEBUG [2015-01-20 22:00:19]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-523762 DEBUG [2015-01-20 22:08:52]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-523764 DEBUG [2015-01-20 22:08:52]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-523767 DEBUG [2015-01-20 22:08:52]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-523769 DEBUG [2015-01-20 22:08:52]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-523772 DEBUG [2015-01-20 22:08:52]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-0    DEBUG [2015-01-20 23:58:35]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-5    DEBUG [2015-01-20 23:58:35]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-98   DEBUG [2015-01-20 23:58:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-128  DEBUG [2015-01-20 23:58:35]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-130  DEBUG [2015-01-20 23:58:35]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-143  DEBUG [2015-01-20 23:58:35]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-145  DEBUG [2015-01-20 23:58:35]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-185  DEBUG [2015-01-20 23:58:35]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-185  DEBUG [2015-01-20 23:58:35]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-200  DEBUG [2015-01-20 23:58:35]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
-200  DEBUG [2015-01-20 23:58:35]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
-40051 DEBUG [2015-01-20 23:59:15]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-40053 DEBUG [2015-01-20 23:59:15]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-40061 DEBUG [2015-01-20 23:59:15]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-40066 DEBUG [2015-01-20 23:59:15]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-40073 DEBUG [2015-01-20 23:59:15]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-325653 DEBUG [2015-01-21 00:04:01]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-325656 DEBUG [2015-01-21 00:04:01]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-325658 DEBUG [2015-01-21 00:04:01]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-325661 DEBUG [2015-01-21 00:04:01]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-325666 DEBUG [2015-01-21 00:04:01]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-333382 DEBUG [2015-01-21 00:04:09]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-333382 DEBUG [2015-01-21 00:04:09]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-333382 DEBUG [2015-01-21 00:04:09]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-333382 DEBUG [2015-01-21 00:04:09]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-333382 DEBUG [2015-01-21 00:04:09]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-354822 DEBUG [2015-01-21 00:04:30]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-354825 DEBUG [2015-01-21 00:04:30]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-354827 DEBUG [2015-01-21 00:04:30]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-354832 DEBUG [2015-01-21 00:04:30]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-354835 DEBUG [2015-01-21 00:04:30]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-388736 DEBUG [2015-01-21 00:05:04]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-388739 DEBUG [2015-01-21 00:05:04]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-388739 DEBUG [2015-01-21 00:05:04]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-388741 DEBUG [2015-01-21 00:05:04]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-388744 DEBUG [2015-01-21 00:05:04]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-397104 DEBUG [2015-01-21 00:05:12]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-397107 DEBUG [2015-01-21 00:05:12]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-397109 DEBUG [2015-01-21 00:05:12]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-397112 DEBUG [2015-01-21 00:05:12]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-397117 DEBUG [2015-01-21 00:05:12]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-409338 DEBUG [2015-01-21 00:05:25]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-409343 DEBUG [2015-01-21 00:05:25]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-409348 DEBUG [2015-01-21 00:05:25]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-409350 DEBUG [2015-01-21 00:05:25]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-409353 DEBUG [2015-01-21 00:05:25]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-966458 DEBUG [2015-01-21 00:14:42]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-966460 DEBUG [2015-01-21 00:14:42]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-966462 DEBUG [2015-01-21 00:14:42]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-966463 DEBUG [2015-01-21 00:14:42]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-966466 DEBUG [2015-01-21 00:14:42]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-0    DEBUG [2015-01-21 00:29:06]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-6    DEBUG [2015-01-21 00:29:06]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-302  DEBUG [2015-01-21 00:29:06]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-325  DEBUG [2015-01-21 00:29:06]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-327  DEBUG [2015-01-21 00:29:06]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-330  DEBUG [2015-01-21 00:29:06]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-332  DEBUG [2015-01-21 00:29:06]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-353  DEBUG [2015-01-21 00:29:06]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-355  DEBUG [2015-01-21 00:29:06]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-366  DEBUG [2015-01-21 00:29:06]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
-374  DEBUG [2015-01-21 00:29:06]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
+871783 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871785 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871793 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871797 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871800 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871840 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871844 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871846 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871848 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871850 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871845 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871873 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871879 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871881 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871884 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871894 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871877 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871898 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871900 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871907 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871929 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871930 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871932 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871935 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871944 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871945 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871957 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871959 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871961 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871963 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871966 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871968 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871969 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871978 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+871974 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+871990 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+871993 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+871996 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+871998 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872001 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872001 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872006 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872008 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872013 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872016 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872024 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872026 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872027 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872028 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872029 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872111 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872113 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872117 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872118 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872123 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872200 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872203 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872209 DEBUG [2015-01-21 22:59:35]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872217 DEBUG [2015-01-21 22:59:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872219 DEBUG [2015-01-21 22:59:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872229 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872230 DEBUG [2015-01-21 22:59:35]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872243 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872245 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872230 DEBUG [2015-01-21 22:59:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872251 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872243 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872260 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872258 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872264 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872266 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872268 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872268 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872272 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872271 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872269 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872276 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872280 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872281 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872284 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872310 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872312 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872315 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872316 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872317 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872317 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872318 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872319 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872320 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872322 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872390 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872392 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872394 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872395 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872396 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872458 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872462 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872462 DEBUG [2015-01-21 22:59:36]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+872463 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872464 DEBUG [2015-01-21 22:59:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+872464 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872464 DEBUG [2015-01-21 22:59:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+872465 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+872465 DEBUG [2015-01-21 22:59:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+872467 DEBUG [2015-01-21 22:59:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+880542 DEBUG [2015-01-21 22:59:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+880542 DEBUG [2015-01-21 22:59:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+880542 DEBUG [2015-01-21 22:59:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+880542 DEBUG [2015-01-21 22:59:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+880542 DEBUG [2015-01-21 22:59:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881043 DEBUG [2015-01-21 22:59:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881043 DEBUG [2015-01-21 22:59:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881043 DEBUG [2015-01-21 22:59:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881043 DEBUG [2015-01-21 22:59:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881043 DEBUG [2015-01-21 22:59:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881117 DEBUG [2015-01-21 22:59:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881118 DEBUG [2015-01-21 22:59:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881118 DEBUG [2015-01-21 22:59:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881120 DEBUG [2015-01-21 22:59:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881121 DEBUG [2015-01-21 22:59:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881163 DEBUG [2015-01-21 22:59:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881168 DEBUG [2015-01-21 22:59:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881173 DEBUG [2015-01-21 22:59:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881176 DEBUG [2015-01-21 22:59:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881178 DEBUG [2015-01-21 22:59:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881183 DEBUG [2015-01-21 22:59:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881185 DEBUG [2015-01-21 22:59:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881194 DEBUG [2015-01-21 22:59:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881196 DEBUG [2015-01-21 22:59:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881200 DEBUG [2015-01-21 22:59:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881204 DEBUG [2015-01-21 22:59:44]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881205 DEBUG [2015-01-21 22:59:44]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881206 DEBUG [2015-01-21 22:59:44]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881207 DEBUG [2015-01-21 22:59:44]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881209 DEBUG [2015-01-21 22:59:44]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881306 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881308 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881309 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881312 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881312 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881313 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881313 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881316 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881319 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881320 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881337 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881340 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881341 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881359 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881366 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881370 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881371 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881372 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881373 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881374 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881487 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881492 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881493 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881495 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881499 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881498 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881502 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881504 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881500 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881505 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881506 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881506 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881506 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881508 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881508 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881564 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881565 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881567 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881569 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881571 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881617 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881619 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881620 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881622 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881624 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881629 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881631 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881633 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881637 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881639 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881651 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881669 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881679 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881681 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881709 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881711 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881713 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881714 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881728 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881727 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881741 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881743 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881749 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881750 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881765 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881812 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881819 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881821 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881828 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881829 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881827 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881841 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881843 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881845 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881847 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881910 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881912 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881923 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881930 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881932 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+881964 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+881971 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+881974 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+881980 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+881982 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+882006 DEBUG [2015-01-21 22:59:45]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+882011 DEBUG [2015-01-21 22:59:45]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+882016 DEBUG [2015-01-21 22:59:45]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+882023 DEBUG [2015-01-21 22:59:45]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+882025 DEBUG [2015-01-21 22:59:45]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+884968 DEBUG [2015-01-21 22:59:48]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+884970 DEBUG [2015-01-21 22:59:48]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+884971 DEBUG [2015-01-21 22:59:48]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+884972 DEBUG [2015-01-21 22:59:48]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+884973 DEBUG [2015-01-21 22:59:48]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+885190 DEBUG [2015-01-21 22:59:48]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+885190 DEBUG [2015-01-21 22:59:48]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+885205 DEBUG [2015-01-21 22:59:48]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+885205 DEBUG [2015-01-21 22:59:48]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+885205 DEBUG [2015-01-21 22:59:48]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+956627 DEBUG [2015-01-21 23:01:00]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+956628 DEBUG [2015-01-21 23:01:00]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+956629 DEBUG [2015-01-21 23:01:00]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+956630 DEBUG [2015-01-21 23:01:00]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+956631 DEBUG [2015-01-21 23:01:00]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+975830 DEBUG [2015-01-21 23:01:19]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+975830 DEBUG [2015-01-21 23:01:19]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+975830 DEBUG [2015-01-21 23:01:19]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+975830 DEBUG [2015-01-21 23:01:19]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+975830 DEBUG [2015-01-21 23:01:19]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+976062 DEBUG [2015-01-21 23:01:19]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+976063 DEBUG [2015-01-21 23:01:19]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+976065 DEBUG [2015-01-21 23:01:19]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+976066 DEBUG [2015-01-21 23:01:19]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+976067 DEBUG [2015-01-21 23:01:19]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+976235 DEBUG [2015-01-21 23:01:19]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+976235 DEBUG [2015-01-21 23:01:19]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+976236 DEBUG [2015-01-21 23:01:19]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+976237 DEBUG [2015-01-21 23:01:19]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+976238 DEBUG [2015-01-21 23:01:19]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+976399 DEBUG [2015-01-21 23:01:20]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+976401 DEBUG [2015-01-21 23:01:20]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+976402 DEBUG [2015-01-21 23:01:20]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+976403 DEBUG [2015-01-21 23:01:20]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+976404 DEBUG [2015-01-21 23:01:20]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+976563 DEBUG [2015-01-21 23:01:20]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+976564 DEBUG [2015-01-21 23:01:20]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+976565 DEBUG [2015-01-21 23:01:20]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+976565 DEBUG [2015-01-21 23:01:20]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+976566 DEBUG [2015-01-21 23:01:20]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+982973 DEBUG [2015-01-21 23:01:26]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+982988 DEBUG [2015-01-21 23:01:26]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+982988 DEBUG [2015-01-21 23:01:26]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+982988 DEBUG [2015-01-21 23:01:26]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+982988 DEBUG [2015-01-21 23:01:26]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983475 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983475 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983475 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983475 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983475 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983602 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983605 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983610 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983616 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983631 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983641 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983650 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983654 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983656 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983658 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983675 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983676 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983679 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983684 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983687 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983704 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983712 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983715 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983716 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983718 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983759 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983760 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983772 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983783 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983790 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983821 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983825 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983827 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983828 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983830 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983842 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983851 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983853 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983856 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983858 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983911 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983915 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983918 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983921 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983932 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983940 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983941 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+983942 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+983943 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+983955 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+983988 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+983989 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984009 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984018 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984022 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984079 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984081 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984082 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984084 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984085 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984085 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984086 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984095 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984097 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984100 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984103 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984104 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984105 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984105 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984106 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984194 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984197 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984202 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984204 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984206 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984210 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984212 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984214 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984215 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984216 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984219 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984221 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984223 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984226 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984231 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984236 DEBUG [2015-01-21 23:01:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984236 DEBUG [2015-01-21 23:01:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984237 DEBUG [2015-01-21 23:01:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984238 DEBUG [2015-01-21 23:01:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984239 DEBUG [2015-01-21 23:01:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984307 DEBUG [2015-01-21 23:01:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984308 DEBUG [2015-01-21 23:01:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984309 DEBUG [2015-01-21 23:01:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984311 DEBUG [2015-01-21 23:01:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984312 DEBUG [2015-01-21 23:01:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984322 DEBUG [2015-01-21 23:01:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984324 DEBUG [2015-01-21 23:01:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984325 DEBUG [2015-01-21 23:01:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984327 DEBUG [2015-01-21 23:01:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984330 DEBUG [2015-01-21 23:01:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984336 DEBUG [2015-01-21 23:01:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984337 DEBUG [2015-01-21 23:01:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984338 DEBUG [2015-01-21 23:01:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984339 DEBUG [2015-01-21 23:01:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984340 DEBUG [2015-01-21 23:01:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984406 DEBUG [2015-01-21 23:01:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984408 DEBUG [2015-01-21 23:01:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984409 DEBUG [2015-01-21 23:01:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984410 DEBUG [2015-01-21 23:01:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984412 DEBUG [2015-01-21 23:01:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+984423 DEBUG [2015-01-21 23:01:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+984423 DEBUG [2015-01-21 23:01:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+984424 DEBUG [2015-01-21 23:01:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+984425 DEBUG [2015-01-21 23:01:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+984426 DEBUG [2015-01-21 23:01:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+1002615 DEBUG [2015-01-21 23:01:46]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+1002615 DEBUG [2015-01-21 23:01:46]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+1002615 DEBUG [2015-01-21 23:01:46]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+1002615 DEBUG [2015-01-21 23:01:46]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+1002615 DEBUG [2015-01-21 23:01:46]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+0    DEBUG [2015-01-22 00:15:02]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
+5    DEBUG [2015-01-22 00:15:02]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
+85   DEBUG [2015-01-22 00:15:02]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+100  DEBUG [2015-01-22 00:15:02]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
+102  DEBUG [2015-01-22 00:15:02]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
+106  DEBUG [2015-01-22 00:15:02]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
+107  DEBUG [2015-01-22 00:15:02]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
+125  DEBUG [2015-01-22 00:15:02]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
+126  DEBUG [2015-01-22 00:15:02]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
+136  DEBUG [2015-01-22 00:15:02]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
+137  DEBUG [2015-01-22 00:15:02]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
+502654 DEBUG [2015-01-22 00:23:25]  Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1421856451299 != file lastModified=1421857327308
+502655 DEBUG [2015-01-22 00:23:25]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
+502666 DEBUG [2015-01-22 00:23:25]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+502667 DEBUG [2015-01-22 00:23:25]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+502670 DEBUG [2015-01-22 00:23:25]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+502672 DEBUG [2015-01-22 00:23:25]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+512958 DEBUG [2015-01-22 00:23:35]  Could not find template in cache, creating new one; id=["user/loginView.ftl"["zh_CN",UTF-8,parsed] ]
+512960 DEBUG [2015-01-22 00:23:35]  Compiling FreeMarker template "user/loginView.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\user\\loginView.ftl"
+512963 DEBUG [2015-01-22 00:23:35]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+512965 DEBUG [2015-01-22 00:23:35]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+512966 DEBUG [2015-01-22 00:23:35]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+512968 DEBUG [2015-01-22 00:23:35]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+521206 DEBUG [2015-01-22 00:23:43]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+521209 DEBUG [2015-01-22 00:23:43]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+521240 DEBUG [2015-01-22 00:23:43]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+521242 DEBUG [2015-01-22 00:23:43]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+521253 DEBUG [2015-01-22 00:23:43]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+521350 DEBUG [2015-01-22 00:23:43]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+524010 DEBUG [2015-01-22 00:23:46]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+524011 DEBUG [2015-01-22 00:23:46]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+524012 DEBUG [2015-01-22 00:23:46]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+524014 DEBUG [2015-01-22 00:23:46]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+524016 DEBUG [2015-01-22 00:23:46]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+1628373 DEBUG [2015-01-22 00:42:10]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+1628374 DEBUG [2015-01-22 00:42:10]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+1628376 DEBUG [2015-01-22 00:42:10]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+1628377 DEBUG [2015-01-22 00:42:10]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+1628378 DEBUG [2015-01-22 00:42:10]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+1966411 DEBUG [2015-01-22 00:47:48]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+1966414 DEBUG [2015-01-22 00:47:48]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+1966416 DEBUG [2015-01-22 00:47:48]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+1966418 DEBUG [2015-01-22 00:47:48]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+1966421 DEBUG [2015-01-22 00:47:48]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+1973435 DEBUG [2015-01-22 00:47:55]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+1973437 DEBUG [2015-01-22 00:47:55]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+1973439 DEBUG [2015-01-22 00:47:55]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+1973441 DEBUG [2015-01-22 00:47:55]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+1973445 DEBUG [2015-01-22 00:47:55]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2080654 DEBUG [2015-01-22 00:49:43]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2080655 DEBUG [2015-01-22 00:49:43]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2080656 DEBUG [2015-01-22 00:49:43]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2080657 DEBUG [2015-01-22 00:49:43]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2080659 DEBUG [2015-01-22 00:49:43]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2149515 DEBUG [2015-01-22 00:50:51]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2149517 DEBUG [2015-01-22 00:50:51]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2149519 DEBUG [2015-01-22 00:50:51]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2149521 DEBUG [2015-01-22 00:50:51]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2149523 DEBUG [2015-01-22 00:50:51]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2151008 DEBUG [2015-01-22 00:50:53]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2151011 DEBUG [2015-01-22 00:50:53]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2151014 DEBUG [2015-01-22 00:50:53]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2151016 DEBUG [2015-01-22 00:50:53]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2151018 DEBUG [2015-01-22 00:50:53]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2185382 DEBUG [2015-01-22 00:51:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2185387 DEBUG [2015-01-22 00:51:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2185393 DEBUG [2015-01-22 00:51:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2185407 DEBUG [2015-01-22 00:51:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2185410 DEBUG [2015-01-22 00:51:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2267493 DEBUG [2015-01-22 00:52:49]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2267500 DEBUG [2015-01-22 00:52:49]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2267503 DEBUG [2015-01-22 00:52:49]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2267505 DEBUG [2015-01-22 00:52:49]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2267506 DEBUG [2015-01-22 00:52:49]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2714071 DEBUG [2015-01-22 01:00:16]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2714076 DEBUG [2015-01-22 01:00:16]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2714078 DEBUG [2015-01-22 01:00:16]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2714083 DEBUG [2015-01-22 01:00:16]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2714085 DEBUG [2015-01-22 01:00:16]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2778607 DEBUG [2015-01-22 01:01:21]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2778611 DEBUG [2015-01-22 01:01:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2778614 DEBUG [2015-01-22 01:01:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2778617 DEBUG [2015-01-22 01:01:21]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2778619 DEBUG [2015-01-22 01:01:21]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2779518 DEBUG [2015-01-22 01:01:21]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2779520 DEBUG [2015-01-22 01:01:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2779522 DEBUG [2015-01-22 01:01:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2779523 DEBUG [2015-01-22 01:01:21]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2779525 DEBUG [2015-01-22 01:01:21]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2815444 DEBUG [2015-01-22 01:01:57]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2815445 DEBUG [2015-01-22 01:01:57]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2815446 DEBUG [2015-01-22 01:01:57]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2815447 DEBUG [2015-01-22 01:01:57]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2815449 DEBUG [2015-01-22 01:01:57]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2845937 DEBUG [2015-01-22 01:02:28]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2845942 DEBUG [2015-01-22 01:02:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2845945 DEBUG [2015-01-22 01:02:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2845947 DEBUG [2015-01-22 01:02:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2845949 DEBUG [2015-01-22 01:02:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2889185 DEBUG [2015-01-22 01:03:11]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2889188 DEBUG [2015-01-22 01:03:11]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2889190 DEBUG [2015-01-22 01:03:11]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2889192 DEBUG [2015-01-22 01:03:11]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2889198 DEBUG [2015-01-22 01:03:11]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2905287 DEBUG [2015-01-22 01:03:27]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2905303 DEBUG [2015-01-22 01:03:27]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2905306 DEBUG [2015-01-22 01:03:27]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2905307 DEBUG [2015-01-22 01:03:27]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2905308 DEBUG [2015-01-22 01:03:27]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2917941 DEBUG [2015-01-22 01:03:40]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+2917943 DEBUG [2015-01-22 01:03:40]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2917944 DEBUG [2015-01-22 01:03:40]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2917948 DEBUG [2015-01-22 01:03:40]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2932936 DEBUG [2015-01-22 01:03:55]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+2932938 DEBUG [2015-01-22 01:03:55]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2932939 DEBUG [2015-01-22 01:03:55]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2932940 DEBUG [2015-01-22 01:03:55]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2940399 DEBUG [2015-01-22 01:04:02]  "user/loginView.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\user\loginView.ftl didn't change.
+2940399 DEBUG [2015-01-22 01:04:02]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2940400 DEBUG [2015-01-22 01:04:02]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2940402 DEBUG [2015-01-22 01:04:02]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2963823 DEBUG [2015-01-22 01:04:26]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+2963825 DEBUG [2015-01-22 01:04:26]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2963827 DEBUG [2015-01-22 01:04:26]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2963848 DEBUG [2015-01-22 01:04:26]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+2971398 DEBUG [2015-01-22 01:04:33]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+2971399 DEBUG [2015-01-22 01:04:33]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+2971401 DEBUG [2015-01-22 01:04:33]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+2971404 DEBUG [2015-01-22 01:04:33]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+2971408 DEBUG [2015-01-22 01:04:33]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.

@@ -13,7 +13,7 @@ var msgUL ;
 		
 		/* 添加用户消息 */
 		this.appendUserMsg = function(msgBody){
-			msgUL.append('<li><span>'+ msgBody.time +'</span><span class="username">'+  msgBody.username +'</span>：'+  msgBody.content + '</li>');
+			msgUL.append('<li><span>'+ msgBody.time +'</span><span class="username">'+  msgBody.fromUser +'</span>：'+  msgBody.msg + '</li>');
 		}
 		
 	}
@@ -25,7 +25,10 @@ var msgUL ;
     $(document).ready(function()
     {
     	
+    	//----------------------连接部分------------------------
     	msgUL = $("#chatlist_ul");
+    	
+    	var pubMsgSubscripe ;
     	
         function _connectionEstablished()
         {   
@@ -69,6 +72,11 @@ var msgUL ;
         {
             if (handshake.successful === true)
             {
+            
+            	 pubMsgSubscripe = cometd.subscribe('/chat/rcv_pub', function(message){
+//            		 var data =  eval("("+message+")"); 
+            		 chatMsgBox.appendUserMsg(message.data);
+                 });  
             	
             }else{
             	 chatMsgBox.appendSystemMsg("服务器连接失败！");
@@ -91,16 +99,31 @@ var msgUL ;
         cometd.addListener('/meta/handshake', _metaHandshake);
         cometd.addListener('/meta/connect', _metaConnect);
         
-        cometd.addListener('/service/hello', function(message){
-        	alert("/service/hello " + message);    
-        });
-        
         cometd.handshake({
             ext: {
         		token : userToken,
         		videoId : videoId
             }
         });
+        
+      //----------------------连接部分------------------------
+        
+        
+        
+       $("#chat_send").click(function(){
+    	   var msg = $("#chat_textarea").val();
+    	   if(userToken == null){
+    		   alert("请先登录");
+    		   return;
+    	   }
+    	   if(msg == null || "" == msg){
+    		   alert("消息不能为空");
+    		   return ;
+    	   }
+    	   cometd.publish("/chat/send_pub" , {
+    		   msg : msg 
+    	   });
+       });
         
     });
     

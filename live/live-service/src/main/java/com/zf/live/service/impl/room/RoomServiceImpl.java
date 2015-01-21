@@ -77,6 +77,7 @@ public class RoomServiceImpl implements RoomService{
 			}else{
 				jedis.incrBy(roomUserCountKey + videoId , -1); 
 			}
+			log.info("用户[{}]退出房间" , sessionId);
 		}finally{
 			jedisPool.returnResource(jedis);
 		}

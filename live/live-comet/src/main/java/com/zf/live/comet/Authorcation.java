@@ -44,9 +44,9 @@ public class Authorcation implements SecurityPolicy{
 			log.info("local session handshake success!");
 			return true ;
 		}
-
+		
 		Oort oort = (Oort)servletContext.getAttribute(Oort.OORT_ATTRIBUTE) ;
-
+		
 		if(oort.isOortHandshake(message)){  
 			log.info("oort handshake[{}]" , message); 
 			return true ;
@@ -62,6 +62,7 @@ public class Authorcation implements SecurityPolicy{
 			return false ;
 		}
 		Audience audience = new Audience() ;
+		audience.setVideoId((long)videoId);  
 		audience.setSessionId(session.getId());
 		audience.setComeInTime(System.currentTimeMillis());
 		if(token == null){
@@ -79,21 +80,21 @@ public class Authorcation implements SecurityPolicy{
 			audience.setUserId(lvuser.getId()); 
 			audience.setUserNick(lvuser.getNick());
 			audience.setUserPhoto(lvuser.getPhoto());
+			
+			Seti seti = (Seti)servletContext.getAttribute(Seti.SETI_ATTRIBUTE) ;
+			seti.associate(String.valueOf(lvuser.getId()), session) ;  
 		}
+		session.setAttribute("audience", audience); 
 		roomService.comeInRoom((long)videoId, audience);  
 
-		Seti seti = (Seti)servletContext.getAttribute(Seti.SETI_ATTRIBUTE) ;
-
-
-		/*
-		Object obj = message.getExt().get("user") ;
-		if(obj == null){
-			return false ;
-		}
-
-		seti.associate(obj.toString(), session) ;
-
-		System.out.println("seti --- " + seti);*/
+		//监听移除事件
+		session.addListener(new ServerSession.RemoveListener(){
+			@Override
+			public void removed(ServerSession session, boolean timeout) {
+				roomService.outRoom((long)videoId, session.getId()); 
+			}
+			
+		}); 
 
 		log.info("session handshake success!");
 
@@ -117,4 +118,5 @@ public class Authorcation implements SecurityPolicy{
 			ServerChannel channel, ServerMessage message) {
 		return true;
 	}
+
 }

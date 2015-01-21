@@ -48,6 +48,8 @@ public class Audience implements Serializable{
 	 * 进入房间时间
 	 */
 	private Long comeInTime ;
+	
+	private Long videoId ;
 
 	public boolean isTourist() {
 		return tourist;
@@ -103,6 +105,14 @@ public class Audience implements Serializable{
 
 	public void setUserToken(String userToken) {
 		this.userToken = userToken;
+	}
+
+	public Long getVideoId() {
+		return videoId;
+	}
+
+	public void setVideoId(Long videoId) {
+		this.videoId = videoId;
 	}
 	
 }

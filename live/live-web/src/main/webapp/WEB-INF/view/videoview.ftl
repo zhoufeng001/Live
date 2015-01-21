@@ -139,7 +139,7 @@
                 	<textarea cols="80" rows="5" class="chat_textarea" id="chat_textarea"></textarea>
                      <div class="chat_control">
                     	 <span class="emotion">表情</span>
-                		<input type="button" value="发送" class="chat_send" />
+                		<input type="button" value="发送" class="chat_send" id="chat_send" />
                		 </div>
                 </div>
             </div>
@@ -177,7 +177,6 @@
 			assign:'chat_textarea', //给那个控件赋值  
 			path:'${static_server}/img/face/'	//表情存放的路径
 		});
-		
 	});
 </script>
 
