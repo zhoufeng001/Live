@@ -8,7 +8,7 @@ var msgUL ;
 		/* 添加系统信息 */
 		this.appendSystemMsg = function(msg){
 			
-			msgUL.append('<li><span class="username">系统消息</span>：'+ msg + '</li>');
+			msgUL.append('<li><span>系统消息</span>：'+ msg + '</li>');
 		}
 		
 		/* 添加用户消息 */

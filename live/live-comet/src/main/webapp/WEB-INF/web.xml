@@ -61,5 +61,9 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+	
+	<listener>
+		<listener-class>com.zf.live.comet.listener.ClearAudiencesWhenContainerClose</listener-class>
+	</listener>
+	
 </web-app>

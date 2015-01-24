@@ -16,24 +16,29 @@ import org.cometd.oort.Seti;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.zf.live.client.room.RoomService;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.room.Audience;
+import com.zf.live.comet.service.room.AudienceContainerManager;
 import com.zf.live.dao.pojo.Lvuser;
 
+/**
+ * 握手权限校验，以及session管理
+ * @author is_zhoufeng@163.com , QQ:243970446
+ * 2015年1月24日 下午2:47:54
+ */
 public class Authorcation implements SecurityPolicy{
 
 	static final Logger log = LoggerFactory.getLogger(Authorcation.class);
 
 	private ServletContext servletContext ;
 
-	private RoomService roomService ;
+	private AudienceContainerManager audienceContainerManager ;
 	
 	private LvuserService lvuserService ;
 
-	public Authorcation(ServletContext servletContext, RoomService roomService, LvuserService lvuserService ) {
+	public Authorcation(ServletContext servletContext, AudienceContainerManager audienceContainerManager, LvuserService lvuserService ) {
 		this.servletContext = servletContext ;
-		this.roomService = roomService ;
+		this.audienceContainerManager = audienceContainerManager ;
 		this.lvuserService = lvuserService ;
 	}
 
@@ -85,18 +90,18 @@ public class Authorcation implements SecurityPolicy{
 			seti.associate(String.valueOf(lvuser.getId()), session) ;  
 		}
 		session.setAttribute("audience", audience); 
-		roomService.comeInRoom((long)videoId, audience);  
-
+		audienceContainerManager.addAudience((long)videoId, audience);
+		
 		//监听移除事件
 		session.addListener(new ServerSession.RemoveListener(){
 			@Override
 			public void removed(ServerSession session, boolean timeout) {
-				roomService.outRoom((long)videoId, session.getId()); 
+				audienceContainerManager.removeAudience((long)videoId, session.getId()); 
 			}
 			
 		}); 
 
-		log.info("session handshake success!");
+		log.info("session[{}] handshake success!",session.getId()); 
 
 		return true;
 	}

@@ -59,9 +59,18 @@
         	
             <!-- 观众列表 -->
         	<div class="audience_list">
-        		<div class="online_count">
-        			300人在线
-        		</div>
+        		<div class="online_count"> 
+        			${(roomInfo.audienceCount)!"0"}人在线 
+        		</div> 
+        		<#if roomInfo.users??> 
+	        		<#list roomInfo.users as user >
+						<div class="audience"> 
+			                <img class="photo" src="${static_server}/img/userphoto/1.jpg" />
+		                    <span class="audience_name">赖宝11</span>
+		                </div>  
+					</#list>
+				</#if>
+        		    
             	<div class="audience">
                 	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
                     <span class="audience_name">赖宝</span>

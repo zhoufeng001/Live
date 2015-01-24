@@ -10,7 +10,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.zf.live.client.room.RoomService;
 import com.zf.live.client.video.local.LocalVideoService;
+import com.zf.live.client.vo.room.RoomInfo;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
 import com.zf.live.common.ZFSpringPropertyConfigure;
 import com.zf.live.web.app.service.video.WebVideoService;
@@ -31,6 +33,9 @@ public class VideoController {
 
 	@Autowired
 	private WebVideoService webVideoService ;
+	
+	@Resource(name="roomService")
+	private RoomService roomService ;
 	
 	@Autowired
 	private ZFSpringPropertyConfigure propertyConfigure ;
@@ -55,6 +60,10 @@ public class VideoController {
 		String cometdHandshake = propertyConfigure.getProperties("comet.server.handshake.url");
 		modelMap.addAttribute("cometServerUrl", cometServerUrl) ;
 		modelMap.addAttribute("cometdHandshake", cometdHandshake) ;
+		
+		/* 房间信息 */
+		RoomInfo roomInfo = roomService.getRoomInfo(videoId) ;
+		modelMap.addAttribute("roomInfo", roomInfo);
 		
 		return "videoview";
 	}

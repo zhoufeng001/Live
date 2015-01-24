@@ -3,6 +3,8 @@ package com.zf.live.client.room;
 import java.util.List;
 
 import com.zf.live.client.vo.room.Audience;
+import com.zf.live.client.vo.room.RoomInfo;
+import com.zf.live.client.vo.room.VideoSessionPair;
 
 /**
  * 包含用户在视频播放房间的基本操作
@@ -26,6 +28,12 @@ public interface RoomService {
 	void outRoom(Long videoId ,String sessionId);
 	
 	/**
+	 * 批量退出房间（用于聊天服务器关闭时退出该服务器上面所有用户）
+	 * @param vsps
+	 */
+	void batchOutRoom(List<VideoSessionPair> vsps );
+	
+	/**
 	 * 获取房间在线人数（登录用户）
 	 * @param videoId
 	 * @return
@@ -43,6 +51,21 @@ public interface RoomService {
 	 * （包含登录用户和未登录用户，未排序，需要自己排序）
 	 * @return
 	 */
-	List<Audience> getRoomUserList(Long videoId);
+	List<Audience> getRoomAudience(Long videoId);
+	
+	/**
+	 * 根据VideoId和sessionId获取观众信息
+	 * @param sessionId
+	 * @param videoId
+	 * @return
+	 */
+	Audience getAudienceBySessionId(Long videoId ,String sessionId);
+	
+	/**
+	 * 获取房间信息，包含观众列表、在线人数等信息
+	 * @param videoId
+	 * @return
+	 */
+	RoomInfo getRoomInfo(Long videoId);
 	
 }

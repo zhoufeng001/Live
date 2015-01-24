@@ -263,3 +263,4 @@
 2015/01/18 00:54:26 [error] 5304#5032: *332 CreateFile() "E:\Live03\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "www.live.com:3040"
 2015/01/19 21:40:54 [notice] 3412#2148: signal process started
 2015/01/19 21:40:54 [error] 3412#2148: OpenEvent("Global\ngx_stop_5692") failed (2: The system cannot find the file specified)
+2015/01/24 00:38:34 [error] 4640#2660: *50 CreateFile() "E:\Live03\live\live-web-resource\nginx/resources/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "www.live.com:3040"

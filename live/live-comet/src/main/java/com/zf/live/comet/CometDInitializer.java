@@ -14,6 +14,7 @@ import org.cometd.server.transport.JSONPTransport;
 import org.cometd.server.transport.JSONTransport;
 import org.cometd.websocket.server.WebSocketTransport;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,7 @@ import org.springframework.web.context.ServletContextAware;
 
 import com.zf.live.client.room.RoomService;
 import com.zf.live.client.user.LvuserService;
+import com.zf.live.comet.service.room.AudienceContainerManager;
 
 @Component
 public class CometDInitializer implements ServletContextAware
@@ -32,6 +34,9 @@ public class CometDInitializer implements ServletContextAware
     
     @Resource(name="lvuserService")
     private LvuserService lvuserService ;
+    
+    @Autowired
+    private AudienceContainerManager audienceContainerManager;
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public BayeuxServer bayeuxServer()
@@ -43,7 +48,7 @@ public class CometDInitializer implements ServletContextAware
         bean.setOption("ws.cometdURLMapping", "/cometd/*");
         
         //设置权限校验服务
-        bean.setSecurityPolicy(new Authorcation(servletContext,roomService,lvuserService));  
+        bean.setSecurityPolicy(new Authorcation(servletContext,audienceContainerManager,lvuserService));  
         
         return bean;
     }
