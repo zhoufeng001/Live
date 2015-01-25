@@ -10,9 +10,10 @@ import javax.servlet.ServletResponse;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zf.live.client.room.RoomService;
+import com.zf.live.client.vo.web.AjaxResult;
+import com.zf.live.web.app.util.WebUtil;
 
 /**
  * 聊天室相关操作
@@ -36,11 +37,10 @@ public class ChatRoomController {
 	 * @return
 	 */
 	@RequestMapping("/audience")
-	@ResponseBody
-	public Map<String, Object> loginView(ServletRequest request, ServletResponse response) {
+	public void loginView(ServletRequest request, ServletResponse response) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("aa", "bb");
-		return data;
+		WebUtil.ajaxOutput(AjaxResult.newSuccessResult(data), response);
 	}
 	
 	

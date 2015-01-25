@@ -4,6 +4,7 @@
 <!-- 公共meta信息 -->
 <#include "./common/live_common_meta.ftl" >	
 <#include "./common/live_common_js.ftl" >	
+<#include "./common/bootstrap.ftl" >
 <link href="${static_server}/css/videoview.css" rel="stylesheet" />
 <link href="${static_server}/js/qqface/face.css" rel="stylesheet" />
 <script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>

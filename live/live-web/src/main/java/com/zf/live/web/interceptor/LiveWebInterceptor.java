@@ -16,13 +16,13 @@ import com.zf.live.web.app.RequestContext;
  * 2014年12月28日 下午10:45:50
  */
 public class LiveWebInterceptor implements HandlerInterceptor {
-	
+
 	static final Logger log = LoggerFactory.getLogger(LiveWebInterceptor.class);
 
 	@Override
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception exception)
-			throws Exception {
+					throws Exception {
 		log.info("LiveWebInterceptor.afterCompletion()");
 	}
 
@@ -31,8 +31,10 @@ public class LiveWebInterceptor implements HandlerInterceptor {
 			Object handler, ModelAndView mav) throws Exception {
 		log.info("LiveWebInterceptor.postHandle()");
 		//将当前登录用户放入request
-		mav.addObject("user", RequestContext.getCurrentUser()) ;
-		
+		if(mav != null){
+			mav.addObject("user", RequestContext.getCurrentUser()) ;
+		}
+
 	}
 
 	@Override

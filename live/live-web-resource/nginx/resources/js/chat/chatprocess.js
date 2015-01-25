@@ -166,7 +166,7 @@ var sendBut ;
     var sendMsg = function(){
  	   var msg = msgInput.val();
  	   if(userToken == null){
- 		   alert("请先登录");
+ 		   $.messager.popup("请先登录");  
  		   return;
  	   }
  	   if(msg == null || "" == msg.trim()){
