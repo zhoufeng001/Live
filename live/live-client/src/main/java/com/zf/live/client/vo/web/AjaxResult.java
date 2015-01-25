@@ -18,7 +18,7 @@ public class AjaxResult implements Serializable{
 	 * 类型，是否成功
 	 * @see com.zf.live.client.vo.web.AjaxResultType
 	 */
-	private int type ;
+	private int success ;
 	
 	/**
 	 * 返回的数据
@@ -42,7 +42,7 @@ public class AjaxResult implements Serializable{
 	 */
 	public static AjaxResult newSuccessResult(Object data){
 		AjaxResult result = new AjaxResult();
-		result.setType(AjaxResultType.SUCCESS.getValue());
+		result.setSuccess(AjaxResultType.SUCCESS.getValue());
 		result.setData(data); 
 		return result;
 	}
@@ -56,7 +56,7 @@ public class AjaxResult implements Serializable{
 	 */
 	public static AjaxResult newFailResult(Object data , String msg , int code){
 		AjaxResult result = new AjaxResult();
-		result.setType(AjaxResultType.FAIL.getValue());
+		result.setSuccess(AjaxResultType.FAIL.getValue());
 		result.setData(data); 
 		result.setMsg(msg); 
 		result.setCode(code);
@@ -72,18 +72,18 @@ public class AjaxResult implements Serializable{
 	 */
 	public static AjaxResult newExceptionResult(Exception e , String msg , int code){
 		AjaxResult result = new AjaxResult();
-		result.setType(AjaxResultType.ERROR.getValue());
+		result.setSuccess(AjaxResultType.ERROR.getValue());
 		result.setMsg(msg); 
 		result.setCode(code);
 		return result;
 	}
 	
-	public int getType() {
-		return type;
+	public int getSuccess() {
+		return success;
 	}
 
-	public void setType(int type) {
-		this.type = type;
+	public void setSuccess(int type) {
+		this.success = type;
 	}
 
 	public Object getData() {

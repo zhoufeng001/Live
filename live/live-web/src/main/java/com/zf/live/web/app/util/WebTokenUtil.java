@@ -152,12 +152,12 @@ public class WebTokenUtil {
 	public String getTokenFromCookie(HttpServletRequest request , HttpServletResponse response){
 		Map<String, String> cookies = getCookies(request , response);
 		String tokenValue = cookies.get(TOKEN_COOKIE_KEY) ;
+		/*
 		String lastTimeValue = cookies.get(TOKEN_COOKIE_LAST_TIME_KEY) ;
 		
 		if(StringUtils.isBlank(tokenValue) || StringUtils.isBlank(lastTimeValue)){
 			return null;
 		}
-		/*
 		Long prevTimeValue = Long.valueOf(lastTimeValue) ;
 		Long currentTime = System.currentTimeMillis();
 		if((currentTime - prevTimeValue ) > TOKEN_MAX_AGE){

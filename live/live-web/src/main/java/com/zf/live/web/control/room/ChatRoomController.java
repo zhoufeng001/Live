@@ -1,17 +1,16 @@
 package com.zf.live.web.control.room;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.room.RoomService;
+import com.zf.live.client.vo.room.RoomInfo;
 import com.zf.live.client.vo.web.AjaxResult;
 import com.zf.live.web.app.util.WebUtil;
 
@@ -30,17 +29,16 @@ public class ChatRoomController {
 	private RoomService roomService ;
 	
 	/**
-	 * 去登录页面
+	 * 获取房间观众列表，用于进入房间后初始化观众列表用
 	 * @param request
 	 * @param response
 	 * @param modelMap
 	 * @return
 	 */
-	@RequestMapping("/audience")
-	public void loginView(ServletRequest request, ServletResponse response) {
-		Map<String, Object> data = new HashMap<String, Object>();
-		data.put("aa", "bb");
-		WebUtil.ajaxOutput(AjaxResult.newSuccessResult(data), response);
+	@RequestMapping("/audiences/{videoId}")
+	public void audiences(@PathVariable("videoId") Long videoId, ServletRequest request, ServletResponse response) {
+		RoomInfo roomInfo = roomService.getRoomInfo(videoId);
+		WebUtil.ajaxOutput(AjaxResult.newSuccessResult(roomInfo), response);
 	}
 	
 	

@@ -4,10 +4,10 @@
 <!-- 公共meta信息 -->
 <#include "./common/live_common_meta.ftl" >	
 <#include "./common/live_common_js.ftl" >	
+<script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>  
 <#include "./common/bootstrap.ftl" >
 <link href="${static_server}/css/videoview.css" rel="stylesheet" />
 <link href="${static_server}/js/qqface/face.css" rel="stylesheet" />
-<script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>
 <script type="text/jscript" src="${static_server}/js/jquery.cookie.js"></script>
 <script type="text/javascript">
 	var ctx = '${ctx!""}';
@@ -32,7 +32,8 @@
 
 <script type="text/jscript" src="${static_server}/js/qqface/jquery.qqFace.js"></script> 
 <script type="text/jscript" src="${static_server}/js/chat/cometd.js"></script>  
-<script type="text/jscript" src="${static_server}/js/chat/jquery.cometd.js"></script>
+<script type="text/jscript" src="${static_server}/js/chat/jquery.cometd.js"></script>  
+<script type="text/jscript" src="${static_server}/js/video/videoview.js"></script> 
 <script type="text/jscript" src="${static_server}/js/chat/chatprocess.js"></script>
 
 <title>${(videoDetailVo.video.videoname)!""}</title>
@@ -60,11 +61,12 @@
         
         <div class="video_main_box">
         	
-            <!-- 观众列表 -->
-        	<div class="audience_list">
+            <!-- 观众列表 --> 
+        	<div class="audience_list" id="audience_list" > 
         		<div class="online_count"> 
-        			${(roomInfo.userCount)!"0"}用户&nbsp;/&nbsp;${(roomInfo.touriseCount)!"0"}游客 
+        			<i id="userCount">${(roomInfo.userCount)!"0"}</i>用户&nbsp;/&nbsp;<i id="touriseCount">${(roomInfo.touriseCount)!"0"}</i>游客 
         		</div> 
+        		<!--
         		<#if roomInfo.users??> 
 		      		<#list roomInfo.users as user >
 						<div class="audience">
@@ -73,7 +75,6 @@
 						</div>
 					</#list>
 				</#if>
-        		<!--
                  <div class="audience_loadmore">
                     <span class="load_more">
                     	<a href="javascript:void(0);">加载更多>></a>

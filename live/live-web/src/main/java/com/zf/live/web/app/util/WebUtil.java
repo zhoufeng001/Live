@@ -30,7 +30,7 @@ public class WebUtil {
 		try {
 			if(result == null){
 				result = new AjaxResult() ;
-				result.setType(AjaxResultType.FAIL.getValue());
+				result.setSuccess(AjaxResultType.FAIL.getValue());
 			}
 			String jsonResult = JSON.toJSONString(result) ;
 			out = response.getWriter();
