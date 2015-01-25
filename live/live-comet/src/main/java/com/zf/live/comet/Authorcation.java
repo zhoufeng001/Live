@@ -3,8 +3,10 @@ package com.zf.live.comet;
 
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import org.cometd.annotation.Service;
 import org.cometd.bayeux.server.BayeuxServer;
 import org.cometd.bayeux.server.SecurityPolicy;
 import org.cometd.bayeux.server.ServerChannel;
@@ -15,9 +17,14 @@ import org.cometd.oort.Oort;
 import org.cometd.oort.Seti;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.ServletContextAware;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.room.Audience;
+import com.zf.live.comet.service.chat.AudienceChangeListener;
 import com.zf.live.comet.service.room.AudienceContainerManager;
 import com.zf.live.dao.pojo.Lvuser;
 
@@ -26,22 +33,20 @@ import com.zf.live.dao.pojo.Lvuser;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月24日 下午2:47:54
  */
-public class Authorcation implements SecurityPolicy{
+@Component("authorcation")
+@Service
+public class Authorcation implements SecurityPolicy , ServletContextAware{
 
 	static final Logger log = LoggerFactory.getLogger(Authorcation.class);
 
 	private ServletContext servletContext ;
-
+	
+	@Autowired
 	private AudienceContainerManager audienceContainerManager ;
 	
+	@Resource(name="lvuserService")
 	private LvuserService lvuserService ;
-
-	public Authorcation(ServletContext servletContext, AudienceContainerManager audienceContainerManager, LvuserService lvuserService ) {
-		this.servletContext = servletContext ;
-		this.audienceContainerManager = audienceContainerManager ;
-		this.lvuserService = lvuserService ;
-	}
-
+	
 	@Override
 	public boolean canHandshake(BayeuxServer server, ServerSession session,
 			ServerMessage message) {
@@ -92,11 +97,19 @@ public class Authorcation implements SecurityPolicy{
 		session.setAttribute("audience", audience); 
 		audienceContainerManager.addAudience((long)videoId, audience);
 		
+		AudienceChangeListener audienceChangeListener = WebApplicationContextUtils
+				.getWebApplicationContext(servletContext).getBean(AudienceChangeListener.class);
+		
+		//发送通知到房间
+		audienceChangeListener.sendAudienceChangeNotice((long)videoId, audience, AudienceChangeListener.TYPE_COMEIN); 
+		
 		//监听移除事件
 		session.addListener(new ServerSession.RemoveListener(){
 			@Override
 			public void removed(ServerSession session, boolean timeout) {
 				audienceContainerManager.removeAudience((long)videoId, session.getId()); 
+				//发送通知到房间
+				audienceChangeListener.sendAudienceChangeNotice((long)videoId, audience, AudienceChangeListener.TYPE_GOOUT); 
 			}
 			
 		}); 
@@ -122,6 +135,11 @@ public class Authorcation implements SecurityPolicy{
 	public boolean canPublish(BayeuxServer server, ServerSession session,
 			ServerChannel channel, ServerMessage message) {
 		return true;
+	}
+
+	@Override
+	public void setServletContext(ServletContext servletContext) {
+		this.servletContext = servletContext ;
 	}
 
 }

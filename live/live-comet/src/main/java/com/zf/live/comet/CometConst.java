@@ -14,6 +14,11 @@ public interface CometConst {
 		 */
 		public static final String chatRcvPubChannel = "/chat/rcv_pub";
 		
+		/**
+		 * 观众变更
+		 */
+		public static final String audienceChangeChannel = "/chat/audienceChange";
+		
 	}
 	
 }

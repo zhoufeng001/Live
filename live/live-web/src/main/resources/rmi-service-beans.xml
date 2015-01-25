@@ -33,5 +33,5 @@
 	    <property name="serviceName" value="roomService"/>
 	    <property name="serviceInterface" value="com.zf.live.client.room.RoomService"/>
 	</bean>
-		
+	
 </beans>

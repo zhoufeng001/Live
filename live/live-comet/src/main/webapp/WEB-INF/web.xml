@@ -32,7 +32,7 @@
 <!--         </init-param> -->  
         <init-param>
             <param-name>oort.channels</param-name>
-            <param-value>/chat/rcv_pub</param-value>
+            <param-value>/chat/send_pub/*,/chat/audienceChange/*</param-value>
          </init-param>
          <init-param>
             <param-name>oort.secret</param-name>

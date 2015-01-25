@@ -10,6 +10,7 @@ import javax.servlet.ServletContext;
 
 import org.cometd.annotation.Configure;
 import org.cometd.annotation.Listener;
+import org.cometd.annotation.Param;
 import org.cometd.annotation.Service;
 import org.cometd.annotation.Session;
 import org.cometd.bayeux.ChannelId;
@@ -23,15 +24,21 @@ import org.cometd.bayeux.server.ServerSession;
 import org.cometd.oort.Oort;
 import org.cometd.server.authorizer.GrantAuthorizer;
 import org.springframework.web.context.ServletContextAware;
+import org.springframework.web.util.HtmlUtils;
 
 import com.zf.live.client.vo.room.Audience;
 import com.zf.live.comet.CometConst.Channel;
 
+/**
+ * 
+ * @author is_zhoufeng@163.com , QQ:243970446
+ * 2015年1月25日 上午1:55:07
+ */
 @Named
 @Singleton
 @Service("pubChatListener")
 public class PubChatListener implements ServletContextAware{
-
+	
 	@Inject
 	private BayeuxServer bayeux;
 	
@@ -40,9 +47,8 @@ public class PubChatListener implements ServletContextAware{
 	
 	@Session
 	private LocalSession localSession ;
-	
+
 	private ServletContext servletContext ;
-	
 
     @Configure(Channel.chatSendPubChannel)
     public void configure(ConfigurableServerChannel channel)
@@ -83,8 +89,8 @@ public class PubChatListener implements ServletContextAware{
      * @param remote
      * @param message
      */
-	@Listener(Channel.chatSendPubChannel)
-	public void chatPub(ServerSession remote, ServerMessage message)
+	@Listener(Channel.chatSendPubChannel + "/{videoId}") 
+	public void chatPub(ServerSession remote, ServerMessage message , @Param("videoId") String videoId)
 	{
 		Audience audience = (Audience)remote.getAttribute("audience");
 		Map<String, Object> dataMap = message.getDataAsMap() ;
@@ -95,12 +101,13 @@ public class PubChatListener implements ServletContextAware{
 			mutable.setData("消息不能为空！");
 			return ;
 		}
-		
-		Map<String, Object> data = new HashMap<String, Object>();
+		String msgText = HtmlUtils.htmlEscape(msg.toString(), "utf-8");
+		Map<String, Object> data = new HashMap<String, Object>(); 
 		data.put("time", String.format("%tR", System.currentTimeMillis())); 
-		data.put("msg", msg);
-		data.put("fromUser", audience.getUserNick()) ;
-		localSession.getChannel(Channel.chatRcvPubChannel).publish(data); 
+		data.put("msg", msgText);
+		data.put("fromUserNick", audience.getUserNick()) ;
+		data.put("fromUserId", audience.getUserId()) ;
+		localSession.getChannel(Channel.chatRcvPubChannel + "/" + videoId ).publish(data); 
 	}
 
 	@Override

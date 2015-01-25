@@ -1,11 +1,18 @@
 package com.zf.live.client.vo.room;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月24日 下午3:17:56
  */
-public class VideoSessionPair {
+public class VideoSessionPair implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2252433108644320562L;
 
 	private Long videoId ;
 	

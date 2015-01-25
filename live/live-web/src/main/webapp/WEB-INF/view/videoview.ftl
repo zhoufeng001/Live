@@ -17,6 +17,8 @@
    		 contextPath: cometServerUrl
 	};
 	
+	var static_server = "${static_server}";
+	
 	var videoId = ${(videoDetailVo.video.id)!""} ;
 	
 	var userToken = $.cookie("_tc_k_");
@@ -34,7 +36,7 @@
 
 <title>${(videoDetailVo.video.videoname)!""}</title>
 </head>
-<body>  
+<body onload="goVideoContent()">   
 
 <div class="index_body"  >
 
@@ -42,7 +44,7 @@
 <#include "./common/head.ftl" >	
  
 <!-- 内容部分 -->
-    <div class="video_main_content">
+    <div class="video_main_content" id="video_main_content">
     	
         <!-- 视频标题部分 -->
         <div class="video_head">
@@ -60,82 +62,23 @@
             <!-- 观众列表 -->
         	<div class="audience_list">
         		<div class="online_count"> 
-        			${(roomInfo.audienceCount)!"0"}人在线 
+        			${(roomInfo.userCount)!"0"}用户&nbsp;/&nbsp;${(roomInfo.touriseCount)!"0"}游客 
         		</div> 
         		<#if roomInfo.users??> 
-	        		<#list roomInfo.users as user >
-						<div class="audience"> 
-			                <img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-		                    <span class="audience_name">赖宝11</span>
-		                </div>  
+		      		<#list roomInfo.users as user >
+						<div class="audience">
+							<img class="photo" src="${(user.userPhoto)!""}" />  
+						    <span class="audience_name">${(user.userNick)!""}</span>
+						</div>
 					</#list>
 				</#if>
-        		    
-            	<div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝赖宝赖宝赖宝赖宝赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                 <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                 <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
-                 <div class="audience">
-                	<img class="photo" src="${static_server}/img/userphoto/1.jpg" />
-                    <span class="audience_name">赖宝</span>
-                </div>
+        		<!--
                  <div class="audience_loadmore">
                     <span class="load_more">
                     	<a href="javascript:void(0);">加载更多>></a>
                     </span>
                 </div>
+                -->
             </div>
         	 <!--/ 观众列表 -->
             
@@ -160,7 +103,7 @@
                 </ul>
             </div>
             <!--/聊天记录  --> 	
-            
+        </div>  
             
     </div> 
  <!-- 内容部分结束 -->
@@ -180,13 +123,22 @@
 	});
 </script>
 -->
+
 <script type="text/javascript">
+	
 	$(function(){
 		$('.emotion').qqFace({
 			assign:'chat_textarea', //给那个控件赋值  
 			path:'${static_server}/img/face/'	//表情存放的路径
 		});
 	});
+	
+	//跳转到视频区
+	function goVideoContent(){
+		var _targetTop = $('#video_main_content').offset().top;//获取位置
+		jQuery("html,body").animate({scrollTop:_targetTop},300);//跳转
+	}
+
 </script>
 
 </body>

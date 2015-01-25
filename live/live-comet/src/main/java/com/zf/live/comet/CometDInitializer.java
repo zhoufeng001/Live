@@ -37,6 +37,9 @@ public class CometDInitializer implements ServletContextAware
     
     @Autowired
     private AudienceContainerManager audienceContainerManager;
+    
+    @Autowired
+    private Authorcation authorcation ;
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public BayeuxServer bayeuxServer()
@@ -48,7 +51,7 @@ public class CometDInitializer implements ServletContextAware
         bean.setOption("ws.cometdURLMapping", "/cometd/*");
         
         //设置权限校验服务
-        bean.setSecurityPolicy(new Authorcation(servletContext,audienceContainerManager,lvuserService));  
+        bean.setSecurityPolicy(authorcation);   
         
         return bean;
     }

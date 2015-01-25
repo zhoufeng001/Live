@@ -90,12 +90,12 @@ public class WebTokenUtil {
 			tokenCookie.setPath(COOKIE_PATH);
 			
 			Cookie useridCookie = new Cookie(COOKIE_USER_ID, String.valueOf(lvuser.getId()));  
-			tokenCookie.setMaxAge(TOKEN_MAX_AGE);
-			tokenCookie.setPath(COOKIE_PATH);
+			useridCookie.setMaxAge(TOKEN_MAX_AGE);
+			useridCookie.setPath(COOKIE_PATH);
 			
 			Cookie usernickCookie = new Cookie(COOKIE_USER_NICK, lvuser.getNick());  
-			tokenCookie.setMaxAge(TOKEN_MAX_AGE);
-			tokenCookie.setPath(COOKIE_PATH);
+			usernickCookie.setMaxAge(TOKEN_MAX_AGE);
+			usernickCookie.setPath(COOKIE_PATH);
 			
 			response.addCookie(tokenCookie);
 			response.addCookie(useridCookie);
@@ -182,7 +182,7 @@ public class WebTokenUtil {
 		for (Cookie cookie : cookies) {
 			cookiesMap.put(cookie.getName(), cookie.getValue()) ;
 		}
-		setLastTimeToken(response); 
+//		setLastTimeToken(response); 
 		return cookiesMap ;
 	}
 	

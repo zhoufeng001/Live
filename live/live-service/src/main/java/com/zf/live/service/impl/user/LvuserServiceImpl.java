@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import com.zf.live.client.exception.LiveException;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.user.CacheUser;
 import com.zf.live.common.Const;
 import com.zf.live.common.util.FlagBitUtil;
 import com.zf.live.common.validate.LoginName;
@@ -293,7 +294,7 @@ public class LvuserServiceImpl implements LvuserService{
 		if(userid == null || userid.longValue() <= 0){
 			return null ;
 		}
-		return userCacheService.getCacheUserById(userid); 
+		return selectByIdWithCache(userid);  
 	}
 
 	@Override

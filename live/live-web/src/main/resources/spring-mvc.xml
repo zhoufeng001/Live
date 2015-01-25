@@ -18,6 +18,31 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
+	
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1" />
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json" />
+            </map>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+            </list>
+        </property>
+        <property name="ignoreAcceptHeader" value="true" />
+    </bean>
+	
+	<!-- 使用alibaba JSON作为spring mvc的json转换支持 -->
+<!-- 	<bean id="mappingJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"> -->
+<!-- 		 <property name="supportedMediaTypes">     -->
+<!-- 	        <list>     -->
+<!-- 	            <value>application/json;charset=UTF-8</value>     -->
+<!-- 	       </list>     -->
+<!-- 	    </property>  -->
+<!-- 	</bean>     -->
+	
 	<!-- freemarker的配置 -->  
     <bean id="freemarkerConfigurer"  
         class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
