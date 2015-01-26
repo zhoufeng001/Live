@@ -1,11 +1,17 @@
+var userCountI;
+var touriseCountI;
+var audienceListDiv;
+
+$(function(){
+	 userCountI = $("#userCount");
+	 touriseCountI = $("#touriseCount");
+	 audienceListDiv = $("#audience_list");
+});
+
 /**
  * 观众列表操作
  */
 var AudienceList = function(){
-	
-	var userCountI = $("#userCount");
-	var touriseCountI = $("#touriseCount");
-	var audienceListDiv = $("#audience_list");
 	
 	/**
 	 * 初始化观众列表以及观众人数等信息
@@ -51,20 +57,52 @@ var AudienceList = function(){
 	 */
 	this.addUser = function(user){
 		if(user){
-			var userHtml =
-				'<div class="audience" data-id="'+ user.userId + '">' 
-			 +  '<img class="photo" src="'+ user.userPhoto +'" /> '
-			 +  '<span class="audience_name">'+ user.userNick +'</span>'
-			 +  '</div>';
-			audienceListDiv.append(userHtml);
+			if(user.tourist){
+				this.incrTouriseCount(1);
+			}else{
+				this.incrUserCount(1);
+				var userHtml =
+					'<div class="audience" data-id="'+ user.userId + '"  data-uuid="'+ user.uuid +'" >' 
+				 +  '<img class="photo" src="'+ user.userPhoto +'" /> '
+				 +  '<span class="audience_name">'+ user.userNick +'</span>'
+				 +  '</div>';
+				audienceListDiv.append(userHtml);
+			}
 		}
 	}
 	
 	/**
 	 * 移除一个用户
 	 */
-	this.removeUser = function(userId){
-		audienceListDiv.find("div.audience").remove("div.audience[data-id='"+ userId +"']");
+	this.removeUser = function(user){
+		if(user){
+			if(user.tourist){
+				this.incrTouriseCount(-1);
+			}else{
+				this.incrUserCount(-1);
+				var uuid = user.uuid ;
+				audienceListDiv.find("div.audience[data-uuid='"+ uuid +"']").remove();  
+			}
+		}
+	}
+	
+	
+	this.incrUserCount = function(count){
+		var currVal = userCountI.val();
+		if(!currVal){
+			currVal = 0 ;
+		}
+		currVal += count ;
+		userCountI.val(currVal); 
+	}
+	
+	this.incrTouriseCount = function(){
+		var currVal = touriseCountI.val();
+		if(!currVal){
+			currVal = 0 ;
+		}
+		currVal += count ;
+		touriseCountI.val(currVal); 
 	}
 	
 }

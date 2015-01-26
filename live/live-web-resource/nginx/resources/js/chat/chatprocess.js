@@ -55,6 +55,7 @@ var sendBut ;
     {
     	
     	init();
+    	//初始化观众列表
     	audienceList.init();
     	
     	//----------------------连接部分------------------------
@@ -104,7 +105,6 @@ var sendBut ;
         {
             if (handshake.successful === true)
             {
-            	
             	 //订阅公聊
             	 pubMsgSubscripe = cometd.subscribe('/chat/rcv_pub/' + videoId , function(dataBody){
             		 var data =  dataBody.data; 
@@ -122,8 +122,27 @@ var sendBut ;
             		 var data =  dataBody.data; 
             		 var type = data.type ;
             		 var audiences = data.audiences;
-            		 console.log(type + "..." + audiences); 
+            		 if(!audiences || audiences.length <= 0){
+            			 return ;
+            		 }
+            		 var audiencesJson = new JsonObject(audiences);
+            		 for(var idx in audiencesJson){
+            			 var audience = audiencesJson[idx];
+            			 if(type == 1){ //进入房间
+            				 if(!audience.tourist){ 
+            					 chatMsgBox.appendSystemMsg("用户" + audience.userNick + "进入房间"); 
+            				 } 
+            				 audienceList.addUser(audience);
+                		 }else if(type == 2){
+                			 audienceList.removeUser(audience);
+                		 }
+            		 }  
+            		 console.log(type + "..." + audiencesJson); 
                  });  
+            	 
+            	 
+            	 //通知房间用户本人进入房间
+            	 cometd.publish("/chat/comeIn");
             	 
             }else{
             	handshakeFailCount++;  

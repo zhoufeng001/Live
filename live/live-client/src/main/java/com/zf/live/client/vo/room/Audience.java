@@ -20,6 +20,11 @@ public class Audience implements Serializable{
 	private String sessionId ;
 	
 	/**
+	 * 加密sessionId
+	 */
+	private String uuid ;
+	
+	/**
 	 * 是否是游客
 	 */
 	private boolean tourist;
@@ -113,6 +118,14 @@ public class Audience implements Serializable{
 
 	public void setVideoId(Long videoId) {
 		this.videoId = videoId;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 	
 }

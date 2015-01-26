@@ -19,6 +19,11 @@ public interface CometConst {
 		 */
 		public static final String audienceChangeChannel = "/chat/audienceChange";
 		
+		/**
+		 * 进入房间
+		 */
+		public static final String comeInRoomChannel = "/chat/comeIn";
+		
 	}
 	
 }

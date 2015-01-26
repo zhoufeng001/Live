@@ -41,6 +41,16 @@ var AjaxResult = function(result){
 	
 }
 
+/**
+ * Json对象
+ */
+var JsonObject = function(jsonString){
+	if(!jsonString){
+		return null ;
+	}
+	var jsonObj = eval('(' + jsonString + ')'); 
+	return jsonObj;
+}
 
 /**
  * 给Date对象添加format方法

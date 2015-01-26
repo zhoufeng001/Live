@@ -24,8 +24,9 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.room.Audience;
-import com.zf.live.comet.service.chat.AudienceChangeListener;
+import com.zf.live.comet.service.chat.AudienceChangeService;
 import com.zf.live.comet.service.room.AudienceContainerManager;
+import com.zf.live.common.util.UUID;
 import com.zf.live.dao.pojo.Lvuser;
 
 /**
@@ -74,6 +75,7 @@ public class Authorcation implements SecurityPolicy , ServletContextAware{
 		Audience audience = new Audience() ;
 		audience.setVideoId((long)videoId);  
 		audience.setSessionId(session.getId());
+		audience.setUuid(UUID.newUUID());
 		audience.setComeInTime(System.currentTimeMillis());
 		if(token == null){
 			audience.setTourist(true);
@@ -97,11 +99,8 @@ public class Authorcation implements SecurityPolicy , ServletContextAware{
 		session.setAttribute("audience", audience); 
 		audienceContainerManager.addAudience((long)videoId, audience);
 		
-		AudienceChangeListener audienceChangeListener = WebApplicationContextUtils
-				.getWebApplicationContext(servletContext).getBean(AudienceChangeListener.class);
-		
-		//发送通知到房间
-		audienceChangeListener.sendAudienceChangeNotice((long)videoId, audience, AudienceChangeListener.TYPE_COMEIN); 
+		AudienceChangeService audienceChangeService = WebApplicationContextUtils
+				.getWebApplicationContext(servletContext).getBean(AudienceChangeService.class);
 		
 		//监听移除事件
 		session.addListener(new ServerSession.RemoveListener(){
@@ -109,7 +108,7 @@ public class Authorcation implements SecurityPolicy , ServletContextAware{
 			public void removed(ServerSession session, boolean timeout) {
 				audienceContainerManager.removeAudience((long)videoId, session.getId()); 
 				//发送通知到房间
-				audienceChangeListener.sendAudienceChangeNotice((long)videoId, audience, AudienceChangeListener.TYPE_GOOUT); 
+				audienceChangeService.sendAudienceChangeNotice((long)videoId, audience, AudienceChangeService.TYPE_GOOUT); 
 			}
 			
 		}); 

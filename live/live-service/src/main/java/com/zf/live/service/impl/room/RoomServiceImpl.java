@@ -25,7 +25,7 @@ import com.zf.live.common.validate.Notnull;
 import com.zf.live.service.impl.room.filter.TouristFilter;
 
 /**
- * 
+ * FireFox收不到聊天消息
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月20日 下午10:34:19
  */
@@ -62,8 +62,11 @@ public class RoomServiceImpl implements RoomService{
 				jedis.incr(roomUserCountKey + videoId); 
 			}
 			String audienceJson = JSON.toJSONString(audience);
-			jedis.hset(roomUserMapKey + videoId, audience.getSessionId() , audienceJson);
-
+			String rumk = roomUserMapKey + videoId ;
+			if(jedis.hexists(rumk , audience.getSessionId())){ 
+				jedis.hdel(rumk, audience.getSessionId()) ;
+			}
+			jedis.hset(rumk, audience.getSessionId() , audienceJson);
 			log.info("用户[{}]，进入房间[{}]成功" , audience.getSessionId() , videoId);
 		}finally{  
 			jedisPool.returnResource(jedis);
