@@ -2,7 +2,8 @@
 <html>
 <head>
 <!-- 公共meta信息 -->
-<#include "../common/live_common_meta.ftl" >	
+<#include "../common/live_common_meta.ftl" >
+<#include "../common/live_common_js.ftl" >	
 <link rel="stylesheet" href="${static_server}/css/login_regist.css">
 <title>Live登录</title>
 </head>
@@ -32,9 +33,10 @@
             </span>
         </div>
     	<div class="plateform_login_box">
-    	  <form method="post" action="${ctx}/user/doLogin.htm">
-        	<ul class="lable_ul">
-            	<li>帐 号：</li>
+    	  <form method="post" action="${ctx}/user/doLogin.htm"> 
+			<input type="hidden" name="redirect" value="${redirect!""}"/>
+         	<ul class="lable_ul">
+            	<li>帐 号：</li>    
                 <li>密 码：</li>
             </ul>
             <ul class="input_ul">

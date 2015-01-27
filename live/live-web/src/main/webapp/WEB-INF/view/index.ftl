@@ -3,6 +3,7 @@
 <head>
 <!-- 公共meta信息 -->
 <#include "./common/live_common_meta.ftl" >	
+<#include "./common/live_common_js.ftl" >	
 <meta property="qc:admins" content="207157331766416567167" />
 <meta property="wb:webmaster" content="dfaf9701554df20f" />
 <link rel="stylesheet" href="${static_server}/css/index.css">

@@ -65,7 +65,45 @@ var sendBut ;
     	
         function _connectionEstablished()
         {   
-           chatMsgBox.appendSystemMsg("服务器连接成功！");
+        	 chatMsgBox.appendSystemMsg("服务器连接成功！");
+           
+	         //订阅公聊
+	      	 pubMsgSubscripe = cometd.subscribe('/chat/rcv_pub/' + videoId , function(dataBody){
+	      		 var data =  dataBody.data; 
+	      		 var time = data.time ;
+	      		 var fromUserNick = data.fromUserNick ;
+	      		 var fromUserId = data.fromUserId;
+	      		 var msg = data.msg ;
+	      		 if(userId && userId != fromUserId){
+	      			 chatMsgBox.appendChatMsg(time,fromUserNick,msg);
+	      		 }
+	           });  
+	      	 
+	      	 //订阅观众列表变动
+	      	 audienceChagenSubscripe = cometd.subscribe('/chat/audienceChange/' + videoId , function(dataBody){
+	      		 var data =  dataBody.data; 
+	      		 var type = data.type ;
+	      		 var audiences = data.audiences;
+	      		 if(!audiences || audiences.length <= 0){
+	      			 return ;
+	      		 }
+	      		 var audiencesJson = new JsonObject(audiences);
+	      		 for(var i = 0 ; i < audiencesJson.length ; i++){
+	      			 var audience = audiencesJson[i];
+	      			 if(type == 1){ //进入房间
+	      				 if(!audience.tourist){ 
+	      					 chatMsgBox.appendSystemMsg("用户" + audience.userNick + "进入房间"); 
+	      				 } 
+	      				 audienceList.addUser(audience);
+	          		 }else if(type == 2){
+	          			 audienceList.removeUser(audience);
+	          		 }
+	      		 }
+	           });  
+	      	 
+	      	 //通知房间用户本人进入房间
+	      	 cometd.publish("/chat/comeIn");
+           
         }
 
         function _connectionBroken()
@@ -105,45 +143,7 @@ var sendBut ;
         {
             if (handshake.successful === true)
             {
-            	 //订阅公聊
-            	 pubMsgSubscripe = cometd.subscribe('/chat/rcv_pub/' + videoId , function(dataBody){
-            		 var data =  dataBody.data; 
-            		 var time = data.time ;
-            		 var fromUserNick = data.fromUserNick ;
-            		 var fromUserId = data.fromUserId;
-            		 var msg = data.msg ;
-            		 if(userId && userId != fromUserId){
-            			 chatMsgBox.appendChatMsg(time,fromUserNick,msg);
-            		 }
-                 });  
-            	 
-            	 //订阅观众列表变动
-            	 audienceChagenSubscripe = cometd.subscribe('/chat/audienceChange/' + videoId , function(dataBody){
-            		 var data =  dataBody.data; 
-            		 var type = data.type ;
-            		 var audiences = data.audiences;
-            		 if(!audiences || audiences.length <= 0){
-            			 return ;
-            		 }
-            		 var audiencesJson = new JsonObject(audiences);
-            		 for(var idx in audiencesJson){
-            			 var audience = audiencesJson[idx];
-            			 if(type == 1){ //进入房间
-            				 if(!audience.tourist){ 
-            					 chatMsgBox.appendSystemMsg("用户" + audience.userNick + "进入房间"); 
-            				 } 
-            				 audienceList.addUser(audience);
-                		 }else if(type == 2){
-                			 audienceList.removeUser(audience);
-                		 }
-            		 }  
-            		 console.log(type + "..." + audiencesJson); 
-                 });  
-            	 
-            	 
-            	 //通知房间用户本人进入房间
-            	 cometd.publish("/chat/comeIn");
-            	 
+            	
             }else{
             	handshakeFailCount++;  
             	if(handshakeFailCount >= handshakeRetryCount ){
@@ -192,6 +192,7 @@ var sendBut ;
  		   return;
  	   }
  	   if(msg == null || "" == msg.trim()){
+ 		  $.messager.popup("请输入内容");  
  		   return ;
  	   }
  	   chatMsgBox.disableSendButton();  

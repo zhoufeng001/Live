@@ -2,7 +2,8 @@
 <html>
 <head>
 <!-- 公共meta信息 -->
-<#include "../common/live_common_meta.ftl" >	
+<#include "../common/live_common_meta.ftl" >
+<#include "../common/live_common_js.ftl" >	
 <link rel="stylesheet" href="${static_server}/css/login_regist.css">
 <title>Live注册</title>
 

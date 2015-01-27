@@ -13,6 +13,8 @@ $(function(){
  */
 var AudienceList = function(){
 	
+	var audiencesMap = new Map();
+	
 	/**
 	 * 初始化观众列表以及观众人数等信息
 	 */
@@ -42,11 +44,11 @@ var AudienceList = function(){
 	 */
 	this.fillByRoomInfo = function(roomInfo){
 		if(roomInfo){
-			userCountI.val(roomInfo.userCount);
-			touriseCountI.val(roomInfo.touristCount);
+//			userCountI.val(roomInfo.userCount);
+//			touriseCountI.val(roomInfo.touristCount);
 			if(roomInfo.users){
-				for(var i in roomInfo.users){
-					this.addUser(roomInfo.users[i]);  
+				for(var i = 0 ; i < roomInfo.users.length ; i++){
+					this.addUser(roomInfo.users[i]); 
 				}
 			}
 		}
@@ -57,8 +59,14 @@ var AudienceList = function(){
 	 */
 	this.addUser = function(user){
 		if(user){
-			if(user.tourist){
+			//如果存在，则跳过，避免重复
+			var existAudience = audiencesMap.get(user.uuid); 
+			if(existAudience){  
+				return ;
+			}
+			if(user.tourist){ 
 				this.incrTouriseCount(1);
+				console.log("添加游客" + user.uuid + " 游客人数+1");
 			}else{
 				this.incrUserCount(1);
 				var userHtml =
@@ -67,7 +75,9 @@ var AudienceList = function(){
 				 +  '<span class="audience_name">'+ user.userNick +'</span>'
 				 +  '</div>';
 				audienceListDiv.append(userHtml);
+				console.log("添加用户" + user.uuid + " 用户人数+1");
 			}
+			audiencesMap.put(user.uuid,user); 
 		}
 	}
 	
@@ -78,31 +88,40 @@ var AudienceList = function(){
 		if(user){
 			if(user.tourist){
 				this.incrTouriseCount(-1);
+				console.log("移除游客" + user.uuid + " 游客人数-1");
 			}else{
 				this.incrUserCount(-1);
 				var uuid = user.uuid ;
 				audienceListDiv.find("div.audience[data-uuid='"+ uuid +"']").remove();  
+				console.log("移除用户" + user.uuid + " 用户人数-1");
 			}
+			audiencesMap.remove(user.uuid); 
 		}
 	}
 	
 	
 	this.incrUserCount = function(count){
-		var currVal = userCountI.val();
+		var currVal = userCountI.text();
 		if(!currVal){
 			currVal = 0 ;
+		}else{
+			currVal = parseInt(currVal);
 		}
 		currVal += count ;
-		userCountI.val(currVal); 
+		userCountI.text(currVal); 
+		console.log("用户人数" + currVal);
 	}
 	
-	this.incrTouriseCount = function(){
-		var currVal = touriseCountI.val();
+	this.incrTouriseCount = function(count){
+		var currVal = touriseCountI.text();
 		if(!currVal){
 			currVal = 0 ;
+		}else{
+			currVal = parseInt(currVal);
 		}
 		currVal += count ;
-		touriseCountI.val(currVal); 
+		touriseCountI.text(currVal); 
+		console.log("游客人数" + currVal); 
 	}
 	
 }

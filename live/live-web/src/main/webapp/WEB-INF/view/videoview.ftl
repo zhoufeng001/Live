@@ -10,7 +10,6 @@
 <link href="${static_server}/js/qqface/face.css" rel="stylesheet" />
 <script type="text/jscript" src="${static_server}/js/jquery.cookie.js"></script>
 <script type="text/javascript">
-	var ctx = '${ctx!""}';
 
 	var cometServerUrl = "${cometServerUrl!""}" ;
 	var cometdHandshake = "${cometdHandshake!""}" ;
@@ -38,7 +37,7 @@
 
 <title>${(videoDetailVo.video.videoname)!""}</title>
 </head>
-<body onload="goVideoContent()">   
+<body onload="goVideoContent()"  redirect='${ctx!""}/video/view/${(videoDetailVo.video.id)!""} .htm'>
 
 <div class="index_body"  >
 
@@ -64,7 +63,7 @@
             <!-- 观众列表 --> 
         	<div class="audience_list" id="audience_list" > 
         		<div class="online_count"> 
-        			<i id="userCount">${(roomInfo.userCount)!"0"}</i>用户&nbsp;/&nbsp;<i id="touriseCount">${(roomInfo.touriseCount)!"0"}</i>游客 
+        			<i id="userCount">0</i>用户&nbsp;/&nbsp;<i id="touriseCount">0</i>游客
         		</div> 
         		<!--
         		<#if roomInfo.users??> 
@@ -114,7 +113,6 @@
 <#include "./common/bottom.ftl" >
 
 </div>
-<!--
 <script type="text/javascript" src="http://player.youku.com/jsapi">
 	player = new YKU.Player('youkuplayer',{
 		styleid: '0',
@@ -124,7 +122,6 @@
 		autoplay: false
 	});
 </script>
--->
 
 <script type="text/javascript">
 	

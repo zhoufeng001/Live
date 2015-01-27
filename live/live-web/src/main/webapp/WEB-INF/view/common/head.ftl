@@ -45,7 +45,7 @@
        <#else>
         <div class="user_info_bar unlogin">
         	<span class="user_info">
-            	<a href="${ctx}/user/loginView.htm">登录</a>
+            	<a href="javascript:gotoLogin()">登录</a>  
             	<a href="${ctx}/user/registView.htm">注册</a>
             </span>
             <span class="third_login_logo" >

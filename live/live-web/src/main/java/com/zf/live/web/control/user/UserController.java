@@ -34,6 +34,8 @@ import com.zf.live.web.app.util.WebTokenUtil;
 public class UserController {
 
 	static final Logger log = org.slf4j.LoggerFactory.getLogger(UserController.class);
+	
+	private static final String REDIRECT_KEY = "redirect";
 
 	@Resource(name = "lvuserService")
 	private LvuserService lvuserService ; 
@@ -53,6 +55,10 @@ public class UserController {
 	 */
 	@RequestMapping("/loginView")
 	public String loginView(ServletRequest request, ServletResponse response , ModelMap modelMap) {
+		String redirect = request.getParameter(REDIRECT_KEY);
+		if(StringUtils.isNotBlank(redirect)){
+			request.setAttribute(REDIRECT_KEY, redirect); 
+		}
 		String errMessage = RequestContext.getErrTipMessage() ;
 		log.error(errMessage); 
 		return "user/loginView";
@@ -76,6 +82,10 @@ public class UserController {
 				String token = result.getData() ;
 				Lvuser user = lvuserService.getUserByToken(token);
 				webTokenUtil.createTokenCookie(request, response, token , user); 
+				String redirect = request.getParameter(REDIRECT_KEY);
+				if(StringUtils.isNotBlank(redirect)){
+					return LiveWebUtil.redirectPath(redirect); 
+				}
 				return LiveWebUtil.redirectIndexPath() ;
 			}else{
 				RequestContext.setErrTipMessage(result.getErrMssage());

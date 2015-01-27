@@ -22,7 +22,7 @@ var zfpager = $.zfpager ;
 
 <title>${category!""}频道</title>
 </head>
-<body>  
+<body>
 
 <div class="index_body"  >
 
