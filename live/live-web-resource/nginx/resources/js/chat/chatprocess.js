@@ -76,7 +76,7 @@ var sendBut;
 						var fromUserNick = data.fromUserNick;
 						var fromUserId = data.fromUserId;
 						var msg = data.msg;
-						if (userId && userId != fromUserId) {
+						if (userId == 0 && (userId != fromUserId)) {
 							chatMsgBox.appendChatMsg(time, fromUserNick, msg);
 						}
 					});
