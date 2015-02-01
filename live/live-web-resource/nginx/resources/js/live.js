@@ -203,4 +203,35 @@ function gotoLogin(){
 	location.href = url;
 }
 
+function gotoQQLogin(){  
+	var url = ctx + "/qq/gotoLogin.htm" ;
+	var Body = $("body");
+	var redirect = Body.attr("redirect");
+	if(redirect){  
+		url += "?redirect=" + redirect;
+	}
+	location.href = url;
+}
+
+function gotoSinaLogin(){  
+	var url = ctx + "/sina/gotoLogin.htm" ;
+	var Body = $("body"); 
+	var redirect = Body.attr("redirect");
+	if(redirect){  
+		url += "?redirect=" + redirect;
+	}
+	location.href = url;
+}
+
+function gotoLogout(){  
+	var url = ctx + "/user/doLogout.htm" ;
+	var Body = $("body");
+	var redirect = Body.attr("redirect");
+	if(redirect){  
+		url += "?redirect=" + redirect;
+	}
+	location.href = url;
+}
+
+
 

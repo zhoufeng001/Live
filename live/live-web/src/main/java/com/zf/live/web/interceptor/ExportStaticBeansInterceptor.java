@@ -24,7 +24,6 @@ public class ExportStaticBeansInterceptor implements HandlerInterceptor{
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception exception)
 					throws Exception {
-		log.info("ExportStaticBeansInterceptor.afterCompletion()");
 	}
 
 	@Override
@@ -36,14 +35,12 @@ public class ExportStaticBeansInterceptor implements HandlerInterceptor{
 		
 		request.setAttribute("errMsg", errorMessage);
 		request.setAttribute("sucMsg", successMessage);
-		log.info("ExportStaticBeansInterceptor.postHandle()");
 
 	}
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler) throws Exception {
-		log.info("ExportStaticBeansInterceptor.preHandle()");
 
 		return true;
 	}

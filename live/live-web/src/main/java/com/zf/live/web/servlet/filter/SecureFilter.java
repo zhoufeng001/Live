@@ -53,7 +53,7 @@ public class SecureFilter implements Filter{
 		try {
 			//如果使用线程池，当前线程可能会残留之前用户的信息，所以需要先清除
 			RequestContext.clearCurrentUser();
-			String token = webTokenUtil.getTokenFromCookie((HttpServletRequest)request, (HttpServletResponse)response);
+			String token = webTokenUtil.getTokenFromCookie((HttpServletRequest)request);
 			if(StringUtils.isBlank(token)){
 				return ;
 			}
@@ -64,7 +64,7 @@ public class SecureFilter implements Filter{
 				RequestContext.setCurrentUser(currentUser);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage() ,e); 
 		}finally{
 			chain.doFilter(request, response); 
 		}

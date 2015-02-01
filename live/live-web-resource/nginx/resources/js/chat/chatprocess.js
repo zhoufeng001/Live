@@ -1,242 +1,235 @@
-var msgUL ;
-var msgInput ;
-var sendBut ;
+var msgUL;
+var msgInput;
+var sendBut;
 
-(function($)
-{
-	
-	//握手失败次数
-	var handshakeFailCount = 0 ;
-	var handshakeRetryCount = 3 ;
-	
-	function ChatMsgBox(){
-		
+(function($) {
+
+	// 握手失败次数
+	var handshakeFailCount = 0;
+	var handshakeRetryCount = 3;
+	//登录用户本人
+	var myself ;
+
+	function ChatMsgBox() {
+
 		/* 添加系统信息 */
-		this.appendSystemMsg = function(msg){
-			msgUL.append('<li><span>系统消息</span>：'+ msg + '</li>');
+		this.appendSystemMsg = function(msg) {
+			msgUL.append('<li><span>系统消息</span>：' + msg + '</li>');
 		}
-		
+
 		/* 添加聊天消息 */
-		this.appendChatMsg = function(time , fromUserNick , msg){   
+		this.appendChatMsg = function(time, fromUserNick, msg) {
 			var msgText = replace_em(msg);
-			msgUL.append('<li><span>'+ time +'</span><span class="username">'+  fromUserNick +'</span>：'+ msgText + '</li>');
+			msgUL.append('<li><span>' + time + '</span><span class="username">'
+					+ fromUserNick + '</span>：' + msgText + '</li>');
 		}
-		
+
 		/**
 		 * 清除输入内容
 		 */
-		this.clearInput = function(){
+		this.clearInput = function() {
 			msgInput.val("");
 		}
-		
+
 		/**
 		 * 启用发送按钮
 		 */
-		this.enableSendButton = function(){
-			sendBut.attr('disabled',false); 
+		this.enableSendButton = function() {
+			sendBut.attr('disabled', false);
 		}
-		
+
 		/**
 		 * 禁用发送按钮
 		 */
-		this.disableSendButton = function(){
-			sendBut.attr('disabled',true); 
+		this.disableSendButton = function() {
+			sendBut.attr('disabled', true);
 		}
-		
+
 	}
-	
-    var cometd = new $.CometD();  
-    
-    var chatMsgBox = new ChatMsgBox();
-    
-    var audienceList = new AudienceList();
 
-    $(document).ready(function()
-    {
-    	
-    	init();
-    	//初始化观众列表
-    	audienceList.init();
-    	
-    	//----------------------连接部分------------------------
-    	
-    	var pubMsgSubscripe ;
-    	var audienceChagenSubscripe ;
-    	
-        function _connectionEstablished()
-        {   
-        	 chatMsgBox.appendSystemMsg("服务器连接成功！");
-           
-	         //订阅公聊
-	      	 pubMsgSubscripe = cometd.subscribe('/chat/rcv_pub/' + videoId , function(dataBody){
-	      		 var data =  dataBody.data; 
-	      		 var time = data.time ;
-	      		 var fromUserNick = data.fromUserNick ;
-	      		 var fromUserId = data.fromUserId;
-	      		 var msg = data.msg ;
-	      		 if(userId && userId != fromUserId){
-	      			 chatMsgBox.appendChatMsg(time,fromUserNick,msg);
-	      		 }
-	           });  
-	      	 
-	      	 //订阅观众列表变动
-	      	 audienceChagenSubscripe = cometd.subscribe('/chat/audienceChange/' + videoId , function(dataBody){
-	      		 var data =  dataBody.data; 
-	      		 var type = data.type ;
-	      		 var audiences = data.audiences;
-	      		 if(!audiences || audiences.length <= 0){
-	      			 return ;
-	      		 }
-	      		 var audiencesJson = new JsonObject(audiences);
-	      		 for(var i = 0 ; i < audiencesJson.length ; i++){
-	      			 var audience = audiencesJson[i];
-	      			 if(type == 1){ //进入房间
-	      				 if(!audience.tourist){ 
-	      					 chatMsgBox.appendSystemMsg("用户" + audience.userNick + "进入房间"); 
-	      				 } 
-	      				 audienceList.addUser(audience);
-	          		 }else if(type == 2){
-	          			 audienceList.removeUser(audience);
-	          		 }
-	      		 }
-	           });  
-	      	 
-	      	 //通知房间用户本人进入房间
-	      	 cometd.publish("/chat/comeIn");
-           
-        }
+	var cometd = new $.CometD();
 
-        function _connectionBroken()
-        {
-            chatMsgBox.appendSystemMsg("服务器连接中断！");
-        }
+	var chatMsgBox = new ChatMsgBox();
 
-        function _connectionClosed()
-        {
-            chatMsgBox.appendSystemMsg("服务器连接关闭！");
-        }
+	var audienceList = new AudienceList();
 
-        // Function that manages the connection status with the Bayeux server
-        var _connected = false;
-        function _metaConnect(message)
-        {
-            if (cometd.isDisconnected())
-            {
-                _connected = false;
-                _connectionClosed();
-                return;
-            }
+	$(document).ready(
+			function() {
 
-            var wasConnected = _connected;
-            _connected = message.successful === true;
-            if (!wasConnected && _connected)
-            {
-                _connectionEstablished();
-            }
-            else if (wasConnected && !_connected)
-            {
-                _connectionBroken();
-            }
-        }
+				init();
+				// 初始化观众列表
+				audienceList.init();
 
-        function _metaHandshake(handshake)
-        {
-            if (handshake.successful === true)
-            {
-            	
-            }else{
-            	handshakeFailCount++;  
-            	if(handshakeFailCount >= handshakeRetryCount ){
-            		chatMsgBox.appendSystemMsg("服务器连接失败！");
-            		cometd.disconnect();  
-            	}
-            }
-        }
+				// ----------------------连接部分------------------------
 
-        // Disconnect when the page unloads
-        $(window).unload(function()
-        {
-            cometd.disconnect(true);
-        });
-        
-        var cometURL = cometdHandshake ;
-        cometd.configure({
-            url: cometURL,
-            logLevel: 'debug',
-            requestHeaders:'{"aaa":"111" , "bbb":"222"}',
-        });
-        
-        cometd.addListener('/meta/handshake', _metaHandshake);
-        cometd.addListener('/meta/connect', _metaConnect);
-         
-        chatMsgBox.appendSystemMsg("服务器连接中...");
-        cometd.handshake({
-            ext: {
-        		token : userToken,
-        		videoId : videoId
-            }
-        });
-        
-      //----------------------连接部分------------------------
-        
-    });
-    
-    
-    /**
-     * 发送消息  
-     */
-    var sendMsg = function(){
- 	   var msg = msgInput.val();
- 	   if(userToken == null){
- 		   $.messager.popup("请先登录");  
- 		   return;
- 	   }
- 	   if(msg == null || "" == msg.trim()){
- 		  $.messager.popup("请输入内容");  
- 		   return ;
- 	   }
- 	   chatMsgBox.disableSendButton();  
- 	   cometd.publish("/chat/send_pub/"  + videoId  , {   
- 		   msg : msg 
- 	   },function(publishAck){
- 		   chatMsgBox.enableSendButton();
- 		   if(publishAck.successful){  
- 			 chatMsgBox.clearInput();
- 			 var time = new Date().format("hh:mm") ;
-       		 chatMsgBox.appendChatMsg(time,userNick,msg);
- 		   }else{
- 			 chatMsgBox.appendSystemMsg("消息发送失败！");
- 		   }
- 	   });
-    }  
-    
-    /**
-     * 页面加在完后初始化函数
-     */
-    function init(){
-    	
-    	msgUL = $("#chatlist_ul");
-    	msgInput = $("#chat_textarea");
-    	sendBut = $("#chat_send");
-    	
-    	//发送按钮绑定时间
-    	sendBut.click(sendMsg);
-    	//输入框绑定回车时间
-    	msgInput.bind('keypress',function(event){
-            if(event.keyCode == "13")    
-            {
-            	sendMsg();     
-            }
-        });
-    }
-    
-    
+				var pubMsgSubscripe;
+				var audienceChagenSubscripe;
+
+				function _connectionEstablished() {
+					chatMsgBox.appendSystemMsg("服务器连接成功！");
+
+					// 订阅公聊
+					pubMsgSubscripe = cometd.subscribe('/chat/rcv_pub/'
+							+ videoId, function(dataBody) {
+						var data = dataBody.data;
+						var time = data.time;
+						var fromUserNick = data.fromUserNick;
+						var fromUserId = data.fromUserId;
+						var msg = data.msg;
+						if (userId && userId != fromUserId) {
+							chatMsgBox.appendChatMsg(time, fromUserNick, msg);
+						}
+					});
+
+					// 订阅观众列表变动
+					audienceChagenSubscripe = cometd.subscribe(
+					'/chat/audienceChange/' + videoId, function(
+							dataBody) {
+						var data = dataBody.data;
+						var type = data.type;
+						var audiences = data.audiences;
+						if (!audiences || audiences.length <= 0) {
+							return;
+						}
+						var audiencesJson = new JsonObject(audiences);
+						for (var i = 0; i < audiencesJson.length; i++) {
+							var audience = audiencesJson[i];
+							if (type == 1) { // 进入房间
+								if (!audience.tourist) {
+									chatMsgBox.appendSystemMsg("用户"
+											+ audience.userNick
+											+ "进入房间");
+								}
+								audienceList.addUser(audience); 
+							} else if (type == 2) {
+								audienceList.removeUser(audience);
+							}
+						}
+					});
+
+					// 通知房间用户本人进入房间
+					cometd.publish("/chat/comeIn");
+
+				}
+
+				function _connectionBroken() {
+					chatMsgBox.appendSystemMsg("服务器连接中断！");
+				}
+
+				function _connectionClosed() {
+					chatMsgBox.appendSystemMsg("服务器连接关闭！");
+				}
+
+				// Function that manages the connection status with the Bayeux
+				// server
+				var _connected = false;
+				function _metaConnect(message) {
+					if (cometd.isDisconnected()) {
+						_connected = false;
+						_connectionClosed();
+						return;
+					}
+
+					var wasConnected = _connected;
+					_connected = message.successful === true;
+					if (!wasConnected && _connected) {
+						_connectionEstablished();
+					} else if (wasConnected && !_connected) {
+						_connectionBroken();
+					}
+				}
+
+				function _metaHandshake(handshake) {
+					if (handshake.successful === true) {
+
+					} else {
+						handshakeFailCount++;
+						if (handshakeFailCount >= handshakeRetryCount) {
+							chatMsgBox.appendSystemMsg("服务器连接失败！");
+							cometd.disconnect();
+						}
+					}
+				}
+
+				// Disconnect when the page unloads
+				$(window).unload(function() {
+					cometd.disconnect(true);
+				});
+
+				var cometURL = cometdHandshake;
+				cometd.configure({
+					url : cometURL,
+					logLevel : 'debug',
+					requestHeaders : '{"aaa":"111" , "bbb":"222"}',
+				});
+
+				cometd.addListener('/meta/handshake', _metaHandshake);
+				cometd.addListener('/meta/connect', _metaConnect);
+
+				chatMsgBox.appendSystemMsg("服务器连接中...");
+				cometd.handshake({
+					ext : {
+						token : userToken,
+						videoId : videoId
+					}
+				});
+
+				// ----------------------连接部分------------------------
+
+			});
+
+	/**
+	 * 发送消息
+	 */
+	var sendMsg = function() {
+		var msg = msgInput.val();
+		if (userToken == null) {
+			$.messager.popup("请先登录");
+			return;
+		}
+		if (msg == null || "" == msg.trim()) {
+			$.messager.popup("请输入内容");
+			return;
+		}
+		chatMsgBox.disableSendButton();
+		cometd.publish("/chat/send_pub/" + videoId, {
+			msg : msg
+		}, function(publishAck) {
+			chatMsgBox.enableSendButton();
+			if (publishAck.successful) {
+				chatMsgBox.clearInput();
+				var time = new Date().format("hh:mm");
+				chatMsgBox.appendChatMsg(time, userNick, msg);
+			} else {
+				chatMsgBox.appendSystemMsg("消息发送失败！");
+			}
+		});
+	}
+
+	/**
+	 * 页面加在完后初始化函数
+	 */
+	function init() {
+
+		msgUL = $("#chatlist_ul");
+		msgInput = $("#chat_textarea");
+		sendBut = $("#chat_send");
+
+		// 发送按钮绑定时间
+		sendBut.click(sendMsg);
+		// 输入框绑定回车时间
+		msgInput.bind('keypress', function(event) {
+			if (event.keyCode == "13") {
+				sendMsg();
+			}
+		});
+	}
+
 })(jQuery);
 
-
-//替换表情标签
-function replace_em(str){     
-	str = str.replace(/\[em_([0-9]*)\]/g,'<img src="'+ static_server +'/img/face/$1.gif" border="0" />');
+// 替换表情标签
+function replace_em(str) {
+	str = str.replace(/\[em_([0-9]*)\]/g, '<img src="' + static_server
+			+ '/img/face/$1.gif" border="0" />');
 	return str;
 }
-

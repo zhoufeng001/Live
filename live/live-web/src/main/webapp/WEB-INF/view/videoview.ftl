@@ -12,7 +12,7 @@
 <script type="text/javascript">
 
 	var cometServerUrl = "${cometServerUrl!""}" ;
-	var cometdHandshake = "${cometdHandshake!""}" ;
+	var cometdHandshake = "${cometdHandshake!""}" ;     
 	var config = {
    		 contextPath: cometServerUrl
 	};
@@ -22,10 +22,6 @@
 	var videoId = ${(videoDetailVo.video.id)!""} ;
 	
 	var userToken = $.cookie("_tc_k_");
-	var userId = $.cookie("_c_uid_");
-	var userNick = $.cookie("_c_unick_");
-	
-	
 </script>
 
 

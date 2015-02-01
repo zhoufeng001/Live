@@ -23,13 +23,11 @@ public class LiveWebInterceptor implements HandlerInterceptor {
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception exception)
 					throws Exception {
-		log.info("LiveWebInterceptor.afterCompletion()");
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler, ModelAndView mav) throws Exception {
-		log.info("LiveWebInterceptor.postHandle()");
 		//将当前登录用户放入request
 		if(mav != null){
 			mav.addObject("user", RequestContext.getCurrentUser()) ;
@@ -40,7 +38,6 @@ public class LiveWebInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler) throws Exception {
-		log.info("LiveWebInterceptor.preHandle()");
 		return true;
 	}
 

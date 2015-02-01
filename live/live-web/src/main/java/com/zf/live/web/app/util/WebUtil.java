@@ -2,14 +2,18 @@ package com.zf.live.web.app.util;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 import com.alibaba.fastjson.JSON;
 import com.zf.live.client.vo.web.AjaxResult;
 import com.zf.live.client.vo.web.AjaxResultType;
+import com.zf.live.common.util.CharUtil;
 
 /**
  * 
@@ -19,7 +23,7 @@ import com.zf.live.client.vo.web.AjaxResultType;
 public class WebUtil {
 
 	static final Logger log = org.slf4j.LoggerFactory.getLogger(WebUtil.class);
-	
+
 	/**
 	 * 输出Json内容到客户端，并关闭连接
 	 * @param result
@@ -44,5 +48,28 @@ public class WebUtil {
 		}
 	}
 
+	/**
+	 * 将URL中的中文字符Encode
+	 * @param url
+	 */
+	public static String urlEncode(String url){
+		if(StringUtils.isBlank(url)){
+			return url ;
+		}
+		StringBuilder sb = new StringBuilder() ;
+		for (int i = 0; i < url.length() ; i++) {
+			char c = url.charAt(i);
+			if(CharUtil.isChinese(c)){
+				try {
+					sb.append(URLEncoder.encode(String.valueOf(c),"utf-8")) ;
+				} catch (UnsupportedEncodingException e) {
+					log.error(e.getMessage() ,e); 
+				} 
+			}else{
+				sb.append(c); 
+			}
+		}
+		return sb.toString() ;
+	}
 
 }

@@ -22,7 +22,9 @@ import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.web.app.RequestContext;
 import com.zf.live.web.app.service.LiveWebUtil;
+import com.zf.live.web.app.service.user.WebUserService;
 import com.zf.live.web.app.util.WebTokenUtil;
+import com.zf.live.web.app.util.WebUtil;
 
 /**
  * 
@@ -46,6 +48,9 @@ public class UserController {
 	@Autowired
 	private IdxcodeGenerator defaultIdxcodeGenerator ;
 
+	@Autowired
+	private WebUserService webUserService ;
+	
 	/**
 	 * 去登录页面
 	 * @param request
@@ -57,7 +62,7 @@ public class UserController {
 	public String loginView(ServletRequest request, ServletResponse response , ModelMap modelMap) {
 		String redirect = request.getParameter(REDIRECT_KEY);
 		if(StringUtils.isNotBlank(redirect)){
-			request.setAttribute(REDIRECT_KEY, redirect); 
+			modelMap.addAttribute(REDIRECT_KEY, redirect); 
 		}
 		String errMessage = RequestContext.getErrTipMessage() ;
 		log.error(errMessage); 
@@ -84,6 +89,7 @@ public class UserController {
 				webTokenUtil.createTokenCookie(request, response, token , user); 
 				String redirect = request.getParameter(REDIRECT_KEY);
 				if(StringUtils.isNotBlank(redirect)){
+					redirect = WebUtil.urlEncode(redirect); 
 					return LiveWebUtil.redirectPath(redirect); 
 				}
 				return LiveWebUtil.redirectIndexPath() ;
@@ -141,7 +147,7 @@ public class UserController {
 	 */
 	@RequestMapping("/doLogout")
 	public String doLogout(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap){
-		String token = webTokenUtil.getTokenFromCookie(request, response) ;
+		String token = webTokenUtil.getTokenFromCookie(request) ;
 		if(StringUtils.isBlank(token)){
 			return LiveWebUtil.redirectIndexPath() ;
 		}

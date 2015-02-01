@@ -89,17 +89,17 @@ public class WebTokenUtil {
 			tokenCookie.setMaxAge(TOKEN_MAX_AGE);
 			tokenCookie.setPath(COOKIE_PATH);
 			
-			Cookie useridCookie = new Cookie(COOKIE_USER_ID, String.valueOf(lvuser.getId()));  
+			/*Cookie useridCookie = new Cookie(COOKIE_USER_ID, String.valueOf(lvuser.getId()));  
 			useridCookie.setMaxAge(TOKEN_MAX_AGE);
 			useridCookie.setPath(COOKIE_PATH);
 			
 			Cookie usernickCookie = new Cookie(COOKIE_USER_NICK, lvuser.getNick());  
 			usernickCookie.setMaxAge(TOKEN_MAX_AGE);
-			usernickCookie.setPath(COOKIE_PATH);
+			usernickCookie.setPath(COOKIE_PATH);*/
 			
 			response.addCookie(tokenCookie);
-			response.addCookie(useridCookie);
-			response.addCookie(usernickCookie); 
+//			response.addCookie(useridCookie);
+//			response.addCookie(usernickCookie);  
 //			setLastTimeToken(response); 
 		}
 
@@ -112,11 +112,11 @@ public class WebTokenUtil {
 	 * @param response
 	 */
 	public  void deleteTokenCookiee(HttpServletRequest request , HttpServletResponse response){
-		Map<String, String> cookies = getCookies(request , response);
+		Map<String, String> cookies = getCookies(request);
 		String tokenValue = cookies.get(TOKEN_COOKIE_KEY) ;
 //		String lastTimeValue = cookies.get(TOKEN_COOKIE_LAST_TIME_KEY) ;
-		String userIdValue = cookies.get(COOKIE_USER_ID) ;
-		String userNickValue = cookies.get(COOKIE_USER_NICK) ;
+//		String userIdValue = cookies.get(COOKIE_USER_ID) ;
+//		String userNickValue = cookies.get(COOKIE_USER_NICK) ;
 		if(StringUtils.isNotBlank(tokenValue)){
 			Cookie tokenCookie = new Cookie(TOKEN_COOKIE_KEY , tokenValue);
 			tokenCookie.setMaxAge(0);
@@ -128,7 +128,7 @@ public class WebTokenUtil {
 			lastTimeCookie.setPath(COOKIE_PATH);
 			response.addCookie(lastTimeCookie); 
 		}*/
-		if(StringUtils.isNotBlank(userIdValue)){
+		/*if(StringUtils.isNotBlank(userIdValue)){
 			Cookie userIdCookie = new Cookie(COOKIE_USER_ID , userIdValue);
 			userIdCookie.setMaxAge(0);
 			userIdCookie.setPath(COOKIE_PATH);
@@ -139,7 +139,7 @@ public class WebTokenUtil {
 			userNickCookie.setMaxAge(0);
 			userNickCookie.setPath(COOKIE_USER_NICK);
 			response.addCookie(userNickCookie); 
-		}
+		}*/
 		
 	}
 
@@ -149,8 +149,8 @@ public class WebTokenUtil {
 	 * @param response
 	 * @return
 	 */
-	public String getTokenFromCookie(HttpServletRequest request , HttpServletResponse response){
-		Map<String, String> cookies = getCookies(request , response);
+	public String getTokenFromCookie(HttpServletRequest request){
+		Map<String, String> cookies = getCookies(request);
 		String tokenValue = cookies.get(TOKEN_COOKIE_KEY) ;
 		/*
 		String lastTimeValue = cookies.get(TOKEN_COOKIE_LAST_TIME_KEY) ;
@@ -170,10 +170,9 @@ public class WebTokenUtil {
 	/**
 	 * 从请求中获取cookie存入map，以cookie名称当作key，值当作value
 	 * @param request
-	 * @param response
 	 * @return
 	 */
-	private Map<String, String> getCookies(HttpServletRequest request , HttpServletResponse response){
+	private Map<String, String> getCookies(HttpServletRequest request){
 		Map<String , String> cookiesMap = new HashMap<String, String>() ;
 		Cookie[] cookies = request.getCookies() ;
 		if(cookies == null || cookies.length == 0){
@@ -185,17 +184,17 @@ public class WebTokenUtil {
 //		setLastTimeToken(response); 
 		return cookiesMap ;
 	}
-	
-	/**
+	/*
+	*//**
 	 * 添加最后访问时间到cookie
 	 * @param response
-	 */
+	 *//*
 	private void setLastTimeToken(HttpServletResponse response){
 		Cookie lastTimeCookie = null ;
 		lastTimeCookie = new Cookie(TOKEN_COOKIE_LAST_TIME_KEY, String.valueOf(System.currentTimeMillis()));
 		lastTimeCookie.setPath(COOKIE_PATH);
 		response.addCookie(lastTimeCookie);
-	}
+	}*/
 
 
 }

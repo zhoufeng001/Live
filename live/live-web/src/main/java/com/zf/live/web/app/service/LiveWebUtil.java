@@ -1,10 +1,15 @@
 package com.zf.live.web.app.service;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -17,6 +22,16 @@ public abstract class LiveWebUtil {
 	public static final String REDIRECT_PREFIX = "redirect:";
 	public static final String SYSTEM_REDIRECT_FLAG_KEY = "_sys_rid_";
 	public static final String SYSTEM_REDIRECT_FLAG_VALUE = "1";
+	
+	static final Logger log = LoggerFactory.getLogger(LiveWebUtil.class);
+	
+	public static void redirect(HttpServletResponse response , String url){
+		try {
+			response.sendRedirect(url);
+		} catch (IOException e) {
+			log.error(e.getMessage() , e);
+		} 
+	}
 
 	public static String redirectIndexPath(){
 		return buildPathWithParams("/index.htm" , null);

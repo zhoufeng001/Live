@@ -17,14 +17,14 @@
  var totalPage = ${(videoPageVo.totalPage)!""} ;  
 
 var zfpager = $.zfpager ; 
-
+ 
 </script>
 
-<title>${category!""}频道</title>
+<title>${category!""}频道</title>  
 </head>
-<body>
+<body redirect="${ctx!""}/video/category/${category!""}/${page!""}/${orderby!""}.htm">
 
-<div class="index_body"  >
+<div class="index_body" >
 
 <!-- 头部信息  -->
 <#include "./common/head.ftl" >	

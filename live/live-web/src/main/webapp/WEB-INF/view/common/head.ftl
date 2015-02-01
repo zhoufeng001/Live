@@ -39,18 +39,18 @@
        <div class="user_info_bar logined">
         	<img class="user_photo" src="${static_server}/img/userphoto/1.jpg" />
             <span class="user_info">  
-           	 ${user.nick!""}，<a href="${ctx}/user/doLogout.htm">退出</a>
+           	 ${user.nick!""}，<a href="javascript:gotoLogout()">退出</a>
             </span> 
         </div>
        <#else>
         <div class="user_info_bar unlogin">
-        	<span class="user_info">
+        	<span class="user_info"> 
             	<a href="javascript:gotoLogin()">登录</a>  
-            	<a href="${ctx}/user/registView.htm">注册</a>
+            	<a href="${ctx}/user/registView.htm">注册</a>   
             </span>
             <span class="third_login_logo" >
-                <a href="${ctx}/qq/gotoLogin.htm"><img  src="${static_server}/img/qq_login_logo_small.png" /></a>
-                <a href="${ctx}/sina/gotoLogin.htm"><img src="${static_server}/img/sina_login_logo_small.png" /></a>
+                <a href="javascript:gotoQQLogin()"><img  src="${static_server}/img/qq_login_logo_small.png" /></a>
+                <a href="javascript:gotoSinaLogin()"><img src="${static_server}/img/sina_login_logo_small.png" /></a>
             </span>
         </div>
 		</#if>

@@ -78,9 +78,9 @@ public class WebVideoService {
 			cateRecommendVo.setTopVideoDetailVo(topVideoDetailVo);
 			recommendVideos.remove(0);
 			cateRecommendVo.setRecommendVideoList(recommendVideos); 
+			//缓存
+			ehCacheUtil.put(EhCacheNames.categoryRecommendTopVideoCache, category, cateRecommendVo); 
 		}
-		//缓存
-		ehCacheUtil.put(EhCacheNames.categoryRecommendTopVideoCache, category, cateRecommendVo); 
 	}
 
 

@@ -1,5 +1,6 @@
 package com.zf.live.web;
 
+
 /**
  * 
  * @author is_zhoufeng@163.com , QQ:243970446
@@ -11,6 +12,11 @@ public interface WebConst {
 	 * Web Ehcache配置文件名
 	 */
 	public String WebEhcacheFileName = "ehcache-web.xml";
+	
+	/**
+	 * 当前用户在Request中的key
+	 */
+	public String RequestUserKey = "user";
 	
 	public static interface EhCacheNames {
 		

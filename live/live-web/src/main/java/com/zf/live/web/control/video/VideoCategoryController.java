@@ -1,5 +1,6 @@
 package com.zf.live.web.control.video;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.common.assertx.ZFAssert;
 import com.zf.live.dao.pojo.Video;
 import com.zf.live.web.app.service.video.WebVideoService;
+import com.zf.live.web.app.util.FreemarkerUtil;
 import com.zf.live.web.vo.video.CategoryRecommendVo;
 
 /**
@@ -68,7 +70,7 @@ public class VideoCategoryController {
 	 * @return
 	 */
 	@RequestMapping("/{category}/{page}/{orderby}")
-	public String loginView(
+	public String categoryVideoView(
 			@PathVariable("category") String category ,
 			@PathVariable("page") Integer page ,
 			@PathVariable("orderby") Integer orderby,
