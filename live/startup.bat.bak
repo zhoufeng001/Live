@@ -85,3 +85,4 @@ if /i "%isopt%"=="0" goto cmd_command
 
 :cmd_command
 	start /HIGH cd %PROJECT_HOME%
+	pause
