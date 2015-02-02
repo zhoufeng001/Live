@@ -20,4 +20,5 @@ public interface ServiceConst {
 	 */ 
 	public List<String> CATEGORY_OTHER_INCLUED = Arrays.asList("教育","纪录片","旅游","亲子","广告","创意视频","拍客");
 	
+	
 }

@@ -35,26 +35,31 @@ public class InitServlet extends HttpServlet{
 		}
 		String appContextPath = propertyConfigure.getProperties("app.context.path");
 		String appStaticserverPath = propertyConfigure.getProperties("app.staticserver.path");
+		String fileServerPath = propertyConfigure.getProperties("app.fileserver.path");
 		if(StringUtils.isBlank(appContextPath)){ 
 			log.error("没找到app.context.path属性");
 		}
 		if(StringUtils.isBlank(appStaticserverPath)){
 			log.error("没找到app.staticserver.path属性");
 		}
+		if(StringUtils.isBlank(fileServerPath)){
+			log.error("没找到app.fileserver.path属性");
+		}
 		getServletContext().setAttribute("ctx", appContextPath); 
 		getServletContext().setAttribute("static_server", appStaticserverPath); 
+		getServletContext().setAttribute("file_server", fileServerPath);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		throw new LiveException("！不能访问该地址");
+		throw new LiveException("不能访问该地址！");
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		throw new LiveException("！不能访问该地址");
+		throw new LiveException("不能访问该地址！");
 	}
 	
 }

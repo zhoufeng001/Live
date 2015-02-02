@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import com.zf.live.client.exception.LiveException;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
-import com.zf.live.client.vo.user.CacheUser;
 import com.zf.live.common.Const;
 import com.zf.live.common.util.FlagBitUtil;
 import com.zf.live.common.validate.LoginName;
@@ -139,7 +138,7 @@ public class LvuserServiceImpl implements LvuserService{
 			result.setErrMssage("Idxcode" + user.getIdxcode() + "已存在");
 			return result ;
 		}
-
+		
 		Date currentTime = new Date();
 		user.setCoin(0L);
 		user.setCreatetime(currentTime);
@@ -147,6 +146,7 @@ public class LvuserServiceImpl implements LvuserService{
 		user.setStatus(Const.UserConst.USER_STATUS_ENABLE);
 		user.setPraise(0L);
 		user.setThirduser(Const.UserConst.THIRD_FALSE); 
+		user.setPhoto(getRandomUserPhoto()); 
 		int inserResult =lvuserMapper.insertSelective(user) ;
 		if(inserResult > 0){
 			Lvuserinfo lvuserinfo = new Lvuserinfo() ;
@@ -323,5 +323,14 @@ public class LvuserServiceImpl implements LvuserService{
 		}
 		Thirduser thirduser = thirdUserList.get(0);
 		return selectByIdWithCache(thirduser.getUserid());
+	}
+	
+	/**
+	 * 获取一张随机头像地址
+	 * @return
+	 */
+	private String getRandomUserPhoto(){ 
+		int idx = (int)(Math.random() * 658) + 1;
+		return String.format("/userphotos/system/%d.jpg", idx) ;
 	}
 }
