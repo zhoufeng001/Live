@@ -1,4 +1,6 @@
 package com.zf.live.common.util;
+import java.io.InputStream;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -39,6 +41,31 @@ public class HttpClientUtils {
 			}
 		}
 	}
+	
+	/** 
+     * 获取输入流
+     * @param url 
+     * @param params 
+     * @return   
+     * @throws Exception 
+     */  
+    public static InputStream getInputStream(String url){  
+    	HttpClient httpClient = new DefaultHttpClient();  
+    	HttpGet httpGet = new HttpGet(url);  
+        try {
+			HttpResponse response = httpClient.execute(httpGet);  
+			if(response != null){
+				return response.getEntity().getContent();
+			}
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}finally{
+			if(httpGet != null){
+				httpGet.releaseConnection(); 
+			}
+		}
+        return null ;
+    }  
 	
 	/**
 	 * 将HttpEntity对象转换为字符串

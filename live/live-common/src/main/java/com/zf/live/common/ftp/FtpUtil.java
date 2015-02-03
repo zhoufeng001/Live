@@ -1,5 +1,7 @@
 package com.zf.live.common.ftp;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -22,7 +24,7 @@ public class FtpUtil {
 	// FTP协议里面，规定文件名编码为iso-8859-1
 	private static String SERVER_CHARSET = "ISO-8859-1";
 	
-	public static boolean uploadFile(String url,int port,String username, String password, String path, String filename, InputStream input){
+	public static boolean uploadFile(String url,int port,String username, String password,String basePath, String path, String filename, InputStream input){
 		boolean success = false;  
 	    FTPClient ftp = new FTPClient();  
 	    try {  
@@ -41,7 +43,19 @@ public class FtpUtil {
 	        }
 	        ftp.setControlEncoding(LOCAL_CHARSET);
 	        ftp.enterLocalPassiveMode(); // 设置被动模式
-	        ftp.changeWorkingDirectory(path);  
+	        String dir = basePath + path;
+	        boolean changeDirResult = ftp.changeWorkingDirectory(dir);  
+	        if(!changeDirResult){
+	        	if(ftp.makeDirectory(dir)){
+	        		log.info("ftp创建目录[{}]成功" , dir);
+	        		changeDirResult = ftp.changeWorkingDirectory(dir);  
+	        	}else{
+	        		log.info("ftp创建目录[{}]失败" , dir);
+	        	}
+	        }
+	        if(!changeDirResult){
+	        	log.error("上传文件失败，不能进入目录[{}]",dir); 
+	        }
 	        filename = new String(filename.getBytes(LOCAL_CHARSET),SERVER_CHARSET); 
 	        ftp.storeFile(filename, input);           
 	        input.close();  
@@ -59,6 +73,13 @@ public class FtpUtil {
 	        }  
 	    }  
 	    return success;  
+	}
+	
+	public static void main(String[] args) throws Exception{
+		
+		uploadFile("vlive.wang", 21, "ftpuser", "is_zhoufeng", "/usr/local/nginx/data", "/11", "aaa.txt",
+					new FileInputStream(new File("C:/Users/Administrator/Desktop/vlive.wang.txt")));
+		
 	}
 	
 }

@@ -71,7 +71,7 @@ public class WebVideoService {
 		condition.setPage(1);
 		condition.setPageSize(9);
 		condition.setOrderBy(" view_count desc , third_view_count desc ,praise desc , third_praise desc , publishtime desc ");
-		PagedVo<Video> videoPageVo = localVideoService.searchVideos(condition);
+		PagedVo<Video> videoPageVo = localVideoService.searchVideosByCategories(condition ,false);
 		if(videoPageVo != null && videoPageVo.getData() != null && videoPageVo.getCount() > 0){
 			List<Video> recommendVideos = videoPageVo.getData();
 			VideoDetailVo topVideoDetailVo = selectVideoDetailVoWithCache(recommendVideos.get(0).getId(), false);
@@ -148,14 +148,14 @@ public class WebVideoService {
 			pageVo = ehCacheUtil.get(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo.getClass());
 			if(pageVo == null){
 				log.info("从数据库中查询分类第一页缓存[{}]",condition.getCategory()); 
-				pageVo = localVideoService.searchVideos(condition); 
+				pageVo = localVideoService.searchVideosByCategories(condition,true); 
 				ehCacheUtil.put(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo);  
 			}else{
 				log.info("从缓存中读取到分类第一页视频[{}]" , condition.getCategory()); 
 			}
 			return pageVo ;
 		}else{
-			return localVideoService.searchVideos(condition); 
+			return localVideoService.searchVideosByCategories(condition,true); 
 		}
 	}
 	

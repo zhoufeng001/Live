@@ -1,5 +1,7 @@
 package com.zf.live.web.control.third;
 
+import java.io.InputStream;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +24,11 @@ import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.common.Const;
+import com.zf.live.common.util.HttpClientUtils;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.Thirduser;
 import com.zf.live.web.app.service.LiveWebUtil;
+import com.zf.live.web.app.util.UploadUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
 
 /**
@@ -46,6 +50,9 @@ public class SinaController {
 
 	@Autowired
 	private WebTokenUtil webTokenUtil;
+	
+	@Autowired
+	private UploadUtil uploadUtil;
 
 	/**
 	 * 去到SINA登录页
@@ -111,8 +118,14 @@ public class SinaController {
 				//注册
 				lvuser = new Lvuser() ;
 				lvuser.setNick(nick);
-				lvuser.setPhoto(photo); 
 				lvuser.setIdxcode(defaultIdxcodeGenerator.generate());
+				if(StringUtils.isNotBlank(photo)){
+					InputStream photoIs = HttpClientUtils.getInputStream(photo);
+					if(photoIs != null){
+						String photoPath = uploadUtil.uploadUserPhoto(photoIs);
+						lvuser.setPhoto(photoPath); 
+					}
+				}
 				
 				Thirduser thirduser = new Thirduser();
 				thirduser.setUserfrom(Const.UserConst.USER_FROM_SINA);

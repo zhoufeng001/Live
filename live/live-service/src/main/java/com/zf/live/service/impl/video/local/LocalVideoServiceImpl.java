@@ -13,6 +13,7 @@ import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.VideoSite;
+import com.zf.live.client.vo.video.local.LocalVideoCategorySearchCondition;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
 import com.zf.live.common.validate.Notnull;
@@ -207,6 +208,34 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 
 	@Override
+	public PagedVo<Video> searchVideosByCategories(
+			@Notnull("category") @Notnull("page") @Notnull("pageSize") 
+			LocalVideoSearchCondition condition, boolean searchTotalCount) {
+		PagedVo<Video> result = new PagedVo<Video>();
+		LocalVideoCategorySearchCondition realCondition = new LocalVideoCategorySearchCondition();
+		if(condition.getCategory().contains("其他")){
+			condition.getCategory().addAll(ServiceConst.CATEGORY_OTHER_INCLUED); 
+		}
+		realCondition.setCategories(condition.getCategory()); 
+		int limitFrom = (condition.getPage() - 1) * condition.getPageSize(); 
+		int limitLength = condition.getPageSize();
+		realCondition.setLimitFrom(limitFrom);
+		realCondition.setLimitLength(limitLength);
+		realCondition.setOrderBy(condition.getOrderBy()); 
+		List<Video> videos = videoMapper.selectByCategory(realCondition);
+		result.setData(videos);
+		if(searchTotalCount){
+			Integer count = videoMapper.selectCountByCategory(realCondition);
+			result.setTotalRecored(count);
+		}
+		result.setPage(condition.getPage()); 
+		result.setPageSize(condition.getPageSize()); 
+		result.setCount(videos == null ? 0 : videos.size());
+		result.setData(videos);
+		return result; 
+	}
+	
+	@Override
 	public Video selectVideoById(@Notnull Long localVideoId) {
 		return videoMapper.selectByPrimaryKey(localVideoId);
 	}
@@ -215,5 +244,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	public boolean updateVideoBySelective(@Notnull("id") Video video) {
 		return videoMapper.updateByPrimaryKeySelective(video) > 0;
 	}
+
+	
 
 }

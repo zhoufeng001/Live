@@ -6,8 +6,6 @@ import java.io.FileNotFoundException;
 
 import org.junit.Test;
 
-import com.zf.live.common.ftp.FtpUtil;
-
 public class FtpTest {
 	
 	@Test
@@ -15,8 +13,8 @@ public class FtpTest {
 		 
 		FileInputStream fis = new FileInputStream(new File("C:/Users/zf/Desktop/性能.txt")) ;
 		
-		FtpUtil.uploadFile("114.215.83.209", 21, 
-				"ftpuser", "is_zhoufeng", "/", "性能.txt", fis) ;
+//		FtpUtil.uploadFile("114.215.83.209", 21, 
+//				"ftpuser", "is_zhoufeng", "/", "性能.txt", fis) ;
 		
 	}
 

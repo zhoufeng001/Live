@@ -95,6 +95,12 @@ public interface LocalVideoService {
 	 */
 	PagedVo<Video> searchVideos(LocalVideoSearchCondition condition);
 	
-	
+	/**
+	 * 根据视频分类分页搜索视频
+	 * @param condition
+	 * @param searchTotalCount 是否查询总记录条数
+	 * @return
+	 */
+	PagedVo<Video> searchVideosByCategories(LocalVideoSearchCondition condition, boolean searchTotalCount);
 	
 }

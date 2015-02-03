@@ -1,5 +1,7 @@
 package com.zf.live.web.control.third;
 
+import java.io.InputStream;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.alibaba.fastjson.util.IOUtils;
 import com.qq.connect.QQConnectException;
 import com.qq.connect.api.OpenID;
 import com.qq.connect.api.qzone.UserInfo;
@@ -22,9 +25,11 @@ import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.common.Const;
+import com.zf.live.common.util.HttpClientUtils;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.Thirduser;
 import com.zf.live.web.app.service.LiveWebUtil;
+import com.zf.live.web.app.util.UploadUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
 
 /**
@@ -46,6 +51,9 @@ public class QQController {
 
 	@Autowired
 	private WebTokenUtil webTokenUtil;
+	
+	@Autowired
+	private UploadUtil uploadUtil;
 	
 	/**
 	 * 去到qq登录页
@@ -107,8 +115,14 @@ public class QQController {
 						//注册
 						lvuser = new Lvuser() ;
 						lvuser.setNick(userNick);
-						lvuser.setPhoto(photo); 
 						lvuser.setIdxcode(defaultIdxcodeGenerator.generate());
+						if(StringUtils.isNotBlank(photo)){
+							InputStream photoIs = HttpClientUtils.getInputStream(photo);
+							if(photoIs != null){
+								String photoPath = uploadUtil.uploadUserPhoto(photoIs);
+								lvuser.setPhoto(photoPath); 
+							}
+						}
 						
 						Thirduser thirduser = new Thirduser() ;
 						thirduser.setOpenid(openID);

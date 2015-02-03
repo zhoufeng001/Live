@@ -7,4 +7,77 @@
 和com.zf.live.dao.mapper.VideoMapper.Base_Column_List对其进行引用
 by is_zhoufeng@163.com 2015-01-05 00:14:43.
   -->
+  
+  <select id="selectByCategory" parameterType="com.zf.live.client.vo.video.local.LocalVideoCategorySearchCondition" resultMap="com.zf.live.dao.mapper.VideoMapper.BaseResultMap">
+	 <choose>
+	 	<when test="categories.size() == 1">
+	 		select 
+	 		<include refid="com.zf.live.dao.mapper.VideoMapper.Base_Column_List"/>
+	 		from `video`
+	 		where category = "${categories.get(0)}"
+			<if test="orderBy != null">
+				order by ${orderBy}
+			</if>
+ 			limit ${limitFrom},${limitLength}
+	 	</when>
+	 	<when test="categories.size() > 1">
+			<foreach collection="categories"  index="idx"  item="item"  separator=" UNION ALL " >  
+			 	(
+			 		select 
+			 		<include refid="com.zf.live.dao.mapper.VideoMapper.Base_Column_List"/>
+			 		from `video`
+			 		where category = "${item}"
+					<if test="orderBy != null">
+						order by ${orderBy}
+					</if>
+					limit ${limitFrom},${limitLength}
+			 	)
+			</foreach>
+			<if test="orderBy != null">
+				order by ${orderBy}
+			</if>
+			limit ${limitFrom},${limitLength}
+		</when>
+		<otherwise>
+			select 
+	 		<include refid="com.zf.live.dao.mapper.VideoMapper.Base_Column_List"/>
+	 		from `video`
+	 		<if test="orderBy != null">
+				order by "${orderBy}"
+			</if>
+ 			limit ${limitFrom},${limitLength}
+		</otherwise>
+	 </choose>
+  </select>
+  
+  
+  <select id="selectCountByCategory" parameterType="com.zf.live.client.vo.video.local.LocalVideoCategorySearchCondition" resultType="java.lang.Integer">
+	 <choose>
+	 	<when test="categories.size() == 1">
+	 		select 
+	 		count(*)
+	 		from `video`
+	 		where category = "${categories.get(0)}"
+	 	</when>
+	 	<when test="categories.size() > 1">
+	 		select sum(cnt) from 
+	 		(
+				<foreach collection="categories"  index="idx"  item="item"  separator=" UNION ALL " >  
+				 	(
+				 		select 
+				 		count(*) as cnt
+				 		from `video`
+				 		where category = "${item}"
+				 	)
+				</foreach>
+			) tmp
+		</when>
+		<otherwise>
+			select 
+	 		<include refid="com.zf.live.dao.mapper.VideoMapper.Base_Column_List"/>
+	 		from `video`
+		</otherwise>
+	 </choose>
+  </select>
+  
 </mapper>

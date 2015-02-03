@@ -18,6 +18,11 @@ public interface WebConst {
 	 */
 	public String RequestUserKey = "user";
 	
+	/**
+	 * 用户头像目录
+	 */
+	public static String userPhotoDir = "/userphotos";
+	
 	public static interface EhCacheNames {
 		
 		/**
