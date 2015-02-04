@@ -14,6 +14,7 @@ $(function(){
 var AudienceList = function(){
 	
 	var audiencesMap = new Map();
+	var uuidUserIdMap = new Map();
 	
 	/**
 	 * 初始化观众列表以及观众人数等信息
@@ -68,14 +69,25 @@ var AudienceList = function(){
 				this.incrTouriseCount(1);
 				console.log("添加游客" + user.uuid + " 游客人数+1");
 			}else{
+				
+				/* 如果该用户在房间未退出，则先删除过期用户（兼容退出房间网络延迟 ） */
+				var userId = user.userId ;
+				if(uuidUserIdMap.get(userId)){
+					var oldAudience = audiencesMap.get(uuidUserIdMap.get(userId));
+					if(oldAudience){
+						this.removeUser(oldAudience);
+					}
+				}
+				
 				this.incrUserCount(1);
 				var userHtml =
-					'<div class="audience" data-id="'+ user.userId + '"  data-uuid="'+ user.uuid +'" >' 
+					'<div class="audience" data-id="'+ userId + '"  data-uuid="'+ user.uuid +'" >' 
 				 +  '<img class="photo" src="'+ (file_server + "/" + user.userPhoto ) +'" /> '
 				 +  '<span class="audience_name">'+ user.userNick +'</span>'
 				 +  '</div>';
 				audienceListDiv.append(userHtml);
 				console.log("添加用户" + user.uuid + " 用户人数+1");
+				uuidUserIdMap.put(userId , user.uuid);
 			}
 			audiencesMap.put(user.uuid,user); 
 		}
@@ -86,6 +98,9 @@ var AudienceList = function(){
 	 */
 	this.removeUser = function(user){
 		if(user){
+			if(!audiencesMap.get(user.uuid)){
+				return; 
+			}
 			if(user.tourist){
 				this.incrTouriseCount(-1);
 				console.log("移除游客" + user.uuid + " 游客人数-1");

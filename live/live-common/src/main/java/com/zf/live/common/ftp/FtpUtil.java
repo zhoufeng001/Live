@@ -43,7 +43,7 @@ public class FtpUtil {
 	        }
 	        ftp.setControlEncoding(LOCAL_CHARSET);
 	        ftp.enterLocalPassiveMode(); // 设置被动模式
-	        String dir = basePath + path;
+	        String dir = basePath + "/" + path;
 	        boolean changeDirResult = ftp.changeWorkingDirectory(dir);  
 	        if(!changeDirResult){
 	        	if(ftp.makeDirectory(dir)){
@@ -55,6 +55,7 @@ public class FtpUtil {
 	        }
 	        if(!changeDirResult){
 	        	log.error("上传文件失败，不能进入目录[{}]",dir); 
+	        	return false;
 	        }
 	        filename = new String(filename.getBytes(LOCAL_CHARSET),SERVER_CHARSET); 
 	        ftp.storeFile(filename, input);           
