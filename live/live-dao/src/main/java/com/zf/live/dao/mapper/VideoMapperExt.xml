@@ -30,7 +30,6 @@ by is_zhoufeng@163.com 2015-01-05 00:14:43.
 					<if test="orderBy != null">
 						order by ${orderBy}
 					</if>
-					limit ${limitFrom},${limitLength}
 			 	)
 			</foreach>
 			<if test="orderBy != null">
@@ -74,7 +73,7 @@ by is_zhoufeng@163.com 2015-01-05 00:14:43.
 		</when>
 		<otherwise>
 			select 
-	 		<include refid="com.zf.live.dao.mapper.VideoMapper.Base_Column_List"/>
+	 		count(*)
 	 		from `video`
 		</otherwise>
 	 </choose>

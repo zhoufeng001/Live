@@ -213,9 +213,9 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 			LocalVideoSearchCondition condition, boolean searchTotalCount) {
 		PagedVo<Video> result = new PagedVo<Video>();
 		LocalVideoCategorySearchCondition realCondition = new LocalVideoCategorySearchCondition();
-		if(condition.getCategory().contains("其他")){
-			condition.getCategory().addAll(ServiceConst.CATEGORY_OTHER_INCLUED); 
-		}
+//		if(condition.getCategory().contains("其他")){
+//			condition.getCategory().addAll(ServiceConst.CATEGORY_OTHER_INCLUED); 
+//		}
 		realCondition.setCategories(condition.getCategory()); 
 		int limitFrom = (condition.getPage() - 1) * condition.getPageSize(); 
 		int limitLength = condition.getPageSize();
