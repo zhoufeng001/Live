@@ -71,7 +71,7 @@ var AudienceList = function(){
 				this.incrUserCount(1);
 				var userHtml =
 					'<div class="audience" data-id="'+ user.userId + '"  data-uuid="'+ user.uuid +'" >' 
-				 +  '<img class="photo" src="'+ user.userPhoto +'" /> '
+				 +  '<img class="photo" src="'+ (file_server + user.userPhoto ) +'" /> '
 				 +  '<span class="audience_name">'+ user.userNick +'</span>'
 				 +  '</div>';
 				audienceListDiv.append(userHtml);

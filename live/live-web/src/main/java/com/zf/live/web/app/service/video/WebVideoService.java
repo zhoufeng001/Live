@@ -70,7 +70,7 @@ public class WebVideoService {
 		condition.setCategory(categoryList);
 		condition.setPage(1);
 		condition.setPageSize(9);
-		condition.setOrderBy(" view_count desc , third_view_count desc ,praise desc , third_praise desc , publishtime desc ");
+		condition.setOrderBy(" view_count desc , third_view_count desc ");
 		PagedVo<Video> videoPageVo = localVideoService.searchVideosByCategories(condition ,false);
 		if(videoPageVo != null && videoPageVo.getData() != null && videoPageVo.getCount() > 0){
 			List<Video> recommendVideos = videoPageVo.getData();
