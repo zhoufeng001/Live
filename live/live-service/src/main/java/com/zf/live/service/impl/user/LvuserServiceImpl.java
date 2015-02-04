@@ -331,6 +331,6 @@ public class LvuserServiceImpl implements LvuserService{
 	 */
 	private String getRandomUserPhoto(){ 
 		int idx = (int)(Math.random() * 658) + 1;
-		return String.format("/userphotos/system/%d.jpg", idx) ;
+		return String.format("userphotos/system/%d.jpg", idx) ;
 	}
 }

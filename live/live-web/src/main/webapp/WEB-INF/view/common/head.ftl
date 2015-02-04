@@ -37,7 +37,7 @@
          
        <#if user??>
        <div class="user_info_bar logined">
-        	<img class="user_photo" src="${static_server}/img/userphoto/1.jpg" />
+        	<img class="user_photo" src="${file_server}/${user.photo!""}" />
             <span class="user_info">  
            	 ${user.nick!""}，<a href="javascript:gotoLogout()">退出</a>
             </span> 

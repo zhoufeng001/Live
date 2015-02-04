@@ -1,4 +1,6 @@
 package com.zf.live.common.util;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 
 import org.apache.http.HttpEntity;
@@ -78,5 +80,21 @@ public class HttpClientUtils {
 				null:EntityUtils.toString(entity , "utf-8"); 
 	}
 
+	public static void main(String[] args) throws Exception{
+		
+		InputStream is = getInputStream("http://qzapp.qlogo.cn/qzapp/101183004/34B88092DE45739A06C3B91FC1120395/30");
+		
+		FileOutputStream os = new FileOutputStream(new File("C:/Users/zf/Desktop/aa.jpg"));
+		
+		byte[] buf = new byte[1024] ;
+		int len = 0 ;
+		while((len = is.read(buf)) > 0){
+			os.write(buf, 0, len);
+		}
+		
+		is.close(); 
+		os.close();
+		
+	}
 
 }       
