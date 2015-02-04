@@ -77,8 +77,8 @@ public class FtpUtil {
 	
 	public static void main(String[] args) throws Exception{
 		
-		uploadFile("vlive.wang", 21, "ftpuser", "is_zhoufeng", "/usr/local/nginx/data", "/11", "aaa.txt",
-					new FileInputStream(new File("C:/Users/Administrator/Desktop/vlive.wang.txt")));
+		uploadFile("vlive.wang", 21, "ftpuser", "is_zhoufeng", "/usr/local/nginx/data", "/userphotos", "aa.jpg",
+					new FileInputStream(new File("C:/Users/zf/Desktop/aa.jpg")));
 		
 	}
 	
