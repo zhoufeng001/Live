@@ -53,7 +53,7 @@ public interface YoukuVideoSearchService {
 	 * @param request
 	 * @return
 	 */
-	VideoDetailWithBLOBs searchYoukuVideoDetailAndSave(Long localVideoId , SearchVideoDetailRequest request);
+	VideoDetailWithBLOBs searchYoukuVideoDetailAndSave(String localVideoId , SearchVideoDetailRequest request);
 	
 	/**
 	 * 查询所有视频分类

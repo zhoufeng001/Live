@@ -36,7 +36,7 @@ public class ChatRoomController {
 	 * @return
 	 */
 	@RequestMapping("/audiences/{videoId}")
-	public void audiences(@PathVariable("videoId") Long videoId, ServletRequest request, ServletResponse response) {
+	public void audiences(@PathVariable("videoId") String videoId, ServletRequest request, ServletResponse response) {
 		RoomInfo roomInfo = roomService.getRoomInfo(videoId);
 		WebUtil.ajaxOutput(AjaxResult.newSuccessResult(roomInfo), response);
 	}

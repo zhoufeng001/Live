@@ -11,6 +11,6 @@ public interface VideoDetailMapperExt extends VideoDetailMapper {
 	
 	public Integer countVideoDetail(@Param("videofrom") Byte videofrom, @Param("fromId") String fromId);
 	
-	public Long selectVideoDetailId(@Param("videofrom") Byte videofrom, @Param("fromId") String fromId);
+	public String selectVideoDetailId(@Param("videofrom") Byte videofrom, @Param("fromId") String fromId);
 
 }

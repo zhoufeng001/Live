@@ -50,7 +50,7 @@ public class RoomServiceImpl implements RoomService{
 	private AudienceComparator audienceComparator ;
 
 	@Override
-	public void comeInRoom(Long videoId, Audience audience) {
+	public void comeInRoom(String videoId, Audience audience) {
 		ZFAssert.notNull(videoId, "videoId不能为空"); 
 		ZFAssert.notNull(audience, "audience不能为空"); 
 		Jedis jedis = null ;
@@ -74,7 +74,7 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
-	public void outRoom(Long videoId, String sessionId) {
+	public void outRoom(String videoId, String sessionId) {
 		ZFAssert.notNull(videoId, "videoId不能为空"); 
 		ZFAssert.notBlank(sessionId, "sessionId不能为空"); 
 		Jedis jedis = null ;
@@ -120,7 +120,7 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
-	public Integer getRoomUserCount(@Notnull Long videoId) {
+	public Integer getRoomUserCount(@Notnull String videoId) {
 		Jedis jedis = null ;
 		try{
 			jedis = jedisPool.getResource();
@@ -136,7 +136,7 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
-	public Integer getRoomTouristCount(@Notnull Long videoId) {
+	public Integer getRoomTouristCount(@Notnull String videoId) {
 		Jedis jedis = null ;
 		try{
 			jedis = jedisPool.getResource();
@@ -152,7 +152,7 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
-	public List<Audience> getRoomAudience(@Notnull Long videoId) {
+	public List<Audience> getRoomAudience(@Notnull String videoId) {
 		Jedis jedis = null ;
 		try{
 			jedis = jedisPool.getResource();
@@ -171,7 +171,7 @@ public class RoomServiceImpl implements RoomService{
 	}
 
 	@Override
-	public Audience getAudienceBySessionId(Long videoId ,String sessionId) {
+	public Audience getAudienceBySessionId(String videoId ,String sessionId) {
 		Jedis jedis = null ;
 		try{
 			jedis = jedisPool.getResource();
@@ -187,7 +187,7 @@ public class RoomServiceImpl implements RoomService{
 
 
 	@Override
-	public RoomInfo getRoomInfo(@Notnull Long videoId) {
+	public RoomInfo getRoomInfo(@Notnull String videoId) {
 		RoomInfo roomInfo = new RoomInfo(); 
 		Integer userCount = getRoomUserCount(videoId);
 		Integer touristCount = getRoomTouristCount(videoId);

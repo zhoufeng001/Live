@@ -51,7 +51,7 @@ public class VideoController {
 	 * @return
 	 */
 	@RequestMapping("/view/{videoId}")
-	public String videoView(@PathVariable("videoId") Long videoId, ModelMap modelMap){
+	public String videoView(@PathVariable("videoId") String videoId, ModelMap modelMap){
 		VideoDetailVo videoDetailVo =  webVideoService.selectVideoDetailVoWithCache(videoId, true) ;
 		modelMap.addAttribute("videoDetailVo", videoDetailVo) ;
 		if(videoDetailVo != null && videoDetailVo.getVideo() != null){

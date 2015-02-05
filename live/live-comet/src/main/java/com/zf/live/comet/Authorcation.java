@@ -73,7 +73,7 @@ public class Authorcation implements SecurityPolicy , ServletContextAware{
 			return false ;
 		}
 		Audience audience = new Audience() ;
-		audience.setVideoId((long)videoId);  
+		audience.setVideoId((String)videoId);  
 		audience.setSessionId(session.getId());
 		audience.setUuid(UUID.newUUID());
 		audience.setComeInTime(System.currentTimeMillis());
@@ -97,7 +97,7 @@ public class Authorcation implements SecurityPolicy , ServletContextAware{
 			seti.associate(String.valueOf(lvuser.getId()), session) ;  
 		}
 		session.setAttribute("audience", audience); 
-		audienceContainerManager.addAudience((long)videoId, audience);
+		audienceContainerManager.addAudience((String)videoId, audience);
 		
 		AudienceChangeService audienceChangeService = WebApplicationContextUtils
 				.getWebApplicationContext(servletContext).getBean(AudienceChangeService.class);
@@ -106,9 +106,9 @@ public class Authorcation implements SecurityPolicy , ServletContextAware{
 		session.addListener(new ServerSession.RemoveListener(){
 			@Override
 			public void removed(ServerSession session, boolean timeout) {
-				audienceContainerManager.removeAudience((long)videoId, session.getId()); 
+				audienceContainerManager.removeAudience((String)videoId, session.getId()); 
 				//发送通知到房间
-				audienceChangeService.sendAudienceChangeNotice((long)videoId, audience, AudienceChangeService.TYPE_GOOUT); 
+				audienceChangeService.sendAudienceChangeNotice((String)videoId, audience, AudienceChangeService.TYPE_GOOUT); 
 			}
 			
 		}); 

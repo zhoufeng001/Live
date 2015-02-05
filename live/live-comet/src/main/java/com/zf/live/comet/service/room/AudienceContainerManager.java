@@ -36,14 +36,14 @@ public class AudienceContainerManager {
 	 * key:videoId
 	 * value:sessionId集合
 	 */
-	private ConcurrentHashMap<Long, ConcurrentHashSet<String> > roomAudienceMap = new ConcurrentHashMap<Long, ConcurrentHashSet<String>>() ;
+	private ConcurrentHashMap<String, ConcurrentHashSet<String> > roomAudienceMap = new ConcurrentHashMap<String, ConcurrentHashSet<String>>() ;
 	
 	/**
 	 * 添加观众
 	 * @param sessionId  cometd sessionId
 	 * @param videoId	  视频Id
 	 */
-	public void addAudience(Long videoId,Audience audience){
+	public void addAudience(String videoId,Audience audience){
 		ConcurrentHashSet<String> sessionSet = roomAudienceMap.get(videoId);
 		if(sessionSet == null){
 			sessionSet = new ConcurrentHashSet<String>();
@@ -57,7 +57,7 @@ public class AudienceContainerManager {
 	 * 移除观众
 	 * @param sessionId  cometd sessionId
 	 */
-	public void removeAudience(Long videoId,String sessionId){
+	public void removeAudience(String videoId,String sessionId){
 		ConcurrentHashSet<String> sessionSet = roomAudienceMap.get(videoId);
 		if(sessionSet == null){
 			log.warn("移除观众不存在，不存在roomSet[{}]" , videoId);
@@ -73,11 +73,11 @@ public class AudienceContainerManager {
 	public void clearAllAudience(){
 		log.info("正在移除观众列表...");
 		List<VideoSessionPair> vsps = new ArrayList<VideoSessionPair>();
-		Set<Entry<Long, ConcurrentHashSet<String>>> roomUserMap = roomAudienceMap.entrySet();
-		Iterator<Entry<Long, ConcurrentHashSet<String>>> roomUserIter = roomUserMap.iterator();
+		Set<Entry<String, ConcurrentHashSet<String>>> roomUserMap = roomAudienceMap.entrySet();
+		Iterator<Entry<String, ConcurrentHashSet<String>>> roomUserIter = roomUserMap.iterator();
 		while(roomUserIter.hasNext()){
-			Entry<Long, ConcurrentHashSet<String>> roomUserSetEntry = roomUserIter.next();
-			Long videoId = roomUserSetEntry.getKey() ;
+			Entry<String, ConcurrentHashSet<String>> roomUserSetEntry = roomUserIter.next();
+			String videoId = roomUserSetEntry.getKey() ;
 			ConcurrentHashSet<String> sessionSet = roomUserSetEntry.getValue();
 			for (String sessionId : sessionSet) {
 				vsps.add(new VideoSessionPair(videoId, sessionId)); 

@@ -11,7 +11,9 @@ import com.zf.live.dao.pojo.VideoDetailWithBLOBs;
  * 本地视频相关操作
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月5日 上午12:23:36
+ * 已废弃，使用com.zf.live.client.video.local.LocalVideoServiceV2接口
  */
+@Deprecated
 public interface LocalVideoService {
 
 	/**
@@ -19,14 +21,14 @@ public interface LocalVideoService {
 	 * @param video
 	 * @return
 	 */
-	ServiceResult<Long> saveVideo(Video video);
+	ServiceResult<String> saveVideo(Video video);
 	
 	/**
 	 * 根据本地视频id查询本地视频
 	 * @param localVideoId
 	 * @return
 	 */
-	Video selectVideoById(Long localVideoId);
+	Video selectVideoById(String localVideoId);
 	
 	/**
 	 * 更新视频信息
@@ -39,14 +41,14 @@ public interface LocalVideoService {
 	 * @param videoDetail
 	 * @return
 	 */
-	ServiceResult<Long> saveVideoDetail(VideoDetailWithBLOBs videoDetail);
+	ServiceResult<String> saveVideoDetail(VideoDetailWithBLOBs videoDetail);
 
 	/**
 	 * 保存视频基本信息以及详细信息
 	 * @param videoDetailVo
 	 * @return
 	 */
-	ServiceResult<Long> saveVideoWithDetail(VideoDetailVo videoDetailVo);
+	ServiceResult<String> saveVideoWithDetail(VideoDetailVo videoDetailVo);
 	
 	/**
 	 * 判断第三方的某个视频是否存在
@@ -79,14 +81,14 @@ public interface LocalVideoService {
 	 * @param fromId
 	 * @return
 	 */
-	Long selectVideoDetailId(Byte videofrom,String fromId) ;
+	String selectVideoDetailId(Byte videofrom,String fromId) ;
 	
 	/**
 	 * 根据视频本地ID查询视频基本信息以及详细信息
 	 * @param videoId
 	 * @return
 	 */
-	ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(Long videoId, boolean incrementViewCount);
+	ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(String videoId, boolean incrementViewCount);
 	
 	/**
 	 * 根据条件搜索本地视频列表

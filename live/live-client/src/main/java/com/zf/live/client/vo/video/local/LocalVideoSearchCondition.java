@@ -8,6 +8,7 @@ import java.util.List;
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月5日 上午12:44:07
  */
+@Deprecated
 public class LocalVideoSearchCondition implements Serializable{
 
 	/**

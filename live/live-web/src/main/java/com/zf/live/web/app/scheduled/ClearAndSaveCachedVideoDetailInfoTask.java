@@ -47,7 +47,7 @@ public class ClearAndSaveCachedVideoDetailInfoTask {
 				continue ;
 			}
 			
-			Video video = localVideoService.selectVideoById((Long)videoId) ;
+			Video video = localVideoService.selectVideoById((String)videoId) ;
 			if(video == null){
 				continue ;
 			}

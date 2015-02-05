@@ -14,22 +14,22 @@ public class VideoSessionPair implements Serializable{
 	 */
 	private static final long serialVersionUID = -2252433108644320562L;
 
-	private Long videoId ;
+	private String videoId ;
 	
 	private String sessionId ;
 	
 	public VideoSessionPair() {	}
 
-	public VideoSessionPair(Long videoId, String sessionId) {
+	public VideoSessionPair(String videoId, String sessionId) {
 		this.videoId = videoId;
 		this.sessionId = sessionId;
 	}
 
-	public Long getVideoId() {
+	public String getVideoId() {
 		return videoId;
 	}
 
-	public void setVideoId(Long videoId) {
+	public void setVideoId(String videoId) {
 		this.videoId = videoId;
 	}
 

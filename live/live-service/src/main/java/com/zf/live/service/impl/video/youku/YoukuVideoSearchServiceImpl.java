@@ -95,7 +95,7 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 
 	@Override
 	public VideoDetailWithBLOBs searchYoukuVideoDetailAndSave(
-			Long localVideoId ,SearchVideoDetailRequest request) {
+			String localVideoId ,SearchVideoDetailRequest request) {
 		VideoDetailResponse youkuVideoDetail = searchYoukuVideoDetail(request) ;
 		if(youkuVideoDetail == null){
 			log.warn("没有搜索到视频{}", request.getVideoId());
@@ -111,7 +111,7 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		if(youkuVideoDetail.getThumbnails() != null){  
 			localVideoDetail.setThumbnails(JSON.toJSONString(youkuVideoDetail.getThumbnails())); 
 		}
-		ServiceResult<Long> saveDetailResult = localVideoService.saveVideoDetail(localVideoDetail);
+		ServiceResult<String> saveDetailResult = localVideoService.saveVideoDetail(localVideoDetail);
 		if(saveDetailResult == null){
 			log.error("存储视频详情到本地失败！");
 			return null ;
@@ -127,8 +127,8 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 	public VideoDetailVo searchVideoDetail(
 			@Notnull("videoId") SearchVideoDetailRequest request) {
 
-		Long localVideoDetailId = localVideoService.selectVideoDetailId(VideoSite.YOUKU.getValue(), request.getVideoId());
-		if(localVideoDetailId != null && localVideoDetailId > 0){
+		String localVideoDetailId = localVideoService.selectVideoDetailId(VideoSite.YOUKU.getValue(), request.getVideoId());
+		if(localVideoDetailId != null){
 			ServiceResult<VideoDetailVo>  localVideoDetailVoResult = localVideoService.selectVideoWithDetailInfo(localVideoDetailId,false);
 			if(localVideoDetailVoResult != null && localVideoDetailVoResult.isSuccess()){
 				return localVideoDetailVoResult.getData() ;
@@ -144,7 +144,7 @@ public class YoukuVideoSearchServiceImpl implements YoukuVideoSearchService {
 		Video video = localVideoService.selectVideo(VideoSite.YOUKU.getValue(), response.getId());
 		if(video == null){
 			video = response.toLocalVideo();
-			ServiceResult<Long> saveVideoResult =	localVideoService.saveVideo(video);
+			ServiceResult<String> saveVideoResult = localVideoService.saveVideo(video);
 			if(saveVideoResult == null){
 				log.error("存储视频到本地失败！");
 				return null ;

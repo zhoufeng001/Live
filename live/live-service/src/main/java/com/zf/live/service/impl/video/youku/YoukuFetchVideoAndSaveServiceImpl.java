@@ -110,7 +110,7 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 						}
 						video.setVideofrom(VideoSite.YOUKU.getValue());
 						video.setVideoname(youkuVideo.getTitle()); 
-						ServiceResult<Long> saveResult = null;
+						ServiceResult<String> saveResult = null;
 						try {
 							saveResult = localVideoService.saveVideo(video);
 						}catch(Exception e){

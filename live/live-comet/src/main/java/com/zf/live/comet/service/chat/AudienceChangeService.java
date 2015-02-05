@@ -57,7 +57,7 @@ public class AudienceChangeService {
 	 * @param videoId
 	 * @param audience
 	 */
-	public void sendAudienceChangeNotice(Long videoId , Audience audience,Byte type){
+	public void sendAudienceChangeNotice(String videoId , Audience audience,Byte type){
 		List<Audience> audiences = new ArrayList<Audience>();
 		audiences.add(audience);
 		sendAudienceChangeNotice(videoId, audiences, type);
@@ -69,7 +69,7 @@ public class AudienceChangeService {
 	 * @param videoId
 	 * @param audience
 	 */
-	public void sendAudienceChangeNotice(Long videoId , List<Audience> audiences,Byte type){
+	public void sendAudienceChangeNotice(String videoId , List<Audience> audiences,Byte type){
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("type", type);
 		data.put("audiences", JSON.toJSONString(audiences));   

@@ -3,7 +3,6 @@ package com.zf.live.client.video.local;
 import java.util.List;
 
 import com.zf.live.client.vo.ServiceResult;
-import com.zf.live.client.vo.video.VideoSite;
 import com.zf.live.dao.pojo.Video;
 import com.zf.live.dao.pojo.VideoGroup;
 

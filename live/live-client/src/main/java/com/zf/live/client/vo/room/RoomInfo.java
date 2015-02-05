@@ -18,7 +18,7 @@ public class RoomInfo implements Serializable{
 	/**
 	 * 视频ID
 	 */
-	private Long videoId ;
+	private String videoId ;
 
 	/**
 	 * 登录用户数量
@@ -40,11 +40,11 @@ public class RoomInfo implements Serializable{
 	 */
 	private List<Audience> users;
 
-	public Long getVideoId() {
+	public String getVideoId() {
 		return videoId;
 	}
 
-	public void setVideoId(Long videoId) {
+	public void setVideoId(String videoId) {
 		this.videoId = videoId;
 	}
 

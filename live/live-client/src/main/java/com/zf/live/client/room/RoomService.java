@@ -18,14 +18,14 @@ public interface RoomService {
 	 * @param videoId
 	 * @param audience
 	 */
-	void comeInRoom(Long videoId , Audience audience);
+	void comeInRoom(String videoId , Audience audience);
 	
 	/**
 	 * 退出房间
 	 * @param videoId
 	 * @param userId
 	 */
-	void outRoom(Long videoId ,String sessionId);
+	void outRoom(String videoId ,String sessionId);
 	
 	/**
 	 * 批量退出房间（用于聊天服务器关闭时退出该服务器上面所有用户）
@@ -38,20 +38,20 @@ public interface RoomService {
 	 * @param videoId
 	 * @return
 	 */
-	Integer getRoomUserCount(Long videoId);
+	Integer getRoomUserCount(String videoId);
 	
 	/**
 	 * 获取房间游客人数（未登录用户）
 	 * @return
 	 */
-	Integer getRoomTouristCount(Long videoId);
+	Integer getRoomTouristCount(String videoId);
 	
 	/**
 	 * 获取房间用户列表
 	 * （包含登录用户和未登录用户，未排序，需要自己排序）
 	 * @return
 	 */
-	List<Audience> getRoomAudience(Long videoId);
+	List<Audience> getRoomAudience(String videoId);
 	
 	/**
 	 * 根据VideoId和sessionId获取观众信息
@@ -59,13 +59,13 @@ public interface RoomService {
 	 * @param videoId
 	 * @return
 	 */
-	Audience getAudienceBySessionId(Long videoId ,String sessionId);
+	Audience getAudienceBySessionId(String videoId ,String sessionId);
 	
 	/**
 	 * 获取房间信息，包含观众列表、在线人数等信息
 	 * @param videoId
 	 * @return
 	 */
-	RoomInfo getRoomInfo(Long videoId);
+	RoomInfo getRoomInfo(String videoId);
 	
 }

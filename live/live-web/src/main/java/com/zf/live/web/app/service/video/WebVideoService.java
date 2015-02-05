@@ -89,7 +89,7 @@ public class WebVideoService {
 	 * @param videoId
 	 * @return
 	 */
-	public CachedVideoDetailVo selectVideoDetailVoWithCache(Long videoId , boolean incrementViewCount){
+	public CachedVideoDetailVo selectVideoDetailVoWithCache(String videoId , boolean incrementViewCount){
 		CachedVideoDetailVo cachedVideoDetailVo = null ;
 		cachedVideoDetailVo = ehCacheUtil.get(EhCacheNames.videoInfoCache, videoId, CachedVideoDetailVo.class);
 		if(cachedVideoDetailVo != null){

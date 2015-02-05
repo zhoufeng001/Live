@@ -55,7 +55,7 @@ public class ComeInRoomListener {
 			mutable.setData("没有权限！");
 			return ;
 		}
-		Long videoId = audience.getVideoId() ;
+		String videoId = audience.getVideoId() ;
 		
 		//发送通知到房间
 		audienceChangeService.sendAudienceChangeNotice(videoId, audience, 

@@ -19,7 +19,7 @@
 	
 	var static_server = "${static_server}";
 	
-	var videoId = ${(videoDetailVo.video.id)!""} ;
+	var videoId = "${(videoDetailVo.video.id)!""}" ;
 	
 	var userToken = $.cookie("_tc_k_");
 </script>

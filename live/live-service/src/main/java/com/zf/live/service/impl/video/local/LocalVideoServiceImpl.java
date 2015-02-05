@@ -16,6 +16,7 @@ import com.zf.live.client.vo.video.VideoSite;
 import com.zf.live.client.vo.video.local.LocalVideoCategorySearchCondition;
 import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
 import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.common.util.UUID;
 import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.VideoDetailMapperExt;
 import com.zf.live.dao.mapper.VideoMapperExt;
@@ -30,8 +31,10 @@ import com.zf.live.service.impl.ServiceConst;
  * 
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月5日 上午12:58:55
+ * 已弃用，使用com.zf.live.service.impl.video.local.LocalVideoServiceImplV2分表实现
  */
 @Component("localVideoService")
+@Deprecated 
 public class LocalVideoServiceImpl implements LocalVideoService{
 
 	@Autowired
@@ -44,10 +47,10 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	private YoukuVideoSearchService youkuVideoSearchService ;
 	
 	@Override
-	public ServiceResult<Long> saveVideo(
+	public ServiceResult<String> saveVideo(
 			@Notnull("videofrom") @Notnull("fromid") @Notnull("videoname") @Notnull("category") 
 			Video video) {
-		ServiceResult<Long> result = new ServiceResult<Long>() ;
+		ServiceResult<String> result = new ServiceResult<String>() ;
 		video.setFlag(0);
 		video.setCreatetime(new Date());
 		if(video.getViewCount() == null){
@@ -59,10 +62,12 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 		if(video.getPraise() == null){
 			video.setPraise(0L);
 		}
+		String id = UUID.newUUID() ;
+		video.setId(id); 
 		int insertResult = videoMapper.insert(video);
 		if(insertResult > 0){
 			result.setSuccess(true);
-			result.setData(video.getId());
+			result.setData(id);
 			return result;
 		}else{
 			result.setErrMssage("插入视频信息失败");
@@ -71,8 +76,8 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 
 	@Override
-	public ServiceResult<Long> saveVideoDetail(@Notnull("id") VideoDetailWithBLOBs videoDetail) {
-		ServiceResult<Long> result = new ServiceResult<Long>() ;
+	public ServiceResult<String> saveVideoDetail(@Notnull("id") VideoDetailWithBLOBs videoDetail) {
+		ServiceResult<String> result = new ServiceResult<String>() ;
 		int insertResult = videoDetailMapper.insert(videoDetail);
 		if(insertResult > 0){
 			result.setSuccess(true);
@@ -85,9 +90,9 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 
 	@Override
-	public ServiceResult<Long> saveVideoWithDetail(VideoDetailVo videoDetailVo) {
-		ServiceResult<Long> result = null ;
-		result = saveVideo(videoDetailVo.getVideo());
+	public ServiceResult<String> saveVideoWithDetail(VideoDetailVo videoDetailVo) {
+		ServiceResult<String> result = null ;
+		result = saveVideo(videoDetailVo.getVideo()); 
 		if(!result.isSuccess()){
 			return result ;
 		}
@@ -127,13 +132,13 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 
 	@Override
-	public Long selectVideoDetailId(Byte videofrom, String fromId) {
+	public String selectVideoDetailId(Byte videofrom, String fromId) {
 		return videoDetailMapper.selectVideoDetailId(videofrom, fromId); 
 	}
 
 
 	@Override
-	public ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(@Notnull Long videoId, boolean incrementViewCount) {
+	public ServiceResult<VideoDetailVo> selectVideoWithDetailInfo(@Notnull String videoId, boolean incrementViewCount) {
 		ServiceResult<VideoDetailVo> result = new ServiceResult<VideoDetailVo>() ;
 		VideoDetailVo videoDetailVo = new VideoDetailVo();
 		Video video = videoMapper.selectByPrimaryKey(videoId);
@@ -236,7 +241,7 @@ public class LocalVideoServiceImpl implements LocalVideoService{
 	}
 	
 	@Override
-	public Video selectVideoById(@Notnull Long localVideoId) {
+	public Video selectVideoById(@Notnull String localVideoId) {
 		return videoMapper.selectByPrimaryKey(localVideoId);
 	}
 
