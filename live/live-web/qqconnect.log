@@ -1,13 +1,8 @@
-0    DEBUG [2015-02-06 15:02:09]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-3    DEBUG [2015-02-06 15:02:09]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-48   DEBUG [2015-02-06 15:02:09]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-56   DEBUG [2015-02-06 15:02:09]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-57   DEBUG [2015-02-06 15:02:09]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-60   DEBUG [2015-02-06 15:02:09]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-61   DEBUG [2015-02-06 15:02:09]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-63   DEBUG [2015-02-06 15:02:09]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-64   DEBUG [2015-02-06 15:02:09]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-71   ERROR [2015-02-06 15:02:09]  Error executing FreeMarker template
+60   DEBUG [2015-02-06 18:51:22]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
+61   DEBUG [2015-02-06 18:51:22]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
+64   DEBUG [2015-02-06 18:51:22]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
+64   DEBUG [2015-02-06 18:51:22]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
+70   ERROR [2015-02-06 18:51:22]  Error executing FreeMarker template
 FreeMarker template error:
 The following has evaluated to null or missing:
 ==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
@@ -125,16 +120,11 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
 	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 15:23:30]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-9    DEBUG [2015-02-06 15:23:30]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-64   DEBUG [2015-02-06 15:23:31]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-71   DEBUG [2015-02-06 15:23:31]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-72   DEBUG [2015-02-06 15:23:31]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-75   DEBUG [2015-02-06 15:23:31]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-75   DEBUG [2015-02-06 15:23:31]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-78   DEBUG [2015-02-06 15:23:31]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-79   DEBUG [2015-02-06 15:23:31]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-86   ERROR [2015-02-06 15:23:31]  Error executing FreeMarker template
+30285 DEBUG [2015-02-06 18:51:52]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+30287 DEBUG [2015-02-06 18:51:52]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+30288 DEBUG [2015-02-06 18:51:52]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+30289 DEBUG [2015-02-06 18:51:52]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+30290 ERROR [2015-02-06 18:51:52]  Error executing FreeMarker template
 FreeMarker template error:
 The following has evaluated to null or missing:
 ==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
@@ -252,23 +242,16 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
 	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-2    DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-49   DEBUG [2015-02-06 15:28:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-49   DEBUG [2015-02-06 15:28:39]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-57   DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-57   DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-57   DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-58   DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-60   DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-60   DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-60   DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-60   DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-64   DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-64   DEBUG [2015-02-06 15:28:39]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-66   DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-65   DEBUG [2015-02-06 15:28:39]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-75   ERROR [2015-02-06 15:28:39]  Error executing FreeMarker template
+0    DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+2    DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+44   DEBUG [2015-02-06 18:57:41]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+52   DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
+53   DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
+55   DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
+56   DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
+59   DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
+60   DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
+66   ERROR [2015-02-06 18:57:41]  Error executing FreeMarker template
 FreeMarker template error:
 The following has evaluated to null or missing:
 ==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
@@ -386,7 +369,11 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
 	at java.lang.Thread.run(Thread.java:745)
-76   ERROR [2015-02-06 15:28:39]  Error executing FreeMarker template
+28147 DEBUG [2015-02-06 18:58:09]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+28148 DEBUG [2015-02-06 18:58:09]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+28149 DEBUG [2015-02-06 18:58:09]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+28150 DEBUG [2015-02-06 18:58:09]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+28150 ERROR [2015-02-06 18:58:09]  Error executing FreeMarker template
 FreeMarker template error:
 The following has evaluated to null or missing:
 ==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
@@ -504,11 +491,16 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
 	at java.lang.Thread.run(Thread.java:745)
-161038 DEBUG [2015-02-06 15:31:20]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-161039 DEBUG [2015-02-06 15:31:20]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-161040 DEBUG [2015-02-06 15:31:20]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-161041 DEBUG [2015-02-06 15:31:20]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-161043 ERROR [2015-02-06 15:31:20]  Error executing FreeMarker template
+0    DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
+3    DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
+50   DEBUG [2015-02-06 19:06:23]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+57   DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
+58   DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
+61   DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
+62   DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
+65   DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
+66   DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
+72   ERROR [2015-02-06 19:06:23]  Error executing FreeMarker template
 FreeMarker template error:
 The following has evaluated to null or missing:
 ==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
@@ -626,19 +618,18 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
 	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 15:41:06]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-19   DEBUG [2015-02-06 15:41:06]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-79   DEBUG [2015-02-06 15:41:06]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-87   DEBUG [2015-02-06 15:41:06]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-88   DEBUG [2015-02-06 15:41:06]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-91   DEBUG [2015-02-06 15:41:06]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-92   DEBUG [2015-02-06 15:41:06]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-96   DEBUG [2015-02-06 15:41:06]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-97   DEBUG [2015-02-06 15:41:06]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-106  ERROR [2015-02-06 15:41:06]  Error executing FreeMarker template
+119799 DEBUG [2015-02-06 19:08:23]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
+119800 DEBUG [2015-02-06 19:08:23]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
+119828 DEBUG [2015-02-06 19:08:23]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+119831 DEBUG [2015-02-06 19:08:23]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+119831 DEBUG [2015-02-06 19:08:23]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+119832 DEBUG [2015-02-06 19:08:23]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
+119833 DEBUG [2015-02-06 19:08:23]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
+119845 DEBUG [2015-02-06 19:08:23]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+119846 ERROR [2015-02-06 19:08:23]  Error executing FreeMarker template
 FreeMarker template error:
 The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
+==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
 
 ----
 Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
@@ -646,7 +637,7 @@ Tip: If the failing expression is known to be legally refer to something that's 
 
 ----
 FTL stack trace ("~" means nesting-related):
-	- Failed at: ${categoryRecommendVo.topVideoDetailV...  [in template "index.ftl" at line 28, column 39]
+	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
 ----
 
 Java stack trace (for programmers):
@@ -658,22 +649,11 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
 	at freemarker.core.Dot._eval(Dot.java:45)
 	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
 	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.DefaultToExpression._eval(DefaultToExpression.java:80)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:80)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:157)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:501)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:67)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
 	at freemarker.core.Environment.visit(Environment.java:257)
 	at freemarker.core.MixedContent.accept(MixedContent.java:57)
 	at freemarker.core.Environment.visit(Environment.java:257)
@@ -694,45 +674,407 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:738)
-	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:708)
-	at org.apache.jsp.index_jsp._jspService(index_jsp.java:74)
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:405)
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:349)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.eclipse.jetty.servlet.DefaultServlet.doGet(DefaultServlet.java:585)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
+	at java.lang.Thread.run(Thread.java:745)
+0    DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
+2    DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
+57   DEBUG [2015-02-06 19:11:34]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+65   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
+66   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
+69   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
+69   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
+73   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
+74   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
+85   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
+85   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
+91   ERROR [2015-02-06 19:11:34]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.MixedContent.accept(MixedContent.java:57)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.Environment.process(Environment.java:235)
+	at freemarker.template.Template.process(Template.java:262)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
+	at java.lang.Thread.run(Thread.java:745)
+165956 DEBUG [2015-02-06 19:14:20]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+165957 DEBUG [2015-02-06 19:14:20]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+165958 DEBUG [2015-02-06 19:14:20]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+165959 DEBUG [2015-02-06 19:14:20]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+165960 DEBUG [2015-02-06 19:14:20]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+165961 ERROR [2015-02-06 19:14:20]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.MixedContent.accept(MixedContent.java:57)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.Environment.process(Environment.java:235)
+	at freemarker.template.Template.process(Template.java:262)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
+	at java.lang.Thread.run(Thread.java:745)
+181705 DEBUG [2015-02-06 19:14:36]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+181707 DEBUG [2015-02-06 19:14:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+181707 DEBUG [2015-02-06 19:14:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+181708 DEBUG [2015-02-06 19:14:36]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+181709 DEBUG [2015-02-06 19:14:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+181709 ERROR [2015-02-06 19:14:36]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.MixedContent.accept(MixedContent.java:57)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.Environment.process(Environment.java:235)
+	at freemarker.template.Template.process(Template.java:262)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
+	at java.lang.Thread.run(Thread.java:745)
+826450 DEBUG [2015-02-06 19:25:21]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+826602 DEBUG [2015-02-06 19:25:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+826605 DEBUG [2015-02-06 19:25:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+826607 DEBUG [2015-02-06 19:25:21]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+826609 DEBUG [2015-02-06 19:25:21]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+826610 ERROR [2015-02-06 19:25:21]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.MixedContent.accept(MixedContent.java:57)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.Environment.process(Environment.java:235)
+	at freemarker.template.Template.process(Template.java:262)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:497)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
+	at java.lang.Thread.run(Thread.java:745)
+917464 DEBUG [2015-02-06 19:26:52]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+917464 DEBUG [2015-02-06 19:26:52]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+917465 DEBUG [2015-02-06 19:26:52]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+917465 DEBUG [2015-02-06 19:26:52]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+917466 DEBUG [2015-02-06 19:26:52]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+917466 ERROR [2015-02-06 19:26:52]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
+	at freemarker.core.Expression.eval(Expression.java:76)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
+	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.MixedContent.accept(MixedContent.java:57)
+	at freemarker.core.Environment.visit(Environment.java:257)
+	at freemarker.core.Environment.process(Environment.java:235)
+	at freemarker.template.Template.process(Template.java:262)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)

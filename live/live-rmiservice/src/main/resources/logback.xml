@@ -44,6 +44,21 @@
         </rollingPolicy>
    </appender>
    
+    <!-- 记录项目Sql执行日志 -->
+   <appender name="liveSql" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.dir}/live-sql.log</file>
+		<encoder>
+		        <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger[%line] - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+             <FileNamePattern>${log.dir}/back/live-sql.%d{yyyy-MM-dd}.log</FileNamePattern>
+             <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+   </appender>
+  <logger name="com.zf.live.dao.mapper" level="DEBUG" additivity="false">  
+    <appender-ref ref="liveSql"/>  
+  </logger>  
+     
   <root level="debug">
     <appender-ref ref="console" />
     <appender-ref ref="liveRmiAll" />
