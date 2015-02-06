@@ -10,6 +10,7 @@
   
   <properties>
   	<cometd.version>3.0.3</cometd.version>
+  	<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
   </properties>
   
   <dependencies>

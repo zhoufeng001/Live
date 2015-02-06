@@ -7,6 +7,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>live-client</artifactId>
+	
+	<properties>
+		  <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+	</properties>
 
 	<dependencies>
 		<dependency>

@@ -19,7 +19,7 @@ public interface VideoMapperExt extends VideoMapper {
 	List<Video> selectByCategory(LocalVideoCategorySearchCondition condition);
 	
 	/**
-	 * 根据匪类搜索视频数量
+	 * 根据分类搜索视频数量
 	 * @param condition
 	 * @return
 	 */

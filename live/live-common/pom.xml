@@ -7,6 +7,10 @@
   </parent>
   <artifactId>live-common</artifactId>
   
+  <properties>
+  	<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+  </properties>
+  
   <dependencies>
 		<dependency>
 			<groupId>com.zf</groupId>

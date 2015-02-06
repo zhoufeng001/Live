@@ -5,7 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
+  
   <properties>
+      <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+  
       <spring.version>4.1.3.RELEASE</spring.version> 
       
       <source.version>1.8</source.version> 
