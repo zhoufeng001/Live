@@ -7,4 +7,117 @@
 和com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List对其进行引用
 by is_zhoufeng@163.com 2015-02-05 22:36:26.
   -->
+  
+  <insert id="saveToSpecificTable">
+  	 insert into ${table} 
+  	 <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="video.id != null" >
+        id,
+      </if>
+      <if test="video.videofrom != null" >
+        videofrom,
+      </if>
+      <if test="video.fromid != null" >
+        fromid,
+      </if>
+      <if test="video.videoname != null" >
+        videoname,
+      </if>
+      <if test="video.thumbnail != null" >
+        thumbnail,
+      </if>
+      <if test="video.category != null" >
+        category,
+      </if>
+      <if test="video.publishtime != null" >
+        publishtime,
+      </if>
+      <if test="video.thirdPraise != null" >
+        third_praise,
+      </if>
+      <if test="video.thirdViewCount != null" >
+        third_view_count,
+      </if>
+      <if test="video.praise != null" >
+        praise,
+      </if>
+      <if test="video.viewCount != null" >
+        view_count,
+      </if>
+      <if test="video.flag != null" >
+        flag,
+      </if>
+      <if test="video.groupId != null" >
+        group_id,
+      </if>
+      <if test="video.groupSeq != null" >
+        group_seq,
+      </if>
+      <if test="video.createtime != null" >
+        createtime,
+      </if>
+      <if test="video.attr != null" >
+        attr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="video.id != null" >
+        #{video.id,jdbcType=VARCHAR},
+      </if>
+      <if test="video.videofrom != null" >
+        #{video.videofrom,jdbcType=TINYINT},
+      </if>
+      <if test="video.fromid != null" >
+        #{video.fromid,jdbcType=VARCHAR},
+      </if>
+      <if test="video.videoname != null" >
+        #{video.videoname,jdbcType=VARCHAR},
+      </if>
+      <if test="video.thumbnail != null" >
+        #{video.thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="video.category != null" >
+        #{video.category,jdbcType=VARCHAR},
+      </if>
+      <if test="video.publishtime != null" >
+        #{video.publishtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="video.thirdPraise != null" >
+        #{video.thirdPraise,jdbcType=BIGINT},
+      </if>
+      <if test="video.thirdViewCount != null" >
+        #{video.thirdViewCount,jdbcType=BIGINT},
+      </if>
+      <if test="video.praise != null" >
+        #{video.praise,jdbcType=BIGINT},
+      </if>
+      <if test="video.viewCount != null" >
+        #{video.viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="video.flag != null" >
+        #{video.flag,jdbcType=INTEGER},
+      </if>
+      <if test="video.groupId != null" >
+        #{video.groupId,jdbcType=BIGINT},
+      </if>
+      <if test="video.groupSeq != null" >
+        #{video.groupSeq,jdbcType=INTEGER},
+      </if>
+      <if test="video.createtime != null" >
+        #{video.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="video.attr != null" >
+        #{video.attr,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <select id="selectFromSpecificTableById" resultMap="com.zf.live.dao.mapper.LocalVideoMapper.BaseResultMap">
+  	 select 
+  	 <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List"/>
+  	 from
+  	 ${table}
+  	 where id = #{id,jdbcType=VARCHAR}
+  </select>
+  
 </mapper>

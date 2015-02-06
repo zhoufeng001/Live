@@ -27,7 +27,7 @@ public interface LocalVideoServiceV2 {
 	 * @param category  视频所属分类，可以为空
 	 * @return
 	 */
-	LocalVideo selectVideoById(String category , String localVideoId);
+	LocalVideo selectVideoById(String localVideoId);
 	
 	/**
 	 * 更新视频信息
@@ -94,7 +94,7 @@ public interface LocalVideoServiceV2 {
 	 * @param category 分类，可以为空
 	 * @return
 	 */
-	ServiceResult<LocalVideoDetailVo> selectVideoWithDetailInfo(String category ,String videoId, boolean incrementViewCount);
+	ServiceResult<LocalVideoDetailVo> selectVideoWithDetailInfo(String videoId, boolean incrementViewCount);
 	
 	/**
 	 * 根据条件搜索本地视频列表
