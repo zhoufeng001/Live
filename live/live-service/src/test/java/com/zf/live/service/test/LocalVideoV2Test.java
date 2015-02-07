@@ -5,7 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.paging.PagedVo;
+import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
+import com.zf.live.client.vo.video.local.LocalVideoSearchConditionV2;
 import com.zf.live.dao.pojo.LocalVideo;
+import com.zf.live.dao.vo.video.LocalVideoVo;
 
 public class LocalVideoV2Test extends ServiceBaseTester{
 
@@ -34,5 +38,31 @@ public class LocalVideoV2Test extends ServiceBaseTester{
 		System.out.println(localVideo);
 	}
 
+	@Test
+	public void testUpdate(){
+		LocalVideo video = new LocalVideoVo() ;
+		video.setId("46e87b53ad0411e4ba363417ebbccb7e025");
+		video.setThirdPraise(31L);
+		boolean updateResult = localVideoServiceV2.updateVideoBySelective(video) ;
+		System.out.println(updateResult); 
+	}
 
+	@Test
+	public void testSearchWithDetail(){
+		ServiceResult<LocalVideoDetailVo> video = localVideoServiceV2.selectVideoWithDetailInfo("46e87b53ad0411e4ba363417ebbccb7e025", true) ;
+		System.out.println(video);
+	}
+	
+	@Test
+	public void testSearchPage(){
+		LocalVideoSearchConditionV2 condition = new LocalVideoSearchConditionV2() ;
+		condition.setCategory("其他");
+		condition.setKeyword("品生一下"); 
+		condition.setPage(5);
+		condition.setPageSize(100);
+		condition.setOrderBy(" view_count desc, third_view_count desc "); 
+		PagedVo<LocalVideo> videoPage = localVideoServiceV2.searchVideos(condition, true) ;
+		System.out.println(videoPage); 
+	}
+	
 }

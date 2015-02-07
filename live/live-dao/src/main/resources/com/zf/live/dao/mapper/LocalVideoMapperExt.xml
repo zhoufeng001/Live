@@ -8,111 +8,200 @@
 by is_zhoufeng@163.com 2015-02-05 22:36:26.
   -->
   
-  <insert id="saveToSpecificTable">
+  <insert id="saveToSpecificTable" parameterType="com.zf.live.dao.vo.video.LocalVideoVo" >
   	 insert into ${table} 
   	 <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="video.id != null" >
+      <if test="id != null" >
         id,
       </if>
-      <if test="video.videofrom != null" >
+      <if test="videofrom != null" >
         videofrom,
       </if>
-      <if test="video.fromid != null" >
+      <if test="fromid != null" >
         fromid,
       </if>
-      <if test="video.videoname != null" >
+      <if test="videoname != null" >
         videoname,
       </if>
-      <if test="video.thumbnail != null" >
+      <if test="thumbnail != null" >
         thumbnail,
       </if>
-      <if test="video.category != null" >
+      <if test="category != null" >
         category,
       </if>
-      <if test="video.publishtime != null" >
+      <if test="publishtime != null" >
         publishtime,
       </if>
-      <if test="video.thirdPraise != null" >
+      <if test="thirdPraise != null" >
         third_praise,
       </if>
-      <if test="video.thirdViewCount != null" >
+      <if test="thirdViewCount != null" >
         third_view_count,
       </if>
-      <if test="video.praise != null" >
+      <if test="praise != null" >
         praise,
       </if>
-      <if test="video.viewCount != null" >
+      <if test="viewCount != null" >
         view_count,
       </if>
-      <if test="video.flag != null" >
+      <if test="flag != null" >
         flag,
       </if>
-      <if test="video.groupId != null" >
+      <if test="groupId != null" >
         group_id,
       </if>
-      <if test="video.groupSeq != null" >
+      <if test="groupSeq != null" >
         group_seq,
       </if>
-      <if test="video.createtime != null" >
+      <if test="createtime != null" >
         createtime,
       </if>
-      <if test="video.attr != null" >
+      <if test="attr != null" >
         attr,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="video.id != null" >
-        #{video.id,jdbcType=VARCHAR},
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
       </if>
-      <if test="video.videofrom != null" >
-        #{video.videofrom,jdbcType=TINYINT},
+      <if test="videofrom != null" >
+        #{videofrom,jdbcType=TINYINT},
       </if>
-      <if test="video.fromid != null" >
-        #{video.fromid,jdbcType=VARCHAR},
+      <if test="fromid != null" >
+        #{fromid,jdbcType=VARCHAR},
       </if>
-      <if test="video.videoname != null" >
-        #{video.videoname,jdbcType=VARCHAR},
+      <if test="videoname != null" >
+        #{videoname,jdbcType=VARCHAR},
       </if>
-      <if test="video.thumbnail != null" >
-        #{video.thumbnail,jdbcType=VARCHAR},
+      <if test="thumbnail != null" >
+        #{thumbnail,jdbcType=VARCHAR},
       </if>
-      <if test="video.category != null" >
-        #{video.category,jdbcType=VARCHAR},
+      <if test="category != null" >
+        #{category,jdbcType=VARCHAR},
       </if>
-      <if test="video.publishtime != null" >
-        #{video.publishtime,jdbcType=TIMESTAMP},
+      <if test="publishtime != null" >
+        #{publishtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="video.thirdPraise != null" >
-        #{video.thirdPraise,jdbcType=BIGINT},
+      <if test="thirdPraise != null" >
+        #{thirdPraise,jdbcType=BIGINT},
       </if>
-      <if test="video.thirdViewCount != null" >
-        #{video.thirdViewCount,jdbcType=BIGINT},
+      <if test="thirdViewCount != null" >
+        #{thirdViewCount,jdbcType=BIGINT},
       </if>
-      <if test="video.praise != null" >
-        #{video.praise,jdbcType=BIGINT},
+      <if test="praise != null" >
+        #{praise,jdbcType=BIGINT},
       </if>
-      <if test="video.viewCount != null" >
-        #{video.viewCount,jdbcType=BIGINT},
+      <if test="viewCount != null" >
+        #{viewCount,jdbcType=BIGINT},
       </if>
-      <if test="video.flag != null" >
-        #{video.flag,jdbcType=INTEGER},
+      <if test="flag != null" >
+        #{flag,jdbcType=INTEGER},
       </if>
-      <if test="video.groupId != null" >
-        #{video.groupId,jdbcType=BIGINT},
+      <if test="groupId != null" >
+        #{groupId,jdbcType=BIGINT},
       </if>
-      <if test="video.groupSeq != null" >
-        #{video.groupSeq,jdbcType=INTEGER},
+      <if test="groupSeq != null" >
+        #{groupSeq,jdbcType=INTEGER},
       </if>
-      <if test="video.createtime != null" >
-        #{video.createtime,jdbcType=TIMESTAMP},
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="video.attr != null" >
-        #{video.attr,jdbcType=LONGVARCHAR},
+      <if test="attr != null" >
+        #{attr,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
   
-  <select id="selectFromSpecificTableById" resultMap="com.zf.live.dao.mapper.LocalVideoMapper.BaseResultMap">
+  <update id="updateByPrimaryKeySelectiveToSpecificTable"  parameterType="com.zf.live.dao.vo.video.LocalVideoVo" >
+    <!--
+      WARNING - @mbggenerated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Thu Feb 05 22:36:26 CST 2015.
+    -->
+    update ${table}
+    <set >
+      <if test="videofrom != null" >
+        videofrom = #{videofrom,jdbcType=TINYINT},
+      </if>
+      <if test="fromid != null" >
+        fromid = #{fromid,jdbcType=VARCHAR},
+      </if>
+      <if test="videoname != null" >
+        videoname = #{videoname,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnail != null" >
+        thumbnail = #{thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null" >
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="publishtime != null" >
+        publishtime = #{publishtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="thirdPraise != null" >
+        third_praise = #{thirdPraise,jdbcType=BIGINT},
+      </if>
+      <if test="thirdViewCount != null" >
+        third_view_count = #{thirdViewCount,jdbcType=BIGINT},
+      </if>
+      <if test="praise != null" >
+        praise = #{praise,jdbcType=BIGINT},
+      </if>
+      <if test="viewCount != null" >
+        view_count = #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=BIGINT},
+      </if>
+      <if test="groupSeq != null" >
+        group_seq = #{groupSeq,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attr != null" >
+        attr = #{attr,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectByExampleFromSpecificTable" resultMap="com.zf.live.dao.mapper.LocalVideoMapper.ResultMapWithBLOBs" parameterType="com.zf.live.dao.pojo.vo.video.LocalVideoExampleVo" >
+    <!--
+      WARNING - @mbggenerated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Thu Feb 05 22:36:26 CST 2015.
+    -->
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List" />
+    ,
+    <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Blob_Column_List" />
+    from ${table}
+    <if test="_parameter != null" >
+      <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="page != null" >
+      limit #{page.begin} , #{page.length}
+    </if>
+  </select>
+  
+   <select id="countByExample" parameterType="com.zf.live.dao.pojo.vo.video.LocalVideoExampleVo" resultType="java.lang.Integer" >
+	   select count(*) from ${table}
+	   <if test="_parameter != null" >
+	     <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Example_Where_Clause" />
+	   </if>
+   </select>
+  
+  <select id="selectFromSpecificTableById" resultMap="com.zf.live.dao.mapper.LocalVideoMapper.ResultMapWithBLOBs">
   	 select 
   	 <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List"/>
   	 from

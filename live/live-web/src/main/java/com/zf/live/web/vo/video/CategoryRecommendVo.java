@@ -3,8 +3,8 @@ package com.zf.live.web.vo.video;
 import java.io.Serializable;
 import java.util.List;
 
-import com.zf.live.client.vo.video.local.VideoDetailVo;
-import com.zf.live.dao.pojo.Video;
+import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
+import com.zf.live.dao.pojo.LocalVideo;
 
 /**
  * 分类推荐视频
@@ -18,23 +18,23 @@ public class CategoryRecommendVo implements Serializable{
 	 */
 	private static final long serialVersionUID = -6169870878436726759L;
 
-	private VideoDetailVo topVideoDetailVo ;
+	private LocalVideoDetailVo topVideoDetailVo ;
 	
-	private List<Video> recommendVideoList ;
+	private List<LocalVideo> recommendVideoList ;
 
-	public VideoDetailVo getTopVideoDetailVo() {
+	public LocalVideoDetailVo getTopVideoDetailVo() {
 		return topVideoDetailVo;
 	}
 
-	public void setTopVideoDetailVo(VideoDetailVo topVideoDetailVo) {
+	public void setTopVideoDetailVo(LocalVideoDetailVo topVideoDetailVo) {
 		this.topVideoDetailVo = topVideoDetailVo;
 	}
 
-	public List<Video> getRecommendVideoList() {
+	public List<LocalVideo> getRecommendVideoList() {
 		return recommendVideoList;
 	}
 
-	public void setRecommendVideoList(List<Video> recommendVideoList) {
+	public void setRecommendVideoList(List<LocalVideo> recommendVideoList) {
 		this.recommendVideoList = recommendVideoList;
 	}
 

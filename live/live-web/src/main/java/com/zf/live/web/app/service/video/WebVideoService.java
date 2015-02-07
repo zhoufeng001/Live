@@ -1,6 +1,5 @@
 package com.zf.live.web.app.service.video;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,14 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
-import com.zf.live.client.video.local.LocalVideoService;
+import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.client.vo.paging.PagedVo;
-import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
-import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
+import com.zf.live.client.vo.video.local.LocalVideoSearchConditionV2;
 import com.zf.live.common.assertx.ZFAssert;
 import com.zf.live.common.util.cache.EhCacheUtil;
-import com.zf.live.dao.pojo.Video;
+import com.zf.live.dao.pojo.LocalVideo;
 import com.zf.live.web.WebConst;
 import com.zf.live.web.WebConst.EhCacheNames;
 import com.zf.live.web.vo.video.CachedVideoDetailVo;
@@ -28,8 +27,8 @@ public class WebVideoService {
 
 	static final Logger log = LoggerFactory.getLogger(WebVideoService.class);
 
-	@Resource(name="localVideoService")
-	private LocalVideoService localVideoService ;
+	@Resource(name="localVideoServiceV2")
+	private LocalVideoServiceV2 localVideoServiceV2 ;
 
 	private static final EhCacheUtil ehCacheUtil = EhCacheUtil.getInstance(WebConst.WebEhcacheFileName);
 
@@ -64,17 +63,15 @@ public class WebVideoService {
 		log.info("Recache分类[{}]" , category); 
 		ZFAssert.notBlank(category, "category不能为空");
 		CategoryRecommendVo cateRecommendVo = new CategoryRecommendVo();
-		LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
-		List<String> categoryList = new ArrayList<String>();
-		categoryList.add(category);
-		condition.setCategory(categoryList);
+		LocalVideoSearchConditionV2 condition = new LocalVideoSearchConditionV2() ;
+		condition.setCategory(category); 
 		condition.setPage(1);
 		condition.setPageSize(9);
-		condition.setOrderBy(" view_count desc , third_view_count desc ");
-		PagedVo<Video> videoPageVo = localVideoService.searchVideosByCategories(condition ,false);
+		condition.setOrderBy(" view_count desc , third_view_count desc "); 
+		PagedVo<LocalVideo> videoPageVo = localVideoServiceV2.searchVideos(condition ,false);
 		if(videoPageVo != null && videoPageVo.getData() != null && videoPageVo.getCount() > 0){
-			List<Video> recommendVideos = videoPageVo.getData();
-			VideoDetailVo topVideoDetailVo = selectVideoDetailVoWithCache(recommendVideos.get(0).getId(), false);
+			List<LocalVideo> recommendVideos = videoPageVo.getData();
+			LocalVideoDetailVo topVideoDetailVo = selectVideoDetailVoWithCache(recommendVideos.get(0).getId(), false);
 			cateRecommendVo.setTopVideoDetailVo(topVideoDetailVo);
 			recommendVideos.remove(0);
 			cateRecommendVo.setRecommendVideoList(recommendVideos); 
@@ -103,14 +100,14 @@ public class WebVideoService {
 			return cachedVideoDetailVo ;
 		}
 
-		ServiceResult<VideoDetailVo> result = localVideoService.selectVideoWithDetailInfo(videoId,true);
+		ServiceResult<LocalVideoDetailVo> result = localVideoServiceV2.selectVideoWithDetailInfo(videoId,true);
 		if(result == null){
 			log.warn("没查询到视频{}",videoId);
 			return null ;
 		}
 		log.info("从数据库读取到视频[{}]" , videoId); 
 		if(result.isSuccess()){
-			VideoDetailVo videoDetailVo = result.getData();
+			LocalVideoDetailVo videoDetailVo = result.getData();
 			if(videoDetailVo == null){
 				return null ;
 			}
@@ -129,33 +126,29 @@ public class WebVideoService {
 	 * 对各分类第一页进行了缓存
 	 */
 	@SuppressWarnings("unchecked")
-	public PagedVo<Video> searchVideos(LocalVideoSearchCondition condition){
+	public PagedVo<LocalVideo> searchVideos(LocalVideoSearchConditionV2 condition){
 		if(condition == null){
 			return null ;
 		}
 		if(condition.getPage() == 1){
 			StringBuilder cacheKey = new StringBuilder("vp");
-			List<String> categories = condition.getCategory();
-			if(categories != null && categories.size() > 0){
-				for (String category : categories) {
-					cacheKey.append("-").append(category);
-				}
-			}
+			String category = condition.getCategory();
+			cacheKey.append("-").append(category);
 			cacheKey.append("-").append(condition.getPage().intValue());
 			cacheKey.append("-").append(condition.getOrderBy());
 			String cacheKeyStr = cacheKey.toString().replace(" ", ".");  
-			PagedVo<Video> pageVo = new PagedVo<Video>();
+			PagedVo<LocalVideo> pageVo = new PagedVo<LocalVideo>();
 			pageVo = ehCacheUtil.get(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo.getClass());
 			if(pageVo == null){
 				log.info("从数据库中查询分类第一页缓存[{}]",condition.getCategory()); 
-				pageVo = localVideoService.searchVideosByCategories(condition,true); 
+				pageVo = localVideoServiceV2.searchVideos(condition,true); 
 				ehCacheUtil.put(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo);  
 			}else{
 				log.info("从缓存中读取到分类第一页视频[{}]" , condition.getCategory()); 
 			}
 			return pageVo ;
-		}else{
-			return localVideoService.searchVideosByCategories(condition,true); 
+		}else{ 
+			return localVideoServiceV2.searchVideos(condition,true); 
 		}
 	}
 	

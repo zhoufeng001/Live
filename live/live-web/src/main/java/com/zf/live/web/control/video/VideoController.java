@@ -2,7 +2,6 @@ package com.zf.live.web.control.video;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zf.live.client.room.RoomService;
-import com.zf.live.client.video.local.LocalVideoService;
 import com.zf.live.client.vo.room.RoomInfo;
-import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
 import com.zf.live.common.ZFSpringPropertyConfigure;
 import com.zf.live.web.app.service.video.WebVideoService;
-
-import freemarker.template.utility.HtmlEscape;
 
 /**
  * 视频播放
@@ -30,9 +26,6 @@ import freemarker.template.utility.HtmlEscape;
 public class VideoController {
 
 	static final Logger log = LoggerFactory.getLogger(VideoController.class);
-
-	@Resource(name="localVideoService")
-	private LocalVideoService localVideoService ;
 
 	@Autowired
 	private WebVideoService webVideoService ;
@@ -52,7 +45,7 @@ public class VideoController {
 	 */
 	@RequestMapping("/view/{videoId}")
 	public String videoView(@PathVariable("videoId") String videoId, ModelMap modelMap){
-		VideoDetailVo videoDetailVo =  webVideoService.selectVideoDetailVoWithCache(videoId, true) ;
+		LocalVideoDetailVo videoDetailVo =  webVideoService.selectVideoDetailVoWithCache(videoId, true) ;
 		modelMap.addAttribute("videoDetailVo", videoDetailVo) ;
 		if(videoDetailVo != null && videoDetailVo.getVideo() != null){
 			modelMap.addAttribute("category", videoDetailVo.getVideo().getCategory());

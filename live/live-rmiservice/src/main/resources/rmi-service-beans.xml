@@ -24,6 +24,13 @@
 	    <property name="serviceInterface" value="com.zf.live.client.video.local.LocalVideoService"/>
 	 </bean>
 
+	 <bean name="/localVideoServiceV2" class="org.springframework.remoting.caucho.HessianServiceExporter">
+	   <!--  需要导出的目标bean-->
+	    <property name="service" ref="localVideoServiceV2"/>
+	      <!--  Hessian服务的接口-->
+	    <property name="serviceInterface" value="com.zf.live.client.video.local.LocalVideoServiceV2"/>
+	 </bean>
+
 	 <bean name="/youkuVideoSearchService" class="org.springframework.remoting.caucho.HessianServiceExporter">
 	   <!--  需要导出的目标bean-->
 	    <property name="service" ref="youkuVideoSearchService"/>

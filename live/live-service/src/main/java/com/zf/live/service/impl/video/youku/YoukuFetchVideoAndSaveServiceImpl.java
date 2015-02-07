@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.zf.live.client.video.FetchVideosAndSaveService;
-import com.zf.live.client.video.local.LocalVideoService;
+import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.client.video.youku.request.SearchVideoByCategoryRequest;
 import com.zf.live.client.video.youku.response.SearchVideoByCategoryResponse;
 import com.zf.live.client.video.youku.response.VideoResponse;
@@ -18,7 +18,7 @@ import com.zf.live.client.video.youku.service.YoukuVideoSearchService;
 import com.zf.live.client.video.youku.vo.Category;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.client.vo.video.VideoSite;
-import com.zf.live.dao.pojo.Video;
+import com.zf.live.dao.pojo.LocalVideo;
 
 /**
  * 从优酷获取视频并更新到数据库
@@ -40,7 +40,7 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 	private YoukuVideoSearchService youkuVideoSearchService;
 
 	@Autowired
-	private LocalVideoService localVideoService ;
+	private LocalVideoServiceV2 localVideoServiceV2 ;
 
 	@Override
 	public void fetchAndSave() {
@@ -85,8 +85,8 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 				/* 存储到本地  */
 				for (VideoResponse youkuVideo : videoResponse) {
 
-					if(!localVideoService.existVideo(VideoSite.YOUKU.getValue(), youkuVideo.getId())){
-						Video video = new Video();
+					if(!localVideoServiceV2.existVideo(youkuVideo.getCategory() ,VideoSite.YOUKU.getValue(), youkuVideo.getId())){
+						LocalVideo video = new LocalVideo(); 
 						video.setCategory(youkuVideo.getCategory());
 						video.setFromid(youkuVideo.getId());
 						video.setThumbnail(youkuVideo.getThumbnail());
@@ -112,7 +112,7 @@ public class YoukuFetchVideoAndSaveServiceImpl implements FetchVideosAndSaveServ
 						video.setVideoname(youkuVideo.getTitle()); 
 						ServiceResult<String> saveResult = null;
 						try {
-							saveResult = localVideoService.saveVideo(video);
+							saveResult = localVideoServiceV2.saveVideo(video); 
 						}catch(Exception e){
 							log.error("保存视频失败,{}",e.getMessage()); 
 							continue ;

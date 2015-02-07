@@ -1,13 +1,13 @@
 package com.zf.live.web.vo.video;
 
-import com.zf.live.client.vo.video.local.VideoDetailVo;
+import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
 
 /**
  * 缓存视频信息对象
  * @author is_zhoufeng@163.com , QQ:243970446
  * 2015年1月15日 上午2:39:53
  */
-public class CachedVideoDetailVo extends VideoDetailVo{
+public class CachedVideoDetailVo extends LocalVideoDetailVo{
 
 	/**
 	 * 

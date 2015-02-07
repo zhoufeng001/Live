@@ -1,8 +1,5 @@
 package com.zf.live.web.control.video;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -15,11 +12,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zf.live.client.video.local.LocalVideoService;
+import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.client.vo.paging.PagedVo;
-import com.zf.live.client.vo.video.local.LocalVideoSearchCondition;
+import com.zf.live.client.vo.video.local.LocalVideoSearchConditionV2;
 import com.zf.live.common.assertx.ZFAssert;
-import com.zf.live.dao.pojo.Video;
+import com.zf.live.dao.pojo.LocalVideo;
 import com.zf.live.web.app.service.video.WebVideoService;
 import com.zf.live.web.vo.video.CategoryRecommendVo;
 
@@ -34,8 +31,8 @@ public class VideoCategoryController {
 
 	static final Logger log = LoggerFactory.getLogger(VideoCategoryController.class);
 
-	@Resource(name="localVideoService")
-	private LocalVideoService localVideoService ;
+	@Resource(name="localVideoServiceV2")
+	private LocalVideoServiceV2 localVideoServiceV2 ;
 	
 	@Autowired
 	private WebVideoService webVideoService ;
@@ -79,10 +76,8 @@ public class VideoCategoryController {
 			ZFAssert.notBlank(category, "category不能为空"); 
 			ZFAssert.notBlank(page, "page不能为空"); 
 			ZFAssert.notBlank(orderby, "orderby不能为空"); 
-			LocalVideoSearchCondition condition = new LocalVideoSearchCondition() ;
-			List<String> categoryList = new ArrayList<String>();
-			categoryList.add(category);
-			condition.setCategory(categoryList);
+			LocalVideoSearchConditionV2 condition = new LocalVideoSearchConditionV2() ;
+			condition.setCategory(category);
 			if(page == null || page <= 0){
 				page = 1;
 			}
@@ -97,7 +92,7 @@ public class VideoCategoryController {
 					condition.setOrderBy(" publishtime desc ");
 				}
 			}
-			PagedVo<Video> videoPageVo = webVideoService.searchVideos(condition);
+			PagedVo<LocalVideo> videoPageVo = webVideoService.searchVideos(condition);
 			modelMap.put("videoPageVo", videoPageVo) ;
 		}
 

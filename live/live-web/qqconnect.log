@@ -1,1162 +1,189 @@
-60   DEBUG [2015-02-06 18:51:22]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-61   DEBUG [2015-02-06 18:51:22]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-64   DEBUG [2015-02-06 18:51:22]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-64   DEBUG [2015-02-06 18:51:22]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-70   ERROR [2015-02-06 18:51:22]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${categoryRecommendVo.topVideoDetailV...  [in template "index.ftl" at line 28, column 39]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.DefaultToExpression._eval(DefaultToExpression.java:80)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:80)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:157)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:501)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:67)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:738)
-	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:708)
-	at org.apache.jsp.index_jsp._jspService(index_jsp.java:74)
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:405)
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:349)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.eclipse.jetty.servlet.DefaultServlet.doGet(DefaultServlet.java:585)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-30285 DEBUG [2015-02-06 18:51:52]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-30287 DEBUG [2015-02-06 18:51:52]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-30288 DEBUG [2015-02-06 18:51:52]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-30289 DEBUG [2015-02-06 18:51:52]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-30290 ERROR [2015-02-06 18:51:52]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${categoryRecommendVo.topVideoDetailV...  [in template "index.ftl" at line 28, column 39]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.DefaultToExpression._eval(DefaultToExpression.java:80)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:80)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:157)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:501)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:67)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:738)
-	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:708)
-	at org.apache.jsp.index_jsp._jspService(index_jsp.java:74)
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:405)
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:349)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.eclipse.jetty.servlet.DefaultServlet.doGet(DefaultServlet.java:585)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-2    DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-44   DEBUG [2015-02-06 18:57:41]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-52   DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-53   DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-55   DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-56   DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-59   DEBUG [2015-02-06 18:57:41]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-60   DEBUG [2015-02-06 18:57:41]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-66   ERROR [2015-02-06 18:57:41]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${categoryRecommendVo.topVideoDetailV...  [in template "index.ftl" at line 28, column 39]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.DefaultToExpression._eval(DefaultToExpression.java:80)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:80)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:157)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:501)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:67)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:738)
-	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:708)
-	at org.apache.jsp.index_jsp._jspService(index_jsp.java:74)
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:405)
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:349)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.eclipse.jetty.servlet.DefaultServlet.doGet(DefaultServlet.java:585)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-28147 DEBUG [2015-02-06 18:58:09]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-28148 DEBUG [2015-02-06 18:58:09]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-28149 DEBUG [2015-02-06 18:58:09]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-28150 DEBUG [2015-02-06 18:58:09]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-28150 ERROR [2015-02-06 18:58:09]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${categoryRecommendVo.topVideoDetailV...  [in template "index.ftl" at line 28, column 39]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.DefaultToExpression._eval(DefaultToExpression.java:80)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:80)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:157)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:501)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:67)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:738)
-	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:708)
-	at org.apache.jsp.index_jsp._jspService(index_jsp.java:74)
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:405)
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:349)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.eclipse.jetty.servlet.DefaultServlet.doGet(DefaultServlet.java:585)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-3    DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-50   DEBUG [2015-02-06 19:06:23]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-57   DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-58   DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-61   DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-62   DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-65   DEBUG [2015-02-06 19:06:23]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-66   DEBUG [2015-02-06 19:06:23]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-72   ERROR [2015-02-06 19:06:23]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "index.ftl" at line 28, column 41]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${categoryRecommendVo.topVideoDetailV...  [in template "index.ftl" at line 28, column 39]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Dot._eval(Dot.java:38)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.DefaultToExpression._eval(DefaultToExpression.java:80)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:80)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:157)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:501)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:67)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:278)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:738)
-	at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:708)
-	at org.apache.jsp.index_jsp._jspService(index_jsp.java:74)
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:405)
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:349)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:587)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:595)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:191)
-	at org.eclipse.jetty.server.Dispatcher.forward(Dispatcher.java:72)
-	at org.eclipse.jetty.servlet.DefaultServlet.doGet(DefaultServlet.java:585)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-119799 DEBUG [2015-02-06 19:08:23]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
-119800 DEBUG [2015-02-06 19:08:23]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
-119828 DEBUG [2015-02-06 19:08:23]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-119831 DEBUG [2015-02-06 19:08:23]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-119831 DEBUG [2015-02-06 19:08:23]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-119832 DEBUG [2015-02-06 19:08:23]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
-119833 DEBUG [2015-02-06 19:08:23]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
-119845 DEBUG [2015-02-06 19:08:23]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-119846 ERROR [2015-02-06 19:08:23]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
-2    DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
-57   DEBUG [2015-02-06 19:11:34]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-65   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-66   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-69   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-69   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-73   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
-74   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
-85   DEBUG [2015-02-06 19:11:34]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-85   DEBUG [2015-02-06 19:11:34]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live05\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-91   ERROR [2015-02-06 19:11:34]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-165956 DEBUG [2015-02-06 19:14:20]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-165957 DEBUG [2015-02-06 19:14:20]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-165958 DEBUG [2015-02-06 19:14:20]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-165959 DEBUG [2015-02-06 19:14:20]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-165960 DEBUG [2015-02-06 19:14:20]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-165961 ERROR [2015-02-06 19:14:20]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-181705 DEBUG [2015-02-06 19:14:36]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-181707 DEBUG [2015-02-06 19:14:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-181707 DEBUG [2015-02-06 19:14:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-181708 DEBUG [2015-02-06 19:14:36]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-181709 DEBUG [2015-02-06 19:14:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-181709 ERROR [2015-02-06 19:14:36]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-826450 DEBUG [2015-02-06 19:25:21]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-826602 DEBUG [2015-02-06 19:25:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-826605 DEBUG [2015-02-06 19:25:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-826607 DEBUG [2015-02-06 19:25:21]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-826609 DEBUG [2015-02-06 19:25:21]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-826610 ERROR [2015-02-06 19:25:21]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-917464 DEBUG [2015-02-06 19:26:52]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-917464 DEBUG [2015-02-06 19:26:52]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-917465 DEBUG [2015-02-06 19:26:52]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-917465 DEBUG [2015-02-06 19:26:52]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-917466 DEBUG [2015-02-06 19:26:52]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live05\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-917466 ERROR [2015-02-06 19:26:52]  Error executing FreeMarker template
-FreeMarker template error:
-The following has evaluated to null or missing:
-==> categoryRecommendVo  [in template "vcategory.ftl" at line 40, column 18]
-
-----
-Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if categoryRecommendVo.topVideoDetai...  [in template "vcategory.ftl" at line 40, column 13]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:108)
-	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
-	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
-	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
-	at freemarker.core.Dot._eval(Dot.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
-	at freemarker.core.Expression.eval(Expression.java:76)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:116)
-	at freemarker.core.Expression.evalToBoolean(Expression.java:108)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:46)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.MixedContent.accept(MixedContent.java:57)
-	at freemarker.core.Environment.visit(Environment.java:257)
-	at freemarker.core.Environment.process(Environment.java:235)
-	at freemarker.template.Template.process(Template.java:262)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
-	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
-	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
-	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1228)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1011)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:955)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:800)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at com.zf.live.web.servlet.filter.SecureFilter.doFilter(SecureFilter.java:69)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:577)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:223)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1125)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1059)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:215)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
-	at org.eclipse.jetty.server.Server.handle(Server.java:497)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:248)
-	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:620)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:540)
-	at java.lang.Thread.run(Thread.java:745)
-0    DEBUG [2015-02-06 23:43:36]  Could not find template in cache, creating new one; id=["index.ftl"["zh_CN",UTF-8,parsed] ]
-5    DEBUG [2015-02-06 23:43:36]  Compiling FreeMarker template "index.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\index.ftl"
-89   DEBUG [2015-02-06 23:43:36]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
-99   DEBUG [2015-02-06 23:43:36]  Could not find template in cache, creating new one; id=["common/live_common_meta.ftl"["zh_CN",UTF-8,parsed] ]
-100  DEBUG [2015-02-06 23:43:36]  Compiling FreeMarker template "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_meta.ftl"
-104  DEBUG [2015-02-06 23:43:36]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
-105  DEBUG [2015-02-06 23:43:36]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
-109  DEBUG [2015-02-06 23:43:36]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
-110  DEBUG [2015-02-06 23:43:36]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
-192  DEBUG [2015-02-06 23:43:36]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
-194  DEBUG [2015-02-06 23:43:36]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
-13028 DEBUG [2015-02-06 23:43:49]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
-13029 DEBUG [2015-02-06 23:43:49]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
-13050 DEBUG [2015-02-06 23:43:49]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-13053 DEBUG [2015-02-06 23:43:49]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-13054 DEBUG [2015-02-06 23:43:49]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-13062 DEBUG [2015-02-06 23:43:49]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
-13063 DEBUG [2015-02-06 23:43:49]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
-13070 DEBUG [2015-02-06 23:43:49]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-13086 DEBUG [2015-02-06 23:43:49]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-20048 DEBUG [2015-02-06 23:43:56]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-20050 DEBUG [2015-02-06 23:43:56]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-20052 DEBUG [2015-02-06 23:43:56]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-20074 DEBUG [2015-02-06 23:43:56]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-20084 DEBUG [2015-02-06 23:43:56]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-20090 DEBUG [2015-02-06 23:43:56]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-28345 DEBUG [2015-02-06 23:44:04]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-28348 DEBUG [2015-02-06 23:44:04]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-28351 DEBUG [2015-02-06 23:44:04]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-28355 DEBUG [2015-02-06 23:44:04]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-28357 DEBUG [2015-02-06 23:44:04]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-28362 DEBUG [2015-02-06 23:44:04]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-34719 DEBUG [2015-02-06 23:44:10]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-34721 DEBUG [2015-02-06 23:44:10]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-34722 DEBUG [2015-02-06 23:44:10]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-34722 DEBUG [2015-02-06 23:44:10]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-34723 DEBUG [2015-02-06 23:44:10]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-34728 DEBUG [2015-02-06 23:44:10]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-38852 DEBUG [2015-02-06 23:44:15]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-38854 DEBUG [2015-02-06 23:44:15]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-38856 DEBUG [2015-02-06 23:44:15]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-38858 DEBUG [2015-02-06 23:44:15]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-38861 DEBUG [2015-02-06 23:44:15]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-38868 DEBUG [2015-02-06 23:44:15]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-40862 DEBUG [2015-02-06 23:44:17]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-40865 DEBUG [2015-02-06 23:44:17]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-40867 DEBUG [2015-02-06 23:44:17]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-40869 DEBUG [2015-02-06 23:44:17]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-40872 DEBUG [2015-02-06 23:44:17]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-40877 DEBUG [2015-02-06 23:44:17]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-45740 DEBUG [2015-02-06 23:44:21]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
-45742 DEBUG [2015-02-06 23:44:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-45743 DEBUG [2015-02-06 23:44:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-45745 DEBUG [2015-02-06 23:44:21]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
-45749 DEBUG [2015-02-06 23:44:22]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-45754 DEBUG [2015-02-06 23:44:22]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
-48103 DEBUG [2015-02-06 23:44:24]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
-48105 DEBUG [2015-02-06 23:44:24]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
-48111 DEBUG [2015-02-06 23:44:24]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
-48111 DEBUG [2015-02-06 23:44:24]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
-48112 DEBUG [2015-02-06 23:44:24]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
-48112 DEBUG [2015-02-06 23:44:24]  Could not find template in cache, creating new one; id=["common/bootstrap.ftl"["zh_CN",UTF-8,parsed] ]
-48113 DEBUG [2015-02-06 23:44:24]  Compiling FreeMarker template "common/bootstrap.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bootstrap.ftl"
-48114 DEBUG [2015-02-06 23:44:24]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
-48120 DEBUG [2015-02-06 23:44:24]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+152  DEBUG [2015-02-07 15:55:12]  Could not find template in cache, creating new one; id=["common/live_common_js.ftl"["zh_CN",UTF-8,parsed] ]
+154  DEBUG [2015-02-07 15:55:12]  Compiling FreeMarker template "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\live_common_js.ftl"
+158  DEBUG [2015-02-07 15:55:12]  Could not find template in cache, creating new one; id=["common/head.ftl"["zh_CN",UTF-8,parsed] ]
+160  DEBUG [2015-02-07 15:55:12]  Compiling FreeMarker template "common/head.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\head.ftl"
+259  DEBUG [2015-02-07 15:55:12]  Could not find template in cache, creating new one; id=["common/bottom.ftl"["zh_CN",UTF-8,parsed] ]
+261  DEBUG [2015-02-07 15:55:12]  Compiling FreeMarker template "common/bottom.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bottom.ftl"
+9175 DEBUG [2015-02-07 15:55:21]  Could not find template in cache, creating new one; id=["vcategory.ftl"["zh_CN",UTF-8,parsed] ]
+9177 DEBUG [2015-02-07 15:55:21]  Compiling FreeMarker template "vcategory.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\vcategory.ftl"
+9191 DEBUG [2015-02-07 15:55:21]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+9192 DEBUG [2015-02-07 15:55:21]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+9193 DEBUG [2015-02-07 15:55:21]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+9194 DEBUG [2015-02-07 15:55:21]  Could not find template in cache, creating new one; id=["common/zfpage.ftl"["zh_CN",UTF-8,parsed] ]
+9196 DEBUG [2015-02-07 15:55:21]  Compiling FreeMarker template "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\zfpage.ftl"
+9204 DEBUG [2015-02-07 15:55:21]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+9210 DEBUG [2015-02-07 15:55:21]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+31224 DEBUG [2015-02-07 15:55:43]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+31230 DEBUG [2015-02-07 15:55:43]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+31233 DEBUG [2015-02-07 15:55:43]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+31235 DEBUG [2015-02-07 15:55:43]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+31237 DEBUG [2015-02-07 15:55:43]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+31247 DEBUG [2015-02-07 15:55:43]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+52480 DEBUG [2015-02-07 15:56:04]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+52482 DEBUG [2015-02-07 15:56:04]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+52483 DEBUG [2015-02-07 15:56:04]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+52485 DEBUG [2015-02-07 15:56:04]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+52487 DEBUG [2015-02-07 15:56:04]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+52495 DEBUG [2015-02-07 15:56:04]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+58332 DEBUG [2015-02-07 15:56:10]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+58334 DEBUG [2015-02-07 15:56:10]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+58335 DEBUG [2015-02-07 15:56:10]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+58337 DEBUG [2015-02-07 15:56:10]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+58339 DEBUG [2015-02-07 15:56:10]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+58344 DEBUG [2015-02-07 15:56:10]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+72316 DEBUG [2015-02-07 15:56:24]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+72318 DEBUG [2015-02-07 15:56:24]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+72320 DEBUG [2015-02-07 15:56:24]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+72321 DEBUG [2015-02-07 15:56:24]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+72323 DEBUG [2015-02-07 15:56:24]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+72330 DEBUG [2015-02-07 15:56:24]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+76557 DEBUG [2015-02-07 15:56:28]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+76562 DEBUG [2015-02-07 15:56:28]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+76567 DEBUG [2015-02-07 15:56:28]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+76570 DEBUG [2015-02-07 15:56:28]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+76573 DEBUG [2015-02-07 15:56:28]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+76588 DEBUG [2015-02-07 15:56:28]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+100622 DEBUG [2015-02-07 15:56:52]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+100624 DEBUG [2015-02-07 15:56:52]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+100625 DEBUG [2015-02-07 15:56:52]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+100639 DEBUG [2015-02-07 15:56:52]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+100640 DEBUG [2015-02-07 15:56:52]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+100644 DEBUG [2015-02-07 15:56:52]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+107516 DEBUG [2015-02-07 15:56:59]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+107518 DEBUG [2015-02-07 15:56:59]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+107519 DEBUG [2015-02-07 15:56:59]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+107527 DEBUG [2015-02-07 15:56:59]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+107540 DEBUG [2015-02-07 15:56:59]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+109263 DEBUG [2015-02-07 15:57:01]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+109264 DEBUG [2015-02-07 15:57:01]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+109265 DEBUG [2015-02-07 15:57:01]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+109267 DEBUG [2015-02-07 15:57:01]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+109268 DEBUG [2015-02-07 15:57:01]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+109278 DEBUG [2015-02-07 15:57:01]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+110828 DEBUG [2015-02-07 15:57:03]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+110831 DEBUG [2015-02-07 15:57:03]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+110834 DEBUG [2015-02-07 15:57:03]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+110836 DEBUG [2015-02-07 15:57:03]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+110840 DEBUG [2015-02-07 15:57:03]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+110866 DEBUG [2015-02-07 15:57:03]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+112997 DEBUG [2015-02-07 15:57:05]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+112998 DEBUG [2015-02-07 15:57:05]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+112999 DEBUG [2015-02-07 15:57:05]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+113000 DEBUG [2015-02-07 15:57:05]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+113002 DEBUG [2015-02-07 15:57:05]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+113006 DEBUG [2015-02-07 15:57:05]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+144374 DEBUG [2015-02-07 15:57:36]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+144376 DEBUG [2015-02-07 15:57:36]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+144377 DEBUG [2015-02-07 15:57:36]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+144378 DEBUG [2015-02-07 15:57:36]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+144380 DEBUG [2015-02-07 15:57:36]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+144383 DEBUG [2015-02-07 15:57:36]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+147683 DEBUG [2015-02-07 15:57:39]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+147685 DEBUG [2015-02-07 15:57:39]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+147697 DEBUG [2015-02-07 15:57:39]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+147701 DEBUG [2015-02-07 15:57:39]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+147702 DEBUG [2015-02-07 15:57:39]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+147705 DEBUG [2015-02-07 15:57:39]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+161263 DEBUG [2015-02-07 15:57:53]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+161266 DEBUG [2015-02-07 15:57:53]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+161268 DEBUG [2015-02-07 15:57:53]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+161274 DEBUG [2015-02-07 15:57:53]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+161276 DEBUG [2015-02-07 15:57:53]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+161285 DEBUG [2015-02-07 15:57:53]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+166899 DEBUG [2015-02-07 15:57:59]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+166900 DEBUG [2015-02-07 15:57:59]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+166902 DEBUG [2015-02-07 15:57:59]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+166904 DEBUG [2015-02-07 15:57:59]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+166906 DEBUG [2015-02-07 15:57:59]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+166911 DEBUG [2015-02-07 15:57:59]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+228128 DEBUG [2015-02-07 15:59:00]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+228132 DEBUG [2015-02-07 15:59:00]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+228135 DEBUG [2015-02-07 15:59:00]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+228137 DEBUG [2015-02-07 15:59:00]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+228140 DEBUG [2015-02-07 15:59:00]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+228146 DEBUG [2015-02-07 15:59:00]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+229368 DEBUG [2015-02-07 15:59:01]  Could not find template in cache, creating new one; id=["videoview.ftl"["zh_CN",UTF-8,parsed] ]
+229370 DEBUG [2015-02-07 15:59:01]  Compiling FreeMarker template "videoview.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\videoview.ftl"
+229378 DEBUG [2015-02-07 15:59:01]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+229379 DEBUG [2015-02-07 15:59:01]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+229380 DEBUG [2015-02-07 15:59:01]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+229381 DEBUG [2015-02-07 15:59:01]  Could not find template in cache, creating new one; id=["common/bootstrap.ftl"["zh_CN",UTF-8,parsed] ]
+229382 DEBUG [2015-02-07 15:59:01]  Compiling FreeMarker template "common/bootstrap.ftl"["zh_CN",UTF-8,parsed]  from "E:\\Live03\\live\\live-web\\src\\main\\webapp\\WEB-INF\\view\\common\\bootstrap.ftl"
+229385 DEBUG [2015-02-07 15:59:01]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+229394 DEBUG [2015-02-07 15:59:01]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+409771 DEBUG [2015-02-07 16:02:02]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+409772 DEBUG [2015-02-07 16:02:02]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+409774 DEBUG [2015-02-07 16:02:02]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+409775 DEBUG [2015-02-07 16:02:02]  "common/bootstrap.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bootstrap.ftl didn't change.
+409776 DEBUG [2015-02-07 16:02:02]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+409781 DEBUG [2015-02-07 16:02:02]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+411919 DEBUG [2015-02-07 16:02:04]  "videoview.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\videoview.ftl didn't change.
+411920 DEBUG [2015-02-07 16:02:04]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+411921 DEBUG [2015-02-07 16:02:04]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+411922 DEBUG [2015-02-07 16:02:04]  "common/bootstrap.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bootstrap.ftl didn't change.
+411924 DEBUG [2015-02-07 16:02:04]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+411929 DEBUG [2015-02-07 16:02:04]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+416214 DEBUG [2015-02-07 16:02:08]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+416215 DEBUG [2015-02-07 16:02:08]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+416215 DEBUG [2015-02-07 16:02:08]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+416216 DEBUG [2015-02-07 16:02:08]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+416224 DEBUG [2015-02-07 16:02:08]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+417662 DEBUG [2015-02-07 16:02:09]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+417666 DEBUG [2015-02-07 16:02:09]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+417667 DEBUG [2015-02-07 16:02:09]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+417669 DEBUG [2015-02-07 16:02:09]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+417673 DEBUG [2015-02-07 16:02:09]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+417676 DEBUG [2015-02-07 16:02:09]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+418656 DEBUG [2015-02-07 16:02:10]  "index.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\index.ftl didn't change.
+418658 DEBUG [2015-02-07 16:02:10]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+418660 DEBUG [2015-02-07 16:02:10]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+418662 DEBUG [2015-02-07 16:02:10]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+418671 DEBUG [2015-02-07 16:02:10]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+419897 DEBUG [2015-02-07 16:02:12]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+419898 DEBUG [2015-02-07 16:02:12]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+419899 DEBUG [2015-02-07 16:02:12]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+419900 DEBUG [2015-02-07 16:02:12]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+419903 DEBUG [2015-02-07 16:02:12]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+419907 DEBUG [2015-02-07 16:02:12]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+420929 DEBUG [2015-02-07 16:02:13]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+420930 DEBUG [2015-02-07 16:02:13]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+420931 DEBUG [2015-02-07 16:02:13]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+420932 DEBUG [2015-02-07 16:02:13]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+420933 DEBUG [2015-02-07 16:02:13]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+420935 DEBUG [2015-02-07 16:02:13]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+421752 DEBUG [2015-02-07 16:02:14]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+421754 DEBUG [2015-02-07 16:02:14]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+421755 DEBUG [2015-02-07 16:02:14]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+421758 DEBUG [2015-02-07 16:02:14]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+421759 DEBUG [2015-02-07 16:02:14]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+421761 DEBUG [2015-02-07 16:02:14]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+422572 DEBUG [2015-02-07 16:02:14]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+422572 DEBUG [2015-02-07 16:02:14]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+422573 DEBUG [2015-02-07 16:02:14]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+422574 DEBUG [2015-02-07 16:02:14]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+422575 DEBUG [2015-02-07 16:02:14]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+422577 DEBUG [2015-02-07 16:02:14]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+423335 DEBUG [2015-02-07 16:02:15]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+423336 DEBUG [2015-02-07 16:02:15]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+423343 DEBUG [2015-02-07 16:02:15]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+423345 DEBUG [2015-02-07 16:02:15]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+423346 DEBUG [2015-02-07 16:02:15]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+423348 DEBUG [2015-02-07 16:02:15]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+424083 DEBUG [2015-02-07 16:02:16]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+424086 DEBUG [2015-02-07 16:02:16]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+424088 DEBUG [2015-02-07 16:02:16]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+424089 DEBUG [2015-02-07 16:02:16]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+424091 DEBUG [2015-02-07 16:02:16]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+424095 DEBUG [2015-02-07 16:02:16]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+424820 DEBUG [2015-02-07 16:02:17]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+424822 DEBUG [2015-02-07 16:02:17]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+424823 DEBUG [2015-02-07 16:02:17]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+424824 DEBUG [2015-02-07 16:02:17]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+424825 DEBUG [2015-02-07 16:02:17]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+424828 DEBUG [2015-02-07 16:02:17]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
+425696 DEBUG [2015-02-07 16:02:17]  "vcategory.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\vcategory.ftl didn't change.
+425705 DEBUG [2015-02-07 16:02:17]  "common/live_common_meta.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_meta.ftl didn't change.
+425711 DEBUG [2015-02-07 16:02:17]  "common/live_common_js.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\live_common_js.ftl didn't change.
+425712 DEBUG [2015-02-07 16:02:17]  "common/zfpage.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\zfpage.ftl didn't change.
+425714 DEBUG [2015-02-07 16:02:17]  "common/head.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\head.ftl didn't change.
+425717 DEBUG [2015-02-07 16:02:18]  "common/bottom.ftl"["zh_CN",UTF-8,parsed]  using cached since E:\Live03\live\live-web\src\main\webapp\WEB-INF\view\common\bottom.ftl didn't change.
