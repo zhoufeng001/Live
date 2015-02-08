@@ -35,7 +35,7 @@
 	                    	<a href="${ctx}/video/view/${(categoryRecommendVo.topVideoDetailVo.video.id)!""}.htm" target="_blank">${(categoryRecommendVo.topVideoDetailVo.video.videoname)!""}</a>
 	                    </span>
 	                    <span class="user_info"> 
-	                    	520人在线
+	                    	${(categoryRecommendVo.topVideoDetailVo.video.audienceCount)!""}人在线
 	                    </span>
 	                    <span class="praise_info">
 	                    	<img src="${static_server}/img/praise.jpg" /> 
@@ -60,7 +60,7 @@
 		                        <p>${(video.thirdPraise)!""}</p>
 		                    </span>
 		                    <span class="user_info">
-		                    	520人在线
+		                    	${(video.audienceCount)!""}人在线
 		                    </span>
 		                </div>
 		                <!--/ 一个视频 -->

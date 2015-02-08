@@ -131,7 +131,7 @@ body{
 	width:700px;
 	margin-left:10px;
 	float:left;
-	height:500px;
+	height:480px;
 }
 
 .player_and_chat .player{
@@ -162,7 +162,7 @@ body{
 
 .chat_control .emotion{
 	height:25px;
-	float:left;
+	float:right;
 }
 
 .chat_send{
@@ -183,7 +183,7 @@ body{
 .chatlist_ul{
 	list-style:none;
 	width:98%;
-	height:98%;
+	height:380px;
 	margin-left:5px;
 	margin-top:5px;
 	overflow-y:auto; 
@@ -206,4 +206,29 @@ body{
 .chatlist_ul li .username{
 	color:#bc755a; 
 	margin-left: 5px;
+}
+
+.chat_input_div{
+	margin-left:5px;
+	width: 98% ;
+	height: 70px;
+}
+
+.chat_input_text{
+	width: 100%; 
+	height:35px;
+	float: left ;
+}
+
+.chat_input_text .chat_input{
+	width: 80% ;
+	height: 25px;
+	float: left ;
+}
+
+.chat_control_div{
+	margin-top:10px;
+	width: 100% ;
+	height: 30px;
+	float: left; 
 }

@@ -24,10 +24,10 @@ import org.cometd.bayeux.server.ServerSession;
 import org.cometd.oort.Oort;
 import org.cometd.server.authorizer.GrantAuthorizer;
 import org.springframework.web.context.ServletContextAware;
-import org.springframework.web.util.HtmlUtils;
 
 import com.zf.live.client.vo.room.Audience;
 import com.zf.live.comet.CometConst.Channel;
+import com.zf.live.common.util.html.HtmlUtils;
 
 /**
  * 
@@ -101,7 +101,7 @@ public class PubChatListener implements ServletContextAware{
 			mutable.setData("消息不能为空！");
 			return ;
 		}
-		String msgText = HtmlUtils.htmlEscape(msg.toString(), "utf-8");
+		String msgText = HtmlUtils.html(msg.toString()); 
 		Map<String, Object> data = new HashMap<String, Object>(); 
 		data.put("time", String.format("%tR", System.currentTimeMillis())); 
 		data.put("msg", msgText);

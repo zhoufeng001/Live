@@ -16,7 +16,7 @@ import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchConditionV2;
 import com.zf.live.common.assertx.ZFAssert;
 import com.zf.live.common.util.cache.EhCacheUtil;
-import com.zf.live.dao.pojo.LocalVideo;
+import com.zf.live.dao.vo.video.LocalVideoVo;
 import com.zf.live.web.WebConst;
 import com.zf.live.web.WebConst.EhCacheNames;
 import com.zf.live.web.vo.video.CachedVideoDetailVo;
@@ -53,7 +53,7 @@ public class WebVideoService {
 		}
 		return cateRecommendVo ;
 	}
-	
+
 	/**
 	 * 重新缓存指定分类的指定视频
 	 * @param category
@@ -68,9 +68,9 @@ public class WebVideoService {
 		condition.setPage(1);
 		condition.setPageSize(9);
 		condition.setOrderBy(" view_count desc , third_view_count desc "); 
-		PagedVo<LocalVideo> videoPageVo = localVideoServiceV2.searchVideos(condition ,false);
+		PagedVo<LocalVideoVo> videoPageVo = localVideoServiceV2.searchVideos(condition ,false);
 		if(videoPageVo != null && videoPageVo.getData() != null && videoPageVo.getCount() > 0){
-			List<LocalVideo> recommendVideos = videoPageVo.getData();
+			List<LocalVideoVo> recommendVideos = videoPageVo.getData();
 			LocalVideoDetailVo topVideoDetailVo = selectVideoDetailVoWithCache(recommendVideos.get(0).getId(), false);
 			cateRecommendVo.setTopVideoDetailVo(topVideoDetailVo);
 			recommendVideos.remove(0);
@@ -87,8 +87,7 @@ public class WebVideoService {
 	 * @return
 	 */
 	public CachedVideoDetailVo selectVideoDetailVoWithCache(String videoId , boolean incrementViewCount){
-		CachedVideoDetailVo cachedVideoDetailVo = null ;
-		cachedVideoDetailVo = ehCacheUtil.get(EhCacheNames.videoInfoCache, videoId, CachedVideoDetailVo.class);
+		CachedVideoDetailVo cachedVideoDetailVo = ehCacheUtil.get(EhCacheNames.videoInfoCache, videoId, CachedVideoDetailVo.class);
 		if(cachedVideoDetailVo != null){
 			log.info("从缓存中读取到视频[{}]" , videoId); 
 			if(incrementViewCount){
@@ -120,13 +119,46 @@ public class WebVideoService {
 			return null ;
 		}
 	}
-	
+
+	/**
+	 * 给视频点赞
+	 * @param videoId
+	 * @return 返回点赞后该视频赞数量
+	 */
+	public long doPraiseVideo(String videoId){
+		CachedVideoDetailVo cachedVideoDetailVo = ehCacheUtil.get(EhCacheNames.videoInfoCache, videoId, CachedVideoDetailVo.class);
+		if(cachedVideoDetailVo == null){
+			ServiceResult<LocalVideoDetailVo> result = localVideoServiceV2.selectVideoWithDetailInfo(videoId,false);
+			if(result == null){
+				log.warn("没查询到视频{}",videoId);
+				return 0 ;
+			}
+			if(result.isSuccess()){
+				LocalVideoDetailVo videoDetailVo = result.getData();
+				if(videoDetailVo == null){
+					return 0 ;
+				}
+				cachedVideoDetailVo = new CachedVideoDetailVo();
+				ehCacheUtil.put(EhCacheNames.videoInfoCache , videoId, cachedVideoDetailVo); 
+			}else{
+				log.error(result.getErrMssage());
+				return 0 ;
+			}
+		}
+		Long praiseCount = cachedVideoDetailVo.getVideo().getPraise(); 
+		praiseCount++ ;
+		cachedVideoDetailVo.setIncrementPraiseCount(cachedVideoDetailVo.getIncrementPraiseCount() + 1); 
+		cachedVideoDetailVo.getVideo().setPraise(praiseCount); 
+		return praiseCount ;
+
+	}
+
 	/**
 	 * 根据条件分页搜索视频 
 	 * 对各分类第一页进行了缓存
 	 */
 	@SuppressWarnings("unchecked")
-	public PagedVo<LocalVideo> searchVideos(LocalVideoSearchConditionV2 condition){
+	public PagedVo<LocalVideoVo> searchVideos(LocalVideoSearchConditionV2 condition){
 		if(condition == null){
 			return null ;
 		}
@@ -137,7 +169,7 @@ public class WebVideoService {
 			cacheKey.append("-").append(condition.getPage().intValue());
 			cacheKey.append("-").append(condition.getOrderBy());
 			String cacheKeyStr = cacheKey.toString().replace(" ", ".");  
-			PagedVo<LocalVideo> pageVo = new PagedVo<LocalVideo>();
+			PagedVo<LocalVideoVo> pageVo = new PagedVo<LocalVideoVo>();
 			pageVo = ehCacheUtil.get(WebConst.EhCacheNames.videoPageCache, cacheKeyStr, pageVo.getClass());
 			if(pageVo == null){
 				log.info("从数据库中查询分类第一页缓存[{}]",condition.getCategory()); 
@@ -151,5 +183,5 @@ public class WebVideoService {
 			return localVideoServiceV2.searchVideos(condition,true); 
 		}
 	}
-	
+
 }

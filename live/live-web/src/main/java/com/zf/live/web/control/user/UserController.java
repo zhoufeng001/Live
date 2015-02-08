@@ -20,11 +20,11 @@ import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
 import com.zf.live.dao.pojo.Lvuser;
+import com.zf.live.web.WebConst;
 import com.zf.live.web.app.RequestContext;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.service.user.WebUserService;
 import com.zf.live.web.app.util.WebTokenUtil;
-import com.zf.live.web.app.util.WebUtil;
 
 /**
  * 
@@ -37,8 +37,6 @@ public class UserController {
 
 	static final Logger log = org.slf4j.LoggerFactory.getLogger(UserController.class);
 	
-	private static final String REDIRECT_KEY = "redirect";
-
 	@Resource(name = "lvuserService")
 	private LvuserService lvuserService ; 
 
@@ -60,10 +58,6 @@ public class UserController {
 	 */
 	@RequestMapping("/loginView")
 	public String loginView(ServletRequest request, ServletResponse response , ModelMap modelMap) {
-		String redirect = request.getParameter(REDIRECT_KEY);
-		if(StringUtils.isNotBlank(redirect)){
-			modelMap.addAttribute(REDIRECT_KEY, redirect); 
-		}
 		String errMessage = RequestContext.getErrTipMessage() ;
 		log.error(errMessage); 
 		return "user/loginView";
@@ -87,10 +81,10 @@ public class UserController {
 				String token = result.getData() ;
 				Lvuser user = lvuserService.getUserByToken(token);
 				webTokenUtil.createTokenCookie(request, response, token , user); 
-				String redirect = request.getParameter(REDIRECT_KEY);
-				if(StringUtils.isNotBlank(redirect)){
-					redirect = WebUtil.urlEncode(redirect); 
-					return LiveWebUtil.redirectPath(redirect); 
+				
+				Object refresh = request.getSession().getAttribute(WebConst.sessionRefreshKey); 
+				if(refresh != null){
+					return LiveWebUtil.redirectPath(refresh.toString()); 
 				}
 				return LiveWebUtil.redirectIndexPath() ;
 			}else{
@@ -153,6 +147,11 @@ public class UserController {
 		}
 		lvuserService.logoutByToken(token); 
 		webTokenUtil.deleteTokenCookiee(request, response); 
+		
+		Object refresh = request.getSession().getAttribute(WebConst.sessionRefreshKey); 
+		if(refresh != null){
+			return LiveWebUtil.redirectPath(refresh.toString()); 
+		}
 		return LiveWebUtil.redirectIndexPath() ;
 	}
 

@@ -6,6 +6,7 @@ import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchConditionV2;
 import com.zf.live.dao.pojo.LocalVideo;
 import com.zf.live.dao.pojo.VideoDetailWithBLOBs;
+import com.zf.live.dao.vo.video.LocalVideoVo;
 
 /**
  * 本地视频相关操作
@@ -27,7 +28,7 @@ public interface LocalVideoServiceV2 {
 	 * @param category  视频所属分类，可以为空
 	 * @return
 	 */
-	LocalVideo selectVideoById(String localVideoId);
+	LocalVideoVo selectVideoById(String localVideoId);
 	
 	/**
 	 * 更新视频信息
@@ -69,7 +70,7 @@ public interface LocalVideoServiceV2 {
 	 * @param category 分类，可以为空
 	 * @return
 	 */
-	LocalVideo selectVideo(String category , Byte videofrom,String fromId) ;
+	LocalVideoVo selectVideo(String category , Byte videofrom,String fromId) ;
 	
 	/**
 	 * 判断第三方视频详情信息是否存在于本地
@@ -102,6 +103,6 @@ public interface LocalVideoServiceV2 {
 	 * @param searchTotalCount 是否查询总记录数量
 	 * @return
 	 */
-	PagedVo<LocalVideo> searchVideos(LocalVideoSearchConditionV2 condition, boolean searchTotalCount);
+	PagedVo<LocalVideoVo> searchVideos(LocalVideoSearchConditionV2 condition, boolean searchTotalCount);
 	
 }

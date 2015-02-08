@@ -64,10 +64,10 @@ $.messager = (function() {
   */
   var msghtml
     = ''
-    + '<div class="dialog modal fade msg-popup">'
+    + '<div class="dialog modal fade msg-popup" >'
     + '<div class="modal-dialog modal-sm">'
     +   '<div class="modal-content">'
-    +     '<div class="modal-body text-center"></div>'
+    +     '<div class="modal-body text-center" style="z-index:100"></div>'   
     +   '</div>'
     + '</div>'
     + '</div>'

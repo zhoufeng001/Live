@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.alibaba.fastjson.util.IOUtils;
 import com.qq.connect.QQConnectException;
 import com.qq.connect.api.OpenID;
 import com.qq.connect.api.qzone.UserInfo;
@@ -28,6 +27,7 @@ import com.zf.live.common.Const;
 import com.zf.live.common.util.HttpClientUtils;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.Thirduser;
+import com.zf.live.web.WebConst;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.UploadUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
@@ -81,7 +81,7 @@ public class QQController {
 	 * @return
 	 */
 	@RequestMapping("/callback")
-	public String callback(ServletRequest request, ServletResponse response , ModelMap modelMap) {
+	public String callback(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap) {
 
 		try {
 			AccessToken accessTokenObj = (new Oauth()).getAccessTokenByRequest(request);
@@ -153,6 +153,12 @@ public class QQController {
 							log.warn("QQ用户{}登录失败", openID);
 						}
 					}
+					
+					Object refresh = request.getSession().getAttribute(WebConst.sessionRefreshKey); 
+					if(refresh != null){
+						return LiveWebUtil.redirectPath(refresh.toString()); 
+					}
+					
 					return LiveWebUtil.redirectIndexPath() ;
 				}else{
 					log.warn("获取用户qq信息失败！");

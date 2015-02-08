@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.zf.live.dao.pojo.LocalVideo;
 import com.zf.live.dao.pojo.vo.video.LocalVideoExampleVo;
 import com.zf.live.dao.vo.video.LocalVideoVo;
 
@@ -28,7 +27,7 @@ public interface LocalVideoMapperExt extends LocalVideoMapper {
 	 * @param table
 	 * @return
 	 */
-	public LocalVideo selectFromSpecificTableById(@Param("id") String id , @Param("table") String table);
+	public LocalVideoVo selectFromSpecificTableById(@Param("id") String id , @Param("table") String table);
 
 	/**
 	 * 根据id从特定的表修改localVideo信息
@@ -44,7 +43,7 @@ public interface LocalVideoMapperExt extends LocalVideoMapper {
 	 * @param table
 	 * @return
 	 */
-	public List<LocalVideo> selectByExampleFromSpecificTable(LocalVideoExampleVo example) ;
+	public List<LocalVideoVo> selectByExampleFromSpecificTable(LocalVideoExampleVo example) ;
 	
 	/**
 	 * 从特定的表查询视频数量

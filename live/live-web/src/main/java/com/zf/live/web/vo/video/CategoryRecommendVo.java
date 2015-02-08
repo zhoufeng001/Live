@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
-import com.zf.live.dao.pojo.LocalVideo;
+import com.zf.live.dao.vo.video.LocalVideoVo;
 
 /**
  * 分类推荐视频
@@ -20,7 +20,7 @@ public class CategoryRecommendVo implements Serializable{
 
 	private LocalVideoDetailVo topVideoDetailVo ;
 	
-	private List<LocalVideo> recommendVideoList ;
+	private List<LocalVideoVo> recommendVideoList ;
 
 	public LocalVideoDetailVo getTopVideoDetailVo() {
 		return topVideoDetailVo;
@@ -30,11 +30,11 @@ public class CategoryRecommendVo implements Serializable{
 		this.topVideoDetailVo = topVideoDetailVo;
 	}
 
-	public List<LocalVideo> getRecommendVideoList() {
+	public List<LocalVideoVo> getRecommendVideoList() {
 		return recommendVideoList;
 	}
 
-	public void setRecommendVideoList(List<LocalVideo> recommendVideoList) {
+	public void setRecommendVideoList(List<LocalVideoVo> recommendVideoList) {
 		this.recommendVideoList = recommendVideoList;
 	}
 

@@ -11,10 +11,13 @@ var sendBut;
 	var myself ;
 
 	function ChatMsgBox() {
+		
+		that = this ;
 
 		/* 添加系统信息 */
 		this.appendSystemMsg = function(msg) {
 			msgUL.append('<li><span>系统消息</span>：' + msg + '</li>');
+			that.setScollBottom();
 		}
 
 		/* 添加聊天消息 */
@@ -22,6 +25,7 @@ var sendBut;
 			var msgText = replace_em(msg);
 			msgUL.append('<li><span>' + time + '</span><span class="username">'
 					+ fromUserNick + '</span>：' + msgText + '</li>');
+			that.setScollBottom();
 		}
 
 		/**
@@ -43,6 +47,13 @@ var sendBut;
 		 */
 		this.disableSendButton = function() {
 			sendBut.attr('disabled', true);
+		}
+		
+		/**
+		 * 设置聊天记录滚动条到底部
+		 */
+		this.setScollBottom = function(){  
+			msgUL.prop("scrollTop" , msgUL.prop("scrollHeight"));  
 		}
 
 	}
@@ -179,16 +190,16 @@ var sendBut;
 			});
 
 	/**
-	 * 发送消息
+	 * 发送公聊消息
 	 */
 	var sendMsg = function() {
 		var msg = msgInput.val();
 		if (userToken == null) {
-			$.messager.popup("请先登录");
+			showErrMsg("请先登录");
 			return;
-		}
+		} 
 		if (msg == null || "" == msg.trim()) {
-			$.messager.popup("请输入内容");
+			showErrMsg("请输入内容");
 			return;
 		}
 		chatMsgBox.disableSendButton();
@@ -199,11 +210,18 @@ var sendBut;
 			if (publishAck.successful) {
 				chatMsgBox.clearInput();
 				var time = new Date().format("hh:mm");
-				chatMsgBox.appendChatMsg(time, userNick, msg);
+				chatMsgBox.appendChatMsg(time, userNick, html2Escape(msg));
 			} else {
 				chatMsgBox.appendSystemMsg("消息发送失败！");
 			}
 		});
+	}
+	
+	/**
+	 * 发送弹幕
+	 */
+	var sendFlyScreenMsg = function(){
+		showInfoMsg("亲，弹幕功能赞未实现，敬请期待哦！"); 
 	}
 
 	/**
@@ -214,9 +232,12 @@ var sendBut;
 		msgUL = $("#chatlist_ul");
 		msgInput = $("#chat_textarea");
 		sendBut = $("#chat_send");
+		sendFlyScreenBut = $("#flyscreen_send");
 
-		// 发送按钮绑定时间
+		// 发送按钮绑定事件
 		sendBut.click(sendMsg);
+		// 发送弹幕按钮绑定事件 
+		sendFlyScreenBut.click(sendFlyScreenMsg);
 		// 输入框绑定回车时间
 		msgInput.bind('keypress', function(event) {
 			if (event.keyCode == "13") {

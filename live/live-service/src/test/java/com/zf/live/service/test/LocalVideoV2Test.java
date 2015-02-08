@@ -49,7 +49,7 @@ public class LocalVideoV2Test extends ServiceBaseTester{
 
 	@Test
 	public void testSearchWithDetail(){
-		ServiceResult<LocalVideoDetailVo> video = localVideoServiceV2.selectVideoWithDetailInfo("46e87b53ad0411e4ba363417ebbccb7e025", true) ;
+		ServiceResult<LocalVideoDetailVo> video = localVideoServiceV2.selectVideoWithDetailInfo("3e99523bacfe11e4ba363417ebbccb7e011", true) ;
 		System.out.println(video);
 	}
 	
@@ -57,11 +57,11 @@ public class LocalVideoV2Test extends ServiceBaseTester{
 	public void testSearchPage(){
 		LocalVideoSearchConditionV2 condition = new LocalVideoSearchConditionV2() ;
 		condition.setCategory("其他");
-		condition.setKeyword("品生一下"); 
 		condition.setPage(5);
 		condition.setPageSize(100);
-		condition.setOrderBy(" view_count desc, third_view_count desc "); 
-		PagedVo<LocalVideo> videoPage = localVideoServiceV2.searchVideos(condition, true) ;
+		condition.setOrderBy(" audience_count desc "); 
+//		condition.setOrderBy(" view_count desc, third_view_count desc "); 
+		PagedVo<LocalVideoVo> videoPage = localVideoServiceV2.searchVideos(condition, true) ;
 		System.out.println(videoPage); 
 	}
 	

@@ -6,9 +6,11 @@
 <#include "./common/live_common_js.ftl" >	
 <script type="text/jscript" src="${static_server}/js/jquery-migrate-1.2.1.js"></script>  
 <#include "./common/bootstrap.ftl" >
+<#include "./common/messenger.ftl" >  
 <link href="${static_server}/css/videoview.css" rel="stylesheet" />
+<link href="${static_server}/css/common/button.css" rel="stylesheet" />
 <link href="${static_server}/js/qqface/face.css" rel="stylesheet" />
-<script type="text/jscript" src="${static_server}/js/jquery.cookie.js"></script>
+<script type="text/jscript" src="${static_server}/js/jquery.cookie.js"></script> 
 <script type="text/javascript">
 
 	var cometServerUrl = "${cometServerUrl!""}" ;
@@ -49,8 +51,10 @@
             <span class="video_name"> ${(videoDetailVo.video.videoname)!""}</span>
             <img src="${static_server}/img/play_icon.png" class="play_icon" />
             <span class="play_count">${(videoDetailVo.video.viewCount)!""}</span>
-            <img src="${static_server}/img/praise.jpg" class="praise_icon"/>
-            <span class="praise_count"> ${(videoDetailVo.video.thirdPraise)!""}</span>
+            <a href="javascript:doPraise();">
+            <img src="${static_server}/img/praise_icon.png" class="praise_icon"/> 
+			</a> 
+            <span class="praise_count" id="praise_count">${(videoDetailVo.video.praise) + (videoDetailVo.video.thirdPraise)}</span> 
         </div>
          <!--/视频标题部分 -->
         
@@ -82,14 +86,7 @@
             <!-- 播放器和聊天窗 -->
             <div class="player_and_chat">
             	<div class="player">
-            	    <div  id="youkuplayer" style="width:700px;height:470px"></div>
-                </div>
-                <div class="chat_input">
-                	<textarea cols="80" rows="5" class="chat_textarea" id="chat_textarea"></textarea>
-                     <div class="chat_control">
-                    	 <span class="emotion">表情</span>
-                		<input type="button" value="发送" class="chat_send" id="chat_send" />
-               		 </div>
+            	    <div  id="youkuplayer" style="width:700px;height:470px;"></div>
                 </div>
             </div>
             <!--/播放器和聊天窗 -->
@@ -98,6 +95,16 @@
             <div class="chat_recored">
             	<ul class="chatlist_ul" id="chatlist_ul" >
                 </ul>
+                <div class="chat_input_div">
+                	<div class="chat_input_text">
+                		<input type="text"  id="chat_textarea" class="chat_input"  />
+                		<span class="emotion">表情</span>
+                	</div>
+                	<div class="chat_control_div">
+                		<span class="button green bubble" id="chat_send" >聊天</span>
+                		<span class="button green bubble" id="flyscreen_send" >弹幕</span>
+                	</div>
+                </div>
             </div>
             <!--/聊天记录  --> 	
         </div>  
@@ -117,6 +124,7 @@
 		show_related: false,
 		autoplay: false
 	});
+	
 </script>
 
 <script type="text/javascript">
@@ -133,8 +141,8 @@
 		var _targetTop = $('#video_main_content').offset().top;//获取位置
 		jQuery("html,body").animate({scrollTop:_targetTop},300);//跳转
 	}
-
-</script>
+      
+</script>     
 
 </body>
 </html>

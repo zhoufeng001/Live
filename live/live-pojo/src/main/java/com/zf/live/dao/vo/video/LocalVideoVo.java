@@ -15,6 +15,12 @@ public class LocalVideoVo extends LocalVideo {
 	private static final long serialVersionUID = 1147916622940117715L;
 	
 	private String table ;
+	
+	private Integer audienceCount ;
+	
+	private Integer touristCount ;
+	
+	private Integer userCount ;
 
 	public String getTable() {
 		return table;
@@ -22,6 +28,30 @@ public class LocalVideoVo extends LocalVideo {
 
 	public void setTable(String table) {
 		this.table = table;
+	}
+
+	public Integer getAudienceCount() {
+		return audienceCount == null ? 0 : audienceCount;
+	}
+
+	public void setAudienceCount(Integer audienceCount) {
+		this.audienceCount = audienceCount;
+	}
+
+	public Integer getTouristCount() {
+		return touristCount == null ? 0 : touristCount;
+	}
+
+	public void setTouristCount(Integer touristCount) {
+		this.touristCount = touristCount;
+	}
+
+	public Integer getUserCount() {
+		return userCount == null ? 0 : userCount;
+	}
+
+	public void setUserCount(Integer userCount) {
+		this.userCount = userCount;
 	}
 	
 }

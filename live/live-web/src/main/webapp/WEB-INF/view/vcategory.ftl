@@ -45,11 +45,11 @@ var zfpager = $.zfpager ;
 	                    	<a href="${ctx}/video/view/${(categoryRecommendVo.topVideoDetailVo.video.id)!""}.htm" target="_blank">${(categoryRecommendVo.topVideoDetailVo.video.videoname)!""}</a>
 	                    </span>
 	                    <span class="user_info"> 
-	                    	520人在线
+	                    	${(categoryRecommendVo.topVideoDetailVo.video.audienceCount)!""}人在线 
 	                    </span>
 	                    <span class="praise_info">
-	                    	<img src="${static_server}/img/praise.jpg" /> 
-	             			<p class="praise_count">${(categoryRecommendVo.topVideoDetailVo.video.thirdPraise)!""}</p>
+	                    	<img src="${static_server}/img/praise.jpg" />    
+	             			<p class="praise_count">${(categoryRecommendVo.topVideoDetailVo.video.praise) + (categoryRecommendVo.topVideoDetailVo.video.thirdPraise) }</p>  
 	                    </span>  
 	                </div>   
 	            	<div class="video_img">    
@@ -64,17 +64,21 @@ var zfpager = $.zfpager ;
 						<!-- 一个视频 -->
 		            	<div class="recommend_video_box">  
 		                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">${(video.videoname)!""}</a></span>
-		                    <a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank"><img src="${(video.thumbnail)!""}"  /></a>
+		                    <span class="video_thumbnail" >
+			                    <a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank">
+			                   	 <img src="${(video.thumbnail)!""}"  />
+			                    </a>
+		                    </span>
 		                    <span class="praise_info">
 		                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
-		                        <p>${(video.thirdPraise)!""}</p>
-		                    </span>
-		                    <span class="user_info">
-		                    	520人在线
-		                    </span>
-		                </div>
-		                <!--/ 一个视频 -->
-					</#list>
+		                        <p>${(video.praise) + (video.thirdPraise)}</p> 
+		                    </span> 
+		                    <span class="user_info"> 
+		                    	${(video.audienceCount)!""}人在线
+		                    </span>   
+		                </div>   
+		                <!--/ 一个视频 -->   
+					</#list> 
 				</#if>
             </div>
             
@@ -85,7 +89,7 @@ var zfpager = $.zfpager ;
         <div class="sort_box">
         	<p class="title">排序：</p>   
             <p class="sort_type"><a <#if orderby == 1 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/1.htm"  >在线人数↓</a></p>
-            <p class="sort_type"><a <#if orderby == 2 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/2.htm"  >赞数量↓</a></p>
+            <p class="sort_type"><a <#if orderby == 2 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/2.htm"  >热门↓</a></p>
             <p class="sort_type"><a <#if orderby == 3 >class="sort_current"</#if> href="${ctx}/video/category/${category!""}/1/3.htm"  >更新时间↓</a></p>
         </div>  
   		<hr />
@@ -97,13 +101,17 @@ var zfpager = $.zfpager ;
 				<!-- 一个视频 -->
 	            <div class="list_video_box">
 	                <span class="video_name"><a href="${ctx}/video/view/${video.id}.htm" target="_blank" title="${(video.videoname)!""}">${(video.videoname)!""}</a></span>
-	                <a href="${ctx}/video/view/${video.id}.htm" target="_blank"><img src="${(video.thumbnail)!""}"  /></a>
+	                   <span class="video_thumbnail" >
+	               		 	<a href="${ctx}/video/view/${video.id}.htm" target="_blank" >
+						  	  <img src="${(video.thumbnail)!""}" />
+							</a>
+	                   </span>
                		 <span class="praise_info">
                     <img src="${static_server}/img/praise.jpg" class="praise_icon" />
-                    <p>${(video.thirdPraise)!""}</p> 
+                    <p>${(video.praise) + (video.thirdPraise)}</p> 
                 	</span>
                 <span class="user_info">
-                    520人在线
+                    ${(video.audienceCount)!""}人在线
                 </span>  
 	            </div>
 	            <!--/ 一个视频 -->

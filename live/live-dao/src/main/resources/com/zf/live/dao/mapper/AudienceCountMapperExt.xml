@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zf.live.dao.mapper.AudienceCountMapperExt" >
+  <!--
+  用于扩展com.zf.live.dao.mapper.AudienceCountMapper接口
+可通过com.zf.live.dao.mapper.AudienceCountMapper.BaseResultMap 
+和com.zf.live.dao.mapper.AudienceCountMapper.Base_Column_List对其进行引用
+by is_zhoufeng@163.com 2015-02-08 18:55:47.
+  -->
+  
+  <update id="incrementUserCount">
+ 		update `audience_count` 
+ 		set 
+ 		audience_count = (audience_count + ${count}) ,
+ 		user_count = (user_count + ${count})
+ 		where vid =  #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="incrementTouristCount">
+ 		update `audience_count` 
+ 		set 
+ 		audience_count = (audience_count + ${count}) ,
+ 		tourist_count = (tourist_count + ${count})
+ 		where vid =  #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectAudienceCount" resultType="java.lang.Integer">
+  	select audience_count from `audience_count`
+  	where vid =  #{id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectUserCount" resultType="java.lang.Integer">
+  	select user_count from `audience_count`
+  	where vid =  #{id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectTouristCount" resultType="java.lang.Integer">
+  	select tourist_count from `audience_count`
+  	where vid =  #{id,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

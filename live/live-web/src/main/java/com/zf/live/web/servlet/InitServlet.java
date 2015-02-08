@@ -15,6 +15,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.zf.live.client.exception.LiveException;
 import com.zf.live.common.ZFSpringPropertyConfigure;
+import com.zf.live.web.WebConst.Config;
 
 public class InitServlet extends HttpServlet{
 	
@@ -45,6 +46,9 @@ public class InitServlet extends HttpServlet{
 		if(StringUtils.isBlank(fileServerPath)){
 			log.error("没找到app.fileserver.path属性");
 		}
+		Config.ctx = appContextPath ;
+		Config.staticServer = appStaticserverPath ;
+		Config.fileServer = fileServerPath ; 
 		getServletContext().setAttribute("ctx", appContextPath); 
 		getServletContext().setAttribute("static_server", appStaticserverPath); 
 		getServletContext().setAttribute("file_server", fileServerPath);

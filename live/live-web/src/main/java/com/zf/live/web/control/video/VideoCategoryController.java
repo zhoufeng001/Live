@@ -1,8 +1,11 @@
 package com.zf.live.web.control.video;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import javax.annotation.Resource;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +19,9 @@ import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.client.vo.paging.PagedVo;
 import com.zf.live.client.vo.video.local.LocalVideoSearchConditionV2;
 import com.zf.live.common.assertx.ZFAssert;
-import com.zf.live.dao.pojo.LocalVideo;
+import com.zf.live.dao.vo.video.LocalVideoVo;
+import com.zf.live.web.WebConst;
+import com.zf.live.web.WebConst.Config;
 import com.zf.live.web.app.service.video.WebVideoService;
 import com.zf.live.web.vo.video.CategoryRecommendVo;
 
@@ -69,7 +74,7 @@ public class VideoCategoryController {
 			@PathVariable("category") String category ,
 			@PathVariable("page") Integer page ,
 			@PathVariable("orderby") Integer orderby,
-			ServletRequest request, ServletResponse response , ModelMap modelMap) {
+			HttpServletRequest request, HttpServletResponse response , ModelMap modelMap) {
 
 		//分页查询video列表信息
 		{
@@ -85,14 +90,14 @@ public class VideoCategoryController {
 			condition.setPageSize(VIDEO_CATEGORY_PAGE_SIZE); 
 			if(orderby != null){
 				if(ORDER_BY_ONLINE_NUM.equals(orderby)){
-					//				condition.setOrderBy(" order by publishtime desc ");
+					condition.setOrderBy(" audience_count desc ");
 				}else if(ORDER_BY_PRAISE_NUM.equals(orderby)){
 					condition.setOrderBy(" praise desc ,third_praise desc ");
 				}else if(ORDER_BY_UPDATE_TIME.equals(orderby)){
 					condition.setOrderBy(" publishtime desc ");
 				}
 			}
-			PagedVo<LocalVideo> videoPageVo = webVideoService.searchVideos(condition);
+			PagedVo<LocalVideoVo> videoPageVo = webVideoService.searchVideos(condition);
 			modelMap.put("videoPageVo", videoPageVo) ;
 		}
 
@@ -102,6 +107,16 @@ public class VideoCategoryController {
 			CategoryRecommendVo categoryRecommendVo = webVideoService.selectCategoryRecommend(category) ;
 			modelMap.put("categoryRecommendVo", categoryRecommendVo);
 		}
+		
+		/**
+		 * 设置当前观看视频地址，用户登录成功后跳转地址
+		 */
+		try {
+			request.getSession().setAttribute(WebConst.sessionRefreshKey,
+					Config.ctx + "/video/category/" + URLEncoder.encode(category,"utf-8") + "/" + page + "/" + orderby + ".htm");
+		} catch (UnsupportedEncodingException e) {
+			log.error(e.getMessage() ,e); 
+		} 
 		
 		modelMap.addAttribute("category", category);
 		return "vcategory";

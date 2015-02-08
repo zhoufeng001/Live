@@ -2,8 +2,8 @@ package com.zf.live.client.vo.video.local;
 
 import java.io.Serializable;
 
-import com.zf.live.dao.pojo.LocalVideo;
 import com.zf.live.dao.pojo.VideoDetailWithBLOBs;
+import com.zf.live.dao.vo.video.LocalVideoVo;
 
 /**
  * 视频详细信息，包含 Video 与 VideDetailWithBLOBs
@@ -17,22 +17,22 @@ public class LocalVideoDetailVo implements Serializable{
 	 */
 	private static final long serialVersionUID = 2422386091578635021L;
 
-	private LocalVideo video ;
+	private LocalVideoVo video ;
 	
 	private VideoDetailWithBLOBs videoDetail ;
 
 	public LocalVideoDetailVo() {}
 
-	public LocalVideoDetailVo(LocalVideo video, VideoDetailWithBLOBs videoDetail) {
+	public LocalVideoDetailVo(LocalVideoVo video, VideoDetailWithBLOBs videoDetail) {
 		this.video = video;
 		this.videoDetail = videoDetail;
 	}
 
-	public LocalVideo getVideo() {
+	public LocalVideoVo getVideo() {
 		return video;
 	}
 
-	public void setVideo(LocalVideo video) {
+	public void setVideo(LocalVideoVo video) {
 		this.video = video;
 	}
 

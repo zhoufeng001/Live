@@ -51,9 +51,9 @@
 <!-- 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID() as id"  type="post" identity="true"/> -->
 <!-- 		</table> -->
 
-		<table schema="video" tableName="video">
+		<table schema="audience_count" tableName="audience_count">
 			<property name="useActualColumnNames" value="false" />
-			<property name="generateExt" value="true" />
+			<property name="generateExt" value="false" /> 
 		</table>
 		
 <!-- 		<table schema="video_detail" tableName="video_detail"> -->

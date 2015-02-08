@@ -1,6 +1,11 @@
 /* CSS Document */
 @CHARSET "UTF-8";
 
+a{
+	text-decoration: none;
+	color: purple;
+}
+
 img{
 	border: none;
 }
@@ -42,13 +47,15 @@ float:left;
 	height:252px;
 }
 
-.main_content .recommend_box .left_video_box .video_info .video_name{
+.main_content .recommend_box .left_video_box .video_info .video_name{  
 	font-weight:200;
 	float:left;
 	text-align:left;
 	height:28px;
 	line-height:28px;
+	
 }
+
 
 .main_content .recommend_box .left_video_box .video_info .praise_info{
 	float:right;
@@ -96,6 +103,13 @@ float:left;
 	float:left;
 	text-align:left;
 	font-size:12px;
+	
+	display:block;/*内联对象需加*/
+	width:130px;
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/ 
 }
 
 .recommend_list_box .recommend_video_box .video_name img{
@@ -178,13 +192,24 @@ float:left;
 	float:left;
 	text-align:left;
 	font-size:12px;
+	
+	display:block;/*内联对象需加*/
+	width:130px;
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/  
 }
 
 .main_content .video_list .list_video_box .video_name img{
 	width:128px;
 	height:96px;
 	float:left;
-	border: n
+	border: none;
+}
+
+.video_thumbnail{
+	width:128px;height:96px;float:left;
 }
 
 .main_content .video_list.list_video_box .praise_info{

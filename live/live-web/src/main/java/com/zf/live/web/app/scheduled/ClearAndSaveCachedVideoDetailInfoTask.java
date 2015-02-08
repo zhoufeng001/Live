@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.zf.live.client.video.local.LocalVideoService;
+import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.common.util.cache.EhCacheUtil;
-import com.zf.live.dao.pojo.Video;
+import com.zf.live.dao.pojo.LocalVideo;
 import com.zf.live.web.WebConst;
 import com.zf.live.web.WebConst.EhCacheNames;
 import com.zf.live.web.app.service.video.WebVideoService;
@@ -27,8 +27,8 @@ public class ClearAndSaveCachedVideoDetailInfoTask {
 	
 	static final Logger log = LoggerFactory.getLogger(ClearAndSaveCachedVideoDetailInfoTask.class);
 	
-	@Resource(name="localVideoService")
-	private LocalVideoService localVideoService ;
+	@Resource(name="localVideoServiceV2")
+	private LocalVideoServiceV2 localVideoServiceV2 ;
 	
 	@Autowired
 	private WebVideoService webVideoService ;
@@ -47,15 +47,15 @@ public class ClearAndSaveCachedVideoDetailInfoTask {
 				continue ;
 			}
 			
-			Video video = localVideoService.selectVideoById((String)videoId) ;
+			LocalVideo video = localVideoServiceV2.selectVideoById((String)videoId) ;
 			if(video == null){
 				continue ;
 			}
-			Video updateVideo = new Video();
+			LocalVideo updateVideo = new LocalVideo();
 			updateVideo.setId(video.getId());
 			updateVideo.setViewCount(video.getViewCount() + videoDetailInfo.getIncrementViewCount()); 
 			updateVideo.setPraise(video.getPraise() + videoDetailInfo.getIncrementPraiseCount());
-			boolean updateResult = localVideoService.updateVideoBySelective(updateVideo) ;
+			boolean updateResult = localVideoServiceV2.updateVideoBySelective(updateVideo) ;
 			if(updateResult){
 				log.info("更新缓存视频{}到数据库成功",videoId);
 			}else{

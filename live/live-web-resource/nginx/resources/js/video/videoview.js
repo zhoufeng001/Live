@@ -1,12 +1,12 @@
 var userCountI;
 var touriseCountI;
 var audienceListDiv;
-
+var praised = false ;
 $(function(){
 	 userCountI = $("#userCount");
-	 touriseCountI = $("#touriseCount");
+	 touriseCountI = $("#touriseCount");  
 	 audienceListDiv = $("#audience_list");
-});
+}); 
 
 /**
  * 观众列表操作
@@ -31,11 +31,11 @@ var AudienceList = function(){
 					var data = ajaxResult.data ;
 					that.fillByRoomInfo(data);
 				}else{
-					$.messager.popup(ajaxResult.msg);  
+					showErrMsg(ajaxResult.msg);  
 				}
 			},
 			error:function(resultData){
-				 $.messager.popup("获取观众列表失败！");  
+				showErrMsg("获取观众列表失败！");  
 			}
 	    });
 	}
@@ -45,8 +45,8 @@ var AudienceList = function(){
 	 */
 	this.fillByRoomInfo = function(roomInfo){
 		if(roomInfo){
-//			userCountI.val(roomInfo.userCount);
-//			touriseCountI.val(roomInfo.touristCount);
+//			userCountI.text(roomInfo.userCount);
+//			this.incrTouriseCount(roomInfo.touristCount);  
 			if(roomInfo.users){
 				for(var i = 0 ; i < roomInfo.users.length ; i++){
 					this.addUser(roomInfo.users[i]); 
@@ -65,6 +65,7 @@ var AudienceList = function(){
 			if(existAudience){  
 				return ;
 			}
+			audiencesMap.put(user.uuid,user); 
 			if(user.tourist){ 
 				this.incrTouriseCount(1);
 				console.log("添加游客" + user.uuid + " 游客人数+1");
@@ -89,7 +90,6 @@ var AudienceList = function(){
 				console.log("添加用户" + user.uuid + " 用户人数+1");
 				uuidUserIdMap.put(userId , user.uuid);
 			}
-			audiencesMap.put(user.uuid,user); 
 		}
 	}
 	
@@ -140,3 +140,32 @@ var AudienceList = function(){
 	}
 	
 }
+
+/**
+ * 点赞
+ */
+function doPraise(){
+	if (userToken == null) {
+		 showErrMsg("请先登录");
+		return;  
+	} 
+	if(praised){
+		showInfoMsg("亲，你已经点过赞了！"); 
+	}else{
+		var doPraiseUrl =  ctx + "/video/doPraise/" + videoId + ".htm" ;  
+		$.ajax({
+			url:doPraiseUrl,
+			success:function(data){
+				showInfoMsg("点赞成功！"); 
+				var praiseCountTag = $("#praise_count") ;
+				var currentPraiseCount = parseInt(praiseCountTag.text());
+				currentPraiseCount++;
+				praiseCountTag.hide(); 
+				praiseCountTag.text(currentPraiseCount);   
+				praiseCountTag.show("slow");  
+				praised = true ;
+			}
+		});
+	}
+}
+

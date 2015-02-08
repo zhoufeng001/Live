@@ -27,6 +27,7 @@ import com.zf.live.common.Const;
 import com.zf.live.common.util.HttpClientUtils;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.dao.pojo.Thirduser;
+import com.zf.live.web.WebConst;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.util.UploadUtil;
 import com.zf.live.web.app.util.WebTokenUtil;
@@ -81,7 +82,7 @@ public class SinaController {
 	 * @return
 	 */
 	@RequestMapping("/callback")
-	public String callback(ServletRequest request, ServletResponse response , ModelMap modelMap) {
+	public String callback(HttpServletRequest request, HttpServletResponse response , ModelMap modelMap) {
 		try {
 			Oauth oauth = new Oauth();
 			String code = request.getParameter("code") ;
@@ -159,6 +160,11 @@ public class SinaController {
 			
 		} catch (WeiboException e) {
 			log.error(e.getMessage()); 
+		}
+		
+		Object refresh = request.getSession().getAttribute(WebConst.sessionRefreshKey); 
+		if(refresh != null){
+			return LiveWebUtil.redirectPath(refresh.toString()); 
 		}
 		return LiveWebUtil.redirectIndexPath();
 	}

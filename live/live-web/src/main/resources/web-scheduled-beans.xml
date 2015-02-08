@@ -55,7 +55,7 @@
 		</property>
 		<!-- cron表达式 -->
 		<property name="cronExpression">
-			<value>0 0/10 * * * ?</value> <!-- 10分钟执行一次 -->
+			<value>0 0/1 * * * ?</value> <!-- 1分钟执行一次 -->
 		</property>
 	</bean>
 	

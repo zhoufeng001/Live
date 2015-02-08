@@ -195,43 +195,57 @@ String.prototype.trim=function() {
 
 function gotoLogin(){  
 	var url = ctx + "/user/loginView.htm" ;
-	var Body = $("body");
-	var redirect = Body.attr("redirect");
-	if(redirect){  
-		url += "?redirect=" + redirect;
-	}
-	location.href = url;
+//	var Body = $("body");
+//	var redirect = Body.attr("redirect");
+//	if(redirect){  
+//		url += "?redirect=" + redirect;
+//	}
+	location.href = url;  
 }
 
 function gotoQQLogin(){  
 	var url = ctx + "/qq/gotoLogin.htm" ;
-	var Body = $("body");
-	var redirect = Body.attr("redirect");
-	if(redirect){  
-		url += "?redirect=" + redirect;
-	}
+//	var Body = $("body");
+//	var redirect = Body.attr("redirect");
+//	if(redirect){  
+//		url += "?redirect=" + redirect;
+//	}
 	location.href = url;
 }
 
 function gotoSinaLogin(){  
 	var url = ctx + "/sina/gotoLogin.htm" ;
-	var Body = $("body"); 
-	var redirect = Body.attr("redirect");
-	if(redirect){  
-		url += "?redirect=" + redirect;
-	}
+//	var Body = $("body"); 
+//	var redirect = Body.attr("redirect");
+//	if(redirect){  
+//		url += "?redirect=" + redirect;
+//	}
 	location.href = url;
 }
 
 function gotoLogout(){  
 	var url = ctx + "/user/doLogout.htm" ;
-	var Body = $("body");
-	var redirect = Body.attr("redirect");
-	if(redirect){  
-		url += "?redirect=" + redirect;
-	}
+//	var Body = $("body");
+//	var redirect = Body.attr("redirect");
+//	if(redirect){  
+//		url += "?redirect=" + redirect;
+//	}
 	location.href = url;
 }
 
 
+function html2Escape(text) {  
+	 return text.replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});
+}
 
+
+/**
+ * 页面加载完后需要初始化的事情
+ */
+function init(){
+	$("#searchBut").click(function(){
+		alert("亲，搜索功能还未实现哦！");
+	});
+}
+
+$(init);

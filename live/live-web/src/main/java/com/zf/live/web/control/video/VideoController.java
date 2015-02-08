@@ -1,6 +1,10 @@
 package com.zf.live.web.control.video;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.zf.live.client.room.RoomService;
 import com.zf.live.client.vo.room.RoomInfo;
 import com.zf.live.client.vo.video.local.LocalVideoDetailVo;
+import com.zf.live.client.vo.web.AjaxResult;
 import com.zf.live.common.ZFSpringPropertyConfigure;
+import com.zf.live.web.WebConst;
+import com.zf.live.web.WebConst.Config;
 import com.zf.live.web.app.service.video.WebVideoService;
+import com.zf.live.web.app.util.WebUtil;
 
 /**
  * 视频播放
@@ -44,7 +52,8 @@ public class VideoController {
 	 * @return
 	 */
 	@RequestMapping("/view/{videoId}")
-	public String videoView(@PathVariable("videoId") String videoId, ModelMap modelMap){
+	public String videoView(@PathVariable("videoId") String videoId, HttpServletRequest request, HttpServletResponse response
+			,ModelMap modelMap){
 		LocalVideoDetailVo videoDetailVo =  webVideoService.selectVideoDetailVoWithCache(videoId, true) ;
 		modelMap.addAttribute("videoDetailVo", videoDetailVo) ;
 		if(videoDetailVo != null && videoDetailVo.getVideo() != null){
@@ -61,8 +70,25 @@ public class VideoController {
 		RoomInfo roomInfo = roomService.getRoomInfo(videoId) ;
 		modelMap.addAttribute("roomInfo", roomInfo);
 		
+		/**
+		 * 设置当前观看视频地址，用户登录成功后跳转地址
+		 */
+		request.getSession().setAttribute(WebConst.sessionRefreshKey, Config.ctx + "/video/view/" + videoId + ".htm"); 
+		
 		return "videoview";
 	}
 
+	/**
+	 * 点赞
+	 * @param videoId
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/doPraise/{videoId}")
+	public void doPraise(@PathVariable("videoId") String videoId, ServletRequest request, ServletResponse response){
+		long praiseCount = webVideoService.doPraiseVideo(videoId) ;
+		WebUtil.ajaxOutput(AjaxResult.newSuccessResult(praiseCount), response);  
+	}
 
 }

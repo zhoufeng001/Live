@@ -23,6 +23,11 @@ public interface WebConst {
 	 */
 	public static String userPhotoDir = "userphotos";
 	
+	/**
+	 * session中保存用户登录成功后要跳转到的地址
+	 */
+	public static String sessionRefreshKey = "refresh";
+	
 	public static interface EhCacheNames {
 		
 		/**
@@ -39,6 +44,28 @@ public interface WebConst {
 		 * 对视频分类的第一页进行缓存
 		 */
 		public String videoPageCache = "videoPageCache";
+	}
+	
+	/**
+	 * 配置信息
+	 * @author is_zhoufeng@163.com , QQ:243970446
+	 * 2015年2月8日 下午4:45:41
+	 */
+	public static class Config{
+		
+		/**
+		 * 项目地址
+		 */
+		public static String ctx  ;
+		/**
+		 * 文件服务器地址
+		 */
+		public static String fileServer  ;
+		/**
+		 * 静态资源服务器地址
+		 */
+		public static String staticServer  ;
+		
 	}
 	
 }

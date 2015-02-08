@@ -13,15 +13,16 @@ import org.springframework.stereotype.Component;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.Pipeline;
 
 import com.alibaba.fastjson.JSON;
 import com.zf.live.client.room.RoomService;
+import com.zf.live.client.room.audience.AudienceCountService;
 import com.zf.live.client.vo.room.Audience;
 import com.zf.live.client.vo.room.RoomInfo;
 import com.zf.live.client.vo.room.VideoSessionPair;
 import com.zf.live.common.assertx.ZFAssert;
 import com.zf.live.common.validate.Notnull;
+import com.zf.live.dao.pojo.AudienceCount;
 import com.zf.live.service.impl.room.filter.TouristFilter;
 
 /**
@@ -34,10 +35,6 @@ public class RoomServiceImpl implements RoomService{
 
 	static final Logger log = LoggerFactory.getLogger(RoomServiceImpl.class);
 
-	private static final String roomUserCountKey = "_r_uc_k_";
-
-	private static final String roomTouristCountKey = "_r_tc_k_";
-
 	private static final String roomUserMapKey = "_r_ul_k_";
 
 	@Autowired
@@ -45,6 +42,9 @@ public class RoomServiceImpl implements RoomService{
 
 	@Autowired
 	private TouristFilter touristFilter ;
+	
+	@Autowired
+	private AudienceCountService audienceCountService;
 
 	@Autowired
 	private AudienceComparator audienceComparator ;
@@ -56,11 +56,7 @@ public class RoomServiceImpl implements RoomService{
 		Jedis jedis = null ;
 		try{
 			jedis = jedisPool.getResource();
-			if(audience.isTourist()){
-				jedis.incr(roomTouristCountKey + videoId); 
-			}else{
-				jedis.incr(roomUserCountKey + videoId); 
-			}
+			audienceCountService.addAudience(audience); 
 			String audienceJson = JSON.toJSONString(audience);
 			String rumk = roomUserMapKey + videoId ;
 			if(jedis.hexists(rumk , audience.getSessionId())){ 
@@ -90,19 +86,10 @@ public class RoomServiceImpl implements RoomService{
 			Long roomCount = jedis.hlen(rumk);
 			//如果用户全部退出房间，则删除房间HMap
 			if(roomCount == null || roomCount.longValue() <= 0){
-				Pipeline pipeline = jedis.pipelined();
-				pipeline.del(rumk);
-				pipeline.del(roomTouristCountKey + videoId);
-				pipeline.del(roomUserCountKey + videoId);
-				pipeline.sync();
-			}else{
-				Audience audience = JSON.parseObject(audienceJson, Audience.class);
-				if(audience.isTourist()){
-					jedis.incrBy(roomTouristCountKey + videoId, -1);
-				}else{
-					jedis.incrBy(roomUserCountKey + videoId , -1); 
-				}				
+				jedis.del(rumk);
 			}
+			Audience audience = JSON.parseObject(audienceJson, Audience.class);
+			audienceCountService.removeAudience(audience); 
 			log.info("用户[{}]退出房间" , sessionId);
 		}finally{
 			jedisPool.returnResource(jedis);
@@ -121,34 +108,12 @@ public class RoomServiceImpl implements RoomService{
 
 	@Override
 	public Integer getRoomUserCount(@Notnull String videoId) {
-		Jedis jedis = null ;
-		try{
-			jedis = jedisPool.getResource();
-			String value = jedis.get(roomUserCountKey + videoId);
-			if(StringUtils.isBlank(value)){
-				return 0;
-			}else{
-				return Integer.valueOf(value);
-			}
-		}finally{
-			jedisPool.returnResource(jedis);
-		}
+		return audienceCountService.getUserCount(videoId); 
 	}
 
 	@Override
 	public Integer getRoomTouristCount(@Notnull String videoId) {
-		Jedis jedis = null ;
-		try{
-			jedis = jedisPool.getResource();
-			String value = jedis.get(roomTouristCountKey + videoId);
-			if(StringUtils.isBlank(value)){
-				return 0;
-			}else{
-				return Integer.valueOf(value);
-			}
-		}finally{
-			jedisPool.returnResource(jedis);
-		}
+		return audienceCountService.getTouristCount(videoId);
 	}
 
 	@Override
@@ -189,13 +154,18 @@ public class RoomServiceImpl implements RoomService{
 	@Override
 	public RoomInfo getRoomInfo(@Notnull String videoId) {
 		RoomInfo roomInfo = new RoomInfo(); 
-		Integer userCount = getRoomUserCount(videoId);
-		Integer touristCount = getRoomTouristCount(videoId);
+		Integer userCount = 0 ;
+		Integer touristCount = 0 ;
+		AudienceCount audienceCount =  audienceCountService.getByVideoId(videoId);
+		if(audienceCount != null){
+			userCount = audienceCount.getUserCount() ;
+			touristCount = audienceCount.getTouristCount() ;
+		}
 		roomInfo.setVideoId(videoId);
 		roomInfo.setUserCount(userCount == null ? 0 : userCount); 
 		roomInfo.setTouristCount(touristCount == null ? 0 : touristCount);
 		List<Audience> audiences = getRoomAudience(videoId) ;
-		touristFilter.filter(audiences); //移除游客
+//		touristFilter.filter(audiences); //移除游客
 		if(audiences != null && audiences.size() > 0){
 			Collections.sort(audiences, audienceComparator);
 		}

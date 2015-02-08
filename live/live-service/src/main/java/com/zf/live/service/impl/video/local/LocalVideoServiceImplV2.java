@@ -126,7 +126,7 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 
 
 	@Override
-	public LocalVideo selectVideoById(@Notnull String localVideoId) {
+	public LocalVideoVo selectVideoById(@Notnull String localVideoId) {
 		String table = getTableById(localVideoId) ; 
 		if(StringUtils.isBlank(table)){
 			log.warn("没找到videoId[{}]所对应的表");
@@ -191,12 +191,12 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 		.andFromidEqualTo(fromId);
 		query.setPage(new Page(0, 1));
 		query.setTable(table); 
-		List<LocalVideo> videos = localVideoMapper.selectByExampleFromSpecificTable(query) ;
+		List<LocalVideoVo> videos = localVideoMapper.selectByExampleFromSpecificTable(query) ;
 		return (videos != null && videos.size() > 0); 
 	}
 
 	@Override
-	public LocalVideo selectVideo(String category, Byte videofrom, String fromId) {
+	public LocalVideoVo selectVideo(String category, Byte videofrom, String fromId) {
 		String table = videoTableSectionMap.get(category);
 		if(StringUtils.isBlank(table)){
 			log.warn("没有存储该分类["+ category +"]视频对应的表！"); 
@@ -207,7 +207,7 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 		.andFromidEqualTo(fromId);
 		query.setPage(new Page(0, 1));
 		query.setTable(table); 
-		List<LocalVideo> videos = localVideoMapper.selectByExample(query); 
+		List<LocalVideoVo> videos = localVideoMapper.selectByExampleFromSpecificTable(query); 
 		if(videos != null && videos.size() > 0){
 			return videos.get(0);
 		}
@@ -231,7 +231,7 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 			@Notnull String localVideoId, boolean incrementViewCount) {
 		ServiceResult<LocalVideoDetailVo> result = new ServiceResult<LocalVideoDetailVo>() ;
 		LocalVideoDetailVo localVideoDetailVo = new LocalVideoDetailVo();
-		LocalVideo localVideo = selectVideoById(localVideoId) ;
+		LocalVideoVo localVideo = selectVideoById(localVideoId) ;
 		if(localVideo == null){
 			result.setErrMssage("该视频不存在");
 			return result;
@@ -265,9 +265,9 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 	}
 
 	@Override
-	public PagedVo<LocalVideo> searchVideos(
+	public PagedVo<LocalVideoVo> searchVideos(
 			@Notnull LocalVideoSearchConditionV2 condition , boolean searchTotalCount) {
-		PagedVo<LocalVideo> result = new PagedVo<LocalVideo>();
+		PagedVo<LocalVideoVo> result = new PagedVo<LocalVideoVo>();
 		LocalVideoExampleVo query = new LocalVideoExampleVo() ;
 		Criteria criteria = query.createCriteria() ;
 		String table = null ;
@@ -296,7 +296,7 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 		}
 		
 		int total = 0 ;
-		List<LocalVideo> videos = null ;
+		List<LocalVideoVo> videos = null ;
 		if(searchTotalCount){
 			LocalVideoExampleVo countQuery = new LocalVideoExampleVo() ;
 			countQuery.setTable(table);
