@@ -54,7 +54,11 @@
 						<!-- 一个视频 -->
 		            	<div class="recommend_video_box">  
 		                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">${(video.videoname)!""}</a></span>
-		                    <a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank"><img src="${(video.thumbnail)!""}"  /></a>
+		                	<span class="video_thumbnail" >
+			                    <a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank">
+			                   		 <img src="${(video.thumbnail)!""}"  />
+								</a>
+							</span>
 		                    <span class="praise_info">
 		                    	<img src="${static_server}/img/praise.jpg" class="praise_icon" />
 		                        <p>${(video.thirdPraise)!""}</p>
