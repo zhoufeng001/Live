@@ -88,16 +88,20 @@ public class VideoCategoryController {
 			}
 			condition.setPage(page); 
 			condition.setPageSize(VIDEO_CATEGORY_PAGE_SIZE); 
+			PagedVo<LocalVideoVo> videoPageVo = null ;
 			if(orderby != null){
 				if(ORDER_BY_ONLINE_NUM.equals(orderby)){
-					condition.setOrderBy(" audience_count desc ");
+					videoPageVo = localVideoServiceV2.searchVideosOrderByAudienceCount(condition) ;
 				}else if(ORDER_BY_PRAISE_NUM.equals(orderby)){
 					condition.setOrderBy(" praise desc ,third_praise desc ");
+					videoPageVo = webVideoService.searchVideos(condition);
 				}else if(ORDER_BY_UPDATE_TIME.equals(orderby)){
 					condition.setOrderBy(" publishtime desc ");
+					videoPageVo = webVideoService.searchVideos(condition);
 				}
 			}
-			PagedVo<LocalVideoVo> videoPageVo = webVideoService.searchVideos(condition);
+			
+			modelMap.put("pageIsNull", videoPageVo == null || videoPageVo.getCount() <= 0) ; 
 			modelMap.put("videoPageVo", videoPageVo) ;
 		}
 

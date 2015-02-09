@@ -18,7 +18,7 @@ public interface ServiceConst {
 	/**
 	 * 分类“其他”包含的分类
 	 */ 
-	public List<String> CATEGORY_OTHER_INCLUED = Arrays.asList("教育","纪录片","旅游","亲子","广告","创意视频","拍客");
+	public List<String> CATEGORY_OTHER_INCLUED = Arrays.asList("教育","纪录片","旅游","亲子","广告","创意视频","拍客" ,"其他");
 	
 	
 }

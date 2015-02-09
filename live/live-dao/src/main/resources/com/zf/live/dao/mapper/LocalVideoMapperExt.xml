@@ -183,34 +183,58 @@ by is_zhoufeng@163.com 2015-02-05 22:36:26.
   
   <select id="selectByExampleFromSpecificTable" resultMap="ResultMapWithAudienceCountInfo" 
   		parameterType="com.zf.live.dao.pojo.vo.video.LocalVideoExampleVo" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List" />
+  	select 
+  	 <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List" />
     ,
     <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Blob_Column_List" />
     ,
     <include refid="AUDIENCE_COUNT_COLOUM" />
-    from ${table} v
-    left join audience_count ac on v.id = ac.vid
-    <if test="_parameter != null" >
-      <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-    <if test="page != null" >
-      limit #{page.begin} , #{page.length}
-    </if>
+  	from (
+	    select
+	    <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List" />
+	    ,
+	    <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Blob_Column_List" />
+	    from ${table} 
+	    <if test="_parameter != null" >
+	      <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Example_Where_Clause" />
+	    </if>
+	    <if test="orderByClause != null" >
+	      order by ${orderByClause}
+	    </if>
+	    <if test="page != null" >
+	      limit #{page.begin} , #{page.length}
+	    </if>
+     ) v left join audience_count ac on v.id = ac.vid
   </select>
   
-   <select id="countByExample" parameterType="com.zf.live.dao.pojo.vo.video.LocalVideoExampleVo" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.zf.live.dao.pojo.vo.video.LocalVideoExampleVo" resultType="java.lang.Integer" >
 	   select count(*) from ${table}
 	   <if test="_parameter != null" >
 	     <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Example_Where_Clause" />
 	   </if>
-   </select>
+  </select>
+  
+   <select id="selectByCategoryOrderByAudienceCount" resultMap="ResultMapWithAudienceCountInfo" >
+  	select 
+  	 <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Base_Column_List" />
+    ,
+    <include refid="com.zf.live.dao.mapper.LocalVideoMapper.Blob_Column_List" />
+    ,
+    <include refid="AUDIENCE_COUNT_COLOUM" />
+  	from (
+	    select
+	    <include refid="AUDIENCE_COUNT_COLOUM" />,vid
+	    from audience_count
+	    where video_category = #{category}
+	    order by audience_count desc
+	    limit #{begin} , #{length}
+     ) ac left join ${table} v on ac.vid = v.id
+  </select>
+  
+  <select id="countByCategoryFromAudienceCounte" resultType="java.lang.Integer" >
+	   select count(*) from audience_count
+	   where video_category = #{category} 
+  </select>
   
   <select id="selectFromSpecificTableById" resultMap="ResultMapWithAudienceCountInfo">
   	 select 

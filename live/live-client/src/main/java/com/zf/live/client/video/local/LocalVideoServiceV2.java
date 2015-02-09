@@ -98,11 +98,18 @@ public interface LocalVideoServiceV2 {
 	ServiceResult<LocalVideoDetailVo> selectVideoWithDetailInfo(String videoId, boolean incrementViewCount);
 	
 	/**
-	 * 根据条件搜索本地视频列表
+	 * 根据条件搜索本地视频列表（不能根据在线人数排序）
 	 * @param condition
 	 * @param searchTotalCount 是否查询总记录数量
 	 * @return
 	 */
 	PagedVo<LocalVideoVo> searchVideos(LocalVideoSearchConditionV2 condition, boolean searchTotalCount);
+	
+	/**
+	 * 根据条件搜索本地视频列表（根据在线人数排序）
+	 * @param condition
+	 * @return
+	 */
+	PagedVo<LocalVideoVo> searchVideosOrderByAudienceCount(LocalVideoSearchConditionV2 condition); 
 	
 }

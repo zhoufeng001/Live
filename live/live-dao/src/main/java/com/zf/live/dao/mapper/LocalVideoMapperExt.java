@@ -38,7 +38,7 @@ public interface LocalVideoMapperExt extends LocalVideoMapper {
 	public int updateByPrimaryKeySelectiveToSpecificTable(LocalVideoVo video) ;
 	
 	/**
-	 * 从特定的表去搜索视频列表
+	 * 从特定的表去搜索视频列表（不能根据在线人数排序）
 	 * @param example
 	 * @param table
 	 * @return
@@ -51,5 +51,20 @@ public interface LocalVideoMapperExt extends LocalVideoMapper {
 	 * @return
 	 */
 	public Integer countByExampleFromSpecificTable(LocalVideoExampleVo example);
+	
+	/**
+	 * 根据分类查询视频列表（根据在线人数排序）
+	 * @return
+	 */
+	public List<LocalVideoVo> selectByCategoryOrderByAudienceCount(@Param("table") String table ,
+			@Param("category")String category , 
+			@Param("begin")int begin , @Param("length")int length) ;
+	
+	/**
+	 * 根据分类查询该分类存在观众的视频总数量
+	 * @return
+	 */
+	public Integer countByCategoryFromAudienceCounte(@Param("category")String category ) ;
+
 	
 }

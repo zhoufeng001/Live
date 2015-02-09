@@ -12,6 +12,7 @@ import com.zf.live.common.validate.Notnull;
 import com.zf.live.dao.mapper.AudienceCountMapperExt;
 import com.zf.live.dao.pojo.AudienceCount;
 import com.zf.live.dao.pojo.LocalVideo;
+import com.zf.live.service.impl.ServiceConst;
 
 /**
  * 
@@ -48,7 +49,11 @@ public class AudienceCountServiceImpl implements AudienceCountService{
 				audienceCount.setUserCount(1);
 				audienceCount.setTouristCount(0); 
 			}
-			audienceCount.setVideoCategory(localVideo.getCategory()); 
+			if(ServiceConst.CATEGORY_OTHER_INCLUED.contains(localVideo.getCategory())){
+				audienceCount.setVideoCategory("其他"); 
+			}else{
+				audienceCount.setVideoCategory(localVideo.getCategory());  
+			}
 			int insertResult = audienceCountMapper.insertSelective(audienceCount) ; 
 			if(insertResult <= 0){
 				log.warn("插入观众信息失败！"); 

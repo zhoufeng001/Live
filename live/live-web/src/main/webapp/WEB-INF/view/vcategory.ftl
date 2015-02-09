@@ -97,6 +97,7 @@ var zfpager = $.zfpager ;
          
         <!-- 视频列表开始 -->
         <div class="video_list">  
+            <#if pageIsNull == false>  
         	<#list videoPageVo.data as video >
 				<!-- 一个视频 -->
 	            <div class="list_video_box">
@@ -114,8 +115,11 @@ var zfpager = $.zfpager ;
                     ${(video.audienceCount)!""}人在线
                 </span>  
 	            </div>
-	            <!--/ 一个视频 -->
+	            <!--/ 一个视频 -->  
 			</#list>
+			<#else>
+				亲，没有找到任何视频哦！，<a href="${ctx}/index.htm">去看看别的吧 </a>  
+			</#if>
         </div>
         <!-- 视频列表结束 -->
         

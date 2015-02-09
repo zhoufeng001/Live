@@ -318,7 +318,47 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 		result.setData(videos);
 		return result; 
 	}
-
+	
+	
+	@Override
+	public PagedVo<LocalVideoVo> searchVideosOrderByAudienceCount(
+			@Notnull("category") LocalVideoSearchConditionV2 condition) {
+		String table = null ;
+		if(StringUtils.isBlank(condition.getCategory())){
+			table = "local_video";
+		}else{
+			if(condition.getCategory().equals("其他")){
+				table = "local_video_others";
+			}else{
+				table = videoTableSectionMap.get(condition.getCategory());
+			}
+		}
+		if(StringUtils.isBlank(table)){
+			log.warn("没有存储该分类["+ condition.getCategory() +"]视频对应的表！"); 
+			return null ;
+		}
+		
+		PagedVo<LocalVideoVo> result = new PagedVo<LocalVideoVo>();
+		Integer videoCount = localVideoMapper.countByCategoryFromAudienceCounte(condition.getCategory()) ;
+		if(videoCount <= 0){
+			result.setCount(0);
+			result.setData(null);
+			result.setPage(1);
+			result.setPageSize(condition.getPageSize());
+			result.setTotalRecored(0);
+			return result ;
+		}
+		int begin = (condition.getPage() - 1) * condition.getPageSize();
+		int length = condition.getPageSize();
+		List<LocalVideoVo> videoList = localVideoMapper.selectByCategoryOrderByAudienceCount(table ,condition.getCategory(), begin, length) ;
+		result.setCount(videoList.size());
+		result.setData(videoList);
+		result.setPage(condition.getPage());
+		result.setPageSize(condition.getPageSize());
+		result.setTotalRecored(videoCount); 
+		return result;
+	}
+	
 
 	/**
 	 * 根据本地视频ID获取存放视频的表名
@@ -333,5 +373,6 @@ public class LocalVideoServiceImplV2 implements LocalVideoServiceV2{
 		String table = "local_video" + tableSuffix ;
 		return table ;
 	}
+
 
 }
