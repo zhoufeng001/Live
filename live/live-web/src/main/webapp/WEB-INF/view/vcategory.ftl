@@ -118,7 +118,7 @@ var zfpager = $.zfpager ;
 	            <!--/ 一个视频 -->  
 			</#list>
 			<#else>
-				亲，没有找到任何视频哦！，<a href="${ctx}/index.htm">去看看别的吧 </a>  
+				亲，没有找到任何视频哦！<a href="${ctx}/index.htm">去看看别的吧 </a>
 			</#if>
         </div>
         <!-- 视频列表结束 -->

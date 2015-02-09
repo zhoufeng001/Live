@@ -108,7 +108,8 @@ body{
 
 
 .audience :hover{
-	background:#CC9;
+	background:#FF69B4;
+	color:white;
 	cursor:context-menu;
 }
 
