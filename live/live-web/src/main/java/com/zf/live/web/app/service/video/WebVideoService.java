@@ -55,7 +55,7 @@ public class WebVideoService {
 	}
 
 	/**
-	 * 重新缓存指定分类的指定视频
+	 * 重新缓存指定分类的推荐视频
 	 * @param category
 	 * @return
 	 */
@@ -139,6 +139,7 @@ public class WebVideoService {
 					return 0 ;
 				}
 				cachedVideoDetailVo = new CachedVideoDetailVo();
+				BeanUtils.copyProperties(videoDetailVo, cachedVideoDetailVo);
 				ehCacheUtil.put(EhCacheNames.videoInfoCache , videoId, cachedVideoDetailVo); 
 			}else{
 				log.error(result.getErrMssage());

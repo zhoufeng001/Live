@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.zf.live.client.video.local.LocalVideoServiceV2;
 import com.zf.live.common.util.cache.EhCacheUtil;
 import com.zf.live.dao.pojo.LocalVideo;
+import com.zf.live.dao.vo.video.LocalVideoVo;
 import com.zf.live.web.WebConst;
 import com.zf.live.web.WebConst.EhCacheNames;
 import com.zf.live.web.app.service.video.WebVideoService;
@@ -46,8 +47,7 @@ public class ClearAndSaveCachedVideoDetailInfoTask {
 			if(videoDetailInfo == null){
 				continue ;
 			}
-			
-			LocalVideo video = localVideoServiceV2.selectVideoById((String)videoId) ;
+			LocalVideoVo video = localVideoServiceV2.selectVideoById((String)videoId) ;
 			if(video == null){
 				continue ;
 			}
