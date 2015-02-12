@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.zf</groupId>
@@ -199,7 +200,7 @@
             <version>${slf4j.version}</version>
          </dependency>
         
-        <!-- 为了将log4j的日志也使用slf4j输出，需要配置下面的转换器 -->
+        <!-- 为了将log4j的日志也使用slf4j输出，需要配置下面的转换�? -->
         <dependency>  
 		    <groupId>org.slf4j</groupId>  
 		    <artifactId>jcl-over-slf4j</artifactId>  
@@ -230,5 +231,6 @@
   	<module>live-common</module>
   	<module>live-service</module>
   	<module>live-scheduled</module>
+    <module>live-robot</module>
   </modules>
 </project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+<!-- <configuration scan="false" scanPeriod="60 seconds" debug="false"> -->
+
+  <property name="log.level"  value="INFO" />
+  <property name="log.dir"  value="D:/live_logs/robot" />
+	
+  <!-- 控制台打印 -->
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">   
+       <level>${log.level}</level>   
+    </filter>  
+    <encoder>
+      <pattern>%d{HH:mm:ss} %-5level %logger[%line] - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <!-- 记录项目所有日志 -->
+  <appender name="liveWebAll" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  		 <filter class="ch.qos.logback.classic.filter.ThresholdFilter">   
+	       <level>${log.level}</level>   
+	    </filter>  
+        <file>${log.dir}/live-web.log</file>
+		<encoder>
+		       <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger[%line] - %msg%n</pattern>
+		</encoder>
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+              <FileNamePattern>${log.dir}/back/live-robot.%d{yyyy-MM-dd}.log</FileNamePattern>
+              <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+   </appender>
+   
+   
+  <root level="${log.level}">
+    <appender-ref ref="console" />
+    <appender-ref ref="liveWebAll" />
+  </root>
+  
+  
+</configuration>

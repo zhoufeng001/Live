@@ -19,12 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.zf.live.client.user.IdxcodeGenerator;
 import com.zf.live.client.user.LvuserService;
 import com.zf.live.client.vo.ServiceResult;
+import com.zf.live.client.vo.web.AjaxResult;
 import com.zf.live.dao.pojo.Lvuser;
 import com.zf.live.web.WebConst;
 import com.zf.live.web.app.RequestContext;
 import com.zf.live.web.app.service.LiveWebUtil;
 import com.zf.live.web.app.service.user.WebUserService;
 import com.zf.live.web.app.util.WebTokenUtil;
+import com.zf.live.web.app.util.WebUtil;
 
 /**
  * 
@@ -90,6 +92,32 @@ public class UserController {
 			}else{
 				RequestContext.setErrTipMessage(result.getErrMssage());
 				return LiveWebUtil.redirectLoginPath();
+			}
+		}
+	}
+	
+	/**
+	 * 执行登录操作（Ajax）
+	 * @param request
+	 * @param response
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping("/doLoginAjax")
+	public void doLoginAjax(String userkey , String secret , 
+			HttpServletRequest request, HttpServletResponse response , ModelMap modelMap) {
+		ServiceResult<String> result = lvuserService.login4Platform(userkey, secret) ;
+		if(result == null){
+			WebUtil.ajaxOutput(AjaxResult.newFailResult(null, "登录失败，获取用户信息失败！", -1), response);
+			return ;
+		}else{
+			if(result.isSuccess()){
+				String token = result.getData() ;
+				WebUtil.ajaxOutput(AjaxResult.newSuccessResult(token), response);
+				return ;
+			}else{
+				WebUtil.ajaxOutput(AjaxResult.newFailResult(null, "登录失败，获取用户信息失败！", -2), response);
+				return ;
 			}
 		}
 	}

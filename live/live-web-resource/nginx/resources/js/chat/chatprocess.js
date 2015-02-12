@@ -170,13 +170,14 @@ var sendBut;
 				var cometURL = cometdHandshake;
 				cometd.configure({
 					url : cometURL,
-					logLevel : 'debug',
-					requestHeaders : '{"aaa":"111" , "bbb":"222"}',
+					logLevel : 'debug'
 				});
-
+				cometd.registerTransport('long-polling', new org.cometd.LongPollingTransport());
+				cometd.registerTransport('callback-polling', new org.cometd.CallbackPollingTransport());
+				
 				cometd.addListener('/meta/handshake', _metaHandshake);
 				cometd.addListener('/meta/connect', _metaConnect);
-
+				
 				chatMsgBox.appendSystemMsg("服务器连接中...");
 				cometd.handshake({
 					ext : {
@@ -184,7 +185,7 @@ var sendBut;
 						videoId : videoId
 					}
 				});
-
+				
 				// ----------------------连接部分------------------------
 
 			});
