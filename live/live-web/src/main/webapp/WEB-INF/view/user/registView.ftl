@@ -46,7 +46,8 @@
                 <ul class="input_ul">
                 	<li>
                     	<input type="text" name="userkey"  class="live_input login_input" id="userkey"
-                    			nullable="false" notnullErr="用户名不能为空" />
+                    			nullable="false" notnullErr="用户名不能为空"
+                    			regex="^[a-zA-Z]{1}[a-zA-Z0-9_]{4,12}$" regexErr="登录名不能以数字开头，不能包含特殊字符，最少4位"  /> 
                     </li>
                     <li>
                     	<input type="text" name="nick" class="live_input login_input" id="nick"
