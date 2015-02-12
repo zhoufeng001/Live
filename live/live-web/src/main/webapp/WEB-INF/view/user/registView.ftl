@@ -4,6 +4,8 @@
 <!-- 公共meta信息 -->
 <#include "../common/live_common_meta.ftl" >
 <#include "../common/live_common_js.ftl" >	
+<#include "../common/validate.ftl" >	
+<script type="text/javascript" src="${static_server}/js/regist.js"></script>
 <link rel="stylesheet" href="${static_server}/css/login_regist.css">
 <title>Live注册</title>
 
@@ -34,7 +36,7 @@
                 </span>
             </div>
         	<div class="plateform_login_box">
-        	<form method="post" action="${ctx}/user/doRegist.htm">
+        	<form method="post" action="${ctx}/user/doRegist.htm" id="registForm">
             	<ul class="lable_ul">
                 	<li>帐 号：</li>
                     <li>昵 称：</li>
@@ -43,16 +45,21 @@
                 </ul>
                 <ul class="input_ul">
                 	<li>
-                    	<input type="text" name="userkey"  class="live_input login_input"/>
+                    	<input type="text" name="userkey"  class="live_input login_input" id="userkey"
+                    			nullable="false" notnullErr="用户名不能为空" />
                     </li>
                     <li>
-                    	<input type="text" name="nick" class="live_input login_input"/>
+                    	<input type="text" name="nick" class="live_input login_input" id="nick"
+                    		nullable="false" notnullErr="昵称不能为空"/>
                     </li>
                     <li>
-                    	<input type="password" name="secret"  class="live_input login_input" />
+                    	<input type="password"  id="secret" name="secret" class="live_input login_input"
+                    		nullable="false" notnullErr="密码不能为空"/>
                     </li>
                     <li>
-                    	<input type="password" name="confirm_secret"  class="live_input login_input" />
+                    	<input type="password" name="confirm_secret"  class="live_input login_input" id="confirmPassword" 
+                    		nullable="false" notnullErr="确认密码不能为空" 
+                    		relObj="secret" relErr="密码输入不一致" />
                     </li>
                     <li>
                     	<input type="submit"  class="login_but" value="注 册" />

@@ -4,6 +4,8 @@
 <!-- 公共meta信息 -->
 <#include "../common/live_common_meta.ftl" >
 <#include "../common/live_common_js.ftl" >	
+<#include "../common/validate.ftl" >	 
+<script type="text/javascript" src="${static_server}/js/login.js"></script>
 <link rel="stylesheet" href="${static_server}/css/login_regist.css">
 <title>Live登录</title>
 </head>
@@ -33,7 +35,7 @@
             </span>
         </div>
     	<div class="plateform_login_box">
-    	  <form method="post" action="${ctx}/user/doLogin.htm"> 
+    	  <form method="post" action="${ctx}/user/doLogin.htm" id="loginForm"> 
 			<input type="hidden" name="redirect" value="${redirect!""}"/>
          	<ul class="lable_ul">
             	<li>帐 号：</li>    
@@ -41,10 +43,12 @@
             </ul>
             <ul class="input_ul">
             	<li>
-                	<input type="text" name="userkey" class="live_input login_input"/>
+                	<input type="text" name="userkey" class="live_input login_input" nullable="false"
+                	   notnullErr="用户名不能为空" />
                 </li>
                 <li>
-                	<input type="password"  name="secret" class="live_input login_input" />
+                	<input type="password"  name="secret" class="live_input login_input" nullable="false"
+                	   notnullErr="密码不能为空" />
                 </li>
                 <li class="rem_password">
                 	<input type="checkbox" />
