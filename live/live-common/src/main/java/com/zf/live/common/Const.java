@@ -28,7 +28,7 @@ public interface Const {
 		/**
 		 * 登录名规则（正则）
 		 */
-		String LOGINNAME_REGEXP = "[a-zA-Z]{1}[a-zA-Z0-9]{4,12}";
+		String LOGINNAME_REGEXP = "[a-zA-Z]{1}[a-zA-Z0-9_]{4,12}";
 		
 		/**
 		 * 昵称规则（正则）
