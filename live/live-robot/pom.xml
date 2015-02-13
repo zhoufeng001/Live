@@ -45,17 +45,35 @@
 			<groupId>org.cometd.java</groupId>
 			<artifactId>cometd-java-annotations</artifactId>
 			<version>3.0.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.cometd.java</groupId>
 			<artifactId>cometd-java-client</artifactId>
 			<version>3.0.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.cometd.java</groupId>
 			<artifactId>cometd-java-websocket-jetty-client</artifactId>
 			<version>3.0.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<dependency>
@@ -87,7 +105,18 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
-    
+		
+	    <dependency>
+             <groupId>ch.qos.logback</groupId> 
+             <artifactId>logback-classic</artifactId>
+             <type>jar</type>
+             <exclusions>
+             	<exclusion>
+             		<artifactId>slf4j-api</artifactId>  
+             		<groupId>org.slf4j</groupId>
+             	</exclusion>
+             </exclusions>
+          </dependency>		
   </dependencies>
   
     <build>

@@ -194,13 +194,8 @@
 		</dependency>
 		
 		<!-- SLF4J  -->
-		 <dependency>
-            <artifactId>slf4j-api</artifactId>
-            <groupId>org.slf4j</groupId>
-            <version>${slf4j.version}</version>
-         </dependency>
         
-        <!-- 为了将log4j的日志也使用slf4j输出，需要配置下面的转换�? -->
+        <!-- 为了将log4j的日志也使用slf4j输出，需要配置下面的转换�? -->
         <dependency>  
 		    <groupId>org.slf4j</groupId>  
 		    <artifactId>jcl-over-slf4j</artifactId>  
