@@ -8,6 +8,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 import org.dyno.visual.swing.layouts.Constraints;
 import org.dyno.visual.swing.layouts.GroupLayout;
@@ -69,6 +70,7 @@ public class RobotFram extends JFrame {
 	}
 	
 	private void initComponents() {
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setLayout(new GroupLayout());
 		add(getJLabel0(), new Constraints(new Leading(12, 12, 12), new Leading(15, 10, 10)));
 		add(getJTextField0(), new Constraints(new Leading(72, 102, 10, 10), new Leading(12, 12, 12)));
@@ -79,13 +81,13 @@ public class RobotFram extends JFrame {
 		add(getJLabel5(), new Constraints(new Leading(38, 12, 12), new Leading(67, 12, 12)));
 		add(getJTextField5(), new Constraints(new Leading(72, 92, 12, 12), new Leading(67, 12, 12)));
 		add(getJLabel6(), new Constraints(new Leading(30, 10, 10), new Leading(97, 12, 12)));
-		add(getJTextField6(), new Constraints(new Leading(72, 202, 12, 12), new Leading(97, 12, 12)));
 		add(getJLabel7(), new Constraints(new Leading(14, 12, 12), new Leading(128, 12, 12)));
 		add(getJCheckBox0(), new Constraints(new Leading(67, 10, 10), new Leading(127, 12, 12)));
 		add(getJLabel8(), new Constraints(new Leading(112, 12, 12), new Leading(128, 12, 12)));
 		add(getJTextField7(), new Constraints(new Leading(169, 58, 10, 10), new Leading(126, 12, 12)));
 		add(getJButton0(), new Constraints(new Leading(16, 10, 10), new Leading(166, 10, 10)));
-		setSize(320, 263);
+		add(getJTextField6(), new Constraints(new Leading(72, 271, 10, 10), new Leading(97, 12, 12)));
+		setSize(441, 263);
 	}
 
 	private JButton getJButton0() {

@@ -126,7 +126,7 @@
 			  <configuration>
 			    <archive>
 			      <manifest>
-			        <mainClass></mainClass>
+			        <mainClass>com.zf.live.robot.ui.StartUp</mainClass>
 			      </manifest>
 			    </archive>
 			    <descriptorRefs>

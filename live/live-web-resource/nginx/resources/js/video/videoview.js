@@ -6,6 +6,10 @@ $(function(){
 	 userCountI = $("#userCount");
 	 touriseCountI = $("#touriseCount");  
 	 audienceListDiv = $("#audience_list");
+	 addParam() ;
+	 
+	 $("#flyscreen_div").
+	 
 }); 
 
 /**
@@ -141,6 +145,22 @@ var AudienceList = function(){
 	
 }
 
+
+/**
+ * 弹幕
+ */
+var PlayScreen = function(){
+	
+	var playScreenBox = $("#flyscreen_div");
+	var msgList = new Array();
+	
+	this.addMsg = function(userName , msg){
+		msgList.push(userName + ":" + msg);
+	}
+	
+	
+}
+
 /**
  * 点赞
  */
@@ -166,6 +186,28 @@ function doPraise(){
 				praised = true ;
 			}
 		});
+	}
+}
+
+
+var hasSet1 = false;
+var hasSet2 = false;
+function addParam(){
+	var flashPlayer = $("#youku-player");
+	if(flashPlayer.find("param[name='wmode']").length == 0){
+		flashPlayer.append('<param name="wmode" value="transparent">');
+	}else{
+		hasSet1 = true ;
+	}
+	if(flashPlayer.find("embed[wmode]").length == 0){
+		flashPlayer.append('<embed wmode="transparent">');
+	}else{
+		hasSet2 = true ;
+	}
+	if(hasSet1 && hasSet2){
+		return ;
+	}else{
+		setTimeout(addParam,1000); 
 	}
 }
 

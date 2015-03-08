@@ -1,6 +1,8 @@
 package com.zf.live.robot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -30,7 +32,9 @@ public class WebSocketService {
 
 	private static final String cometUrl = Config.getInstance().getProperty("test.comet.url");  
 
-	private final ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(30);
+	private final ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
+
+	private List<BayeuxClient> clients = new ArrayList<BayeuxClient>();
 
 	public void joinRoom(final Params params){
 
@@ -53,21 +57,28 @@ public class WebSocketService {
 					{
 						client.getChannel("/chat/comeIn").publish(null);  
 						log.info("用户[{}]进入房间成功",username);
-						if(params.isDoChat()){
-							scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
-								@Override
-								public void run() {
-									Map<String, String> chatData = new HashMap<String, String>();
-									chatData.put("msg", MessageFactory.buildMessage((MessageFactory.TextType_CommonEm |
-											MessageFactory.TextType_Text)));  
-									client.getChannel("/chat/send_pub/" + params.getVideoId()).publish(chatData); 
-								}
-							}, params.getActionInterval(), params.getActionInterval(), TimeUnit.MILLISECONDS) ; 
-						}
+						clients.add(client) ;
 					}
 				}
 			}); 
 		}
+
+		if(params.isDoChat()){
+			scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+				@Override
+				public void run() {
+					if(clients.size() == 0){
+						return ;
+					}
+					Map<String, String> chatData = new HashMap<String, String>();
+					chatData.put("msg", MessageFactory.buildMessage((MessageFactory.TextType_CommonEm |
+							MessageFactory.TextType_Text)));  
+					BayeuxClient randClient = clients.get((int)(Math.random() * clients.size())) ;
+					randClient.getChannel("/chat/send_pub/" + params.getVideoId()).publish(chatData); 
+				}
+			}, params.getActionInterval(), params.getActionInterval(), TimeUnit.MILLISECONDS);
+		}
+
 	}
 
 	/**

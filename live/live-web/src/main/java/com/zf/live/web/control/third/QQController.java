@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -41,7 +42,7 @@ import com.zf.live.web.app.util.WebTokenUtil;
 @RequestMapping("/qq")
 public class QQController {
 
-	static final Logger log = org.slf4j.LoggerFactory.getLogger(QQController.class);
+	static final Logger log = LoggerFactory.getLogger(QQController.class);
 	
 	@Autowired
 	private LvuserService lvuserService ;
@@ -108,7 +109,7 @@ public class QQController {
 					//获取用户qq昵称
 					String userNick = userInfoBean.getNickname() ;
 					String photo = userInfoBean.getAvatar().getAvatarURL30() ;
-					log.info("用户nick{},photo{},openid{}登录成功" , userNick , photo , openID);
+					log.info("用户nick{},photo{},openid{}登录成功" ,new Object[]{ userNick , photo , openID});
 					
 					Lvuser lvuser = lvuserService.selectByThirdInfo(Const.UserConst.USER_FROM_QQ, openID);
 					if(lvuser == null){

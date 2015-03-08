@@ -86,15 +86,16 @@
             <!-- 播放器和聊天窗 -->
             <div class="player_and_chat">
             	<div class="player">
-            	    <div  id="youkuplayer" style="width:700px;height:470px;"></div>
+            	    <div id="youkuplayer" style="width:700px;height:470px;"></div>
                 </div>
+                <div class="flyscreen_div" id="flyscreen_div"></div>
             </div>
             <!--/播放器和聊天窗 -->
             
             <!-- 聊天记录 -->
             <div class="chat_recored">
             	<ul class="chatlist_ul" id="chatlist_ul" >
-                </ul>
+                </ul>  
                 <div class="chat_input_div">
                 	<div class="chat_input_text">
                 		<input type="text"  id="chat_textarea" class="chat_input"  />
@@ -141,7 +142,7 @@
 		var _targetTop = $('#video_main_content').offset().top;//获取位置
 		jQuery("html,body").animate({scrollTop:_targetTop},300);//跳转
 	}
-      
+
 </script>     
 
 </body>
