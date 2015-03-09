@@ -63,7 +63,7 @@ var zfpager = $.zfpager ;
 	            	<#list categoryRecommendVo.recommendVideoList as video>
 						<!-- 一个视频 -->
 		            	<div class="recommend_video_box">  
-		                	<span class="video_name"><a href="${ctx}/video/view/108811.htm" target="_blank">${(video.videoname)!""}</a></span>
+		                	<span class="video_name"><a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank">${(video.videoname)!""}</a></span>
 		                    <span class="video_thumbnail" >
 			                    <a href="${ctx}/video/view/${(video.id)!""}.htm" target="_blank">
 			                   	 <img src="${(video.thumbnail)!""}"  />
